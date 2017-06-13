@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Python Daemon Example</title>
+        <script language="JavaScript">
+            function submit_form(form) {
+                // Identifies the correct response.
+                var rad, msg="";
+                for (rad = 0; rad < 2; rad++) {
+                    if (form.selectme[rad].checked) {
+                        msg = "You selected : " + form.selectme[rad].value;
+                        if (form.selectme[rad].value == "Python"){
+                            msg += ".\nYou are correct!";
+                        }
+                        else {
+                            msg += ".\nIncorrect, please try again.";
+                        }
+                        break;
+                    }
+                }
+                alert(msg);
+            }
+        </script>
+    </head>
+    
+    <body>
+        <br>
+        <p><b>Python Daemon Example<b></p>
+        <br>
+        <p> Select the world's best scripting language</p>
+        <form>
+            <input type="radio" name="selectme" value="Python" CHECKED>Python<br>
+            <input type="radio" name="selectme" value="Perl">Perl<br>
+            <input type="submit" value="Submit" onClick="submit_form(this.form)">
+        </form>
+        <br>
+        <hr>
+        <p>Andrew Cuddon, www.cuddon.net</p>
+    </body>
+</html>
+
