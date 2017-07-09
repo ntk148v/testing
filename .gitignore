@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# ssbot config
+ssbot/config.py
+
 .idea/*
 
 # C extensions
