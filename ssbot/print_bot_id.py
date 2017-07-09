@@ -1,12 +1,10 @@
 from slackclient import SlackClient
 
-
-BOT_NAME = 'sworker'
-SLACK_BOT_TOKEN = '<secret>'
+from config import BOT_NAME, BOT_TOKEN
 
 
 if __name__ == '__main__':
-    api_call = SlackClient(SLACK_BOT_TOKEN).api_call('users.list')
+    api_call = SlackClient(BOT_TOKEN).api_call('users.list')
     if api_call.get('ok'):
         # retrieve all users so we can find our bot
         users = api_call.get('members')

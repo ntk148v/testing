@@ -1,9 +1,9 @@
 import time
 from slackclient import SlackClient
 
+from config import BOT_ID, BOT_TOKEN
 
-BOT_ID = '<secret>'
-BOT_TOKEN = '<secret>'
+
 AT_BOT = '<@%s>'% BOT_ID
 EXAMPLE_COMMAND = 'do'
 slack_client = SlackClient(BOT_TOKEN)
