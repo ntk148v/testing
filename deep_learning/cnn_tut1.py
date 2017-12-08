@@ -11,9 +11,17 @@ tf.logging.set_verbosity(tf.logging.INFO)
 def cnn_model_fn(features, labels, mode):
     """Model function for CNN"""
     # Input layer
+    # monochrome 28x28 images,
+    # [batch_size, width, height, channels]
+    # batch_size specifies that dimension should be dynamically computed
+    # based on the number of input values in features['x'].
+    # channels number of color channels (Monochrome - 1, color - 3)
     input_layer = tf.reshape(features['x'], [-1, 28, 28, 1])
 
     # Convolutional layer #1
+    # 32 5x5 filters with ReLU activation function
+    # padding argument specifies one of two enumerated values: valid(default)
+    # and same.
     conv1 = tf.layer.conv2d(
         inputs=input_layer,
         filters=32,
@@ -36,9 +44,11 @@ def cnn_model_fn(features, labels, mode):
     pool2 = tf.layers.max_pooling2d(inputs=conv2, pool_size=[2, 2], strides=2)
 
     # Dense layer
+    # Flatten pool2 to shape [batch_size, features]
     pool2_flat = tf.reshape(pool2, [-1, 7 * 7 * 64])
     dense = tf.layers.dense(inputs=pool2_flat, units=1024,
                             activation=tf.nn.relu)
+    # Dropout regularization with rate 0.4
     dropout = tf.layers.dropout(inputs=dense, rate=0.4, training=mode ==
                                 tf.estimator.ModeKeys.TRAIN)
 
