@@ -22,7 +22,7 @@ def cnn_model_fn(features, labels, mode):
     # 32 5x5 filters with ReLU activation function
     # padding argument specifies one of two enumerated values: valid(default)
     # and same.
-    conv1 = tf.layer.conv2d(
+    conv1 = tf.layers.conv2d(
         inputs=input_layer,
         filters=32,
         kernel_size=[5, 5],
@@ -55,7 +55,7 @@ def cnn_model_fn(features, labels, mode):
                                 tf.estimator.ModeKeys.TRAIN)
 
     # Logits layer
-    logits = tf.layer.dense(inputs=dropout, units=10)
+    logits = tf.layers.dense(inputs=dropout, units=10)
 
     predictions = {
         # Generate predictions (for PREDICT and EVAL mode)
@@ -146,4 +146,4 @@ def main(unused_argv):
 
 
 if __name__ == '__main__':
-    tf.app.run()
+    tf.app.run(main=main)
