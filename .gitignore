@@ -94,3 +94,4 @@ ENV/
 .ropeproject
 
 deep_learning/MNIST-data/*
+admin-openrc
