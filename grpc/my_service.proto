@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.kiennt.testing";
+option java_outer_classname = "MyServiceProto";
+option objc_class_prefix = "HLW";
+
+package testing;
+
+service MyService {
+    rpc MyMethod1 (MyRequest) returns (MyResponse) {
+    }
+
+    rpc MyMethod2 (MyRequest) returns (MyResponse) {
+    }
+}
+
+message MyRequest {
+    string name = 1;
+    int32 code = 2;
+}
+
+message MyResponse {
+    string name = 1;
+    string sex = 2;
+    int32 code = 3;
+}
