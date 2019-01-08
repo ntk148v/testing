@@ -1,12 +1,12 @@
 package main
 
 import (
+	pb "github.com/ntk148v/testing/grpc/golang_example/customer"
+	"golang.org/x/net/context"
+	"google.golang.org/grpc"
 	"log"
 	"net"
 	"strings"
-	"golang.org/x/net/context"
-	"google.golang.org/grpc"
-	pb "github.com/ntk148v/testing/golang_example/customer"
 )
 
 const (
@@ -15,7 +15,7 @@ const (
 
 // server is used to implement customer.CustomerServer
 type server struct {
-	saveCustomers []*pb.CustomerRequest
+	savedCustomers []*pb.CustomerRequest
 }
 
 // CreateCustomer creates a new Customer
@@ -25,10 +25,10 @@ func (s *server) CreateCustomer(ctx context.Context, in *pb.CustomerRequest) (*p
 }
 
 // GetCustomers returns all customers by given filter
-func (s *server) GetCustomers(filter *pb.CustomerFilter, stream pb.Customer_GetCustomersServer) error {
+func (s *server) GetCustomers(filter *pb.CustomerFilter, stream pb.Customer_GetCustomerServer) error {
 	for _, customer := range s.savedCustomers {
 		if filter.Keyword != "" {
-			if !strings.Contains(customer.Name, filter.keyword) {
+			if !strings.Contains(customer.Name, filter.Keyword) {
 				continue
 			}
 		}
@@ -46,6 +46,6 @@ func main() {
 	}
 	// Creates a new gRPC server
 	s := grpc.NewServer()
-	pb.RegisterCustomer(s,. &server{})
+	pb.RegisterCustomerServer(s, &server{})
 	s.Serve(lis)
 }
