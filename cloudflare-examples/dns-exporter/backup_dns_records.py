@@ -2,6 +2,7 @@
 import logging
 import os
 import sys
+import yaml
 
 import CloudFlare
 
@@ -36,6 +37,7 @@ def export_dns_records():
         api_certkey = os.environ['CF_API_CERTKEY']
     except KeyError as err:
         LOG.error('Required environment variable is missing: %s' % (err))
+        raise
 
     LOG.info('Initilize CloudFlare API Client.')
     cf = CloudFlare.CloudFlare(
@@ -48,8 +50,10 @@ def export_dns_records():
         zones = cf.zones.get(params={'name': zone_name})
     except CloudFlare.exceptions.CloudFlareAPIError as err:
         LOG.error('/zones %d %s - api call failed' % (err, err))
+        raise
     except Exception as err:
         LOG.error('/zones.get - %s - api call failed' % (err))
+        raise
 
     if len(zones) == 0:
         LOG.error('/zones.get - %s - zone not found' % (zone_name))
@@ -66,6 +70,7 @@ def export_dns_records():
     except CloudFlare.exceptions.CloudFlareAPIError as err:
         LOG.error('/zones/dns_records/export %s - %d %s - api call failed' %
                   (zone_name, err, err))
+        raise
 
     backupfile_path = os.environ.get('BACKUP_DNS_FILE', 'dns_records.bak')
     with open(backupfile_path, 'a') as backupfile:
