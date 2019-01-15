@@ -57,11 +57,13 @@ def export_dns_records():
 
     if len(zones) == 0:
         LOG.error('/zones.get - %s - zone not found' % (zone_name))
+        raise
 
     # The zone identifier should be unique
     if len(zones) != 1:
         LOG.error(
             '/zones.get - %s - api call return more than one items' % (zone_name))
+        raise
 
     zone_id = zones[0]['id']
     try:
