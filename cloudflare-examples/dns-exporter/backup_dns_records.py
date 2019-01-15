@@ -68,7 +68,7 @@ def export_dns_records():
                   (zone_name, err, err))
 
     backupfile_path = os.environ.get('BACKUP_DNS_FILE', 'dns_records.bak')
-    with open(backupfile_path, 'a') as backupfile
+    with open(backupfile_path, 'a') as backupfile:
         for line in dns_records.splitlines():
             if len(line) == 0 or line[0] == ';':
                 # Blank line or comment line are skipped
