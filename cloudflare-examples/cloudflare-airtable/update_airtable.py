@@ -77,7 +77,7 @@ for dns_record in dns_records:
         'Name': dns_name,
         'IP': dns_content,
         'Environment': dns_env,
-        'LastUpdated': str(datetime.now()),
+        'LastUpdated': str(datetime.utcnow()),
         'ModifiedOn': dns_modified_on
     }
     # Search by name
