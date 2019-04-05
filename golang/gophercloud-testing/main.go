@@ -10,6 +10,12 @@ import (
 	"github.com/gophercloud/gophercloud/pagination"
 )
 
+type Result struct {
+	ID      string
+	Name    string
+	Outputs map[string]interface{}
+}
+
 func main() {
 	// Option 1: Pass in the values yourself
 	// opts := gophercloud.AuthOptions{
@@ -46,9 +52,11 @@ func main() {
 	// }
 	// fmt.Println(outputValueMap["service_name"])
 	listopts := stacks.ListOpts{
-		TenantID: "c5a8b5960ac04cc68f18a541a7a9c51e",
+		SortKey: "stack_name",
+		Tags:    "test",
 	}
 
+	results := make(map[string]Result)
 	pager := stacks.List(client, listopts)
 	fmt.Println(pager)
 	err = pager.EachPage(func(page pagination.Page) (bool, error) {
@@ -56,8 +64,15 @@ func main() {
 		if err != nil {
 			return false, err
 		}
+		var stack stacks.GetResult
 		for _, s := range stackList {
-			fmt.Println(s)
+			stack = stacks.Get(client, s.Name, s.ID)
+			stackBody, _ := stack.Extract()
+			results[s.ID] = Result{
+				ID:      s.ID,
+				Name:    s.Name,
+				Outputs: stackBody.Outputs[0],
+			}
 		}
 		return true, nil
 	})
@@ -65,4 +80,5 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	fmt.Println(results)
 }
