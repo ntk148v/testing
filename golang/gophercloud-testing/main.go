@@ -1,13 +1,13 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"os"
 
 	"github.com/gophercloud/gophercloud"
 	"github.com/gophercloud/gophercloud/openstack"
 	"github.com/gophercloud/gophercloud/openstack/orchestration/v1/stacks"
+	"github.com/gophercloud/gophercloud/pagination"
 )
 
 func main() {
@@ -35,14 +35,34 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	stack := stacks.Find(client, "vsmart_kiennt_2")
-	stackBody, _ := stack.Extract()
-	// Convert output value (JSON string) to Map
-	outputValueMap := make(map[string]interface{})
-	outputValueRaw := stackBody.Outputs[0]["output_value"].(string)
-	err = json.Unmarshal([]byte(outputValueRaw), &outputValueMap)
-	if err != nil {
-		panic(err)
+	// stack := stacks.Find(client, "vsmart_kiennt_2")
+	// stackBody, _ := stack.Extract()
+	// // Convert output value (JSON string) to Map
+	// outputValueMap := make(map[string]interface{})
+	// outputValueRaw := stackBody.Outputs[0]["output_value"].(string)
+	// err = json.Unmarshal([]byte(outputValueRaw), &outputValueMap)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// fmt.Println(outputValueMap["service_name"])
+	listopts := stacks.ListOpts{
+		TenantID: "c5a8b5960ac04cc68f18a541a7a9c51e",
 	}
-	fmt.Println(outputValueMap["service_name"])
+
+	pager := stacks.List(client, listopts)
+	fmt.Println(pager)
+	err = pager.EachPage(func(page pagination.Page) (bool, error) {
+		stackList, err := stacks.ExtractStacks(page)
+		if err != nil {
+			return false, err
+		}
+		for _, s := range stackList {
+			fmt.Println(s)
+		}
+		return true, nil
+	})
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 }
