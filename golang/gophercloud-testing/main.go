@@ -1,20 +1,16 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/gophercloud/gophercloud"
 	"github.com/gophercloud/gophercloud/openstack"
 	"github.com/gophercloud/gophercloud/openstack/orchestration/v1/stacks"
 	"github.com/gophercloud/gophercloud/pagination"
 )
-
-type Result struct {
-	ID      string
-	Name    string
-	Outputs map[string]interface{}
-}
 
 func main() {
 	// Option 1: Pass in the values yourself
@@ -41,44 +37,87 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	// stack := stacks.Find(client, "vsmart_kiennt_2")
-	// stackBody, _ := stack.Extract()
-	// // Convert output value (JSON string) to Map
-	// outputValueMap := make(map[string]interface{})
-	// outputValueRaw := stackBody.Outputs[0]["output_value"].(string)
-	// err = json.Unmarshal([]byte(outputValueRaw), &outputValueMap)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// fmt.Println(outputValueMap["service_name"])
+
 	listopts := stacks.ListOpts{
 		SortKey: "stack_name",
-		Tags:    "test",
+		Tags:    "scale",
 	}
 
-	results := make(map[string]Result)
-	pager := stacks.List(client, listopts)
-	fmt.Println(pager)
-	err = pager.EachPage(func(page pagination.Page) (bool, error) {
-		stackList, err := stacks.ExtractStacks(page)
-		if err != nil {
-			return false, err
-		}
-		var stack stacks.GetResult
-		for _, s := range stackList {
-			stack = stacks.Get(client, s.Name, s.ID)
-			stackBody, _ := stack.Extract()
-			results[s.ID] = Result{
-				ID:      s.ID,
-				Name:    s.Name,
-				Outputs: stackBody.Outputs[0],
+	results := make(map[string]interface{})
+	go func() {
+		for i := 0; i <= 10; i++ {
+			pager := stacks.List(client, listopts)
+			fmt.Println(pager)
+			err = pager.EachPage(func(page pagination.Page) (bool, error) {
+				stackList, err := stacks.ExtractStacks(page)
+				if err != nil {
+					return false, err
+				}
+				var stack stacks.GetResult
+				for _, s := range stackList {
+					stack = stacks.Get(client, s.Name, s.ID)
+					stackBody, _ := stack.Extract()
+					outputValues := make(map[string]interface{})
+					if len(stackBody.Outputs) == 0 {
+						continue
+					}
+					// Convert output value (JSON string) to Map
+					for _, v := range stackBody.Outputs {
+						outputValueMap := make(map[string]interface{})
+						outputValueRaw := v["output_value"].(string)
+						if err := json.Unmarshal([]byte(outputValueRaw), &outputValueMap); err != nil {
+							continue
+						}
+						outputValues[v["output_key"].(string)] = outputValueMap
+					}
+					results[s.ID] = outputValues
+				}
+				return true, nil
+			})
+			if err != nil {
+				fmt.Println(err)
+				return
 			}
+			for _, value := range results {
+				fmt.Println(value)
+			}
+			time.Sleep(time.Second * 2)
 		}
-		return true, nil
-	})
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fmt.Println(results)
+	}()
+	time.Sleep(time.Second * 100)
+	// pager := stacks.List(client, listopts)
+	// fmt.Println(pager)
+	// err = pager.EachPage(func(page pagination.Page) (bool, error) {
+	// 	stackList, err := stacks.ExtractStacks(page)
+	// 	if err != nil {
+	// 		return false, err
+	// 	}
+	// 	var stack stacks.GetResult
+	// 	for _, s := range stackList {
+	// 		stack = stacks.Get(client, s.Name, s.ID)
+	// 		stackBody, _ := stack.Extract()
+	// 		outputValues := make(map[string]interface{})
+	// 		if len(stackBody.Outputs) == 0 {
+	// 			continue
+	// 		}
+	// 		// Convert output value (JSON string) to Map
+	// 		for _, v := range stackBody.Outputs {
+	// 			outputValueMap := make(map[string]interface{})
+	// 			outputValueRaw := v["output_value"].(string)
+	// 			if err := json.Unmarshal([]byte(outputValueRaw), &outputValueMap); err != nil {
+	// 				continue
+	// 			}
+	// 			outputValues[v["output_key"].(string)] = outputValueMap
+	// 		}
+	// 		results[s.ID] = outputValues
+	// 	}
+	// 	return true, nil
+	// })
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+	// for _, value := range results {
+	// 	fmt.Println(value)
+	// }
 }
