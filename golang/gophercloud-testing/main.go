@@ -51,7 +51,6 @@ func main() {
 		defer wg.Done()
 		for i := 0; i <= 10; i++ {
 			pager := stacks.List(client, listopts)
-			fmt.Println(pager)
 			err = pager.EachPage(func(page pagination.Page) (bool, error) {
 				stackList, err := stacks.ExtractStacks(page)
 				if err != nil {
@@ -70,11 +69,14 @@ func main() {
 						outputValueMap := make(map[string]interface{})
 						outputValueRaw := v["output_value"].(string)
 						if err := json.Unmarshal([]byte(outputValueRaw), &outputValueMap); err != nil {
+							outputValues[v["output_key"].(string)] = outputValueRaw
 							continue
 						}
 						outputValues[v["output_key"].(string)] = outputValueMap
 					}
-					results[s.ID] = outputValues
+					if len(outputValues) != 0 {
+						results[s.ID] = outputValues
+					}
 				}
 				return true, nil
 			})
