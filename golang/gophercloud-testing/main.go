@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"sync"
 	"time"
 
 	"github.com/gophercloud/gophercloud"
@@ -44,7 +45,10 @@ func main() {
 	}
 
 	results := make(map[string]interface{})
+	var wg sync.WaitGroup
+	wg.Add(1)
 	go func() {
+		defer wg.Done()
 		for i := 0; i <= 10; i++ {
 			pager := stacks.List(client, listopts)
 			fmt.Println(pager)
@@ -84,7 +88,8 @@ func main() {
 			time.Sleep(time.Second * 2)
 		}
 	}()
-	time.Sleep(time.Second * 100)
+
+	wg.Wait()
 	// pager := stacks.List(client, listopts)
 	// fmt.Println(pager)
 	// err = pager.EachPage(func(page pagination.Page) (bool, error) {
