@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"os"
 	"sync"
@@ -41,10 +40,10 @@ func main() {
 
 	listopts := stacks.ListOpts{
 		SortKey: "stack_name",
-		Tags:    "scale",
+		// Tags:    "scale",
 	}
 
-	results := make(map[string]interface{})
+	results := make(map[string]map[string]string)
 	var wg sync.WaitGroup
 	wg.Add(1)
 	go func() {
@@ -60,19 +59,19 @@ func main() {
 				for _, s := range stackList {
 					stack = stacks.Get(client, s.Name, s.ID)
 					stackBody, _ := stack.Extract()
-					outputValues := make(map[string]interface{})
+					outputValues := make(map[string]string)
 					if len(stackBody.Outputs) == 0 {
 						continue
 					}
 					// Convert output value (JSON string) to Map
 					for _, v := range stackBody.Outputs {
-						outputValueMap := make(map[string]interface{})
-						outputValueRaw := v["output_value"].(string)
-						if err := json.Unmarshal([]byte(outputValueRaw), &outputValueMap); err != nil {
-							outputValues[v["output_key"].(string)] = outputValueRaw
-							continue
-						}
-						outputValues[v["output_key"].(string)] = outputValueMap
+						// outputValueMap := make(map[string]string)
+						// outputValueRaw := v["output_value"].(string)
+						// if err := json.Unmarshal([]byte(outputValueRaw), &outputValueMap); err != nil {
+						// 	outputValues[v["output_key"].(string)] = outputValueRaw
+						// 	continue
+						// }
+						outputValues[v["output_key"].(string)] = v["output_value"].(string)
 					}
 					if len(outputValues) != 0 {
 						results[s.ID] = outputValues
@@ -85,7 +84,10 @@ func main() {
 				return
 			}
 			for _, value := range results {
-				fmt.Println(value)
+				// fmt.Println(value)
+				for _, sv := range value {
+					fmt.Println(sv)
+				}
 			}
 			time.Sleep(time.Second * 2)
 		}
