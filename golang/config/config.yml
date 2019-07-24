@@ -1,0 +1,44 @@
+# OpenStackConfiguration.
+# These configs will be overwritten by OS_* environment variables.
+# Check handlers/openstack/.env.example for details.
+openstack_configs:
+  - name: openstack-1f
+    region_name: "RegionOne"
+    domain_name: "Default"
+    auth_url: "http://openstackhost1:5000"
+    username: "admin"
+    password: "password"
+    project_name: "tenantName"
+    stack_query:
+      # update_interval: 30
+      list_opts:
+        tags: "scale"
+
+  - name: openstack-2f
+    region_name: "RegionOne"
+    domain_name: "Default"
+    auth_url: "http://openstackhost2:5000"
+    username: "admin"
+    password: "password"
+    project_name: "tenantName"
+    stack_query:
+      update_interval: 30s
+      list_opts:
+        tags: "scale"
+
+# StackStormConfiguration
+# These configs will be overwritten by STACKSTORM_* environment variables.
+# Check handlers/stackstorm/.env.example for details.
+stackstorm_configs:
+  - name: "stackstorm-1f"
+    host: "stackstormhost"
+    api_key: "fakestackstomrapikey"
+
+server_config:
+  # Example:
+  # "www.example.com"
+  # "([a-z]+).domain.com"
+  remote_host_pattern: "192.168.(128|129).*"
+  basic_auth:
+    username: "admin"
+    password: "notverysecurepassword"
