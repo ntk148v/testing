@@ -11,9 +11,9 @@ import (
 
 // Config is the top-level configuration for Faythe's config file.
 type Config struct {
-	ServerConfig     ServerConfig        `yaml:"server_config"`
-	OpenStackConfigs []*OpenStackConfig  `yaml:"openstack_configs,omitempty"`
-	StackConfig      []*StackStormConfig `yaml:"stackstorm_configs,omitempty"`
+	ServerConfig     ServerConfig       `yaml:"server_config"`
+	OpenStackConfigs []OpenStackConfig  `yaml:"openstack_configs,omitempty"`
+	StackConfig      []StackStormConfig `yaml:"stackstorm_configs,omitempty"`
 }
 
 // ServerConfig configures values that are used to config Faythe HTTP server
