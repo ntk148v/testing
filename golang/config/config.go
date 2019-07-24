@@ -39,7 +39,7 @@ StackStormConfig stores information needed to forward
 request to an StackStorm instance.
 */
 type StackStormConfig struct {
-	Name   string `yaml:name`
+	Name   string `yaml:"name"`
 	Host   string `yaml:"host"`
 	APIKey string `yaml:"api_key"`
 }
