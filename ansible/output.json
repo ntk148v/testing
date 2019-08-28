@@ -33,19 +33,19 @@
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.10": {
+            "192.168.9.10": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.11": {
+            "192.168.9.11": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.110": {
+            "192.168.9.110": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.111": {
+            "192.168.9.111": {
                 "ansible_become_pass": "Viettel@123",
                 "ansible_ssh_pass": "Viettel@123",
                 "ansible_ssh_port": 22,
@@ -53,67 +53,67 @@
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.112": {
+            "192.168.9.112": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.113": {
+            "192.168.9.113": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.114": {
+            "192.168.9.114": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.117": {
+            "192.168.9.117": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.118": {
+            "192.168.9.118": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.119": {
+            "192.168.9.119": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.12": {
+            "192.168.9.12": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.120": {
+            "192.168.9.120": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.121": {
+            "192.168.9.121": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.122": {
+            "192.168.9.122": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.123": {
+            "192.168.9.123": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.124": {
+            "192.168.9.124": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.125": {
+            "192.168.9.125": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.13": {
+            "192.168.9.13": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.135": {
+            "192.168.9.135": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.136": {
+            "192.168.9.136": {
                 "ansible_become_pass": "Viettel@123",
                 "ansible_ssh_pass": "Viettel@123",
                 "ansible_ssh_port": 22,
@@ -121,67 +121,67 @@
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.137": {
+            "192.168.9.137": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.138": {
+            "192.168.9.138": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.139": {
+            "192.168.9.139": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.14": {
+            "192.168.9.14": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.142": {
+            "192.168.9.142": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.144": {
+            "192.168.9.144": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.145": {
+            "192.168.9.145": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.146": {
+            "192.168.9.146": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.147": {
+            "192.168.9.147": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.148": {
+            "192.168.9.148": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.149": {
+            "192.168.9.149": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.15": {
+            "192.168.9.15": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.150": {
+            "192.168.9.150": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.16": {
+            "192.168.9.16": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.160": {
+            "192.168.9.160": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.161": {
+            "192.168.9.161": {
                 "ansible_become_pass": "Viettel@123",
                 "ansible_ssh_pass": "Viettel@123",
                 "ansible_ssh_port": 22,
@@ -189,311 +189,311 @@
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.162": {
+            "192.168.9.162": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.163": {
+            "192.168.9.163": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.164": {
+            "192.168.9.164": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.165": {
+            "192.168.9.165": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.166": {
+            "192.168.9.166": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.167": {
+            "192.168.9.167": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.168": {
+            "192.168.9.168": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.169": {
+            "192.168.9.169": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.17": {
+            "192.168.9.17": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.170": {
+            "192.168.9.170": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.171": {
+            "192.168.9.171": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.172": {
+            "192.168.9.172": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.173": {
+            "192.168.9.173": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.174": {
+            "192.168.9.174": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.175": {
+            "192.168.9.175": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.18": {
+            "192.168.9.18": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.185": {
+            "192.168.9.185": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.187": {
+            "192.168.9.187": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.188": {
+            "192.168.9.188": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.189": {
+            "192.168.9.189": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.19": {
+            "192.168.9.19": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.190": {
+            "192.168.9.190": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.191": {
+            "192.168.9.191": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.192": {
+            "192.168.9.192": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.193": {
+            "192.168.9.193": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.194": {
+            "192.168.9.194": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.195": {
+            "192.168.9.195": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.197": {
+            "192.168.9.197": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.198": {
+            "192.168.9.198": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.199": {
+            "192.168.9.199": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.20": {
+            "192.168.9.20": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.200": {
+            "192.168.9.200": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.21": {
+            "192.168.9.21": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.210": {
+            "192.168.9.210": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.211": {
+            "192.168.9.211": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.212": {
+            "192.168.9.212": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.213": {
+            "192.168.9.213": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.214": {
+            "192.168.9.214": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.215": {
+            "192.168.9.215": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.216": {
+            "192.168.9.216": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.217": {
+            "192.168.9.217": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.218": {
+            "192.168.9.218": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.22": {
+            "192.168.9.22": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.220": {
+            "192.168.9.220": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.222": {
+            "192.168.9.222": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.23": {
+            "192.168.9.23": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.239": {
+            "192.168.9.239": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.24": {
+            "192.168.9.24": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.240": {
+            "192.168.9.240": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.241": {
+            "192.168.9.241": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.242": {
+            "192.168.9.242": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.243": {
+            "192.168.9.243": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.244": {
+            "192.168.9.244": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.245": {
+            "192.168.9.245": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.246": {
+            "192.168.9.246": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.247": {
+            "192.168.9.247": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.25": {
+            "192.168.9.25": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.49": {
+            "192.168.9.49": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.50": {
+            "192.168.9.50": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.51": {
+            "192.168.9.51": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.52": {
+            "192.168.9.52": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.53": {
+            "192.168.9.53": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.54": {
+            "192.168.9.54": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.55": {
+            "192.168.9.55": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.57": {
+            "192.168.9.57": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.58": {
+            "192.168.9.58": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.59": {
+            "192.168.9.59": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.74": {
+            "192.168.9.74": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.75": {
+            "192.168.9.75": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.76": {
+            "192.168.9.76": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.77": {
+            "192.168.9.77": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.78": {
+            "192.168.9.78": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.79": {
+            "192.168.9.79": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.80": {
+            "192.168.9.80": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.82": {
+            "192.168.9.82": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.83": {
+            "192.168.9.83": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
-            "10.9.9.84": {
+            "192.168.9.84": {
                 "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
                 "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
             },
@@ -671,17 +671,17 @@
             "elastalert"
         ],
         "hosts": [
-            "10.9.9.11",
-            "10.9.9.11",
-            "10.9.9.111",
-            "10.9.9.136",
-            "10.9.9.161"
+            "192.168.9.11",
+            "192.168.9.11",
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
         ],
         "vars": {
             "ansible_become": "true",
-            "ansible_become_pass": "2018_HLC_T5_Cloud!@#",
+            "ansible_become_pass": "passwordne",
             "ansible_connection": "ssh",
-            "ansible_ssh_pass": "2018_HLC_T5_Cloud!@#",
+            "ansible_ssh_pass": "passwordne",
             "ansible_ssh_port": 22,
             "ansible_ssh_user": "root"
         }
@@ -689,7 +689,7 @@
     "aodh": {
         "children": [],
         "hosts": [
-            "10.9.9.50"
+            "192.168.9.50"
         ],
         "vars": {}
     },
@@ -698,7 +698,7 @@
             "aodh"
         ],
         "hosts": [
-            "10.9.9.50"
+            "192.168.9.50"
         ],
         "vars": {}
     },
@@ -707,7 +707,7 @@
             "aodh"
         ],
         "hosts": [
-            "10.9.9.50"
+            "192.168.9.50"
         ],
         "vars": {}
     },
@@ -716,7 +716,7 @@
             "aodh"
         ],
         "hosts": [
-            "10.9.9.50"
+            "192.168.9.50"
         ],
         "vars": {}
     },
@@ -725,7 +725,7 @@
             "aodh"
         ],
         "hosts": [
-            "10.9.9.50"
+            "192.168.9.50"
         ],
         "vars": {}
     },
@@ -734,9 +734,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -745,9 +745,9 @@
             "barbican"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -756,9 +756,9 @@
             "barbican"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -767,9 +767,9 @@
             "barbican"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -782,114 +782,114 @@
             "monitoring"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160",
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185",
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247",
-            "10.9.9.110",
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -907,9 +907,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -918,9 +918,9 @@
             "blazar"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -929,9 +929,9 @@
             "blazar"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -940,9 +940,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -951,9 +951,9 @@
             "ceilometer"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -962,104 +962,104 @@
             "compute"
         ],
         "hosts": [
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247"
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
         ],
         "vars": {}
     },
@@ -1068,9 +1068,9 @@
             "ceilometer"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1079,9 +1079,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1090,9 +1090,9 @@
             "ceph"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1101,9 +1101,9 @@
             "ceph"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1112,9 +1112,9 @@
             "ceph"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1123,9 +1123,9 @@
             "ceph"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1134,7 +1134,7 @@
             "storage"
         ],
         "hosts": [
-            "10.9.9.110"
+            "192.168.9.110"
         ],
         "vars": {}
     },
@@ -1143,9 +1143,9 @@
             "ceph"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1158,114 +1158,114 @@
             "monitoring"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160",
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185",
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247",
-            "10.9.9.110",
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -1281,9 +1281,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1292,9 +1292,9 @@
             "cinder"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1303,7 +1303,7 @@
             "storage"
         ],
         "hosts": [
-            "10.9.9.110"
+            "192.168.9.110"
         ],
         "vars": {}
     },
@@ -1312,9 +1312,9 @@
             "cinder"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1323,7 +1323,7 @@
             "storage"
         ],
         "hosts": [
-            "10.9.9.110"
+            "192.168.9.110"
         ],
         "vars": {}
     },
@@ -1332,9 +1332,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1343,9 +1343,9 @@
             "cloudkitty"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1354,18 +1354,18 @@
             "cloudkitty"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
     "cluster": {
         "children": [],
         "hosts": [
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14"
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
         ],
         "vars": {}
     },
@@ -1374,104 +1374,104 @@
             "compute"
         ],
         "hosts": [
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247"
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
         ],
         "vars": {}
     },
@@ -1481,104 +1481,104 @@
             "external-compute"
         ],
         "hosts": [
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247"
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
         ],
         "vars": {}
     },
@@ -1587,9 +1587,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1598,9 +1598,9 @@
             "congress"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1609,9 +1609,9 @@
             "congress"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1620,18 +1620,18 @@
             "congress"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
     "control": {
         "children": [],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1640,9 +1640,9 @@
             "monitoring"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -1658,9 +1658,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1669,9 +1669,9 @@
             "designate"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1680,9 +1680,9 @@
             "designate"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1691,9 +1691,9 @@
             "designate"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1702,9 +1702,9 @@
             "network"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -1713,9 +1713,9 @@
             "designate"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1724,9 +1724,9 @@
             "designate"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -1735,30 +1735,30 @@
             "designate"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
     "elastalert": {
         "children": [],
         "hosts": [
-            "10.9.9.111",
-            "10.9.9.136",
-            "10.9.9.161"
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
         ],
         "vars": {}
     },
     "elasticsearch": {
         "children": [],
         "hosts": [
-            "10.9.9.136",
-            "10.9.9.111",
-            "10.9.9.161",
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.136",
+            "192.168.9.111",
+            "192.168.9.161",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -1767,21 +1767,21 @@
             "elasticsearch"
         ],
         "hosts": [
-            "10.9.9.136",
-            "10.9.9.111",
-            "10.9.9.161",
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.136",
+            "192.168.9.111",
+            "192.168.9.161",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
     "elasticsearch-master": {
         "children": [],
         "hosts": [
-            "10.9.9.111",
-            "10.9.9.136",
-            "10.9.9.161"
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
         ],
         "vars": {}
     },
@@ -1791,107 +1791,107 @@
             "compute"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160",
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
         ],
         "vars": {}
     },
@@ -1912,113 +1912,113 @@
     "external-ceph-mgr": {
         "children": [],
         "hosts": [
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14"
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
         ],
         "vars": {}
     },
     "external-compute": {
         "children": [],
         "hosts": [
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247"
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
         ],
         "vars": {}
     },
@@ -2027,9 +2027,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2038,9 +2038,9 @@
             "freezer"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2049,9 +2049,9 @@
             "freezer"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2060,9 +2060,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2071,9 +2071,9 @@
             "glance"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2082,9 +2082,9 @@
             "glance"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2093,9 +2093,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2104,9 +2104,9 @@
             "gnocchi"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2115,9 +2115,9 @@
             "gnocchi"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2126,9 +2126,9 @@
             "gnocchi"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2137,9 +2137,9 @@
             "monitoring"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -2148,9 +2148,9 @@
             "cluster"
         ],
         "hosts": [
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14"
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
         ],
         "vars": {}
     },
@@ -2159,9 +2159,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2170,9 +2170,9 @@
             "heat"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2181,9 +2181,9 @@
             "heat"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2192,9 +2192,9 @@
             "heat"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2203,9 +2203,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2219,9 +2219,9 @@
             "monitoring"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -2235,9 +2235,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2246,9 +2246,9 @@
             "ironic"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2257,9 +2257,9 @@
             "ironic"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2268,9 +2268,9 @@
             "ironic"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2279,9 +2279,9 @@
             "ironic"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2290,9 +2290,9 @@
             "neutron"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -2301,9 +2301,9 @@
             "ironic"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2314,108 +2314,108 @@
             "ironic"
         ],
         "hosts": [
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247",
-            "10.9.9.110",
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2424,9 +2424,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2435,9 +2435,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2446,9 +2446,9 @@
             "karbor"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2457,9 +2457,9 @@
             "karbor"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2468,9 +2468,9 @@
             "karbor"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2479,9 +2479,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2490,9 +2490,9 @@
             "elasticsearch-master"
         ],
         "hosts": [
-            "10.9.9.111",
-            "10.9.9.136",
-            "10.9.9.161"
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
         ],
         "vars": {}
     },
@@ -2501,9 +2501,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2512,9 +2512,9 @@
             "magnum"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2523,9 +2523,9 @@
             "magnum"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2534,9 +2534,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2545,9 +2545,9 @@
             "manila"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2556,9 +2556,9 @@
             "manila"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2567,9 +2567,9 @@
             "manila"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2578,9 +2578,9 @@
             "network"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -2589,9 +2589,9 @@
             "cluster"
         ],
         "hosts": [
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14"
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
         ],
         "vars": {}
     },
@@ -2600,9 +2600,9 @@
             "cluster"
         ],
         "hosts": [
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14"
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
         ],
         "vars": {}
     },
@@ -2611,9 +2611,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2622,9 +2622,9 @@
             "mistral"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2633,9 +2633,9 @@
             "mistral"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2644,9 +2644,9 @@
             "mistral"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2655,9 +2655,9 @@
             "monitoring"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -2666,9 +2666,9 @@
             "monasca"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -2677,9 +2677,9 @@
             "monasca"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -2688,9 +2688,9 @@
             "monasca"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -2699,9 +2699,9 @@
             "monasca"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -2710,18 +2710,18 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
     "monitoring": {
         "children": [],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -2731,105 +2731,105 @@
             "storage"
         ],
         "hosts": [
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247",
-            "10.9.9.110"
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110"
         ],
         "vars": {}
     },
@@ -2838,9 +2838,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2849,9 +2849,9 @@
             "murano"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2860,18 +2860,18 @@
             "murano"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
     "network": {
         "children": [],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -2880,9 +2880,9 @@
             "network"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -2891,9 +2891,9 @@
             "neutron"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -2902,9 +2902,9 @@
             "neutron"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -2913,9 +2913,9 @@
             "neutron"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -2924,9 +2924,9 @@
             "neutron"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -2935,9 +2935,9 @@
             "neutron"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -2946,9 +2946,9 @@
             "neutron"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -2957,9 +2957,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2968,9 +2968,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2979,9 +2979,9 @@
             "nova"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -2990,9 +2990,9 @@
             "nova"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3001,9 +3001,9 @@
             "nova"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3012,9 +3012,9 @@
             "nova"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3023,9 +3023,9 @@
             "nova"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3034,9 +3034,9 @@
             "nova"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3045,9 +3045,9 @@
             "nova"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3056,9 +3056,9 @@
             "nova"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3067,9 +3067,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3078,9 +3078,9 @@
             "octavia"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3089,9 +3089,9 @@
             "octavia"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3100,9 +3100,9 @@
             "octavia"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3111,9 +3111,9 @@
             "octavia"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3122,9 +3122,9 @@
             "network"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -3135,107 +3135,107 @@
             "manila-share"
         ],
         "hosts": [
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185",
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247"
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
         ],
         "vars": {}
     },
@@ -3244,9 +3244,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3255,9 +3255,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3266,9 +3266,9 @@
             "panko"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3277,9 +3277,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3288,9 +3288,9 @@
             "placement"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3299,9 +3299,9 @@
             "monitoring"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -3310,9 +3310,9 @@
             "monitoring"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -3328,114 +3328,114 @@
             "elasticsearch-master"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74",
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160",
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247",
-            "10.9.9.110",
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74",
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
             "10.240.201.30",
             "10.240.201.29",
             "10.240.201.31",
@@ -3444,19 +3444,19 @@
             "10.240.201.33",
             "10.240.201.34",
             "10.240.201.35",
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14",
-            "10.9.9.111",
-            "10.9.9.136",
-            "10.9.9.161"
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14",
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
         ],
         "vars": {}
     },
     "prometheus-ceph-exporter": {
         "children": [],
         "hosts": [
-            "10.9.9.11"
+            "192.168.9.11"
         ],
         "vars": {}
     },
@@ -3465,9 +3465,9 @@
             "haproxy"
         ],
         "hosts": [
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14"
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
         ],
         "vars": {}
     },
@@ -3476,9 +3476,9 @@
             "memcached"
         ],
         "hosts": [
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14"
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
         ],
         "vars": {}
     },
@@ -3487,9 +3487,9 @@
             "mariadb"
         ],
         "hosts": [
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14"
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
         ],
         "vars": {}
     },
@@ -3498,9 +3498,9 @@
             "monitoring"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -3516,114 +3516,114 @@
             "elasticsearch-master"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74",
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160",
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247",
-            "10.9.9.110",
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74",
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
             "10.240.201.30",
             "10.240.201.29",
             "10.240.201.31",
@@ -3632,12 +3632,12 @@
             "10.240.201.33",
             "10.240.201.34",
             "10.240.201.35",
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14",
-            "10.9.9.111",
-            "10.9.9.136",
-            "10.9.9.161"
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14",
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
         ],
         "vars": {}
     },
@@ -3647,9 +3647,9 @@
             "external-ceph"
         ],
         "hosts": [
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14",
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14",
             "10.240.201.30",
             "10.240.201.29",
             "10.240.201.31",
@@ -3664,7 +3664,7 @@
     "prometheus-rabbitmq-exporter": {
         "children": [],
         "hosts": [
-            "10.9.9.11"
+            "192.168.9.11"
         ],
         "vars": {}
     },
@@ -3673,9 +3673,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3684,9 +3684,9 @@
             "cluster"
         ],
         "hosts": [
-            "10.9.9.11",
-            "10.9.9.13",
-            "10.9.9.14"
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
         ],
         "vars": {}
     },
@@ -3695,9 +3695,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3706,9 +3706,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3717,9 +3717,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3728,9 +3728,9 @@
             "sahara"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3739,9 +3739,9 @@
             "sahara"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3750,9 +3750,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3761,9 +3761,9 @@
             "searchlight"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3772,9 +3772,9 @@
             "searchlight"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3783,9 +3783,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3794,9 +3794,9 @@
             "senlin"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3805,9 +3805,9 @@
             "senlin"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3816,9 +3816,9 @@
             "monitoring"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -3828,107 +3828,107 @@
             "network"
         ],
         "hosts": [
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247",
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185"
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
         ],
         "vars": {}
     },
@@ -3937,9 +3937,9 @@
             "skydive"
         ],
         "hosts": [
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74"
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
         ],
         "vars": {}
     },
@@ -3948,9 +3948,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3959,9 +3959,9 @@
             "solum"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3970,9 +3970,9 @@
             "solum"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3981,9 +3981,9 @@
             "solum"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -3992,16 +3992,16 @@
             "solum"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
     "storage": {
         "children": [],
         "hosts": [
-            "10.9.9.110"
+            "192.168.9.110"
         ],
         "vars": {}
     },
@@ -4010,9 +4010,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4021,7 +4021,7 @@
             "storage"
         ],
         "hosts": [
-            "10.9.9.110"
+            "192.168.9.110"
         ],
         "vars": {}
     },
@@ -4030,7 +4030,7 @@
             "storage"
         ],
         "hosts": [
-            "10.9.9.110"
+            "192.168.9.110"
         ],
         "vars": {}
     },
@@ -4039,7 +4039,7 @@
             "storage"
         ],
         "hosts": [
-            "10.9.9.110"
+            "192.168.9.110"
         ],
         "vars": {}
     },
@@ -4048,9 +4048,9 @@
             "swift"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4059,9 +4059,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4070,9 +4070,9 @@
             "tacker"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4081,9 +4081,9 @@
             "tacker"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4096,114 +4096,114 @@
             "storage"
         ],
         "hosts": [
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247",
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160",
-            "10.9.9.49",
-            "10.9.9.50",
-            "10.9.9.74",
-            "10.9.9.51",
-            "10.9.9.75",
-            "10.9.9.185",
-            "10.9.9.110"
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
+            "192.168.9.110"
         ],
         "vars": {}
     },
@@ -4212,9 +4212,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4223,7 +4223,7 @@
             "storage"
         ],
         "hosts": [
-            "10.9.9.110"
+            "192.168.9.110"
         ],
         "vars": {}
     },
@@ -4232,9 +4232,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4243,9 +4243,9 @@
             "trove"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4254,9 +4254,9 @@
             "trove"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4265,9 +4265,9 @@
             "trove"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4281,9 +4281,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4292,9 +4292,9 @@
             "vitrage"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4303,9 +4303,9 @@
             "vitrage"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4314,9 +4314,9 @@
             "vitrage"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4325,9 +4325,9 @@
             "vitrage"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4336,9 +4336,9 @@
             "vitrage"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4347,9 +4347,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4358,9 +4358,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4369,9 +4369,9 @@
             "watcher"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4380,9 +4380,9 @@
             "watcher"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4391,9 +4391,9 @@
             "watcher"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4402,9 +4402,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4413,9 +4413,9 @@
             "control"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4424,9 +4424,9 @@
             "zun"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     },
@@ -4435,104 +4435,104 @@
             "compute"
         ],
         "hosts": [
-            "10.9.9.10",
-            "10.9.9.12",
-            "10.9.9.15",
-            "10.9.9.16",
-            "10.9.9.17",
-            "10.9.9.18",
-            "10.9.9.19",
-            "10.9.9.20",
-            "10.9.9.21",
-            "10.9.9.22",
-            "10.9.9.23",
-            "10.9.9.24",
-            "10.9.9.25",
-            "10.9.9.52",
-            "10.9.9.53",
-            "10.9.9.54",
-            "10.9.9.55",
-            "10.9.9.57",
-            "10.9.9.58",
-            "10.9.9.59",
-            "10.9.9.76",
-            "10.9.9.77",
-            "10.9.9.78",
-            "10.9.9.79",
-            "10.9.9.80",
-            "10.9.9.82",
-            "10.9.9.83",
-            "10.9.9.84",
-            "10.9.9.112",
-            "10.9.9.113",
-            "10.9.9.114",
-            "10.9.9.117",
-            "10.9.9.118",
-            "10.9.9.119",
-            "10.9.9.120",
-            "10.9.9.121",
-            "10.9.9.122",
-            "10.9.9.123",
-            "10.9.9.124",
-            "10.9.9.125",
-            "10.9.9.137",
-            "10.9.9.138",
-            "10.9.9.139",
-            "10.9.9.142",
-            "10.9.9.144",
-            "10.9.9.145",
-            "10.9.9.146",
-            "10.9.9.147",
-            "10.9.9.148",
-            "10.9.9.149",
-            "10.9.9.150",
-            "10.9.9.162",
-            "10.9.9.163",
-            "10.9.9.164",
-            "10.9.9.165",
-            "10.9.9.166",
-            "10.9.9.167",
-            "10.9.9.168",
-            "10.9.9.169",
-            "10.9.9.170",
-            "10.9.9.171",
-            "10.9.9.172",
-            "10.9.9.173",
-            "10.9.9.174",
-            "10.9.9.175",
-            "10.9.9.187",
-            "10.9.9.188",
-            "10.9.9.189",
-            "10.9.9.190",
-            "10.9.9.191",
-            "10.9.9.192",
-            "10.9.9.193",
-            "10.9.9.194",
-            "10.9.9.195",
-            "10.9.9.197",
-            "10.9.9.198",
-            "10.9.9.199",
-            "10.9.9.200",
-            "10.9.9.210",
-            "10.9.9.211",
-            "10.9.9.212",
-            "10.9.9.213",
-            "10.9.9.214",
-            "10.9.9.215",
-            "10.9.9.216",
-            "10.9.9.217",
-            "10.9.9.218",
-            "10.9.9.220",
-            "10.9.9.222",
-            "10.9.9.239",
-            "10.9.9.240",
-            "10.9.9.241",
-            "10.9.9.242",
-            "10.9.9.243",
-            "10.9.9.244",
-            "10.9.9.245",
-            "10.9.9.246",
-            "10.9.9.247"
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
         ],
         "vars": {}
     },
@@ -4541,9 +4541,9 @@
             "zun"
         ],
         "hosts": [
-            "10.9.9.110",
-            "10.9.9.135",
-            "10.9.9.160"
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
         ],
         "vars": {}
     }
