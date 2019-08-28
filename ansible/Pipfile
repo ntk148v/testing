@@ -7,6 +7,7 @@ verify_ssl = true
 
 [packages]
 etcd3 = "*"
+ansible = "*"
 
 [requires]
 python_version = "3.6"
