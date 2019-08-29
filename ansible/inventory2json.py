@@ -13,6 +13,7 @@ except ImportError:
     A24 = False
 import etcd3
 
+
 def put_val(etcdclient, prefix, input):
     prefix = prefix.rstrip("/")
     if isinstance(input, dict):
@@ -28,6 +29,7 @@ def put_val(etcdclient, prefix, input):
     else:
         print(prefix)
         etcdclient.put(prefix, str(input))
+
 
 loader = DataLoader()
 if A24:
@@ -52,13 +54,15 @@ for group in inventory.groups.values():
 for host in inventory.get_hosts():
     out['_meta']['hostvars'][host.name] = host.vars
 
-# Init etcd3 client
-etcdclient = etcd3.client(host="10.4.4.235", port="8379")
-put_val(etcdclient, "/test", out)
+# Write output to json
+print(json.dumps(out, indent=4, sort_keys=True))
 
+# # Init etcd3 client
+etcdclient = etcd3.client(host="10.4.4.235", port="8379")
+# Delete it anw
+etcdclient.delete_prefix("/test")
+put_val(etcdclient, "/test", out)
+# Verify
 etcdout = etcdclient.get_prefix("/test")
 for k, v in etcdout:
-    print(k)
-    print(v)
-
-# print(json.dumps(out, indent=4, sort_keys=True))
+    print("{} - {}" . format(k, v.key))
