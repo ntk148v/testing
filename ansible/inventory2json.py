@@ -27,7 +27,6 @@ def put_val(etcdclient, prefix, input):
             tmpprefix = "/".join([tmpprefix, str(i)])
             put_val(etcdclient, tmpprefix, v)
     else:
-        print(prefix)
         etcdclient.put(prefix, str(input))
 
 
@@ -55,7 +54,7 @@ for host in inventory.get_hosts():
     out['_meta']['hostvars'][host.name] = host.vars
 
 # Write output to json
-print(json.dumps(out, indent=4, sort_keys=True))
+# print(json.dumps(out, indent=4, sort_keys=True))
 
 # # Init etcd3 client
 etcdclient = etcd3.client(host="10.4.4.235", port="8379")
