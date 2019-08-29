@@ -1,0 +1,4538 @@
+{
+    "_meta": {
+        "hostvars": {
+            "10.240.201.28": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "10.240.201.29": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "10.240.201.30": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "10.240.201.31": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "10.240.201.32": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "10.240.201.33": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "10.240.201.34": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "10.240.201.35": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.10": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.11": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.110": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.111": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.112": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.113": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.114": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.117": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.118": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.119": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.12": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.120": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.121": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.122": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.123": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.124": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.125": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.13": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.135": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.136": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.137": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.138": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.139": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.14": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.142": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.144": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.145": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.146": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.147": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.148": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.149": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.15": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.150": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.16": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.160": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.161": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.162": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.163": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.164": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.165": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.166": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.167": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.168": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.169": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.17": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.170": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.171": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.172": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.173": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.174": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.175": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.18": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.185": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.187": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.188": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.189": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.19": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.190": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.191": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.192": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.193": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.194": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.195": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.197": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.198": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.199": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.20": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.200": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.21": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.210": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.211": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.212": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.213": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.214": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.215": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.216": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.217": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.218": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.22": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.220": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.222": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.23": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.239": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.24": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.240": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.241": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.242": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.243": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.244": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.245": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.246": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.247": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.25": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.49": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.50": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.51": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.52": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.53": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.54": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.55": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.57": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.58": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.59": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.74": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.75": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.76": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.77": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.78": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.79": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.80": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.82": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.83": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "192.168.9.84": {
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            },
+            "localhost": {
+                "ansible_connection": "local",
+                "inventory_dir": "/warehouse/Workspace/github-repos/testing/ansible",
+                "inventory_file": "/warehouse/Workspace/github-repos/testing/ansible/inventory-sample"
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "ungrouped",
+            "baremetal",
+            "chrony-server",
+            "chrony",
+            "collectd",
+            "grafana",
+            "etcd",
+            "influxdb",
+            "prometheus",
+            "kafka",
+            "telegraf",
+            "elasticsearch-data",
+            "kibana",
+            "curator",
+            "hyperv",
+            "rabbitmq",
+            "prometheus-rabbitmq-exporter",
+            "outward-rabbitmq",
+            "qdrouterd",
+            "mongodb",
+            "keystone",
+            "openvswitch",
+            "opendaylight",
+            "horizon",
+            "tempest",
+            "vmtp",
+            "rally",
+            "bifrost",
+            "zookeeper",
+            "redis",
+            "glance-api",
+            "glance-registry",
+            "nova-api",
+            "nova-conductor",
+            "nova-consoleauth",
+            "nova-novncproxy",
+            "nova-scheduler",
+            "nova-spicehtml5proxy",
+            "nova-compute-ironic",
+            "nova-serialproxy",
+            "neutron-server",
+            "neutron-dhcp-agent",
+            "neutron-l3-agent",
+            "neutron-lbaas-agent",
+            "neutron-metadata-agent",
+            "neutron-bgp-dragent",
+            "neutron-infoblox-ipam-agent",
+            "ironic-neutron-agent",
+            "ceph-mds",
+            "ceph-mgr",
+            "ceph-nfs",
+            "ceph-mon",
+            "ceph-rgw",
+            "ceph-osd",
+            "cinder-api",
+            "cinder-backup",
+            "cinder-scheduler",
+            "cinder-volume",
+            "cloudkitty-api",
+            "cloudkitty-processor",
+            "freezer-api",
+            "freezer-scheduler",
+            "iscsid",
+            "tgtd",
+            "karbor-api",
+            "karbor-protection",
+            "karbor-operationengine",
+            "manila-api",
+            "manila-scheduler",
+            "manila-data",
+            "swift-proxy-server",
+            "swift-account-server",
+            "swift-container-server",
+            "swift-object-server",
+            "barbican-api",
+            "barbican-keystone-listener",
+            "barbican-worker",
+            "heat-api",
+            "heat-api-cfn",
+            "heat-engine",
+            "murano-api",
+            "murano-engine",
+            "monasca-api",
+            "monasca-log-api",
+            "monasca-log-transformer",
+            "monasca-log-persister",
+            "ironic-api",
+            "ironic-conductor",
+            "ironic-inspector",
+            "ironic-pxe",
+            "ironic-ipxe",
+            "magnum-api",
+            "magnum-conductor",
+            "sahara-api",
+            "sahara-engine",
+            "solum-api",
+            "solum-worker",
+            "solum-deployer",
+            "solum-conductor",
+            "mistral-api",
+            "mistral-executor",
+            "mistral-engine",
+            "ceilometer-central",
+            "ceilometer-notification",
+            "ceilometer-compute",
+            "aodh-api",
+            "aodh-evaluator",
+            "aodh-listener",
+            "aodh-notifier",
+            "congress-api",
+            "congress-datasource",
+            "congress-policy-engine",
+            "panko-api",
+            "gnocchi-api",
+            "gnocchi-statsd",
+            "gnocchi-metricd",
+            "trove-api",
+            "trove-conductor",
+            "trove-taskmanager",
+            "multipathd",
+            "watcher-api",
+            "watcher-engine",
+            "watcher-applier",
+            "senlin-api",
+            "senlin-engine",
+            "searchlight-api",
+            "searchlight-listener",
+            "octavia-api",
+            "octavia-health-manager",
+            "octavia-housekeeping",
+            "octavia-worker",
+            "designate-api",
+            "designate-central",
+            "designate-producer",
+            "designate-mdns",
+            "designate-worker",
+            "designate-sink",
+            "designate-backend-bind9",
+            "placement-api",
+            "zun-api",
+            "zun-wsproxy",
+            "zun-compute",
+            "skydive-analyzer",
+            "skydive-agent",
+            "tacker-server",
+            "tacker-conductor",
+            "vitrage-api",
+            "vitrage-notifier",
+            "vitrage-graph",
+            "vitrage-collector",
+            "vitrage-ml",
+            "blazar-api",
+            "blazar-manager",
+            "prometheus-node-exporter",
+            "prometheus-mysqld-exporter",
+            "prometheus-haproxy-exporter",
+            "prometheus-memcached-exporter",
+            "prometheus-cadvisor",
+            "prometheus-alertmanager",
+            "prometheus-ceph-exporter",
+            "prometheus-nocpro-alert",
+            "prometheus-process-exporter",
+            "elastalert"
+        ],
+        "hosts": [
+            "192.168.9.11",
+            "192.168.9.11",
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
+        ],
+        "vars": {
+            "ansible_become": "true",
+            "ansible_become_pass": "passwordne",
+            "ansible_connection": "ssh",
+            "ansible_ssh_pass": "passwordne",
+            "ansible_ssh_port": 22,
+            "ansible_ssh_user": "root"
+        }
+    },
+    "aodh": {
+        "children": [],
+        "hosts": [
+            "192.168.9.50"
+        ],
+        "vars": {}
+    },
+    "aodh-api": {
+        "children": [
+            "aodh"
+        ],
+        "hosts": [
+            "192.168.9.50"
+        ],
+        "vars": {}
+    },
+    "aodh-evaluator": {
+        "children": [
+            "aodh"
+        ],
+        "hosts": [
+            "192.168.9.50"
+        ],
+        "vars": {}
+    },
+    "aodh-listener": {
+        "children": [
+            "aodh"
+        ],
+        "hosts": [
+            "192.168.9.50"
+        ],
+        "vars": {}
+    },
+    "aodh-notifier": {
+        "children": [
+            "aodh"
+        ],
+        "hosts": [
+            "192.168.9.50"
+        ],
+        "vars": {}
+    },
+    "barbican": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "barbican-api": {
+        "children": [
+            "barbican"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "barbican-keystone-listener": {
+        "children": [
+            "barbican"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "barbican-worker": {
+        "children": [
+            "barbican"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "baremetal": {
+        "children": [
+            "control",
+            "network",
+            "compute",
+            "storage",
+            "monitoring"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "bifrost": {
+        "children": [
+            "deployment"
+        ],
+        "hosts": [
+            "localhost"
+        ],
+        "vars": {}
+    },
+    "blazar": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "blazar-api": {
+        "children": [
+            "blazar"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "blazar-manager": {
+        "children": [
+            "blazar"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ceilometer": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ceilometer-central": {
+        "children": [
+            "ceilometer"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ceilometer-compute": {
+        "children": [
+            "compute"
+        ],
+        "hosts": [
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
+        ],
+        "vars": {}
+    },
+    "ceilometer-notification": {
+        "children": [
+            "ceilometer"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ceph": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ceph-mds": {
+        "children": [
+            "ceph"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ceph-mgr": {
+        "children": [
+            "ceph"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ceph-mon": {
+        "children": [
+            "ceph"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ceph-nfs": {
+        "children": [
+            "ceph"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ceph-osd": {
+        "children": [
+            "storage"
+        ],
+        "hosts": [
+            "192.168.9.110"
+        ],
+        "vars": {}
+    },
+    "ceph-rgw": {
+        "children": [
+            "ceph"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "chrony": {
+        "children": [
+            "control",
+            "network",
+            "compute",
+            "storage",
+            "monitoring"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "chrony-server": {
+        "children": [
+            "haproxy"
+        ],
+        "hosts": [],
+        "vars": {}
+    },
+    "cinder": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "cinder-api": {
+        "children": [
+            "cinder"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "cinder-backup": {
+        "children": [
+            "storage"
+        ],
+        "hosts": [
+            "192.168.9.110"
+        ],
+        "vars": {}
+    },
+    "cinder-scheduler": {
+        "children": [
+            "cinder"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "cinder-volume": {
+        "children": [
+            "storage"
+        ],
+        "hosts": [
+            "192.168.9.110"
+        ],
+        "vars": {}
+    },
+    "cloudkitty": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "cloudkitty-api": {
+        "children": [
+            "cloudkitty"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "cloudkitty-processor": {
+        "children": [
+            "cloudkitty"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "cluster": {
+        "children": [],
+        "hosts": [
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
+        ],
+        "vars": {}
+    },
+    "collectd": {
+        "children": [
+            "compute"
+        ],
+        "hosts": [
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
+        ],
+        "vars": {}
+    },
+    "compute": {
+        "children": [
+            "inner-compute",
+            "external-compute"
+        ],
+        "hosts": [
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
+        ],
+        "vars": {}
+    },
+    "congress": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "congress-api": {
+        "children": [
+            "congress"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "congress-datasource": {
+        "children": [
+            "congress"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "congress-policy-engine": {
+        "children": [
+            "congress"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "control": {
+        "children": [],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "curator": {
+        "children": [
+            "monitoring"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "deployment": {
+        "children": [],
+        "hosts": [
+            "localhost"
+        ],
+        "vars": {}
+    },
+    "designate": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "designate-api": {
+        "children": [
+            "designate"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "designate-backend-bind9": {
+        "children": [
+            "designate"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "designate-central": {
+        "children": [
+            "designate"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "designate-mdns": {
+        "children": [
+            "network"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "designate-producer": {
+        "children": [
+            "designate"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "designate-sink": {
+        "children": [
+            "designate"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "designate-worker": {
+        "children": [
+            "designate"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "elastalert": {
+        "children": [],
+        "hosts": [
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
+        ],
+        "vars": {}
+    },
+    "elasticsearch": {
+        "children": [],
+        "hosts": [
+            "192.168.9.136",
+            "192.168.9.111",
+            "192.168.9.161",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "elasticsearch-data": {
+        "children": [
+            "elasticsearch"
+        ],
+        "hosts": [
+            "192.168.9.136",
+            "192.168.9.111",
+            "192.168.9.161",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "elasticsearch-master": {
+        "children": [],
+        "hosts": [
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
+        ],
+        "vars": {}
+    },
+    "etcd": {
+        "children": [
+            "control",
+            "compute"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
+        ],
+        "vars": {}
+    },
+    "external-ceph": {
+        "children": [],
+        "hosts": [
+            "10.240.201.30",
+            "10.240.201.29",
+            "10.240.201.31",
+            "10.240.201.32",
+            "10.240.201.28",
+            "10.240.201.33",
+            "10.240.201.34",
+            "10.240.201.35"
+        ],
+        "vars": {}
+    },
+    "external-ceph-mgr": {
+        "children": [],
+        "hosts": [
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
+        ],
+        "vars": {}
+    },
+    "external-compute": {
+        "children": [],
+        "hosts": [
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
+        ],
+        "vars": {}
+    },
+    "freezer": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "freezer-api": {
+        "children": [
+            "freezer"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "freezer-scheduler": {
+        "children": [
+            "freezer"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "glance": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "glance-api": {
+        "children": [
+            "glance"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "glance-registry": {
+        "children": [
+            "glance"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "gnocchi": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "gnocchi-api": {
+        "children": [
+            "gnocchi"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "gnocchi-metricd": {
+        "children": [
+            "gnocchi"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "gnocchi-statsd": {
+        "children": [
+            "gnocchi"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "grafana": {
+        "children": [
+            "monitoring"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "haproxy": {
+        "children": [
+            "cluster"
+        ],
+        "hosts": [
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
+        ],
+        "vars": {}
+    },
+    "heat": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "heat-api": {
+        "children": [
+            "heat"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "heat-api-cfn": {
+        "children": [
+            "heat"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "heat-engine": {
+        "children": [
+            "heat"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "horizon": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "hyperv": {
+        "children": [],
+        "hosts": [],
+        "vars": {}
+    },
+    "influxdb": {
+        "children": [
+            "monitoring"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "inner-compute": {
+        "children": [],
+        "hosts": [],
+        "vars": {}
+    },
+    "ironic": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ironic-api": {
+        "children": [
+            "ironic"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ironic-conductor": {
+        "children": [
+            "ironic"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ironic-inspector": {
+        "children": [
+            "ironic"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ironic-ipxe": {
+        "children": [
+            "ironic"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ironic-neutron-agent": {
+        "children": [
+            "neutron"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "ironic-pxe": {
+        "children": [
+            "ironic"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "iscsid": {
+        "children": [
+            "compute",
+            "storage",
+            "ironic"
+        ],
+        "hosts": [
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "kafka": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "karbor": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "karbor-api": {
+        "children": [
+            "karbor"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "karbor-operationengine": {
+        "children": [
+            "karbor"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "karbor-protection": {
+        "children": [
+            "karbor"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "keystone": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "kibana": {
+        "children": [
+            "elasticsearch-master"
+        ],
+        "hosts": [
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
+        ],
+        "vars": {}
+    },
+    "magnum": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "magnum-api": {
+        "children": [
+            "magnum"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "magnum-conductor": {
+        "children": [
+            "magnum"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "manila": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "manila-api": {
+        "children": [
+            "manila"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "manila-data": {
+        "children": [
+            "manila"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "manila-scheduler": {
+        "children": [
+            "manila"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "manila-share": {
+        "children": [
+            "network"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "mariadb": {
+        "children": [
+            "cluster"
+        ],
+        "hosts": [
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
+        ],
+        "vars": {}
+    },
+    "memcached": {
+        "children": [
+            "cluster"
+        ],
+        "hosts": [
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
+        ],
+        "vars": {}
+    },
+    "mistral": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "mistral-api": {
+        "children": [
+            "mistral"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "mistral-engine": {
+        "children": [
+            "mistral"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "mistral-executor": {
+        "children": [
+            "mistral"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "monasca": {
+        "children": [
+            "monitoring"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "monasca-api": {
+        "children": [
+            "monasca"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "monasca-log-api": {
+        "children": [
+            "monasca"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "monasca-log-persister": {
+        "children": [
+            "monasca"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "monasca-log-transformer": {
+        "children": [
+            "monasca"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "mongodb": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "monitoring": {
+        "children": [],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "multipathd": {
+        "children": [
+            "compute",
+            "storage"
+        ],
+        "hosts": [
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110"
+        ],
+        "vars": {}
+    },
+    "murano": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "murano-api": {
+        "children": [
+            "murano"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "murano-engine": {
+        "children": [
+            "murano"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "network": {
+        "children": [],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "neutron": {
+        "children": [
+            "network"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "neutron-bgp-dragent": {
+        "children": [
+            "neutron"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "neutron-dhcp-agent": {
+        "children": [
+            "neutron"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "neutron-infoblox-ipam-agent": {
+        "children": [
+            "neutron"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "neutron-l3-agent": {
+        "children": [
+            "neutron"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "neutron-lbaas-agent": {
+        "children": [
+            "neutron"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "neutron-metadata-agent": {
+        "children": [
+            "neutron"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "neutron-server": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "nova": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "nova-api": {
+        "children": [
+            "nova"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "nova-compute-ironic": {
+        "children": [
+            "nova"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "nova-conductor": {
+        "children": [
+            "nova"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "nova-consoleauth": {
+        "children": [
+            "nova"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "nova-novncproxy": {
+        "children": [
+            "nova"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "nova-scheduler": {
+        "children": [
+            "nova"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "nova-serialproxy": {
+        "children": [
+            "nova"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "nova-spicehtml5proxy": {
+        "children": [
+            "nova"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "octavia": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "octavia-api": {
+        "children": [
+            "octavia"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "octavia-health-manager": {
+        "children": [
+            "octavia"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "octavia-housekeeping": {
+        "children": [
+            "octavia"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "octavia-worker": {
+        "children": [
+            "octavia"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "opendaylight": {
+        "children": [
+            "network"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "openvswitch": {
+        "children": [
+            "network",
+            "compute",
+            "manila-share"
+        ],
+        "hosts": [
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
+        ],
+        "vars": {}
+    },
+    "outward-rabbitmq": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "panko": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "panko-api": {
+        "children": [
+            "panko"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "placement": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "placement-api": {
+        "children": [
+            "placement"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "prometheus": {
+        "children": [
+            "monitoring"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "prometheus-alertmanager": {
+        "children": [
+            "monitoring"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "prometheus-cadvisor": {
+        "children": [
+            "monitoring",
+            "control",
+            "compute",
+            "storage",
+            "network",
+            "external-ceph",
+            "cluster",
+            "elasticsearch-master"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74",
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
+            "10.240.201.30",
+            "10.240.201.29",
+            "10.240.201.31",
+            "10.240.201.32",
+            "10.240.201.28",
+            "10.240.201.33",
+            "10.240.201.34",
+            "10.240.201.35",
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14",
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
+        ],
+        "vars": {}
+    },
+    "prometheus-ceph-exporter": {
+        "children": [],
+        "hosts": [
+            "192.168.9.11"
+        ],
+        "vars": {}
+    },
+    "prometheus-haproxy-exporter": {
+        "children": [
+            "haproxy"
+        ],
+        "hosts": [
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
+        ],
+        "vars": {}
+    },
+    "prometheus-memcached-exporter": {
+        "children": [
+            "memcached"
+        ],
+        "hosts": [
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
+        ],
+        "vars": {}
+    },
+    "prometheus-mysqld-exporter": {
+        "children": [
+            "mariadb"
+        ],
+        "hosts": [
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
+        ],
+        "vars": {}
+    },
+    "prometheus-nocpro-alert": {
+        "children": [
+            "monitoring"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "prometheus-node-exporter": {
+        "children": [
+            "monitoring",
+            "control",
+            "compute",
+            "storage",
+            "network",
+            "external-ceph",
+            "cluster",
+            "elasticsearch-master"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74",
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
+            "10.240.201.30",
+            "10.240.201.29",
+            "10.240.201.31",
+            "10.240.201.32",
+            "10.240.201.28",
+            "10.240.201.33",
+            "10.240.201.34",
+            "10.240.201.35",
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14",
+            "192.168.9.111",
+            "192.168.9.136",
+            "192.168.9.161"
+        ],
+        "vars": {}
+    },
+    "prometheus-process-exporter": {
+        "children": [
+            "external-ceph-mgr",
+            "external-ceph"
+        ],
+        "hosts": [
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14",
+            "10.240.201.30",
+            "10.240.201.29",
+            "10.240.201.31",
+            "10.240.201.32",
+            "10.240.201.28",
+            "10.240.201.33",
+            "10.240.201.34",
+            "10.240.201.35"
+        ],
+        "vars": {}
+    },
+    "prometheus-rabbitmq-exporter": {
+        "children": [],
+        "hosts": [
+            "192.168.9.11"
+        ],
+        "vars": {}
+    },
+    "qdrouterd": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "rabbitmq": {
+        "children": [
+            "cluster"
+        ],
+        "hosts": [
+            "192.168.9.11",
+            "192.168.9.13",
+            "192.168.9.14"
+        ],
+        "vars": {}
+    },
+    "rally": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "redis": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "sahara": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "sahara-api": {
+        "children": [
+            "sahara"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "sahara-engine": {
+        "children": [
+            "sahara"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "searchlight": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "searchlight-api": {
+        "children": [
+            "searchlight"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "searchlight-listener": {
+        "children": [
+            "searchlight"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "senlin": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "senlin-api": {
+        "children": [
+            "senlin"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "senlin-engine": {
+        "children": [
+            "senlin"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "skydive": {
+        "children": [
+            "monitoring"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "skydive-agent": {
+        "children": [
+            "compute",
+            "network"
+        ],
+        "hosts": [
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185"
+        ],
+        "vars": {}
+    },
+    "skydive-analyzer": {
+        "children": [
+            "skydive"
+        ],
+        "hosts": [
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74"
+        ],
+        "vars": {}
+    },
+    "solum": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "solum-api": {
+        "children": [
+            "solum"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "solum-conductor": {
+        "children": [
+            "solum"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "solum-deployer": {
+        "children": [
+            "solum"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "solum-worker": {
+        "children": [
+            "solum"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "storage": {
+        "children": [],
+        "hosts": [
+            "192.168.9.110"
+        ],
+        "vars": {}
+    },
+    "swift": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "swift-account-server": {
+        "children": [
+            "storage"
+        ],
+        "hosts": [
+            "192.168.9.110"
+        ],
+        "vars": {}
+    },
+    "swift-container-server": {
+        "children": [
+            "storage"
+        ],
+        "hosts": [
+            "192.168.9.110"
+        ],
+        "vars": {}
+    },
+    "swift-object-server": {
+        "children": [
+            "storage"
+        ],
+        "hosts": [
+            "192.168.9.110"
+        ],
+        "vars": {}
+    },
+    "swift-proxy-server": {
+        "children": [
+            "swift"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "tacker": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "tacker-conductor": {
+        "children": [
+            "tacker"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "tacker-server": {
+        "children": [
+            "tacker"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "telegraf": {
+        "children": [
+            "compute",
+            "control",
+            "monitoring",
+            "network",
+            "storage"
+        ],
+        "hosts": [
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247",
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160",
+            "192.168.9.49",
+            "192.168.9.50",
+            "192.168.9.74",
+            "192.168.9.51",
+            "192.168.9.75",
+            "192.168.9.185",
+            "192.168.9.110"
+        ],
+        "vars": {}
+    },
+    "tempest": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "tgtd": {
+        "children": [
+            "storage"
+        ],
+        "hosts": [
+            "192.168.9.110"
+        ],
+        "vars": {}
+    },
+    "trove": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "trove-api": {
+        "children": [
+            "trove"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "trove-conductor": {
+        "children": [
+            "trove"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "trove-taskmanager": {
+        "children": [
+            "trove"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "ungrouped": {
+        "children": [],
+        "hosts": [],
+        "vars": {}
+    },
+    "vitrage": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "vitrage-api": {
+        "children": [
+            "vitrage"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "vitrage-collector": {
+        "children": [
+            "vitrage"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "vitrage-graph": {
+        "children": [
+            "vitrage"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "vitrage-ml": {
+        "children": [
+            "vitrage"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "vitrage-notifier": {
+        "children": [
+            "vitrage"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "vmtp": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "watcher": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "watcher-api": {
+        "children": [
+            "watcher"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "watcher-applier": {
+        "children": [
+            "watcher"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "watcher-engine": {
+        "children": [
+            "watcher"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "zookeeper": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "zun": {
+        "children": [
+            "control"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "zun-api": {
+        "children": [
+            "zun"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    },
+    "zun-compute": {
+        "children": [
+            "compute"
+        ],
+        "hosts": [
+            "192.168.9.10",
+            "192.168.9.12",
+            "192.168.9.15",
+            "192.168.9.16",
+            "192.168.9.17",
+            "192.168.9.18",
+            "192.168.9.19",
+            "192.168.9.20",
+            "192.168.9.21",
+            "192.168.9.22",
+            "192.168.9.23",
+            "192.168.9.24",
+            "192.168.9.25",
+            "192.168.9.52",
+            "192.168.9.53",
+            "192.168.9.54",
+            "192.168.9.55",
+            "192.168.9.57",
+            "192.168.9.58",
+            "192.168.9.59",
+            "192.168.9.76",
+            "192.168.9.77",
+            "192.168.9.78",
+            "192.168.9.79",
+            "192.168.9.80",
+            "192.168.9.82",
+            "192.168.9.83",
+            "192.168.9.84",
+            "192.168.9.112",
+            "192.168.9.113",
+            "192.168.9.114",
+            "192.168.9.117",
+            "192.168.9.118",
+            "192.168.9.119",
+            "192.168.9.120",
+            "192.168.9.121",
+            "192.168.9.122",
+            "192.168.9.123",
+            "192.168.9.124",
+            "192.168.9.125",
+            "192.168.9.137",
+            "192.168.9.138",
+            "192.168.9.139",
+            "192.168.9.142",
+            "192.168.9.144",
+            "192.168.9.145",
+            "192.168.9.146",
+            "192.168.9.147",
+            "192.168.9.148",
+            "192.168.9.149",
+            "192.168.9.150",
+            "192.168.9.162",
+            "192.168.9.163",
+            "192.168.9.164",
+            "192.168.9.165",
+            "192.168.9.166",
+            "192.168.9.167",
+            "192.168.9.168",
+            "192.168.9.169",
+            "192.168.9.170",
+            "192.168.9.171",
+            "192.168.9.172",
+            "192.168.9.173",
+            "192.168.9.174",
+            "192.168.9.175",
+            "192.168.9.187",
+            "192.168.9.188",
+            "192.168.9.189",
+            "192.168.9.190",
+            "192.168.9.191",
+            "192.168.9.192",
+            "192.168.9.193",
+            "192.168.9.194",
+            "192.168.9.195",
+            "192.168.9.197",
+            "192.168.9.198",
+            "192.168.9.199",
+            "192.168.9.200",
+            "192.168.9.210",
+            "192.168.9.211",
+            "192.168.9.212",
+            "192.168.9.213",
+            "192.168.9.214",
+            "192.168.9.215",
+            "192.168.9.216",
+            "192.168.9.217",
+            "192.168.9.218",
+            "192.168.9.220",
+            "192.168.9.222",
+            "192.168.9.239",
+            "192.168.9.240",
+            "192.168.9.241",
+            "192.168.9.242",
+            "192.168.9.243",
+            "192.168.9.244",
+            "192.168.9.245",
+            "192.168.9.246",
+            "192.168.9.247"
+        ],
+        "vars": {}
+    },
+    "zun-wsproxy": {
+        "children": [
+            "zun"
+        ],
+        "hosts": [
+            "192.168.9.110",
+            "192.168.9.135",
+            "192.168.9.160"
+        ],
+        "vars": {}
+    }
+}
