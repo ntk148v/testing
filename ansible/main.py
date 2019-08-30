@@ -60,9 +60,11 @@ for host in inventory.get_hosts():
 # Init etcd3 client
 etcdclient = etcd3.client(host="10.4.4.235", port="8379")
 # Delete it anw
-etcdclient.delete_prefix("/test")
-put_val(etcdclient, "/test", out)
+name = "/".join(["", str(hash("openstack-hlc-5f")), "inventory"])
+etcdclient.delete_prefix(name)
+put_val(etcdclient, name, out)
 # Verify
-etcdout = etcdclient.get_prefix("/test")
+etcdout = etcdclient.get_prefix(name)
 for k, v in etcdout:
+    print("===========================")
     print("{} - {}" . format(k, v.key))
