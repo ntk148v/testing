@@ -22,10 +22,11 @@ def put_val(etcdclient, prefix, input):
             tmpprefix = "/".join([tmpprefix, k])
             put_val(etcdclient, tmpprefix, v)
     elif isinstance(input, list):
-        for i, v in enumerate(input):
-            tmpprefix = copy.deepcopy(prefix)
-            tmpprefix = "/".join([tmpprefix, str(i)])
-            put_val(etcdclient, tmpprefix, v)
+        # for i, v in enumerate(input):
+        #     tmpprefix = copy.deepcopy(prefix)
+        #     tmpprefix = "/".join([tmpprefix, str(i)])
+        #     put_val(etcdclient, tmpprefix, v)
+        etcdclient.put(prefix, json.dumps(input))
     else:
         etcdclient.put(prefix, str(input))
 
@@ -56,7 +57,7 @@ for host in inventory.get_hosts():
 # Write output to json
 # print(json.dumps(out, indent=4, sort_keys=True))
 
-# # Init etcd3 client
+# Init etcd3 client
 etcdclient = etcd3.client(host="10.4.4.235", port="8379")
 # Delete it anw
 etcdclient.delete_prefix("/test")
