@@ -26,26 +26,7 @@ func main() {
 	defer cli.Close()
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	_, err = cli.Put(ctx, "test1/test2", "dm")
-	if err != nil {
-		panic(err)
-	}
-	resp, err := cli.Get(ctx, "test1/test2")
-	if err != nil {
-		panic(err)
-	}
-
-	for _, ev := range resp.Kvs {
-		fmt.Printf("%s : %s\n", ev.Key, ev.Value)
-	}
-	resp, err = cli.Get(ctx, "test1/test2/test")
-	if err != nil {
-		panic(err)
-	}
-
-	for _, ev := range resp.Kvs {
-		fmt.Printf("%s : %s\n", ev.Key, ev.Value)
-	}
+	defer cancel()
 
 	p := Person{
 		Name: "Kien",
@@ -57,7 +38,7 @@ func main() {
 		panic(err)
 	}
 
-	_, err = cli.Put(ctx, "/cloud/test1", string(value))
+	_, err = cli.Put(ctx, "/cloud1/test1", string(value))
 	if err != nil {
 		panic(err)
 	}
@@ -72,12 +53,12 @@ func main() {
 		panic(err)
 	}
 
-	_, err = cli.Put(ctx, "/cloud/test2", string(value))
+	_, err = cli.Put(ctx, "/cloud1/test2", string(value))
 	if err != nil {
 		panic(err)
 	}
 
-	resp, err = cli.Get(ctx, "cloud", clientv3.WithPrefix())
+	resp, err := cli.Get(ctx, "/cloud", clientv3.WithPrefix())
 	if err != nil {
 		panic(err)
 	}
@@ -92,5 +73,15 @@ func main() {
 		// fmt.Printf("%+v", p)
 	}
 
-	cancel()
+	resp, err = cli.Get(ctx, "/cloud/openstack/8806313588793473031", clientv3.WithPrefix())
+	if err != nil {
+		panic(err)
+	}
+
+	if len(resp.Kvs) > 0 {
+		fmt.Println("Found")
+	}
+
+	// _, _ = cli.Delete(ctx, "/cloud", clientv3.WithPrefix())
+
 }
