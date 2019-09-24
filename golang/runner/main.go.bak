@@ -1,0 +1,71 @@
+package main
+
+import (
+	"fmt"
+	"time"
+
+	"github.com/matryer/runner"
+)
+
+type scaler struct {
+	ticker *time.Ticker
+}
+
+func (s *scaler) do(i int) {
+	fmt.Printf("Tick tick %d: %s", i, time.Now())
+}
+func (s *scaler) run(i int) {
+	// ticker := time.NewTicker(s.interval)
+	defer s.ticker.Stop()
+	fmt.Println("dm")
+	select {
+	case <-s.ticker.C:
+		go s.do(i)
+	}
+}
+
+func main() {
+	s := scaler{
+		ticker: time.NewTicker(1 * time.Second),
+	}
+	task := runner.Go(func(shouldStop runner.S) error {
+		// do setup work
+		i := 0
+		defer func() {
+			// do tear-down work
+			// close(stopChan)
+		}()
+		for {
+
+			// do stuff
+			s.run(i)
+			i++
+
+			// periodically check to see if we should
+			// stop or not.
+			if shouldStop() {
+				break
+			}
+		}
+		return nil // no errors
+	})
+
+	time.Sleep(5 * time.Second)
+
+	task.Stop()
+	select {
+	case <-task.StopChan():
+		// task successfully stopped
+		fmt.Printf("Task %s stopped\n", task.ID)
+	case <-time.After(1 * time.Second):
+		// task didn't stop in time
+		fmt.Printf("Task %s didn't stop in time", task.ID)
+	}
+
+	// execution continues once the code has stopped or has
+	// timed out.
+
+	if task.Err() != nil {
+		fmt.Println("task failed:", task.Err())
+	}
+}
