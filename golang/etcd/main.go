@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"time"
 
@@ -28,37 +27,37 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	p := Person{
-		Name: "Kien",
-		Age:  26,
-	}
+	// p := Person{
+	// 	Name: "Kien",
+	// 	Age:  26,
+	// }
 
-	value, err := json.Marshal(&p)
-	if err != nil {
-		panic(err)
-	}
+	// value, err := json.Marshal(&p)
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	_, err = cli.Put(ctx, "/cloud1/test1", string(value))
-	if err != nil {
-		panic(err)
-	}
+	// _, err = cli.Put(ctx, "/cloud1/test1", string(value))
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	p = Person{
-		Name: "Kien Khac",
-		Age:  69,
-	}
+	// p = Person{
+	// 	Name: "Kien Khac",
+	// 	Age:  69,
+	// }
 
-	value, err = json.Marshal(&p)
-	if err != nil {
-		panic(err)
-	}
+	// value, err = json.Marshal(&p)
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	_, err = cli.Put(ctx, "/cloud1/test2", string(value))
-	if err != nil {
-		panic(err)
-	}
+	// _, err = cli.Put(ctx, "/cloud1/test2", string(value))
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	resp, err := cli.Get(ctx, "/cloud", clientv3.WithPrefix())
+	resp, err := cli.Get(ctx, "/clouds", clientv3.WithPrefix())
 	if err != nil {
 		panic(err)
 	}
@@ -73,14 +72,14 @@ func main() {
 		// fmt.Printf("%+v", p)
 	}
 
-	resp, err = cli.Get(ctx, "/cloud/openstack/8806313588793473031", clientv3.WithPrefix())
-	if err != nil {
-		panic(err)
-	}
+	// resp, err = cli.Get(ctx, "/clouds/", clientv3.WithPrefix())
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	if len(resp.Kvs) > 0 {
-		fmt.Println("Found")
-	}
+	// if len(resp.Kvs) > 0 {
+	// 	fmt.Println("Found")
+	// }
 
 	// _, _ = cli.Delete(ctx, "/cloud", clientv3.WithPrefix())
 
