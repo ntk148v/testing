@@ -81,6 +81,7 @@ func main() {
 	// 	fmt.Println("Found")
 	// }
 
-	// _, _ = cli.Delete(ctx, "/cloud", clientv3.WithPrefix())
+	_, _ = cli.Delete(ctx, "/clouds", clientv3.WithPrefix())
+	_, _ = cli.Delete(ctx, "/scalers", clientv3.WithPrefix())
 
 }
