@@ -11,7 +11,7 @@ import (
 
 func main() {
 	cli, err := clientv3.New(clientv3.Config{
-		Endpoints: []string{"10.240.201.235:8379", "10.240.201.236:8379"},
+		Endpoints: []string{"127.0.0.1:2379"},
 	})
 
 	if err != nil {
@@ -20,41 +20,61 @@ func main() {
 
 	defer cli.Close()
 
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
 	cli.KV = namespace.NewKV(cli.KV, "prefixne/")
 	cli.Watcher = namespace.NewWatcher(cli.Watcher, "prefixne/")
 	cli.Lease = namespace.NewLease(cli.Lease, "prefixne/")
 	// Test 5 seconds
-	lresp, err := cli.Grant(ctx, 6)
+	lresp, err := cli.Grant(ctx, 5)
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("Grant lease:", lresp.ID)
+
+	_, err = cli.Put(ctx, "foo", "bar", clientv3.WithLease(lresp.ID))
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("Put foo with lease:", lresp.ID)
 
 	watch := cli.Watch(ctx, "foo", clientv3.WithPrefix())
+	done := make(chan bool)
+	ticker := time.NewTicker(time.Second)
 
-	for i := 0; i < 5; i++ {
-		fmt.Println(i)
-		_, err = cli.Put(ctx, fmt.Sprintf("foo/%d", i), fmt.Sprintf("bar%d", i), clientv3.WithLease(lresp.ID))
-		if err != nil {
-			fmt.Println(err)
-		}
-		time.Sleep(2 * time.Second)
-	}
-
-	fmt.Println("Put xong roi day")
-
-	for stay, timeout := true, time.After(10*time.Second); stay; {
-		select {
-		case wresp := <-watch:
-			for _, e := range wresp.Events {
-				if e.Type == clientv3.EventTypeDelete {
-					fmt.Printf("%+v\n", e)
+	go func() {
+		for {
+			select {
+			case <-done:
+				// Make sure lease & key be deleted.
+				cli.Revoke(ctx, lresp.ID)
+				return
+			case wresp := <-watch:
+				for _, e := range wresp.Events {
+					if e.Type == clientv3.EventTypeDelete {
+						fmt.Printf("Deleted key: %+v\n", e)
+					}
 				}
+			case <-ticker.C:
+				time.Sleep(time.Second)
+				resp, err := cli.TimeToLive(ctx, lresp.ID, clientv3.WithAttachedKeys())
+				if err != nil {
+					panic(err)
+				}
+				fmt.Printf("Time to live: %d - %s\n", resp.TTL, resp.Keys)
+				_, err = cli.KeepAliveOnce(ctx, lresp.ID)
+				if err != nil {
+					panic(err)
+				}
+				fmt.Println("Keep alive lease:", lresp.ID)
 			}
-		case <-timeout:
-			stay = false
 		}
-	}
+	}()
+
+	time.Sleep(10 * time.Second)
+	ticker.Stop()
+	time.Sleep(10 * time.Second)
+	done <- true
+	fmt.Println("Stopped")
 }
