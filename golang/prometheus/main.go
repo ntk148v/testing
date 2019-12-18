@@ -52,6 +52,7 @@ func (t *BasicAuthTransport) transport() http.RoundTripper {
 func configFromEnv() (*api.Config, error) {
 	cfg := &api.Config{}
 	url := os.Getenv("PROM_URL")
+	url = "http://10.240.202.201:9092"
 	if url == "" {
 		return nil, errors.New("Prometheus address is missing")
 	}
@@ -82,14 +83,15 @@ func main() {
 		panic(err)
 	}
 
-	api := v1.NewAPI(client)
+	papi := v1.NewAPI(client)
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 	query := "absent(up) or sum by(instance, job) (up) < 1"
 	fmt.Println(query)
-	val, warn, err := api.Query(ctx, query, time.Now())
+	val, warn, err := papi.Query(ctx, query, time.Now())
 	fmt.Println(warn)
 	if err != nil {
+		fmt.Printf("%+v\n", err)
 		panic(err)
 	}
 	// fmt.Println(val)
