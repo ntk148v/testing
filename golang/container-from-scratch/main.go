@@ -54,14 +54,14 @@ func child() {
 	cmd.Stderr = os.Stderr
 
 	// Create cgroup
-	cg()
+	// cg()
 
 	// Change root filesystem
 	// Have to create a rootfs by following this, don't know why
 	// others not face the same problem.
 	// https://medium.com/@ssttehrani/containers-from-scratch-with-golang-5276576f9909
 	must(syscall.Sethostname([]byte("container")))
-	must(syscall.Chroot("/root/containerfs"))
+	must(syscall.Chroot("./containerfs"))
 	must(os.Chdir("/"))
 	// must(syscall.Mount("proc", "proc", "proc", 0, ""))
 	// must(syscall.Mount("something", "mytemp", "tmpfs", 0, ""))
