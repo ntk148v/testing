@@ -61,16 +61,18 @@ func child() {
 	// others not face the same problem.
 	// https://medium.com/@ssttehrani/containers-from-scratch-with-golang-5276576f9909
 	must(syscall.Sethostname([]byte("container")))
-	must(syscall.Chroot("./containerfs"))
+	// must(syscall.Mount("/", "/home/kiennt/rootfs", "", syscall.MS_BIND, ""))
+	// must(os.MkdirAll("/home/kiennt/rootfs/oldrootfs", 0700))
+	// must(syscall.PivotRoot("/", "/home/kiennt/rootfs/oldrootfs"))
+
+	must(syscall.Chroot("/home/kiennt/rootfs"))
 	must(os.Chdir("/"))
-	// must(syscall.Mount("proc", "proc", "proc", 0, ""))
-	// must(syscall.Mount("something", "mytemp", "tmpfs", 0, ""))
+	must(syscall.Mount("proc", "proc", "proc", 0, ""))
 
 	must(cmd.Run())
 
 	// Cleanup mount
-	// must(syscall.Unmount("proc", 0))
-	// must(syscall.Unmount("mytemp", 0))
+	must(syscall.Unmount("proc", 0))
 }
 
 // cg - demonstrate cgroup
