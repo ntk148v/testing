@@ -1,0 +1,9 @@
+version: 2
+services:
+  etcd:
+    image: bitnami/etcd:${tag}
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+    ports:
+      - 2381:2379
+      - 2382:2380
