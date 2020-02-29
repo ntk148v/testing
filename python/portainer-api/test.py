@@ -168,7 +168,7 @@ if __name__ == '__main__':
     p = PortainerAPIClient('http://127.0.0.1:9000',
                            'admin', '12345678')
     # print(p.get_status())
-    with open('docker-compose.yml', 'rb') as f:
+    # with open('docker-compose.yml', 'rb') as f:
         # body = {
         #     'Name': 'test2',
         #     'Env': "[{\"name\": \"tag\", \"value\": \"3\"}]",
@@ -182,13 +182,13 @@ if __name__ == '__main__':
         # print(body)
         # files = {'file': f}
         # print(p.create_stack(1, 2, 'file', body=json.dumps(body), files=files))
-        sf = p.get_stack_file(23)
-        update = sf
-        # update = {}
-        update['Env'] = [
-            {
-                'name': 'tag',
-                'value': '3'
-            }
-        ]
-        print(p.update_stack(23, 1, body=update))
+    sf = p.get_stack_file(14)
+    update = sf
+    # update = {}
+    update['Env'] = [
+        {
+            'name': 'IMAGE_TAG',
+            'value': '4'
+        }
+    ]
+    print(p.update_stack(14, 1, body=update))
