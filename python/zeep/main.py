@@ -23,4 +23,4 @@ if __name__ == '__main__':
     except KeyError as e:
         LOG.error('Missing environment variables! %s' % str(e))
     soap_client = Client(kwargs['gnoc_url'])
-    LOG.info(soap_client.service.getListSR())
+    LOG.info(soap_client.service.getListSR(rowStart=0, maxRow=2))
