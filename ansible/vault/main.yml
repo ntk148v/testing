@@ -1,0 +1,14 @@
+---
+- name: Test
+  gather_facts: true
+  hosts: localhost
+  tasks:
+  - name: Print vault
+    debug:
+      msg: "{{ the_secret }}"
+
+  - name: Copy template
+    template:
+      src: test.yml.j2
+      dest: /tmp/test.yml
+      mode: 0644
