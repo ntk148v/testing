@@ -1,0 +1,9 @@
+version: "3"
+services:
+  etcd:
+    image: bitnami/etcd:3
+    environment:
+      - ETCD_ROOT_PASSWORD=test
+    ports:
+      - 2379:2379
+      - 2380:2380

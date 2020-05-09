@@ -15,7 +15,7 @@ type Person struct {
 
 func main() {
 	cli, err := clientv3.New(clientv3.Config{
-		Endpoints: []string{"10.240.201.235:8379", "10.240.201.236:8379"},
+		Endpoints: []string{"127.0.0.1:2379"},
 	})
 
 	if err != nil {
