@@ -4,13 +4,15 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"go.etcd.io/etcd/clientv3"
+	"strings"
 	"time"
+
+	"go.etcd.io/etcd/clientv3"
 )
 
 func main() {
-	etcdHost := flag.String("etcdHost", "192.168.99.100:2379", "etcd host")
-	etcdWatchKey := flag.String("etcdWatchKey", "foo", "etcd key to watch")
+	etcdHost := flag.String("etcdHost", "127.0.0.1:2379", "etcd host")
+	etcdWatchKey := flag.String("etcdWatchKey", "/foo", "etcd key to watch")
 
 	flag.Parse()
 
@@ -31,19 +33,27 @@ func main() {
 	watchChan := etcd.Watch(context.Background(), *etcdWatchKey, clientv3.WithPrefix())
 	fmt.Println("set WATCH on " + *etcdWatchKey)
 
-	// go func() {
-	// 	fmt.Println("started goroutine for PUT...")
-	// 	for {
-	// 		etcd.Put(context.Background(), *etcdWatchKey, time.Now().String())
-	// 		fmt.Println("populated " + *etcdWatchKey + " with a value..")
-	// 		time.Sleep(2 * time.Second)
-	// 	}
+	go func() {
+		fmt.Println("started goroutine for PUT...")
+		var k string
+		for i := 0; i <= 20; i++ {
+			if i%2 == 0 {
+				k = fmt.Sprintf("%s/%d/%s", *etcdWatchKey, i, "subfoo")
+			} else {
+				k = fmt.Sprintf("%s/%d/%s", *etcdWatchKey, i, "notsubfoo")
+			}
+			etcd.Put(context.Background(), k, time.Now().String())
+			fmt.Println("populated " + k + " with a value..")
+			time.Sleep(2 * time.Second)
+		}
 
-	// }()
+	}()
 
 	for watchResp := range watchChan {
 		for _, event := range watchResp.Events {
-			fmt.Printf("Event received! %s executed on %q with value %q\n", event.Type, event.Kv.Key, event.Kv.Value)
+			if strings.Contains(string(event.Kv.Key), "/subfoo") {
+				fmt.Printf("Event received! %s executed on %q with value %q\n", event.Type, event.Kv.Key, event.Kv.Value)
+			}
 		}
 	}
 }
