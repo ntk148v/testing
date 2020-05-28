@@ -6,40 +6,23 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-//Hash implements root.Hash
-type Hash struct{}
-
-//Generate a salted hash for the input string
-func (c *Hash) Generate(s string) (string, error) {
-	saltedBytes := []byte(s)
-	hashedBytes, err := bcrypt.GenerateFromPassword(saltedBytes, bcrypt.DefaultCost)
-	if err != nil {
-		return "", err
-	}
-
-	hash := string(hashedBytes[:])
-	return hash, nil
+func HashPassword(password string) (string, error) {
+	bytes, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+	return string(bytes), err
 }
 
-//Compare string to generated hash
-func (c *Hash) Compare(hash string, s string) error {
-	incoming := []byte(s)
-	existing := []byte(hash)
-	return bcrypt.CompareHashAndPassword(existing, incoming)
+func CheckPasswordHash(password, hash string) bool {
+	err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
+	return err == nil
 }
 
 func main() {
-	h := Hash{}
-	hashed, err := h.Generate("duma")
-	if err != nil {
-		panic(err)
-	}
+	password := "secret"
+	hash, _ := HashPassword(password) // ignore error for the sake of simplicity
 
-	fmt.Println(hashed)
-	err = h.Compare(hashed, "duma1")
-	if err == nil {
-		fmt.Println(true)
-	} else {
-		fmt.Println(false)
-	}
+	fmt.Println("Password:", password)
+	fmt.Println("Hash:    ", hash)
+
+	match := CheckPasswordHash(password, hash)
+	fmt.Println("Match:   ", match)
 }
