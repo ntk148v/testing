@@ -73,6 +73,7 @@ func main() {
 	for i := 1; i < 4; i++ {
 		user = fmt.Sprintf("user%d", i)
 		pass = fmt.Sprintf("pass%d", i)
+		role = fmt.Sprintf("role%d", i)
 		userns = fmt.Sprintf("%d/", i)
 		userCli, err = clientv3.New(clientv3.Config{
 			Endpoints: []string{"127.0.0.1:2379"},
@@ -102,6 +103,21 @@ func main() {
 			}
 
 		}
+
+		// Check the permissions
+		if roleResp, err := userCli.RoleGet(context.TODO(), role); err != nil {
+			log.Fatal(err)
+		} else {
+			log.Println(roleResp.Perm[0].String())
+		}
+
+		// Check the user details
+		if userResp, err := userCli.UserGet(context.TODO(), user); err != nil {
+			log.Fatal(err)
+		} else {
+			log.Println(userResp)
+		}
+
 	}
 
 	// Cleanup
