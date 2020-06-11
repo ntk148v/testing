@@ -43,9 +43,9 @@ def parse_slack_output(slack_rtm_output):
 
 
 def listen_sync():
-    READ_WEBSOCKET_DELAY = 1  # 1 second delay between reading from firehose
     if slack_client.rtm_connect():
         print("StarterBot connected and running!")
+        READ_WEBSOCKET_DELAY = 1  # 1 second delay between reading from firehose
         while True:
             command, channel = parse_slack_output(slack_client.rtm_read())
             if command and channel:
