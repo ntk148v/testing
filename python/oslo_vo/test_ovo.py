@@ -17,13 +17,15 @@ class TestObject(base.VersionedObject):
     }
 
     def __setattr__(self, key, value):
-        if not (key[0:5] == '_obj_'
-                or key[0:7] == '_change'
-                or key == '_context'
-                or key in list(self.fields)
-                or key == 'FIELDS'
-                or key == 'VERSION'
-                or key == 'fields'):
+        if (
+            key[0:5] != '_obj_'
+            and key[0:7] != '_change'
+            and key != '_context'
+            and key not in list(self.fields)
+            and key != 'FIELDS'
+            and key != 'VERSION'
+            and key != 'fields'
+        ):
             raise AttributeError(
                 "Designate object '%(type)s' has no"
                 "attribute '%(name)s'" % {

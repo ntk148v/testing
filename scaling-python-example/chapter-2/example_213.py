@@ -5,8 +5,7 @@ import random
 
 
 def compute():
-    return sum(
-        [random.randint(1, 100) for i in range(100000)])
+    return sum(random.randint(1, 100) for i in range(100000))
 
 
 with futurist.ThreadPoolExecutor(max_workers=8) as executor:

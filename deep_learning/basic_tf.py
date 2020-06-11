@@ -21,7 +21,7 @@ y_train = [0, -1, -2, -3]
 init = tf.global_variables_initializer()
 sess = tf.Session()
 sess.run(init) # reset values to wrong
-for i in range(1000):
+for _ in range(1000):
   sess.run(train, {x: x_train, y: y_train})
 
 # evaluate training accuracy

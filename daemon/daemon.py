@@ -85,10 +85,7 @@ class DaemonClass:
         self.alive = True
 
         # Null device for redirecting input and output
-        if (hasattr(os, "devnull")):
-            DEVNULL = os.devnull
-        else:
-            DEVNULL = "/dev/null"
+        DEVNULL = os.devnull if hasattr(os, "devnull") else "/dev/null"
         self.stdin = DEVNULL
         self.stdout = DEVNULL
         self.stderr = DEVNULL
@@ -326,7 +323,7 @@ class DaemonClass:
         """
         self.set_mode('restarting')
         self.before_restart()
-        
+
         if self.platform == "Linux":
             sys.stdout.write("(PID: %s) Restarting the Linux Daemon...\n")
             self.stop_linux_daemon()          # Stops the original daemon process by issuing a SIGTERM
@@ -334,9 +331,6 @@ class DaemonClass:
         elif self.platform == "Windows":
             self.stop_windows_service()
             self.start_windows_service()
-        else:
-            pass
-        
         self.run()                  # Passes processing control to the run method
 
     #-----------------------------------------------------------------------------------
