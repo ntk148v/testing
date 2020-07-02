@@ -11,6 +11,7 @@ autopep8 = "*"
 simplejson = "*"
 zeep = "*"
 requests = "*"
+aiohttp = "*"
 
 [requires]
 python_version = "3.6"
