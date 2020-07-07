@@ -1,0 +1,138 @@
+CHANGES
+=======
+
+* Add concurrency tests
+* Add dependencies
+* Refactored by Sourcery
+* Add casbin jwt
+* update
+* Update
+* Format
+* Add bcrypt test
+* Add jwt test
+* Update
+* Add travis for testing
+* Update watch test
+* Add authen test
+* Blockforever in golang
+* Add seccomp bpf
+* Rename binary file
+* Add seccopt example
+* Use http client
+* Add github module test
+* Test SMTP
+* Custom golang duration json
+* Vault test
+* testing context
+* Updateeeeeee
+* Update params
+* Add zeep test
+* Use a general pipfile
+* Restructure
+* Add new test
+* Add golang playground
+* Bump ansible from 2.8.4 to 2.8.8 in /ansible
+* Addddddddddd
+* Add python nested list testing
+* Add Prom Config test
+* Add template testing
+* Add tutorial
+* Init vuejs
+* Updateeeee
+* Updateeeee
+* Updateeeee
+* Container from scratch
+* update
+* Test instrument
+* Add prometheus client with auth
+* Remove binary file
+* Add hashring test
+* Update lease example
+* Expose port - etcd
+* Add etcd testings
+* Add docker-compose for etcd
+* Add etcd lock example
+* Rename thoi ma
+* Add avast-retry test
+* Update
+* Update
+* Use 2nd channel to gracefully terminate
+* Add runner test
+* Add etcd watch testing
+* update
+* Update
+* Add etcd example
+* Add prometheus test
+* Update
+* Just rename
+* Update
+* Update
+* Update
+* Update
+* Update
+* Add files
+* Ignore
+* Remove inventory-sample
+* Remove output
+* update
+* Add ansible testing
+* Updateeeeeeeeeeee
+* Updateeeeeeeeeeee
+* Add config example
+* Add retry example
+* Add retry example
+* Add retry example
+* FuCk UpDaTe
+* Update tiep ne
+* Add sync.WG
+* Updateeeeeeeeeeee
+* Update main.go
+* Update main.go
+* Add golang gophercloud example
+* Change to utc timezone
+* Add cloudflare-airtable
+* Fix alerts
+* Add missing raise to exit
+* Update cloudflare dns exporter
+* Fix typo - missing :
+* Add cloudflare-example
+* Update golang grpc testing
+* Update golang grpc testing
+* Add golang example directory
+* Create python example directory
+* Init golang examples dir
+* Add grpc example
+* Add a lazy tool to create a general OpenStack client
+* Add openstack\_nova
+* Add gnocchi test
+* Add file
+* Ignore admin-openrc
+* Add openstack-heat client test
+* Add sanic hello world example
+* Add scaling-python example
+* Equalize histogram both grayscale & colored images
+* Update
+* Init blockchain code testing
+* Update
+* Add basic examples
+* Fix cnn
+* Add MNIST-data to .gitignore
+* Complete CNN tut 1
+* Update
+* Add cnn\_tut1
+* Add opencv testing
+* Add calplus test
+* Rename
+* Add test\_futurist examples
+* Add openstack futurist test
+* Update async way, not work perfectly
+* Update
+* Update
+* Add ssbot & glanceclient test
+* Add slackbot test, not finish
+* Update
+* Add files via upload
+* Update
+* Update
+* Update
+* Initial commit
