@@ -20,7 +20,7 @@ func main() {
 			return
 		case t := <-ticker.C:
 			fmt.Println("Current time: ", t)
-			time.Sleep(time.Second * 10)
+			time.Sleep(time.Second * 2)
 			fmt.Println("After a tick 2s", time.Now())
 		}
 	}
