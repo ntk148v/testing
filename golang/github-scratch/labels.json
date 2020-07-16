@@ -1,0 +1,87 @@
+[
+    {
+        "color": "367996",
+        "description": "Something relates to API",
+        "name": "component/api"
+    },
+    {
+        "color": "367996",
+        "description": "Something relates to autohealing feature",
+        "name": "component/autohealer"
+    },
+    {
+        "color": "367996",
+        "description": "Something relates to autoscale feature",
+        "name": "component/autoscaler"
+    },
+    {
+        "color": "367996",
+        "description": "Something relates to clustering",
+        "name": "component/cluster"
+    },
+    {
+        "color": "367996",
+        "description": "Something relates to configuration",
+        "name": "component/config"
+    },
+    {
+        "color": "367996",
+        "description": "Documentation, guide & examples",
+        "name": "component/documentation"
+    },
+    {
+        "color": "367996",
+        "description": "UI things",
+        "name": "component/ui"
+    },
+    {
+        "color": "d73a4a",
+        "description": "Something isn't working",
+        "name": "kind/bug"
+    },
+    {
+        "color": "cfd3d7",
+        "description": "This issue or pull request already exists",
+        "name": "kind/duplicate"
+    },
+    {
+        "color": "a2eeef",
+        "description": "New feature or request",
+        "name": "kind/enhancement"
+    },
+    {
+        "color": "008672",
+        "description": "Extra attention is needed",
+        "name": "kind/help wanted"
+    },
+    {
+        "color": "e4e669",
+        "description": "This doesn't seem right",
+        "name": "kind/invalid"
+    },
+    {
+        "color": "fbca04",
+        "description": "This issue is needed to be clarify",
+        "name": "kind/more-info-needed"
+    },
+    {
+        "color": "d876e3",
+        "description": "Further information is requested",
+        "name": "kind/question"
+    },
+    {
+        "color": "ff9698",
+        "description": "Easy issue/bug",
+        "name": "low-hanging-fruit"
+    },
+    {
+        "color": "f9d0c4",
+        "description": "Something that needs to be discussed",
+        "name": "need-further-discussion"
+    },
+    {
+        "color": "ffffff",
+        "description": "This will not be worked on",
+        "name": "wontfix"
+    }
+]
