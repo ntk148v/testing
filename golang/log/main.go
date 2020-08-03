@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"runtime"
 	"time"
@@ -20,9 +19,19 @@ var (
 	)
 )
 
-func info() string {
-	return fmt.Sprintf("(os=%s, arch=%s, version=%s)", runtime.GOOS,
-		runtime.GOARCH, runtime.Version())
+func info() []string {
+	return []string{"os", runtime.GOOS, "arch", runtime.GOARCH, "version", runtime.Version()}
+}
+
+func infoWithMsg(msg, info []string) []interface{} {
+	var r []interface{}
+	for _, v := range msg {
+		r = append(r, v)
+	}
+	for _, v := range info {
+		r = append(r, v)
+	}
+	return r
 }
 
 func main() {
@@ -33,5 +42,5 @@ func main() {
 	// l = log.NewJSONLogger(log.NewSyncWriter(os.Stderr))
 	l = log.With(l, "ts", timestampFormat, "caller", log.DefaultCaller)
 	level.Info(l).Log("msg", "Start testing")
-	level.Info(l).Log("msg", "Info", "build", info())
+	level.Info(l).Log(infoWithMsg([]string{"msg", "Info"}, info())...)
 }
