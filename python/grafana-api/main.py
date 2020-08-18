@@ -18,7 +18,7 @@ with open('users.csv') as csv_file:
             continue
         name = row[0]
         email = row[1]
-        username = email.strip('@gmail.com')
+        username = email.replace('@gmail.com', '')
         user = {
             "name": name,
             "email": email,
