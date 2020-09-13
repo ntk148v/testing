@@ -17,6 +17,7 @@ prometheus-client = "*"
 grafana-api = "*"
 telethon = "*"
 pyrogram = "*"
+tgcrypto = "*"
 
 [requires]
 python_version = "3.6"
