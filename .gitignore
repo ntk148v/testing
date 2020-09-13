@@ -97,4 +97,6 @@ deep_learning/MNIST-data/*
 admin-openrc
 
 .vscode
+.idea/
 
+**/.env
