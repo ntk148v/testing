@@ -100,3 +100,5 @@ admin-openrc
 .idea/
 
 **/.env
+
+**/*.session
