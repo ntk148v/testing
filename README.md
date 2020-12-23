@@ -1,3 +1,3 @@
 # Testing
 
-This repos contains all testing scripts.
+This repos contains all testing stuffs.
