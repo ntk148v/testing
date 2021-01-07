@@ -4,8 +4,10 @@ import (
 	"context"
 	"fmt"
 	"net/http"
+	"net/url"
 	"os"
 
+	amclient "github.com/prometheus/alertmanager/api/v2/client"
 	prometheusclient "github.com/prometheus/client_golang/api"
 	prometheus "github.com/prometheus/client_golang/api/prometheus/v1"
 	"github.com/prometheus/prometheus/config"
@@ -67,11 +69,28 @@ func main() {
 		panic(err)
 	}
 	api := prometheus.NewAPI(client)
-	// am, err := api.AlertManagers(context.Background())
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// fmt.Println(am)
+	ams, err := api.AlertManagers(context.Background())
+	if err != nil {
+		panic(err)
+	}
+	for _, a := range ams.Active {
+		u, err := url.Parse(a.URL)
+		if err != nil {
+			panic(err)
+		}
+		fmt.Println(u.Host)
+		amCli := amclient.NewHTTPClientWithConfig(nil, &amclient.TransportConfig{
+			Host:     u.Host,
+			BasePath: amclient.DefaultBasePath,
+			Schemes:  amclient.DefaultSchemes,
+		})
+		// resp, err := amCli.Silence.GetSilences(silence.NewGetSilencesParams())
+		resp, err := amCli.General.GetStatus()
+		if err != nil {
+			panic(err)
+		}
+		fmt.Println(resp)
+	}
 	cfgRaw, err := api.Config(context.Background())
 	if err != nil {
 		panic(err)
