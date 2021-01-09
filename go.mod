@@ -9,8 +9,9 @@ require (
 	github.com/go-kit/kit v0.10.0
 	github.com/gophercloud/gophercloud v0.15.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
-	github.com/prometheus/alertmanager v0.21.1-0.20201223141538-ce108378d4c8 // indirect
-	github.com/prometheus/prometheus v2.5.0+incompatible // indirect
+	github.com/prometheus/alertmanager v0.21.1-0.20201223141538-ce108378d4c8
+	github.com/prometheus/client_golang v1.7.1
+	github.com/prometheus/prometheus v2.5.0+incompatible
 	gopkg.in/fsnotify/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/src-d/go-git.v4 v4.13.1 // indirect
 	k8s.io/api v0.20.1 // indirect
