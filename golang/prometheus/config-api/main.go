@@ -85,7 +85,7 @@ func main() {
 			Schemes:  amclient.DefaultSchemes,
 		})
 		// resp, err := amCli.Silence.GetSilences(silence.NewGetSilencesParams())
-		resp, err := amCli.General.GetStatus()
+		resp, err := amCli.General.GetStatus(nil)
 		if err != nil {
 			panic(err)
 		}
