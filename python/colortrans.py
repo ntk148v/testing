@@ -303,7 +303,7 @@ def _strip_hash(rgb):
 def _create_dicts():
     short2rgb_dict = dict(CLUT)
     rgb2short_dict = {}
-    for k, v in short2rgb_dict.items():
+    for k, v in list(short2rgb_dict.items()):
         rgb2short_dict[v] = k
     return rgb2short_dict, short2rgb_dict
 
@@ -318,8 +318,8 @@ def print_all():
         sys.stdout.write("\033[0m  ")
         sys.stdout.write('\033[38;5;%sm%s:%s' % (short, short, rgb))
         sys.stdout.write("\033[0m\n")
-    print "Printed all codes."
-    print "You can translate a hex or 0-255 code by providing an argument."
+    print("Printed all codes.")
+    print("You can translate a hex or 0-255 code by providing an argument.")
 
 def rgb2short(rgb):
     """ Find the closest xterm-256 approximation to the given RGB value.
