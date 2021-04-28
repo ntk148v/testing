@@ -1,0 +1,46 @@
+Autoscaling without Telemetry
+22 Sep 2020
+Tags: autoscaling,faythe,openstack,prometheus
+
+Kien Nguyen-Tuan
+Engineer, Viettel
+kiennt2609@gmail.com
+
+Dat Vu-Tuan
+Engineer, Viettel
+tuandatk25a@gmail.com
+
+* Agenda
+
+- About Autoscaling
+- OpenStack Autoscaling with Heat & Telemetry
+- Telemetry problems
+- Autoscaling with Faythe
+- Demo
+
+* About Autoscaling
+
+* OpenStack Autoscaling with Heat & Telemetry
+
+- *Overview*: By using pre-defined rules that consider factors such as _CPU_ or _memory_usage_, OpenStack Heat will add/remove additional instances automatically, when they are needed.
+
+- *Architecture*:
+
+.image images/autoscaling-telemetry.png
+
+* OpenStack Autoscaling with Heat & Telemetry
+
+*Components*-*Heat*
+- OpenStack Orchestration.
+- Allow user to define rules using YAML templates.
+
+* OpenStack Autoscaling with Heat & Telemetry
+
+*Components*-*Telemetry*
+- Does performance monitoring of your OpenStack environment.
+
+* Telemetry problems
+
+* Autoscaling with Faythe
+
+* Demo
