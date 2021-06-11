@@ -5,10 +5,16 @@ go 1.12
 require (
 	github.com/Azure/go-autorest/autorest v0.11.15 // indirect
 	github.com/Azure/go-autorest/autorest/adal v0.9.10 // indirect
+	github.com/Netflix/go-env v0.0.0-20210215222557-e437a7e7f9fb
+	github.com/andygrunwald/go-jira v1.13.0 // indirect
+	github.com/gin-contrib/pprof v1.3.0 // indirect
+	github.com/gin-gonic/gin v1.7.2 // indirect
 	github.com/go-git/go-git/v5 v5.2.0 // indirect
 	github.com/go-kit/kit v0.10.0
 	github.com/gophercloud/gophercloud v0.15.0 // indirect
+	github.com/influxdata/influxdb-client-go/v2 v2.3.0
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
+	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/prometheus/alertmanager v0.21.1-0.20201223141538-ce108378d4c8
 	github.com/prometheus/client_golang v1.7.1
 	github.com/prometheus/prometheus v2.5.0+incompatible
