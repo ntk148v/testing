@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 pylint = "*"
 autopep8 = "*"
+urllib3 = ">=1.26.5"
 
 [packages]
 simplejson = "*"
@@ -18,6 +19,7 @@ grafana-api = "*"
 telethon = "*"
 pyrogram = "*"
 tgcrypto = "*"
+urllib3 = ">=1.26.5"
 
 [requires]
 python_version = "3.6"
