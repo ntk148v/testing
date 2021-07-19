@@ -9,6 +9,7 @@ require (
 	github.com/andygrunwald/go-jira v1.13.0 // indirect
 	github.com/gin-contrib/pprof v1.3.0 // indirect
 	github.com/gin-gonic/gin v1.7.2 // indirect
+	github.com/go-ego/riot v0.0.0-20201013133145-f4c30acb3704 // indirect
 	github.com/go-git/go-git/v5 v5.2.0 // indirect
 	github.com/go-kit/kit v0.10.0
 	github.com/gophercloud/gophercloud v0.15.0 // indirect
