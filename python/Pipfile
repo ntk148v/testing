@@ -20,6 +20,7 @@ telethon = "*"
 pyrogram = "*"
 tgcrypto = "*"
 urllib3 = ">=1.26.5"
+confluent-kafka = "*"
 
 [requires]
-python_version = "3.6"
+#python_version = "3.6"
