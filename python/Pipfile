@@ -21,6 +21,8 @@ pyrogram = "*"
 tgcrypto = "*"
 urllib3 = ">=1.26.5"
 confluent-kafka = "*"
+kafka-python = "*"
+msgpack = "*"
 
 [requires]
 #python_version = "3.6"
