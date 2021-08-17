@@ -21,6 +21,7 @@ require (
 	github.com/prometheus/client_golang v1.7.1
 	github.com/prometheus/prometheus v2.5.0+incompatible
 	github.com/yuin/goldmark-meta v1.0.0 // indirect
+	go.uber.org/fx v1.14.2 // indirect
 	gopkg.in/fsnotify/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/src-d/go-git.v4 v4.13.1 // indirect
 	k8s.io/api v0.20.1 // indirect
