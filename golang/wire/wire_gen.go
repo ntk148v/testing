@@ -5,7 +5,7 @@
 
 package main
 
-// Injectors from container.go:
+// Injectors from wire.go:
 
 func CreateConcatService() *ConcatService {
 	logger := &Logger{}
