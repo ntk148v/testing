@@ -13,6 +13,7 @@ require (
 	github.com/go-git/go-git/v5 v5.2.0 // indirect
 	github.com/go-kit/kit v0.10.0
 	github.com/google/go-github v17.0.0+incompatible // indirect
+	github.com/google/wire v0.5.0 // indirect
 	github.com/gophercloud/gophercloud v0.15.0 // indirect
 	github.com/influxdata/influxdb-client-go/v2 v2.3.0
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
