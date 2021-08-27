@@ -15,6 +15,7 @@ require (
 	github.com/google/go-github v17.0.0+incompatible // indirect
 	github.com/google/wire v0.5.0 // indirect
 	github.com/gophercloud/gophercloud v0.15.0 // indirect
+	github.com/hashicorp/go-retryablehttp v0.7.0 // indirect
 	github.com/influxdata/influxdb-client-go/v2 v2.3.0
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
