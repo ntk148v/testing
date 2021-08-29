@@ -102,3 +102,6 @@ admin-openrc
 **/.env
 
 **/*.session
+
+**/credentials.json
+**/token.pickle
