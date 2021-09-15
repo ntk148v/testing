@@ -12,6 +12,7 @@ require (
 	github.com/go-ego/riot v0.0.0-20201013133145-f4c30acb3704 // indirect
 	github.com/go-git/go-git/v5 v5.2.0 // indirect
 	github.com/go-kit/kit v0.10.0
+	github.com/go-redis/redis/v8 v8.11.3 // indirect
 	github.com/google/go-github v17.0.0+incompatible // indirect
 	github.com/google/wire v0.5.0 // indirect
 	github.com/gophercloud/gophercloud v0.15.0 // indirect
