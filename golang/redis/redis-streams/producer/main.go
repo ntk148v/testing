@@ -11,6 +11,8 @@ import (
 	"github.com/go-redis/redis/v8"
 )
 
+const streamName string = "test"
+
 type Event struct {
 	Name string `json:"name"`
 }
@@ -49,8 +51,8 @@ func main() {
 		panic(err)
 	}
 
-	// Generate event id
-	for i := 0; i < 10; i++ {
+	// Generate event
+	for {
 		name := randName()
 		id, err := client.XAdd(ctx, &redis.XAddArgs{
 			Stream: os.Getenv("REDIS_STREAM"),
