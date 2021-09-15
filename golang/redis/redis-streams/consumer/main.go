@@ -12,6 +12,8 @@ import (
 
 var wg sync.WaitGroup
 
+const streamName string = "test"
+
 type Event struct {
 	Name string `json:"name"`
 }
@@ -42,7 +44,6 @@ func main() {
 		panic(err)
 	}
 
-	streamName := os.Getenv("REDIS_STREAM")
 	for {
 		streams, err := client.XRead(ctx, &redis.XReadArgs{
 			Streams: []string{streamName, "0"},
