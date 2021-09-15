@@ -55,7 +55,7 @@ func main() {
 	for {
 		name := randName()
 		id, err := client.XAdd(ctx, &redis.XAddArgs{
-			Stream: os.Getenv("REDIS_STREAM"),
+			Stream: streamName,
 			Values: map[string]interface{}{
 				name: &Event{
 					Name: name,
