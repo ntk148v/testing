@@ -2,11 +2,13 @@ version: '2'
 
 services:
   redis-sentinel:
+    container_name: redis-sentinel
     image: docker.io/bitnami/redis-sentinel:6.2
     volumes:
       - redis-sentinel_data:/bitnami
   redis:
     image: docker.io/bitnami/redis:6.2
+    container_name: redis
     ports:
       - 6379:6379
     environment:
