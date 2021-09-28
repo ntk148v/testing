@@ -45,6 +45,13 @@ func main() {
 	}
 
 	for {
+		// Blocking get the arrived event
+		// streams, err := client.XRead(ctx, &redis.XReadArgs{
+		// Streams: []string{streamName, "$"},
+		// Block:   0,
+		// }).Result()
+
+		// Get from the 1st -> last
 		streams, err := client.XRead(ctx, &redis.XReadArgs{
 			Streams: []string{streamName, "0"},
 		}).Result()
