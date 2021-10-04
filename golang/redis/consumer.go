@@ -32,17 +32,48 @@ type Package struct {
 	Service string `json:"service"`
 }
 
+// Action is the event action type
+type Action int
+
+const (
+	CreateAction Action = iota
+	UpdateStatusAction
+	UpdatePackageAction
+)
+
+func (a Action) String() string {
+	switch a {
+	case CreateAction:
+		return "create"
+	case UpdateStatusAction:
+		return "update-status"
+	case UpdatePackageAction:
+		return "update-package"
+	default:
+		return "unkwon"
+	}
+}
+
+// Event is data struct which is sent to Redis queue
 type Event struct {
-	TenantID string  `json:"tenant_id"`
-	Package  Package `json:"package"`
+	// Action - what action was taken
+	// - create
+	// - update-package
+	// - update-status (deactivated/activated)
+	Action   Action `json:"action"`
+	TenantID string `json:"tenant_id"`
+	// TenantActivated - tenant is activated or not
+	TenantActivated *bool `json:"tenant_activated,omitempty"`
+	// TenantPackage is package per service
+	TenantPackage *Package `json:"tenant_package,omitempty"`
 }
 
-func (p *Event) MarshalBinary() ([]byte, error) {
-	return json.Marshal(p)
+func (e *Event) MarshalBinary() ([]byte, error) {
+	return json.Marshal(e)
 }
 
-func (p *Event) UnmarshalBinary(data []byte) error {
-	return json.Unmarshal(data, p)
+func (e *Event) UnmarshalBinary(data []byte) error {
+	return json.Unmarshal(data, e)
 }
 
 const nsmQueue = "nsm"
@@ -82,5 +113,11 @@ func main() {
 		var event Event
 		event.UnmarshalBinary(eventBytes)
 		fmt.Printf("Pop nsm event %+v\n", event)
+		if event.TenantActivated != nil {
+			fmt.Printf("- tenant activated: %t\n", *event.TenantActivated)
+		}
+		if event.TenantPackage != nil {
+			fmt.Printf("- tenant package: %+v\n", *event.TenantPackage)
+		}
 	}
 }
