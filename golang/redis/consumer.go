@@ -62,10 +62,8 @@ type Event struct {
 	// - update-status (deactivated/activated)
 	Action   Action `json:"action"`
 	TenantID string `json:"tenant_id"`
-	// TenantActivated - tenant is activated or not
-	TenantActivated *bool `json:"tenant_activated,omitempty"`
-	// TenantPackage is package per service
-	TenantPackage *Package `json:"tenant_package,omitempty"`
+	// Data can be activated status or package
+	Data interface{} `json:"data"`
 }
 
 func (e *Event) MarshalBinary() ([]byte, error) {
@@ -112,12 +110,15 @@ func main() {
 		eventBytes := []byte(result[1])
 		var event Event
 		event.UnmarshalBinary(eventBytes)
-		fmt.Printf("Pop nsm event %+v\n", event)
-		if event.TenantActivated != nil {
-			fmt.Printf("- tenant activated: %t\n", *event.TenantActivated)
-		}
-		if event.TenantPackage != nil {
-			fmt.Printf("- tenant package: %+v\n", *event.TenantPackage)
+		fmt.Println(result[1])
+		// Data depends on Action
+		switch event.Action {
+		case CreateAction:
+			fmt.Printf("New tenant %s is created, nsm package %+v\n", event.TenantID, event.Data)
+		case UpdateStatusAction:
+			fmt.Printf("Tenant %s activated status is %t now\n", event.TenantID, event.Data)
+		case UpdatePackageAction:
+			fmt.Printf("Tenant %s package nsm is changed to %+v\n", event.TenantID, event.Data)
 		}
 	}
 }
