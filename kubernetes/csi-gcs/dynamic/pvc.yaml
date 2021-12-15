@@ -5,7 +5,7 @@ metadata:
 spec:
   storageClassName: csi-gcs
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi

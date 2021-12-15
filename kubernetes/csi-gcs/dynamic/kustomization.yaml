@@ -3,6 +3,6 @@ kind: Kustomization
 commonLabels:
   app: csi-gcs-test
 resources:
-- sc.yaml
-- pvc.yaml
-- deployment.yaml
+  - sc.yaml
+  - pvc.yaml
+  - deployment.yaml
