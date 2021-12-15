@@ -6,24 +6,24 @@ spec:
   template:
     spec:
       containers:
-      - name: writer
-        image: busybox
-        command:
-        - sleep
-        - infinity
-        volumeMounts:
-        - name: csi-gcs-pvc
-          mountPath: /data
-      - name: reader
-        image: busybox
-        command:
-        - sleep
-        - infinity
-        volumeMounts:
-        - name: csi-gcs-pvc
-          mountPath: /data
-          readOnly: true
+        - name: writer
+          image: busybox
+          command:
+            - sleep
+            - infinity
+          volumeMounts:
+            - name: csi-gcs-pvc
+              mountPath: /data
+        - name: reader
+          image: busybox
+          command:
+            - sleep
+            - infinity
+          volumeMounts:
+            - name: csi-gcs-pvc
+              mountPath: /data
+              readOnly: true
       volumes:
-      - name: csi-gcs-pvc
-        persistentVolumeClaim:
-          claimName: csi-gcs-pvc
+        - name: csi-gcs-pvc
+          persistentVolumeClaim:
+            claimName: csi-gcs-pvc
