@@ -3,7 +3,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: csi-gcs-pvc
   annotations:
-    gcs.csi.ofek.dev/project-id: balmy-renderer-335116
     gcs.csi.ofek.dev/bucket: csigcstest
     gcs.csi.ofek.dev/gid: "63147"
     gcs.csi.ofek.dev/dir-mode: "0775"
