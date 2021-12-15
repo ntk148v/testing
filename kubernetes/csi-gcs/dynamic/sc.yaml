@@ -2,13 +2,12 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: csi-gcs
-  annotations:
-    volume.beta.kubernetes.io/storage-class: "standard"
 provisioner: gcs.csi.ofek.dev
 volumeBindingMode: Immediate
 allowVolumeExpansion: true
 reclaimPolicy: Delete
 parameters:
+  gcs.csi.ofek.dev/project-id: balmy-renderer-335116
   csi.storage.k8s.io/node-publish-secret-name: csi-gcs-secret-mounter
   csi.storage.k8s.io/node-publish-secret-namespace: default
   csi.storage.k8s.io/provisioner-secret-name: csi-gcs-secret-creator
