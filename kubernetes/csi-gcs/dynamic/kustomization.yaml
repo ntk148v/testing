@@ -4,5 +4,6 @@ commonLabels:
   app: csi-gcs-test
 resources:
   - sc.yaml
-  - pvc.yaml
+  - pvc1.yaml
+  - pvc2.yaml
   - deployment.yaml
