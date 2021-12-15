@@ -12,18 +12,14 @@ spec:
             - sleep
             - infinity
           volumeMounts:
-            - name: csi-gcs-pvc
-              mountPath: /data
-        - name: reader
-          image: busybox
-          command:
-            - sleep
-            - infinity
-          volumeMounts:
-            - name: csi-gcs-pvc
-              mountPath: /data
-              readOnly: true
-      volumes:
-        - name: csi-gcs-pvc
+            - name: csi-gcs-pvc-1
+              mountPath: /data1
+            - name: csi-gcs-pvc-2
+              mountPath: /data2
+     volumes:
+        - name: csi-gcs-pvc-1
           persistentVolumeClaim:
-            claimName: csi-gcs-pvc
+            claimName: csi-gcs-pvc-1
+        - name: csi-gcs-pvc-2
+          persistentVolumeClaim:
+            claimName: csi-gcs-pvc-2
