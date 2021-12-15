@@ -16,7 +16,7 @@ spec:
               mountPath: /data1
             - name: csi-gcs-pvc-2
               mountPath: /data2
-     volumes:
+      volumes:
         - name: csi-gcs-pvc-1
           persistentVolumeClaim:
             claimName: csi-gcs-pvc-1
