@@ -18,6 +18,7 @@ require (
 	github.com/gin-contrib/gzip v0.0.3
 	github.com/gin-contrib/pprof v1.3.0
 	github.com/gin-gonic/gin v1.7.2
+	github.com/go-echarts/go-echarts/v2 v2.2.4
 	github.com/go-ego/riot v0.0.0-20201013133145-f4c30acb3704
 	github.com/go-git/go-git/v5 v5.2.0
 	github.com/go-kit/kit v0.10.0
