@@ -18,7 +18,6 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"log"
 	"time"
 
 	env "github.com/Netflix/go-env"
@@ -32,14 +31,14 @@ type InfluxDBConfig struct {
 }
 
 func main() {
-	log.Println("Setup InfluxDB client...")
+	fmt.Println("## Setup InfluxDB client")
 	var influxCfg InfluxDBConfig
 	_, err := env.UnmarshalFromEnviron(&influxCfg)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 	if influxCfg.URL == "" {
-		log.Fatal(errors.New("Missing InfluxDB configurations"))
+		panic(errors.New("missing InfluxDB configurations"))
 	}
 	client := influxdb2.NewClient(influxCfg.URL, fmt.Sprintf("%s:%s", influxCfg.Username, influxCfg.Password))
 	ctx, cancel := context.WithTimeout(context.TODO(), 10*time.Second)
@@ -48,17 +47,68 @@ func main() {
 		client.Close()
 	}()
 
-	log.Println("Check health")
 	check, err := client.Health(ctx)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
-	log.Println(*check.Version)
+	fmt.Println("## Check health and version", *check.Version)
 
-	log.Println("Test query")
-	result, err := client.QueryAPI("").QueryRaw(ctx, `buckets()`, nil)
-	if err != nil {
-		log.Fatal(err)
+	// Get query client
+	queryAPI := client.QueryAPI("")
+	resources := make(map[string][]string)
+
+	// Get customer
+	getCustomerQuery := `
+	from(bucket: "telegraf/autogen")
+	|> range(start: -5m)
+	|> filter(fn: (r) => r._measurement == "system")
+	|> keyValues(keyColumns: ["customer"])
+	|> group()
+	|> keep(columns: ["customer"])
+	|> distinct(column: "customer")`
+	fmt.Printf("## Get customer (query %s)\n", getCustomerQuery)
+	customerResult, err := queryAPI.Query(ctx, getCustomerQuery)
+
+	if err == nil {
+		if customerResult.Err() != nil {
+			fmt.Printf("## Query error: %s\n", customerResult.Err().Error())
+		}
+		for customerResult.Next() {
+			if customerResult.TableChanged() {
+				fmt.Printf("table: %s\n", customerResult.TableMetadata().String())
+			}
+			customer := customerResult.Record().Value().(string)
+
+			// Get host by customer
+			getHostQuery := fmt.Sprintf(`
+			from(bucket: "telegraf/autogen")
+			|> range(start: -5m)
+			|> filter(fn: (r) => r._measurement == "system")
+			|> filter(fn: (r) => r["customer"] == "%s")
+			|> keyValues(keyColumns: ["host"])
+			|> group()
+			|> keep(columns: ["host"])
+			|> distinct(column: "host")
+			`, customer)
+			fmt.Printf("## Get host by customer %s (query %s)\n", customer, getHostQuery)
+
+			hostResult, err := queryAPI.Query(ctx, getHostQuery)
+			if err != nil {
+				fmt.Printf("Query error: %s\n", err.Error())
+			}
+			if hostResult.Err() != nil {
+				fmt.Printf("Query error: %s\n", hostResult.Err().Error())
+			}
+			for hostResult.Next() {
+				if hostResult.TableChanged() {
+					fmt.Printf("table: %s\n", hostResult.TableMetadata().String())
+				}
+				resources[customer] = append(resources[customer], hostResult.Record().Value().(string))
+			}
+
+		}
+	} else {
+		fmt.Printf("## Query error: %s\n", err.Error())
 	}
-	log.Println(result)
+	fmt.Println("## Final results:", resources)
 }
