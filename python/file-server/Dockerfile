@@ -1,4 +1,5 @@
 FROM python:3-alpine
-WORKDIR test
+WORKDIR /app
 COPY main.py .
-CMD ["python", "main.py"]
+WORKDIR /data
+CMD ["python", "/app/main.py"]
