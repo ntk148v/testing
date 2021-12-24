@@ -3,7 +3,10 @@ kind: PersistentVolumeClaim
 metadata:
   name: fileserver-pvc
   annotations:
-    gcs.csi.ofek.dev/bucket: fileserver-gcs
+    gcs.csi.ofek.dev/bucket:
+    gcs.csi.ofek.dev/gid: "0"
+    gcs.csi.ofek.dev/dir-mode: "0775"
+    gcs.csi.ofek.dev/file-mode: "0664"
 spec:
   storageClassName: csi-gcs
   accessModes:
