@@ -4,13 +4,10 @@ metadata:
   name: fileserver-pvc
   annotations:
     gcs.csi.ofek.dev/bucket: fileserver
-    gcs.csi.ofek.dev/gid: "63147"
-    gcs.csi.ofek.dev/dir-mode: "0775"
-    gcs.csi.ofek.dev/file-mode: "0664"
 spec:
   storageClassName: csi-gcs
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
+      storage: 1Gi
