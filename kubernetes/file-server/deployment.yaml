@@ -13,7 +13,7 @@ spec:
           image: kiennt26/python-fileserver
           volumeMounts:
             - name: fileserver-pvc
-              mountPath: /test
+              mountPath: /data
           ports:
             - containerPort: 8000
       volumes:
