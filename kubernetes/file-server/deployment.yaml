@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: csi-gcs-fileserver
+spec:
+  selector:
+    matchLabels:
+      app: csi-gcs-fileserver
+  template:
+    spec:
+      containers:
+        - name: fileserver
+          image: kiennt26/python-fileserver
+          volumeMounts:
+            - name: fileserver-pvc
+              mountPath: /test
+          ports:
+            - containerPort: 8000
+      volumes:
+        - name: fileserver-pvc
+          persistentVolumeClaim:
+            claimName: fileserver-pvc
