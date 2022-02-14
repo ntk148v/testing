@@ -7,6 +7,7 @@ require (
 	github.com/adam-hanna/jwt-auth/jwt v0.0.0-20210801230358-648d06fb0092
 	github.com/alecthomas/units v0.0.0-20210927113745-59d0afb8317a // indirect
 	github.com/andygrunwald/go-jira v1.13.0
+	github.com/atotto/clipboard v0.1.4 // indirect
 	github.com/avast/retry-go v3.0.0+incompatible
 	github.com/casbin/casbin v1.9.1
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
