@@ -59,6 +59,7 @@ require (
 	github.com/prometheus/common v0.32.1
 	github.com/seccomp/libseccomp-golang v0.9.1
 	github.com/sirupsen/logrus v1.8.1 // indirect
+	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/yuin/goldmark v1.4.0
 	github.com/yuin/goldmark-meta v1.0.0
 	go.etcd.io/bbolt v1.3.5 // indirect
