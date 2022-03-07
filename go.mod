@@ -26,6 +26,8 @@ require (
 	github.com/google/wire v0.5.0
 	github.com/gophercloud/gophercloud v0.23.0
 	github.com/gorilla/mux v1.8.0
+	github.com/haproxytech/config-parser v1.2.0
+	github.com/haproxytech/config-parser/v4 v4.0.0-rc2
 	github.com/hashicorp/go-retryablehttp v0.7.0
 	github.com/influxdata/influxdb-client-go/v2 v2.3.1-0.20210518120617-5d1fff431040
 	github.com/kkdai/maglev v0.2.0
@@ -101,15 +103,18 @@ require (
 	github.com/go-stack/stack v1.8.0 // indirect
 	github.com/go-vgo/gt/conf v0.0.0-20200606140533-a397c46789df // indirect
 	github.com/go-vgo/gt/info v0.0.0-20200606140533-a397c46789df // indirect
+	github.com/gofrs/flock v0.8.1 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/gojek/valkyrie v0.0.0-20180215180059-6aee720afcdf // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/btree v1.0.1 // indirect
 	github.com/google/go-querystring v1.0.0 // indirect
+	github.com/google/renameio v1.0.1 // indirect
 	github.com/google/uuid v1.2.0 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0 // indirect
+	github.com/haproxytech/go-logger v1.0.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.1 // indirect
 	github.com/hashicorp/go-hclog v0.12.2 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
