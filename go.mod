@@ -26,7 +26,6 @@ require (
 	github.com/google/wire v0.5.0
 	github.com/gophercloud/gophercloud v0.23.0
 	github.com/gorilla/mux v1.8.0
-	github.com/haproxytech/config-parser v1.2.0
 	github.com/haproxytech/config-parser/v4 v4.0.0-rc2
 	github.com/hashicorp/go-retryablehttp v0.7.0
 	github.com/influxdata/influxdb-client-go/v2 v2.3.1-0.20210518120617-5d1fff431040
@@ -39,6 +38,7 @@ require (
 	github.com/prometheus/common v0.32.1
 	github.com/seccomp/libseccomp-golang v0.9.1
 	github.com/spf13/pflag v1.0.5
+	github.com/tus/tusd v1.8.0
 	github.com/yuin/goldmark v1.4.0
 	github.com/yuin/goldmark-meta v1.0.0
 	go.etcd.io/etcd v3.3.10+incompatible
@@ -50,7 +50,7 @@ require (
 	golang.org/x/oauth2 v0.0.0-20211005180243-6b3c2da341f1
 	golang.org/x/sys v0.0.0-20211025201205-69cdffdb9359
 	golang.org/x/term v0.0.0-20210220032956-6a3ed077a48d
-	google.golang.org/grpc v1.40.0
+	google.golang.org/grpc v1.41.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	gopkg.in/yaml.v2 v2.4.0
 	stathat.com/c/consistent v1.0.0
@@ -70,6 +70,7 @@ require (
 	github.com/alecthomas/units v0.0.0-20210927113745-59d0afb8317a // indirect
 	github.com/asaskevich/govalidator v0.0.0-20200907205600-7a23bdc65eef // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
+	github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40 // indirect
 	github.com/cactus/go-statsd-client/statsd v0.0.0-20200423205355-cb0885a1018c // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
@@ -111,7 +112,6 @@ require (
 	github.com/google/btree v1.0.1 // indirect
 	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/google/renameio v1.0.1 // indirect
-	github.com/google/uuid v1.2.0 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0 // indirect
 	github.com/haproxytech/go-logger v1.0.0 // indirect
@@ -156,7 +156,6 @@ require (
 	go.uber.org/goleak v1.1.12 // indirect
 	go.uber.org/multierr v1.5.0 // indirect
 	go.uber.org/zap v1.16.0 // indirect
-	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/mod v0.5.0 // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
 	golang.org/x/text v0.3.7 // indirect
