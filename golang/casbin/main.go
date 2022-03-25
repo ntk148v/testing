@@ -18,14 +18,14 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"github.com/casbin/casbin"
 	"log"
 	"net/http"
 	"strconv"
 	"strings"
 	"time"
 
-	"github.com/dgrijalva/jwt-go"
+	"github.com/casbin/casbin"
+	"github.com/golang-jwt/jwt"
 	"github.com/gorilla/mux"
 )
 
@@ -100,13 +100,7 @@ func AuthorMiddleware(e *casbin.Enforcer) func(next http.Handler) http.Handler {
 			ctx := req.Context()
 			user := ctx.Value("user")
 			log.Println(user)
-			res, err := e.Enforce(user, req.URL.Path, req.Method)
-			if err != nil {
-				w.WriteHeader(http.StatusInternalServerError)
-				return
-			}
-
-			if !res {
+			if !e.Enforce(user, req.URL.Path, req.Method) {
 				w.WriteHeader(http.StatusForbidden)
 				return
 			}
@@ -123,10 +117,7 @@ func Ping(w http.ResponseWriter, req *http.Request) {
 func main() {
 	var port = flag.Int("port", 3000, "port to listen on")
 	flag.Parse()
-	policyEngine, err := casbin.NewEnforcer("./model.conf", "./policy.csv")
-	if err != nil {
-		log.Fatal("Unable to create casbin policy engine: ", err)
-	}
+	policyEngine := casbin.NewEnforcer("./model.conf", "./policy.csv")
 	router := mux.NewRouter()
 	pubRouter := router.PathPrefix("/public").Subrouter()
 	pubRouter.HandleFunc("/token", IssueToken).Methods("POST")
