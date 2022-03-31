@@ -8,13 +8,13 @@ pylint = "*"
 autopep8 = "*"
 urllib3 = ">=1.26.5"
 lxml = ">=4.6.5"
+seatable-api = "*"
 
 [packages]
 simplejson = "*"
 zeep = "*"
 requests = "*"
 aiohttp = "*"
-stevedore = "*"
 prometheus-client = "*"
 grafana-api = "*"
 telethon = "*"
@@ -25,6 +25,7 @@ confluent-kafka = "*"
 kafka-python = "*"
 msgpack = "*"
 lxml = ">=4.6.5"
+seatable-api = "*"
 
 [requires]
 #python_version = "3.6"
