@@ -9,4 +9,5 @@ except KeyError as err:
     exit('Required environment variables is missing: %s' % (err))
 
 base = Base(api_token, server_url)
-base.auth(with_socket_io=True)
+base.auth(with_socket_io=False)
+print(base.get_metadata())
