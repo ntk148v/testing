@@ -19,6 +19,7 @@ import (
 	"io/ioutil"
 	"os"
 	"os/exec"
+	"path"
 	"path/filepath"
 	"strconv"
 	"syscall"
@@ -48,16 +49,19 @@ func parent() {
 	cmd.Stderr = os.Stderr
 
 	// Cloneflags is only available in Linux
+	// Check here: https://en.wikipedia.org/wiki/Linux_namespaces#Namespace_kinds
 	// CLONE_NEWUTS namespace isolates hostname
 	// CLONE_NEWPID namespace isolates processes
 	// CLONE_NEWNS namespace isolates mounts
+	// CLONE_NEWIPC namespace isolates interprocess communication (IPC)
+	// CLONE_NEWNET namespace isolates network
 	cmd.SysProcAttr = &syscall.SysProcAttr{
 		Cloneflags:   syscall.CLONE_NEWUTS | syscall.CLONE_NEWPID | syscall.CLONE_NEWNS | syscall.CLONE_NEWIPC | syscall.CLONE_NEWNET,
 		Unshareflags: syscall.CLONE_NEWNS,
 	}
 
 	// Run child using namespaces. The command provided will be executed inside that.
-	must(cmd.Run())
+	checkErr(cmd.Run())
 }
 
 func child() {
@@ -68,26 +72,31 @@ func child() {
 	cmd.Stderr = os.Stderr
 
 	// Create cgroup
-	// cg()
+	cg()
+
+	// Get homedir
+	dir, err := os.UserHomeDir()
+	checkErr(err)
+	rootFsDir := path.Join(dir, "rootfs")
 
 	// Change root filesystem
 	// Have to create a rootfs by following this, don't know why
 	// others not face the same problem.
 	// https://medium.com/@ssttehrani/containers-from-scratch-with-golang-5276576f9909
-	must(syscall.Sethostname([]byte("container")))
-	must(syscall.Mount("/", "/home/kiennt/rootfs", "", syscall.MS_BIND, ""))
+	checkErr(syscall.Sethostname([]byte("container")))
+	checkErr(syscall.Mount("/", rootFsDir, "", syscall.MS_BIND, ""))
 	// must(os.MkdirAll("/home/kiennt/rootfs/oldrootfs", 0700))
 	// must(syscall.PivotRoot("/", "/home/kiennt/rootfs/oldrootfs"))
 	// must(os.Chdir("/"))
 
-	must(syscall.Chroot("/home/kiennt/rootfs"))
-	must(os.Chdir("/"))
-	must(syscall.Mount("proc", "proc", "proc", 0, ""))
+	checkErr(syscall.Chroot(rootFsDir))
+	checkErr(os.Chdir("/"))
+	checkErr(syscall.Mount("proc", "proc", "proc", 0, ""))
 
-	must(cmd.Run())
+	checkErr(cmd.Run())
 
 	// Cleanup mount
-	must(syscall.Unmount("proc", 0))
+	checkErr(syscall.Unmount("proc", 0))
 }
 
 // cg - demonstrate cgroup
@@ -98,16 +107,16 @@ func cg() {
 	kontainer := filepath.Join(mem, "kontainer")
 	_ = os.Mkdir(kontainer, 0755)
 	// Limit memory to 1mb
-	must(ioutil.WriteFile(filepath.Join(kontainer, "memory.limit_in_bytes"), []byte("999424"), 0700))
+	checkErr(ioutil.WriteFile(filepath.Join(kontainer, "memory.limit_in_bytes"), []byte("999424"), 0700))
 	// Cleanup cgroup when it is not being used
-	must(ioutil.WriteFile(filepath.Join(kontainer, "notify_on_release"), []byte("1"), 0700))
+	checkErr(ioutil.WriteFile(filepath.Join(kontainer, "notify_on_release"), []byte("1"), 0700))
 
 	pid := strconv.Itoa(os.Getpid())
 	// Apply this and any child process in this cgroup
-	must(ioutil.WriteFile(filepath.Join(kontainer, "cgroup.procs"), []byte(pid), 0700))
+	checkErr(ioutil.WriteFile(filepath.Join(kontainer, "cgroup.procs"), []byte(pid), 0700))
 }
 
-func must(err error) {
+func checkErr(err error) {
 	if err != nil {
 		panic(err)
 	}
