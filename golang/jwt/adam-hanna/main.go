@@ -15,8 +15,6 @@
 package main
 
 import (
-	"./randomStrings"
-	"./templates"
 	"github.com/adam-hanna/jwt-auth/jwt"
 
 	"encoding/json"
@@ -24,6 +22,9 @@ import (
 	"net/http"
 	"strings"
 	"time"
+
+	randomstrings "github.com/ntk148v/testing/golang/jwt/adam-hanna/randomStrings"
+	"github.com/ntk148v/testing/golang/jwt/adam-hanna/templates"
 )
 
 type randomStringStruct struct {
