@@ -75,19 +75,20 @@ func child() {
 	cg()
 
 	// Get homedir
-	dir, err := os.UserHomeDir()
-	checkErr(err)
+	dir := os.TempDir()
 	rootFsDir := path.Join(dir, "rootfs")
 
 	// Change root filesystem
 	// Have to create a rootfs by following this, don't know why
 	// others not face the same problem.
 	// https://medium.com/@ssttehrani/containers-from-scratch-with-golang-5276576f9909
-	checkErr(syscall.Sethostname([]byte("container")))
+	checkErr(os.MkdirAll(rootFsDir, 0700))
+	checkErr(syscall.Sethostname([]byte("kontainer")))
 	checkErr(syscall.Mount("/", rootFsDir, "", syscall.MS_BIND, ""))
-	// must(os.MkdirAll("/home/kiennt/rootfs/oldrootfs", 0700))
-	// must(syscall.PivotRoot("/", "/home/kiennt/rootfs/oldrootfs"))
-	// must(os.Chdir("/"))
+	// oldRootFsDir := path.Join(rootFsDir, "oldrootfs")
+	// checkErr(os.MkdirAll(oldRootFsDir, 0700))
+	// checkErr(syscall.PivotRoot("/", oldRootFsDir))
+	// checkErr(os.Chdir("/"))
 
 	checkErr(syscall.Chroot(rootFsDir))
 	checkErr(os.Chdir("/"))
