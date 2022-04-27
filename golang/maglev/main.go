@@ -17,14 +17,11 @@ package main
 import (
 	"fmt"
 	"log"
-
-	"github.com/kkdai/maglev"
 )
 
 func main() {
 	sizeN := 5
-	var lookupSizeM uint64
-	lookupSizeM = 13 //(must be prime number)
+	lookupSizeM := uint64(13) //(must be prime number)
 
 	var names []string
 	for i := 0; i < sizeN; i++ {
@@ -32,7 +29,7 @@ func main() {
 	}
 	//backend-0 ~ backend-4
 
-	mm, err := maglev.NewMaglev(names, lookupSizeM)
+	mm, err := NewMaglev(names, lookupSizeM)
 	if err != nil {
 		log.Fatal("Init maglev", err)
 	}
