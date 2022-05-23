@@ -9,6 +9,8 @@ require (
 	github.com/atotto/clipboard v0.1.4
 	github.com/avast/retry-go v3.0.0+incompatible
 	github.com/casbin/casbin v1.9.1
+	github.com/dchest/siphash v1.2.2
+	github.com/fatih/semgroup v1.2.0
 	github.com/gin-contrib/gzip v0.0.3
 	github.com/gin-contrib/pprof v1.3.0
 	github.com/gin-gonic/gin v1.7.2
@@ -30,7 +32,6 @@ require (
 	github.com/hashicorp/go-retryablehttp v0.7.0
 	github.com/influxdata/influxdb-client-go/v2 v2.3.1-0.20210518120617-5d1fff431040
 	github.com/kevinburke/ssh_config v1.2.0
-	github.com/kkdai/maglev v0.2.0
 	github.com/neo4j/neo4j-go-driver/v4 v4.4.0
 	github.com/ntk148v/hashring v0.0.0-20191101020850-d84c46ab57aa
 	github.com/patrickmn/go-cache v2.1.0+incompatible
@@ -79,7 +80,6 @@ require (
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/go-systemd v0.0.0-20190321100706-95778dfbb74e // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/dchest/siphash v1.2.2 // indirect
 	github.com/deepmap/oapi-codegen v1.6.0 // indirect
 	github.com/dgraph-io/badger v1.6.1 // indirect
 	github.com/dgraph-io/ristretto v0.0.2 // indirect
