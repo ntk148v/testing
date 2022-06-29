@@ -45,4 +45,5 @@ func main() {
 	s.Write([]byte("reset!"))
 	// This prints "reset!", and not "dirtyappendreset!"
 	fmt.Println(s)
+	// Finish
 }
