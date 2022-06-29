@@ -1,54 +1,48 @@
-// Copyright 2022 Kien Nguyen-Tuan <kiennt2609@gmail.com>
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 package main
 
 import (
 	"bytes"
-	"io"
-	"os"
+	"fmt"
 	"sync"
-	"time"
 )
 
-var bufPool = sync.Pool{
+var pool = sync.Pool{
+	// New creates an object when the pool has nothing available to return.
+	// New must return an interface{} to make it flexible. You have to cast
+	// your type after getting it.
 	New: func() interface{} {
-		// The Pool's New function should generally only return pointer
-		// types, since a pointer can be put into the return interface
-		// value without an allocation:
-		return new(bytes.Buffer)
+		// Pools often contain things like *bytes.Buffer, which are
+		// temporary and re-usable.
+		return &bytes.Buffer{}
 	},
 }
 
-// timeNow is a fake version of time.Now for tests.
-func timeNow() time.Time {
-	return time.Unix(1136214245, 0)
-}
-
-func Log(w io.Writer, key, val string) {
-	b := bufPool.Get().(*bytes.Buffer)
-	b.Reset()
-	// Replace this with time.Now() in a real logger.
-	b.WriteString(timeNow().UTC().Format(time.RFC3339))
-	b.WriteByte(' ')
-	b.WriteString(key)
-	b.WriteByte('=')
-	b.WriteString(val)
-	w.Write(b.Bytes())
-	bufPool.Put(b)
-}
-
 func main() {
-	Log(os.Stdout, "path", "/search?q=flowers")
+	// When getting from a Pool, you need to cast
+	s := pool.Get().(*bytes.Buffer)
+	// We write to the object
+	s.Write([]byte("dirty"))
+	// Then put it back
+	pool.Put(s)
+
+	// Pools can return dirty results
+
+	// Get 'another' buffer
+	s = pool.Get().(*bytes.Buffer)
+	// Write to it
+	s.Write([]byte("append"))
+	// At this point, if GC ran, this buffer *might* exist already, in
+	// which case it will contain the bytes of the string "dirtyappend"
+	fmt.Println(s)
+	// So use pools wisely, and clean up after yourself
+	s.Reset()
+	pool.Put(s)
+
+	// When you clean up, your buffer should be empty
+	s = pool.Get().(*bytes.Buffer)
+	// Defer your Puts to make sure you don't leak!
+	defer pool.Put(s)
+	s.Write([]byte("reset!"))
+	// This prints "reset!", and not "dirtyappendreset!"
+	fmt.Println(s)
 }
