@@ -50,7 +50,7 @@ require (
 	golang.org/x/crypto v0.0.0-20220131195533-30dcbda58838
 	golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2
 	golang.org/x/oauth2 v0.0.0-20211005180243-6b3c2da341f1
-	golang.org/x/sys v0.0.0-20211025201205-69cdffdb9359
+	golang.org/x/sys v0.0.0-20220702020025-31831981b65f
 	golang.org/x/term v0.0.0-20210220032956-6a3ed077a48d
 	google.golang.org/grpc v1.41.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
@@ -150,6 +150,7 @@ require (
 	github.com/prometheus/procfs v0.6.0 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/rs/zerolog v1.27.0 // indirect
+	github.com/rvflash/tcp v0.3.0 // indirect
 	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/shirou/gopsutil v2.20.5+incompatible // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
