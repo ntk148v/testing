@@ -102,21 +102,25 @@ func child() {
 
 // cg - demonstrate cgroup
 func cg() {
-	// cgourp location in Ubuntu
+	// cgroup location in Ubuntu
 	cgroups := "/sys/fs/cgroup"
 	mem := filepath.Join(cgroups, "memory")
-	kontainer := filepath.Join(mem, "kontainer")
-	_ = os.Mkdir(kontainer, 0755)
+	kontainerMem := filepath.Join(mem, "kontainer")
+	_ = os.Mkdir(kontainerMem, 0755)
 	// Limit memory to 1mb
-	checkErr(ioutil.WriteFile(filepath.Join(kontainer, "memory.limit_in_bytes"), []byte("999424"), 0700))
-	// Cleanup cgroup when it is not being used
-	checkErr(ioutil.WriteFile(filepath.Join(kontainer, "notify_on_release"), []byte("1"), 0700))
+	checkErr(ioutil.WriteFile(filepath.Join(kontainerMem, "memory.limit_in_bytes"), []byte("999424"), 0700))
 
-	pid := strconv.Itoa(os.Getpid())
+	pids := filepath.Join(cgroups, "pids")
+	kontainerPids := filepath.Join(pids, "kontainer")
+	_ = os.Mkdir(kontainerPids, 0755)
+	checkErr(ioutil.WriteFile(filepath.Join(kontainerPids, "pids.max"), []byte("20"), 0700))
+	// Cleanup cgroup when it is not being used (after the container exits)
+	checkErr(ioutil.WriteFile(filepath.Join(kontainerPids, "notify_on_release"), []byte("1"), 0700))
 	// Apply this and any child process in this cgroup
-	checkErr(ioutil.WriteFile(filepath.Join(kontainer, "cgroup.procs"), []byte(pid), 0700))
+	checkErr(ioutil.WriteFile(filepath.Join(kontainerPids, "cgroup.procs"), []byte(strconv.Itoa(os.Getpid())), 0700))
 }
 
+// checkErr - simply catch error and panic
 func checkErr(err error) {
 	if err != nil {
 		panic(err)
