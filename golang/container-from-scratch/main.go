@@ -56,8 +56,8 @@ func parent() {
 	// CLONE_NEWIPC namespace isolates interprocess communication (IPC)
 	// CLONE_NEWNET namespace isolates network
 	cmd.SysProcAttr = &syscall.SysProcAttr{
-		Cloneflags:   syscall.CLONE_NEWUTS | syscall.CLONE_NEWPID | syscall.CLONE_NEWNS | syscall.CLONE_NEWIPC | syscall.CLONE_NEWNET,
-		Unshareflags: syscall.CLONE_NEWNS,
+		Cloneflags:   syscall.CLONE_NEWUTS | syscall.CLONE_NEWPID | syscall.CLONE_NEWNS | syscall.CLONE_NEWIPC,
+		Unshareflags: syscall.CLONE_NEWNS | syscall.CLONE_NEWNET,
 	}
 
 	// Run child using namespaces. The command provided will be executed inside that.
