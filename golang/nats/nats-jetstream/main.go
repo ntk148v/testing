@@ -31,6 +31,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("unable to connect to nats: %v", err)
 	}
+	defer nc.Close()
 
 	// Create JetStream Context
 	js, err := nc.JetStream(nats.PublishAsyncMaxPending(256))
@@ -43,8 +44,8 @@ func main() {
 		log.Fatalf("stream already exists: %v", info)
 	}
 
-	// Run pub/sub for 1 minute
-	ctx, cancel := context.WithTimeout(context.Background(), time.Minute)
+	// Run pub/sub for 30 seconds
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*30)
 	defer cancel()
 
 	_, err = js.AddStream(&nats.StreamConfig{
@@ -83,7 +84,6 @@ func main() {
 			totalTime += microsec
 			totalMessages++
 		}
-
 	}
 }
 
@@ -100,8 +100,7 @@ func pub(ctx context.Context, subject string, js nats.JetStream) {
 			log.Fatalf("could not get bytes from literal TestMessage: %v", err)
 		}
 
-		_, err = js.Publish(subject, bytes, nats.Context(ctx))
-		if err != nil {
+		if _, err = js.Publish(subject, bytes, nats.Context(ctx)); err != nil {
 			if errors.Is(err, context.DeadlineExceeded) {
 				return
 			}
@@ -110,7 +109,7 @@ func pub(ctx context.Context, subject string, js nats.JetStream) {
 		}
 
 		log.Printf("[publisher] sent %d, publish time microsec: %d", i, time.Since(start).Microseconds())
-		time.Sleep(1 * time.Second)
+		time.Sleep(time.Second)
 		i++
 	}
 }
@@ -122,6 +121,8 @@ func sub(ctx context.Context, subject string, results chan int64) {
 	if err != nil {
 		log.Fatalf("[consumer: %s] unable to connect to nats: %v", id, err)
 	}
+	defer nc.Close()
+
 	js, err := nc.JetStream()
 	if err != nil {
 		log.Fatalf("[consumer: %s] error getting jetstream: %v", id, err)
@@ -162,7 +163,7 @@ func sub(ctx context.Context, subject string, results chan int64) {
 
 		err = msg.Ack(nats.Context(ctx))
 		if err != nil {
-			log.Printf("[consumer: %s] error acking message: %v", id, err)
+			log.Fatalf("[consumer: %s] error acking message: %v", id, err)
 		}
 	}
 }
