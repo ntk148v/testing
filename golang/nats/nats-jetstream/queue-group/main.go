@@ -24,7 +24,7 @@ func init() {
 }
 
 func main() {
-	stream := "test"
+	stream := "test-push"
 	subject := stream
 
 	// Connect to NATS
@@ -131,7 +131,10 @@ func sub(ctx context.Context, subject string, results chan int64) {
 		log.Fatalf("[consumer: %s] error getting jetstream: %v", id, err)
 	}
 
+	defer js.DeleteConsumer(subject, "worker")
+
 	for {
+		// Auto add a push consumer named worker to stream
 		if _, err := js.QueueSubscribe(subject, "worker", func(msg *nats.Msg) {
 			var tMsg *TestMessage
 

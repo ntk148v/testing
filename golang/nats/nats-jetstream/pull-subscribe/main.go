@@ -24,7 +24,7 @@ func init() {
 }
 
 func main() {
-	stream := "test"
+	stream := "test-pull"
 	subject := stream
 
 	// Connect to NATS
@@ -131,9 +131,12 @@ func sub(ctx context.Context, subject string, results chan int64) {
 		log.Fatalf("[consumer: %s] error getting jetstream: %v", id, err)
 	}
 
-	sub, err := js.PullSubscribe(subject, "group")
+	defer js.DeleteConsumer(subject, "worker")
+
+	// Auto add a pull consumer named worker to stream
+	sub, err := js.PullSubscribe(subject, "worker")
 	if err != nil {
-		log.Fatalf("[consumer: %s] error pulling subscribe", id)
+		log.Fatalf("[consumer: %s] error pulling subscribe: %v", id, err)
 	}
 
 	for {
