@@ -1,3 +1,4 @@
+// Follow: https://docs.nats.io/nats-concepts/core-nats/queue#stream-as-a-queue
 package main
 
 import (
@@ -23,7 +24,7 @@ func init() {
 }
 
 func main() {
-	stream := uuid.NewV4().String()
+	stream := "test"
 	subject := stream
 
 	// Connect to NATS
@@ -39,10 +40,11 @@ func main() {
 		log.Fatalf("error getting jetstream: %v", err)
 	}
 
-	info, err := js.StreamInfo(stream)
-	if err == nil {
-		log.Fatalf("stream already exists: %v", info)
-	}
+	// Check stream exists
+	// info, err := js.StreamInfo(stream)
+	// if err == nil {
+	// 	log.Fatalf("stream already exists: %v", info)
+	// }
 
 	// Run pub/sub for 30 seconds
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*30)
@@ -76,7 +78,7 @@ func main() {
 		select {
 		case <-ctx.Done():
 			cancel()
-			log.Printf("sent %d messages with average time of %f", totalMessages,
+			log.Printf("sent %d messages with average time of %f (ms)", totalMessages,
 				math.Round(float64(totalTime/totalMessages)))
 			js.DeleteStream(stream)
 			return
@@ -108,7 +110,8 @@ func pub(ctx context.Context, subject string, js nats.JetStream) {
 			log.Fatalf("error publishing: %v", err)
 		}
 
-		log.Printf("[publisher] sent %d, publish time microsec: %d", i, time.Since(start).Microseconds())
+		log.Printf("[publisher] sent %d to subject %s, publish time: %d (ms)",
+			i, subject, time.Since(start).Microseconds())
 		time.Sleep(time.Second)
 		i++
 	}
@@ -130,7 +133,7 @@ func sub(ctx context.Context, subject string, results chan int64) {
 
 	sub, err := js.PullSubscribe(subject, "group")
 	if err != nil {
-		log.Fatalf("[consumer: %s] error pulling subscribe")
+		log.Fatalf("[consumer: %s] error pulling subscribe", id)
 	}
 
 	for {
@@ -141,7 +144,7 @@ func sub(ctx context.Context, subject string, results chan int64) {
 			}
 
 			log.Printf("[consumer: %s] error consuming, sleeping for a second: %v", id, err)
-			time.Sleep(1 * time.Second)
+			time.Sleep(time.Second)
 			continue
 		}
 
@@ -152,14 +155,15 @@ func sub(ctx context.Context, subject string, results chan int64) {
 		err = json.Unmarshal(msg.Data, &tMsg)
 		if err != nil {
 			log.Printf("[consumer: %s] error unmarshaling, sleeping for a second: %v", id, err)
-			time.Sleep(1 * time.Second)
+			time.Sleep(time.Second)
 			continue
 		}
 
 		// Get publish time for logging
 		tm := time.Since(tMsg.PublishTime).Microseconds()
 		results <- tm
-		log.Printf("[consumer: %s] received msg (%d) after waiting microsec: %d", id, tMsg.ID, tm)
+		log.Printf("[consumer: %s] received msg (%d) from subject %s after waiting: %d (ms)",
+			id, tMsg.ID, subject, tm)
 
 		err = msg.Ack(nats.Context(ctx))
 		if err != nil {

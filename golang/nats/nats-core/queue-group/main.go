@@ -20,9 +20,9 @@ func init() {
 }
 
 func main() {
-	subject := uuid.NewV4().String()
+	subject := "test"
 	// Run pub/sub for 30 seconds
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*30)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*10)
 	defer cancel()
 
 	// Create 2 consumers
@@ -36,6 +36,7 @@ func main() {
 	select {
 	case <-ctx.Done():
 		cancel()
+		log.Printf("exit!")
 		return
 	}
 }
@@ -64,7 +65,7 @@ func pub(ctx context.Context, subject string) {
 				log.Fatalf("[publisher] error publishing: %v", err)
 			}
 
-			log.Printf("[publisher] sent %d", i)
+			log.Printf("[publisher] sent %d to subject %s", i, subject)
 			time.Sleep(time.Second)
 			i++
 		}
@@ -86,7 +87,7 @@ func sub(ctx context.Context, subject string) {
 			return
 		default:
 			if _, err := nc.QueueSubscribe(subject, "worker", func(msg *nats.Msg) {
-				log.Printf("[consumer: %s] got message: %s", id, msg.Data)
+				log.Printf("[consumer: %s] got message from subject %s: %s", id, subject, msg.Data)
 			}); err != nil {
 				log.Fatalf("[consumer: %s] error consuming message: %v", id, err)
 			}
