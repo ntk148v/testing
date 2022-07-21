@@ -131,28 +131,14 @@ func sub(ctx context.Context, subject string, results chan int64) {
 		log.Fatalf("[consumer: %s] error getting jetstream: %v", id, err)
 	}
 
+	sub, err := js.PullSubscribe(subject, "group")
+	if err != nil {
+		log.Fatalf("[consumer: %s] error pulling subscribe", id)
+	}
+
 	for {
-		if _, err := js.QueueSubscribe(subject, "worker", func(msg *nats.Msg) {
-			var tMsg *TestMessage
-
-			err = json.Unmarshal(msg.Data, &tMsg)
-			if err != nil {
-				log.Printf("[consumer: %s] error unmarshaling, sleeping for a second: %v", id, err)
-				time.Sleep(time.Second)
-				return
-			}
-
-			// Get publish time for logging
-			tm := time.Since(tMsg.PublishTime).Microseconds()
-			results <- tm
-			log.Printf("[consumer: %s] received msg (%d) from subject %s after waiting: %d (ms)",
-				id, tMsg.ID, subject, tm)
-
-			err = msg.Ack(nats.Context(ctx))
-			if err != nil {
-				log.Fatalf("[consumer: %s] error acking message: %v", id, err)
-			}
-		}); err != nil {
+		msgs, err := sub.Fetch(1, nats.Context(ctx))
+		if err != nil {
 			if errors.Is(err, context.DeadlineExceeded) {
 				break
 			}
@@ -160,6 +146,28 @@ func sub(ctx context.Context, subject string, results chan int64) {
 			log.Printf("[consumer: %s] error consuming, sleeping for a second: %v", id, err)
 			time.Sleep(time.Second)
 			continue
+		}
+
+		msg := msgs[0]
+
+		var tMsg *TestMessage
+
+		err = json.Unmarshal(msg.Data, &tMsg)
+		if err != nil {
+			log.Printf("[consumer: %s] error unmarshaling, sleeping for a second: %v", id, err)
+			time.Sleep(time.Second)
+			continue
+		}
+
+		// Get publish time for logging
+		tm := time.Since(tMsg.PublishTime).Microseconds()
+		results <- tm
+		log.Printf("[consumer: %s] received msg (%d) from subject %s after waiting: %d (ms)",
+			id, tMsg.ID, subject, tm)
+
+		err = msg.Ack(nats.Context(ctx))
+		if err != nil {
+			log.Fatalf("[consumer: %s] error acking message: %v", id, err)
 		}
 	}
 }
