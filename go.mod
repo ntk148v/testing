@@ -10,6 +10,7 @@ require (
 	github.com/avast/retry-go v3.0.0+incompatible
 	github.com/casbin/casbin v1.9.1
 	github.com/dchest/siphash v1.2.2
+	github.com/elazarl/goproxy v0.0.0-20220529153421-8ea89ba92021
 	github.com/fatih/semgroup v1.2.0
 	github.com/gin-contrib/gzip v0.0.3
 	github.com/gin-contrib/pprof v1.3.0
