@@ -1,0 +1,3 @@
+name: openstack-go
+runtime: go
+description: A minimal OpenStack Go Pulumi program
