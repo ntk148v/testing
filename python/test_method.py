@@ -18,7 +18,7 @@ class Kls(object):
 
 ins = Kls('test')
 ins.printd()
-#Kls.printd()
+Kls.printd()
 ins.smethod('test')
 Kls.smethod('test')
 ins.cmethod('test')
