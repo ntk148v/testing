@@ -30,3 +30,5 @@ httpx = "*"
 
 [requires]
 #python_version = "3.6"
+
+print("hello world")
