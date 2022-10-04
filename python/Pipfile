@@ -27,7 +27,7 @@ msgpack = "*"
 lxml = ">=4.6.5"
 seatable-api = "*"
 httpx = "*"
+dulwich = "*"
 
 [requires]
 #python_version = "3.6"
-
