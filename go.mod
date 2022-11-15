@@ -9,6 +9,7 @@ require (
 	github.com/atotto/clipboard v0.1.4
 	github.com/avast/retry-go v3.0.0+incompatible
 	github.com/casbin/casbin v1.9.1
+	github.com/coreos/go-iptables v0.6.0
 	github.com/dchest/siphash v1.2.2
 	github.com/docker/docker v20.10.17+incompatible
 	github.com/elazarl/goproxy v0.0.0-20220529153421-8ea89ba92021
