@@ -35,6 +35,7 @@ require (
 	github.com/hashicorp/go-retryablehttp v0.7.0
 	github.com/influxdata/influxdb-client-go/v2 v2.3.1-0.20210518120617-5d1fff431040
 	github.com/kevinburke/ssh_config v1.2.0
+	github.com/kilo-io/iptables_parser v0.0.0-20220520085151-275b7c93e8a7
 	github.com/nats-io/nats.go v1.17.0
 	github.com/neo4j/neo4j-go-driver/v4 v4.4.0
 	github.com/ntk148v/hashring v0.0.0-20191101020850-d84c46ab57aa
