@@ -50,7 +50,7 @@ type Number interface {
 
 // SumNumbers sums the values of map m. It supports both integers
 // and floats as map values
-func  SumNumbers[K comparable, V Number](m map[K]V) V {
+func SumNumbers[K comparable, V Number](m map[K]V) V {
 	var s V
 	for _, v := range m {
 		s += v

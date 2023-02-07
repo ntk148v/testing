@@ -26,7 +26,6 @@ import (
 func main() {
 	//url := "http://example.com"
 	url := "http://testretrythoima.com"
-	var body []byte
 
 	err := retry.Do(
 		func() error {
@@ -39,7 +38,12 @@ func main() {
 						panic(err)
 					}
 				}()
-				body, err = ioutil.ReadAll(resp.Body)
+				body, err := ioutil.ReadAll(resp.Body)
+				if err != nil {
+					return err
+				}
+
+				fmt.Printf("%s\n", body)
 			}
 
 			return err
