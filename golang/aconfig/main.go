@@ -48,4 +48,12 @@ func main() {
 		return true
 	})
 
+	if err := loader.Load(); err != nil {
+		log.Panic(err)
+	}
+
+	fmt.Println("* Default")
+	fmt.Printf("HTTPPort:  %v\n", cfg.HTTPPort)
+	fmt.Printf("Auth.User: %v\n", cfg.Auth.User)
+	fmt.Printf("Auth.Pass: %v\n", cfg.Auth.Pass)
 }
