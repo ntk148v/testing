@@ -53,16 +53,16 @@ require (
 	github.com/seccomp/libseccomp-golang v0.9.1
 	github.com/spf13/pflag v1.0.5
 	github.com/tus/tusd v1.8.0
-	github.com/yuin/goldmark v1.4.4
+	github.com/yuin/goldmark v1.4.13
 	github.com/yuin/goldmark-meta v1.0.0
 	go.etcd.io/etcd v3.3.10+incompatible
 	go.i3wm.org/i3/v4 v4.18.0
 	go.mongodb.org/mongo-driver v1.7.3
 	go.uber.org/fx v1.14.2
 	golang.org/x/crypto v0.0.0-20221012134737-56aed061732a
-	golang.org/x/net v0.0.0-20220526153639-5463443f8c37
+	golang.org/x/net v0.0.0-20220722155237-a158d28d115b
 	golang.org/x/oauth2 v0.0.0-20211005180243-6b3c2da341f1
-	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
+	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
 	golang.org/x/sys v0.0.0-20221010170243-090e33056c14
 	golang.org/x/term v0.0.0-20220411215600-e5f449aeb171
 	google.golang.org/grpc v1.45.0
@@ -167,8 +167,7 @@ require (
 	go.uber.org/dig v1.12.0 // indirect
 	go.uber.org/multierr v1.8.0 // indirect
 	go.uber.org/zap v1.23.0 // indirect
-	golang.org/x/text v0.3.7 // indirect
-	golang.org/x/tools v0.1.10 // indirect
+	golang.org/x/text v0.3.8 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20220414192740-2d67ff6cf2b4 // indirect
 	google.golang.org/protobuf v1.28.0 // indirect
