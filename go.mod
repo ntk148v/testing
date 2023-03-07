@@ -39,6 +39,7 @@ require (
 	github.com/influxdata/influxdb1-client v0.0.0-20191209144304-8bf82d3c094d
 	github.com/kevinburke/ssh_config v1.2.0
 	github.com/kilo-io/iptables_parser v0.0.0-20220520085151-275b7c93e8a7
+	github.com/knadh/go-pop3 v0.3.0
 	github.com/knadh/koanf v1.5.0
 	github.com/mholt/archiver/v4 v4.0.0-alpha.7
 	github.com/nats-io/nats.go v1.17.0
@@ -101,6 +102,8 @@ require (
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/dsnet/compress v0.0.1 // indirect
 	github.com/dustin/go-humanize v1.0.0 // indirect
+	github.com/emersion/go-message v0.15.0 // indirect
+	github.com/emersion/go-textwrapper v0.0.0-20200911093747-65d896831594 // indirect
 	github.com/emirpasic/gods v1.12.0 // indirect
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
