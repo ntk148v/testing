@@ -29,6 +29,7 @@ seatable-api = "*"
 httpx = "*"
 dulwich = "*"
 pandas = "*"
+memray = "*"
 
 [requires]
 #python_version = "3.6"
