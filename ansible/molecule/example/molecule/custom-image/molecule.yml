@@ -1,0 +1,13 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: instance-${MOLECULE_DISTRO:-quay.io/centos/centos:stream8}
+    image: ${MOLECULE_DISTRO:-'quay.io/centos/centos:stream8'}
+    pre_build_image: false
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
