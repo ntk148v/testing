@@ -1,0 +1,22 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - &default-instance
+    name: instance-0
+    image: quay.io/centos/centos:stream8
+    pre_build_image: true
+    groups:
+      - test
+  - <<: *default-instance
+    name: instance-1
+  - <<: *default-instance
+    name: instance-2
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
+scenario:
+  name: cluster
