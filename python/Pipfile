@@ -32,6 +32,7 @@ pandas = "*"
 memray = "*"
 fire = "*"
 molecule = {extras = ["docker"], version = "*"}
+ansible-runner = "*"
 
 [requires]
 #python_version = "3.6"
