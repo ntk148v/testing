@@ -33,6 +33,7 @@ memray = "*"
 fire = "*"
 molecule = {extras = ["docker"], version = "*"}
 ansible-runner = "*"
+beautifulsoup4 = "*"
 
 [requires]
 #python_version = "3.6"
