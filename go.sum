@@ -94,6 +94,8 @@ github.com/adam-hanna/jwt-auth/jwt v0.0.0-20210801230358-648d06fb0092 h1:y05YIK1
 github.com/adam-hanna/jwt-auth/jwt v0.0.0-20210801230358-648d06fb0092/go.mod h1:rRvtvEPnk302LsSfT7OXSrG+f5p91DmxUc2/BWP8Kow=
 github.com/adam-hanna/randomstrings v0.0.0-20160715001758-88fd7c52a2c7 h1:62HlqmZyGNiYN348/+z/q1Z6m/mHvKWlRzHBN6uq1CU=
 github.com/adam-hanna/randomstrings v0.0.0-20160715001758-88fd7c52a2c7/go.mod h1:Sv99nuALJEEt6XHy56tbVlXUJ2GvCgbNo99JuGpWafY=
+github.com/adrg/xdg v0.4.0 h1:RzRqFcjH4nE5C6oTAxhBtoE2IRyjBSa62SCbyPidvls=
+github.com/adrg/xdg v0.4.0/go.mod h1:N6ag73EX4wyxeaoeHctc1mas01KZgsj5tYiAIwqJE/E=
 github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5 h1:rFw4nCn9iMW+Vajsk51NtYIcwSTkXr+JGrMd36kTDJw=
 github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5/go.mod h1:SkGFH1ia65gfNATL8TAiHDNxPzPdmEL5uirI2Uyuz6c=
 github.com/ajg/form v1.5.1/go.mod h1:uL1WgH+h2mgNtvBq0339dVnzXdBETtL2LeUXaIv25UY=

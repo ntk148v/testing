@@ -5,6 +5,7 @@ go 1.17
 require (
 	github.com/Netflix/go-env v0.0.0-20210215222557-e437a7e7f9fb
 	github.com/adam-hanna/jwt-auth/jwt v0.0.0-20210801230358-648d06fb0092
+	github.com/adrg/xdg v0.4.0
 	github.com/andygrunwald/go-jira v1.13.0
 	github.com/atotto/clipboard v0.1.4
 	github.com/avast/retry-go v3.0.0+incompatible
