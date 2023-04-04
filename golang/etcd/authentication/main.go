@@ -20,8 +20,8 @@ import (
 	"log"
 	"strconv"
 
-	"go.etcd.io/etcd/clientv3"
-	"go.etcd.io/etcd/clientv3/namespace"
+	"clientv3 "go.etcd.io/etcd/client/v3""
+	"clientv3 "go.etcd.io/etcd/client/v3"/namespace"
 	"go.etcd.io/etcd/etcdserver/api/v3rpc/rpctypes"
 )
 
