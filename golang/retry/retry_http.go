@@ -12,7 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package httpretry
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"net/http"
+	"time"
+)
 
 func init() {
 	rand.Seed(time.Now().UnixNano())
