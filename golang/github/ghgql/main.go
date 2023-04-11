@@ -117,6 +117,7 @@ func getStarredRepositoriesByUsername(ctx context.Context, client *githubv4.Clie
 			Language:       string(repo.PrimaryLanguage.Name),
 			URL:            string(repo.URL),
 			StargazerCount: int(repo.StargazerCount),
+			Topics:         make([]string, 0),
 		}
 
 		for _, topic := range repo.RepositoryTopics.Nodes {
