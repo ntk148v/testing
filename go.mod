@@ -55,6 +55,7 @@ require (
 	github.com/rvflash/tcp v0.3.0
 	github.com/satori/go.uuid v1.2.0
 	github.com/seccomp/libseccomp-golang v0.9.2-0.20220502022130-f33da4d89646
+	github.com/shurcooL/githubv4 v0.0.0-20230305132112-efb623903184
 	github.com/spf13/pflag v1.0.5
 	github.com/tus/tusd v1.8.0
 	github.com/yuin/goldmark v1.4.13
@@ -188,6 +189,7 @@ require (
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/shirou/gopsutil v2.20.5+incompatible // indirect
+	github.com/shurcooL/graphql v0.0.0-20220606043923-3cf50f8a0a29 // indirect
 	github.com/stretchr/objx v0.5.0 // indirect
 	github.com/stretchr/testify v1.8.2 // indirect
 	github.com/syndtr/goleveldb v1.0.0 // indirect
