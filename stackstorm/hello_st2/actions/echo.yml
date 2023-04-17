@@ -1,0 +1,12 @@
+---
+name: 'echo'
+runner_type: 'python-script'
+description: 'Print message to standard output.'
+enabled: true
+entry_point: 'echo.py'
+parameters:
+  message:
+    type: 'string'
+    description: 'Message to print.'
+    required: true
+    position: 0
