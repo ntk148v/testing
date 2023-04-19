@@ -1,12 +1,16 @@
+// Stole from here: https://gist.github.com/IceflowRE/e4c2b9163a697105a3e72f35f0cd12a5
 package main
 
 import (
 	"fmt"
-	"github.com/schollz/progressbar/v3"
 	"io"
+	"net/http"
 	"os"
+	"path/filepath"
+	"strings"
 	"sync"
-	"time"
+
+	"github.com/schollz/progressbar/v3"
 )
 
 type LineWriter struct {
@@ -17,7 +21,7 @@ type LineWriter struct {
 func (lw *LineWriter) Write(p []byte) (n int, err error) {
 	lw.guard.Lock()
 	defer lw.guard.Unlock()
-	lw.move(lw.id, lw.output)
+	lw.Move(lw.id, lw.output)
 	return lw.output.Write(p)
 }
 
@@ -45,8 +49,17 @@ func NewMultiProgressBar(pBars []*progressbar.ProgressBar, output io.Writer) *Mu
 	return mpb
 }
 
+func (mpb *MultiProgressBar) Add(b *progressbar.ProgressBar) {
+	mpb.Bars = append(mpb.Bars, b)
+	id := len(mpb.Bars) - 1
+	progressbar.OptionSetWriter(&LineWriter{
+		MultiProgressBar: mpb,
+		id:               id,
+	})(b)
+}
+
 // Move cursor to the beginning of the current progressbar.
-func (mpb *MultiProgressBar) move(id int, writer io.Writer) (int, error) {
+func (mpb *MultiProgressBar) Move(id int, writer io.Writer) (int, error) {
 	bias := mpb.curLine - id
 	mpb.curLine = id
 	if bias > 0 {
@@ -61,28 +74,51 @@ func (mpb *MultiProgressBar) move(id int, writer io.Writer) (int, error) {
 
 // End Move cursor to the end of the Progressbars.
 func (mpb *MultiProgressBar) End() {
-	mpb.move(len(mpb.Bars), mpb.output)
+	mpb.Move(len(mpb.Bars), mpb.output)
 }
 
 func main() {
-	mpb := NewMultiProgressBar(
-		[]*progressbar.ProgressBar{
-			progressbar.New(100),
-			progressbar.New(100),
-			progressbar.New(100),
-		},
-		os.Stdout,
+	var (
+		urls = []string{
+			"https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Ubuntu.zip",
+			"https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/VictorMono.zip",
+			"https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/iA-Writer.zip",
+		}
+		wg sync.WaitGroup
 	)
-	mpb.Bars[0].Describe("Bar Zero")
-	mpb.Bars[1].Describe("Bar One")
-	mpb.Bars[2].Describe("Bar Two")
 
-	length := len(mpb.Bars) - 1
-	for val := 0; val < 300; val++ {
-		time.Sleep(25 * time.Millisecond)
-		barId := val % 3
-		mpb.Bars[length-barId].Add(1)
+	mpb := NewMultiProgressBar(make([]*progressbar.ProgressBar, 0), os.Stderr)
+
+	for _, url := range urls {
+		wg.Add(1)
+		go func(url string) {
+			defer wg.Done()
+			// download
+			resp, _ := http.Get(url)
+			defer check(resp.Body.Close)
+
+			zipName := filepath.Join(os.TempDir(),
+				strings.TrimPrefix(url, "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/")) // I know this is hardcode
+			f, _ := os.OpenFile(zipName, os.O_CREATE|os.O_WRONLY, 0644)
+			defer f.Close()
+
+			bar := progressbar.DefaultBytes(
+				resp.ContentLength,
+				fmt.Sprintf("downloading %-25s", zipName),
+			)
+			mpb.Add(bar)
+			io.Copy(io.MultiWriter(f, bar), resp.Body)
+		}(url)
 	}
-	mpb.End()
-	fmt.Printf("TADA")
+
+	wg.Wait()
+
+	fmt.Println("All done")
+}
+
+// check checks the returned error of a function.
+func check(f func() error) {
+	if err := f(); err != nil {
+		fmt.Fprintf(os.Stderr, "received error: %v\n", err)
+	}
 }
