@@ -47,6 +47,7 @@ require (
 	github.com/knadh/go-pop3 v0.3.0
 	github.com/knadh/koanf v1.5.0
 	github.com/mholt/archiver/v4 v4.0.0-alpha.7
+	github.com/michaelbironneau/garbler v0.0.0-20230116103306-c77e50337f93
 	github.com/nats-io/nats.go v1.17.0
 	github.com/neo4j/neo4j-go-driver/v4 v4.4.0
 	github.com/ntk148v/hashring v0.0.0-20191101020850-d84c46ab57aa

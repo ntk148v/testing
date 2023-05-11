@@ -1102,6 +1102,8 @@ github.com/matttproud/golang_protobuf_extensions v1.0.4 h1:mmDVorXM7PCGKw94cs5zk
 github.com/matttproud/golang_protobuf_extensions v1.0.4/go.mod h1:BSXmuO+STAnVfrANrmjBb36TMTDstsz7MSK+HVaYKv4=
 github.com/mholt/archiver/v4 v4.0.0-alpha.7 h1:xzByj8G8tj0Oq7ZYYU4+ixL/CVb5ruWCm0EZQ1PjOkE=
 github.com/mholt/archiver/v4 v4.0.0-alpha.7/go.mod h1:Fs8qUkO74HHaidabihzYephJH8qmGD/nCP6tE5xC9BM=
+github.com/michaelbironneau/garbler v0.0.0-20230116103306-c77e50337f93 h1:WxceZtvEhPH5NUFuOwZDLFv+N838yjkBcKPdvF9uCA4=
+github.com/michaelbironneau/garbler v0.0.0-20230116103306-c77e50337f93/go.mod h1:DrGFQgS9i/aISVnZbeJJ3amQdTplnBIQBthT4q30Euo=
 github.com/miekg/dns v1.0.14/go.mod h1:W1PPwlIAgtquWBMBEV9nkV9Cazfe8ScdGz/Lj7v3Nrg=
 github.com/miekg/dns v1.1.26/go.mod h1:bPDLeHnStXmXAq1m/Ch/hvfNHr14JKNPMBo3VZKjuso=
 github.com/miekg/dns v1.1.41/go.mod h1:p6aan82bvRIyn+zDIv9xYNUpwa73JcSh9BKwknJysuI=
