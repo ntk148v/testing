@@ -56,6 +56,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.14.0
 	github.com/prometheus/common v0.37.0
+	github.com/redis/go-redis/v9 v9.0.5
 	github.com/rs/zerolog v1.27.0
 	github.com/rvflash/tcp v0.3.0
 	github.com/satori/go.uuid v1.2.0

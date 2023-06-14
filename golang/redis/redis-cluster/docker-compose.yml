@@ -1,0 +1,131 @@
+version: "3"
+
+services:
+  redis-node-0:
+    image: docker.io/bitnami/redis-cluster:7.0
+    container_name: redis-node-0
+    volumes:
+      - redis-cluster_data-0:/bitnami/redis/data
+    environment:
+      - "REDIS_PASSWORD=bitnami"
+      - "REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5 redis-node-6 redis-node-7 redis-node-8"
+
+  redis-node-1:
+    image: docker.io/bitnami/redis-cluster:7.0
+    container_name: redis-node-1
+    volumes:
+      - redis-cluster_data-1:/bitnami/redis/data
+    environment:
+      - "REDIS_PASSWORD=bitnami"
+      - "REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5 redis-node-6 redis-node-7 redis-node-8"
+
+  redis-node-2:
+    image: docker.io/bitnami/redis-cluster:7.0
+    container_name: redis-node-2
+    volumes:
+      - redis-cluster_data-2:/bitnami/redis/data
+    environment:
+      - "REDIS_PASSWORD=bitnami"
+      - "REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5 redis-node-6 redis-node-7 redis-node-8"
+
+  redis-node-3:
+    image: docker.io/bitnami/redis-cluster:7.0
+    container_name: redis-node-3
+    volumes:
+      - redis-cluster_data-3:/bitnami/redis/data
+    environment:
+      - "REDIS_PASSWORD=bitnami"
+      - "REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5 redis-node-6 redis-node-7 redis-node-8"
+
+  redis-node-4:
+    image: docker.io/bitnami/redis-cluster:7.0
+    container_name: redis-node-4
+    volumes:
+      - redis-cluster_data-4:/bitnami/redis/data
+    environment:
+      - "REDIS_PASSWORD=bitnami"
+      - "REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5 redis-node-6 redis-node-7 redis-node-8"
+
+  redis-node-5:
+    image: docker.io/bitnami/redis-cluster:7.0
+    container_name: redis-node-5
+    volumes:
+      - redis-cluster_data-5:/bitnami/redis/data
+    environment:
+      - "REDIS_PASSWORD=bitnami"
+      - "REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5 redis-node-6 redis-node-7 redis-node-8"
+
+  redis-node-6:
+    image: docker.io/bitnami/redis-cluster:7.0
+    container_name: redis-node-6
+    volumes:
+      - redis-cluster_data-6:/bitnami/redis/data
+    environment:
+      - "REDIS_PASSWORD=bitnami"
+      - "REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5 redis-node-6 redis-node-7 redis-node-8"
+
+  redis-node-7:
+    image: docker.io/bitnami/redis-cluster:7.0
+    container_name: redis-node-7
+    volumes:
+      - redis-cluster_data-7:/bitnami/redis/data
+    environment:
+      - "REDIS_PASSWORD=bitnami"
+      - "REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5 redis-node-6 redis-node-7 redis-node-8"
+
+  redis-node-8:
+    image: docker.io/bitnami/redis-cluster:7.0
+    container_name: redis-node-8
+    volumes:
+      - redis-cluster_data-8:/bitnami/redis/data
+    depends_on:
+      - redis-node-0
+      - redis-node-1
+      - redis-node-2
+      - redis-node-3
+      - redis-node-4
+      - redis-node-5
+      - redis-node-6
+      - redis-node-7
+    environment:
+      - "REDIS_PASSWORD=bitnami"
+      - "REDISCLI_AUTH=bitnami"
+      - "REDIS_CLUSTER_REPLICAS=1"
+      - "REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5 redis-node-6 redis-node-7 redis-node-8"
+      - "REDIS_CLUSTER_CREATOR=yes"
+
+  redis-insight:
+    image: redislabs/redisinsight:latest
+    container_name: redis-insight
+    ports:
+      - "8001:8001"
+    depends_on:
+      - redis-node-8
+    volumes:
+      - redis-insight-data:/db
+
+  redis-cli:
+    build: .
+    container_name: redis-cli
+
+volumes:
+  redis-cluster_data-0:
+    driver: local
+  redis-cluster_data-1:
+    driver: local
+  redis-cluster_data-2:
+    driver: local
+  redis-cluster_data-3:
+    driver: local
+  redis-cluster_data-4:
+    driver: local
+  redis-cluster_data-5:
+    driver: local
+  redis-cluster_data-6:
+    driver: local
+  redis-cluster_data-7:
+    driver: local
+  redis-cluster_data-8:
+    driver: local
+  redis-insight-data:
+    driver: local
