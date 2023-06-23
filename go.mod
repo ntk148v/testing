@@ -46,6 +46,7 @@ require (
 	github.com/kilo-io/iptables_parser v0.0.0-20220520085151-275b7c93e8a7
 	github.com/knadh/go-pop3 v0.3.0
 	github.com/knadh/koanf v1.5.0
+	github.com/liamg/fontinfo v0.1.3
 	github.com/mholt/archiver/v4 v4.0.0-alpha.7
 	github.com/michaelbironneau/garbler v0.0.0-20230116103306-c77e50337f93
 	github.com/nats-io/nats.go v1.17.0
