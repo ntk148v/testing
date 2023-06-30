@@ -18,7 +18,7 @@ require (
 	github.com/coreos/go-iptables v0.6.0
 	github.com/cristalhq/aconfig v0.18.3
 	github.com/dchest/siphash v1.2.2
-	github.com/docker/docker v20.10.20+incompatible
+	github.com/docker/docker v20.10.24+incompatible
 	github.com/elazarl/goproxy v0.0.0-20220529153421-8ea89ba92021
 	github.com/fatih/semgroup v1.2.0
 	github.com/gin-contrib/gzip v0.0.3
