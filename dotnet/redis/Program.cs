@@ -24,6 +24,20 @@ namespace ReferenceConsoleRedisApp
             string value = "sample-value";
             Console.WriteLine("Set Value: " + db.StringSet("sample-key", value));
             Console.WriteLine("Get Value: " + db.StringGet("sample-key"));
+
+            RedisChannel channel = new RedisChannel("chat", RedisChannel.PatternMode.Literal);
+            ISubscriber subScriber = redis.GetSubscriber();
+            var tcs = new TaskCompletionSource();
+            subScriber.Subscribe(channel).OnMessage(channelMessage =>
+            {
+                Console.WriteLine($"Message {channelMessage.Message} received successfully");
+                tcs.SetResult();
+            });
+
+            Console.WriteLine("Starting timer to fire in 5 seconds...");
+            var t = new Timer((_) => subScriber.Publish(channel, "Heyyyyyy"), null, TimeSpan.FromSeconds(5), TimeSpan.Zero);
+            await tcs.Task;
+            Console.WriteLine("Exiting...");
         }
     }
 }
