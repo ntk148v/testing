@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedRssClient", "FeedRssClient\FeedRssClient.csproj", "{71EE560C-23B8-4747-A68E-62729C2A4E13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedRssPublisher", "FeedRssPublisher\FeedRssPublisher.csproj", "{056EB843-C2D5-4CBE-AE69-B65C19C98803}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{71EE560C-23B8-4747-A68E-62729C2A4E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71EE560C-23B8-4747-A68E-62729C2A4E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71EE560C-23B8-4747-A68E-62729C2A4E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{056EB843-C2D5-4CBE-AE69-B65C19C98803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{056EB843-C2D5-4CBE-AE69-B65C19C98803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{056EB843-C2D5-4CBE-AE69-B65C19C98803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{056EB843-C2D5-4CBE-AE69-B65C19C98803}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
