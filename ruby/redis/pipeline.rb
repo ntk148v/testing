@@ -1,31 +1,28 @@
-require 'rubygems'
-require 'redis'
+require "redis"
+require "benchmark"
 
-def bench(descr)
-  start = Time.now
-  yield
-  puts "#{descr} #{(Time.now - start)*1000} milliseconds"
-end
+# Khởi tạo Redis connection
+redis = Redis.new
 
-def without_pipelining
-  r = Redis.new
-  10_000.times do
-    r.ping
+# Benchmark không pipeline
+time = Benchmark.realtime do
+  (0...10000).each do |i|
+    redis.set("key#{i}", "value#{i}")
+    redis.get("key#{i}")
   end
 end
+puts "Elapsed time without pipeline: #{(time * 1000).round(2)}ms"
 
-def with_pipelining
-  r = Redis.new
-  r.pipelined do
-    10_000.times do
-      r.ping
+# Benchmark pipeline
+time = Benchmark.realtime do
+  redis.pipelined do
+    (0...10000).each do |i|
+      redis.set("key#{i}", "value#{i}")
+      redis.get("key#{i}")
     end
   end
 end
+puts "Elapsed time with pipeline: #{(time * 1000).round(2)}ms"
 
-bench('without pipelining') do
-  without_pipelining
-end
-bench('with pipelining') do
-  with_pipelining
-end
+# Đóng Redis connection
+redis.close

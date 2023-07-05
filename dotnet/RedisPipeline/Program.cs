@@ -14,9 +14,10 @@ namespace RedisPipeline
                 });
         static void Main()
         {
-            bench(withPipeline, 10000, "With Pipeine");
-            bench(withoutPipeline, 10000, "Without Pipeine");
-            // Hmmm, not work as expected
+            bench(withPipeline, 10000, "with Pipeine");
+            bench(withoutPipeline, 10000, "without Pipeine");
+
+            redis.Close();
         }
 
         static void bench(Action<int> benchedMethod, int loopNum, string desc)
@@ -24,28 +25,28 @@ namespace RedisPipeline
             var watch = System.Diagnostics.Stopwatch.StartNew();
             benchedMethod(loopNum);
             watch.Stop();
-            Console.WriteLine($"{desc}: {watch.ElapsedMilliseconds} milliseconds");
+            Console.WriteLine($"Elapsed time {desc}: {watch.ElapsedMilliseconds} milliseconds");
         }
 
         static void withoutPipeline(int loopNum)
         {
             IDatabase db = redis.GetDatabase();
-            foreach (int i in Enumerable.Range(0, loopNum))
+            for (int i = 0; i < loopNum; i++)
             {
-                db.Ping();
-            };
+                db.StringSet("key" + i, "value" + i);
+                db.StringGet("key" + i);
+            }
         }
 
         static void withPipeline(int loopNum)
         {
             IDatabase db = redis.GetDatabase();
             var pipeline = db.CreateBatch();
-            foreach (int i in Enumerable.Range(0, loopNum))
+            for (int i = 0; i < loopNum; i++)
             {
-                // db.Wait(db.PingAsync());
-                pipeline.PingAsync();
-            };
-
+                pipeline.StringSetAsync("key" + i, "value" + i);
+                pipeline.StringGetAsync("key" + i);
+            }
             pipeline.Execute();
         }
     }
