@@ -39,10 +39,14 @@ namespace RedisPipeline
         static void withPipeline(int loopNum)
         {
             IDatabase db = redis.GetDatabase();
+            var pipeline = db.CreateBatch();
             foreach (int i in Enumerable.Range(0, loopNum))
             {
-                db.Wait(db.PingAsync());
+                // db.Wait(db.PingAsync());
+                pipeline.PingAsync();
             };
+
+            pipeline.Execute();
         }
     }
 }
