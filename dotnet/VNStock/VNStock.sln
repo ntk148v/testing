@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VNStockLib", "VNStockLib\VNStockLib.csproj", "{DC0A2F11-3823-40F1-A335-CD0E5BB873CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VNStockConsole", "VNStockConsole\VNStockConsole.csproj", "{5F0797F3-1305-4882-B234-48D913D9BFAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DC0A2F11-3823-40F1-A335-CD0E5BB873CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC0A2F11-3823-40F1-A335-CD0E5BB873CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC0A2F11-3823-40F1-A335-CD0E5BB873CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC0A2F11-3823-40F1-A335-CD0E5BB873CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F0797F3-1305-4882-B234-48D913D9BFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F0797F3-1305-4882-B234-48D913D9BFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F0797F3-1305-4882-B234-48D913D9BFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F0797F3-1305-4882-B234-48D913D9BFAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
