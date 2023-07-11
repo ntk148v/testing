@@ -1,17 +1,19 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
 
 namespace VNStockLib;
 public class VNStockService
 {
-    private ServiceCollection _services = null!;
     private TCBSClient _tcbsClient = null!;
     private readonly ILogger<VNStockService> _logger = null!;
     public VNStockService(ILogger<VNStockService> logger)
     {
-        ServiceCollection services = new ServiceCollection();
+        // ServiceCollection services = new ServiceCollection();
+        HostApplicationBuilder builder = Host.CreateApplicationBuilder();
+
         // TCBSClient
-        services.AddHttpClient<TCBSClient>(
+        builder.Services.AddHttpClient<TCBSClient>(
             client =>
             {
                 client.BaseAddress = new Uri("https://apipubaws.tcbs.com.vn/");
@@ -27,14 +29,12 @@ public class VNStockService
             }
         );
 
-        _services = services;
-        _tcbsClient = _services.BuildServiceProvider().GetRequiredService<TCBSClient>();
+        _tcbsClient = builder.Services.BuildServiceProvider().GetRequiredService<TCBSClient>();
         _logger = logger;
     }
 
     public async Task PrintCompanyOverview(string symbol)
     {
-        _logger.LogInformation("Sending a request...");
         var response = await _tcbsClient.GetCompanyOverview(symbol);
         var data = await response.Content.ReadAsStringAsync();
         _logger.LogInformation($"Response data: {(object)data}");

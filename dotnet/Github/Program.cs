@@ -13,6 +13,10 @@ namespace Github
 
             var services = builder.Services.BuildServiceProvider();
 
+            // ServiceCollection serviceCollection = new ServiceCollection();
+            // Configure(serviceCollection);
+            // var services = serviceCollection.BuildServiceProvider();
+            
             Console.WriteLine("Creating a client...");
             var github = services.GetRequiredService<Client>();
 
