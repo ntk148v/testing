@@ -21,7 +21,8 @@ public class APIClient : IDisposable
         _httpClient.Timeout = TimeSpan.FromSeconds(10);
     }
 
-    public async Task<Company> GetCompanyAsync(string symbol)
+    // Return company overview of a target stock symbol
+    public async Task<Company> GetCompanyAsync(string symbol = "TCB")
     {
         try
         {
@@ -30,6 +31,36 @@ public class APIClient : IDisposable
             response.EnsureSuccessStatusCode();
 
             return await response.Content.ReadFromJsonAsync<Company>();
+        }
+        catch (NotSupportedException)
+        {
+            System.Diagnostics.Debug.WriteLine("The content type is not supported.");
+        }
+        catch (HttpRequestException e)
+        {
+            System.Diagnostics.Debug.WriteLine(e.StatusCode switch
+            {
+                HttpStatusCode.BadRequest => "Error 400 - Bad Request. Possible query error?",
+                HttpStatusCode.Unauthorized => "Error 401 - Unauthorized. Possible API key error?",
+                HttpStatusCode.Forbidden => "Error 403 - Forbidden. Possible API key error?",
+                HttpStatusCode.NotFound => "Error 404 - Not Found.",
+                _ => $"Error {e.StatusCode}"
+            });
+        }
+
+        return default;
+    }
+
+    // Get intraday stock insights from TCBS Trade Station
+    public async Task<StockInfraday> GetInfradaStockAsync(string symbol = "TCB", int pageSize = 50, int page = 0)
+    {
+        try
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, $"stock-insight/v1/intraday/{symbol}/investor/his/paging?page={page}&size={pageSize}&headIndex=-1");
+            using var response = await _httpClient.SendAsync(request);
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadFromJsonAsync<StockInfraday>();
         }
         catch (NotSupportedException)
         {
