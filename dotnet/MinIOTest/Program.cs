@@ -12,7 +12,7 @@ namespace MinioTest
             var endpoint = System.Environment.GetEnvironmentVariable("MINIO_ENDPOINT") ?? "play.min.io";
             var accessKey = System.Environment.GetEnvironmentVariable("MINIO_ACCESS_KEY") ?? "Q3AM3UQ867trueSPQQA43P2F";
             var secretKey = System.Environment.GetEnvironmentVariable("MINIO_SECRET_KEY") ?? "zuf+tfteSlswRu7BJ86wtrueekitnifILbZam1KYY3TG";
-            var secure = true; // Fixed
+            var secure = Convert.ToBoolean(System.Environment.GetEnvironmentVariable("MINIO_SECURE"));
 
             MinioClient minio = new MinioClient()
             .WithEndpoint(endpoint)
@@ -23,7 +23,7 @@ namespace MinioTest
             var bucketName = System.Environment.GetEnvironmentVariable("MINIO_BUCKET") ?? "test";
             var objectName = System.Environment.GetEnvironmentVariable("MINIO_OBJECT") ?? "test";
 
-            await GetStatObject(minio, bucketName, objectName).ConfigureAwait(false);
+            await GetStatObject(minio, bucketName, objectName, null).ConfigureAwait(false);
         }
 
         // Get object in a bucket
