@@ -23,11 +23,12 @@ namespace MinioTest
             var bucketName = System.Environment.GetEnvironmentVariable("MINIO_BUCKET") ?? "test";
             var objectName = System.Environment.GetEnvironmentVariable("MINIO_OBJECT") ?? "test";
 
-            await GetStatObject(minio, bucketName, objectName, null).ConfigureAwait(false);
+            await ListBucketsAsync(minio).ConfigureAwait(false);
+            await GetStatObjectAsync(minio, bucketName, objectName, null).ConfigureAwait(false);
         }
 
         // Get object in a bucket
-        public static async Task GetObjects(IMinioClient minio,
+        public static async Task GetObjectAsync(IMinioClient minio,
             string bucketName = "my-bucket-name",
             string objectName = "my-object-name",
             string fileName = "my-file-name")
@@ -61,7 +62,7 @@ namespace MinioTest
         }
 
         // Get stats on a object
-        public static async Task GetStatObject(IMinioClient minio,
+        public static async Task GetStatObjectAsync(IMinioClient minio,
             string bucketName = "my-bucket-name",
             string bucketObject = "my-object-name",
             string versionID = null)
@@ -109,6 +110,22 @@ namespace MinioTest
             Console.WriteLine("Metadata:");
             foreach (var metaPair in metaData) Console.WriteLine("    " + metaPair.Key + ":\t" + metaPair.Value);
             Console.WriteLine();
+        }
+
+        // List all buckets on host
+        public static async Task ListBucketsAsync(IMinioClient minio)
+        {
+            try
+            {
+                Console.WriteLine("Running example for API: ListBucketsAsync");
+                var list = await minio.ListBucketsAsync().ConfigureAwait(false);
+                foreach (var bucket in list.Buckets) Console.WriteLine($"{bucket.Name} {bucket.CreationDateDateTime}");
+                Console.WriteLine();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"[Bucket]  Exception: {e}");
+            }
         }
     }
 }
