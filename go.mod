@@ -1,6 +1,6 @@
 module github.com/ntk148v/testing
 
-go 1.20
+go 1.21
 
 require (
 	github.com/Netflix/go-env v0.0.0-20210215222557-e437a7e7f9fb
