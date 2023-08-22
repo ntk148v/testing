@@ -34,6 +34,7 @@ fire = "*"
 molecule = {extras = ["docker"], version = "*"}
 ansible-runner = "*"
 beautifulsoup4 = "*"
+flet = "*"
 
 [requires]
 #python_version = "3.6"
