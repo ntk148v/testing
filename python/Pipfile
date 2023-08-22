@@ -35,6 +35,7 @@ molecule = {extras = ["docker"], version = "*"}
 ansible-runner = "*"
 beautifulsoup4 = "*"
 flet = "*"
+prettymaps = "*"
 
 [requires]
 #python_version = "3.6"
