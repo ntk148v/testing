@@ -7,6 +7,7 @@ require (
 	github.com/adam-hanna/jwt-auth/jwt v0.0.0-20210801230358-648d06fb0092
 	github.com/adrg/xdg v0.4.0
 	github.com/andygrunwald/go-jira v1.13.0
+	github.com/apex/log v1.9.0
 	github.com/atotto/clipboard v0.1.4
 	github.com/avast/retry-go v3.0.0+incompatible
 	github.com/casbin/casbin v1.9.1
@@ -40,6 +41,7 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/haproxytech/config-parser/v4 v4.0.0-rc2
 	github.com/hashicorp/go-retryablehttp v0.7.0
+	github.com/inconshreveable/log15 v2.16.0+incompatible
 	github.com/influxdata/influxdb-client-go/v2 v2.3.1-0.20210518120617-5d1fff431040
 	github.com/influxdata/influxdb1-client v0.0.0-20191209144304-8bf82d3c094d
 	github.com/kevinburke/ssh_config v1.2.0
@@ -69,10 +71,12 @@ require (
 	github.com/tus/tusd v1.8.0
 	github.com/yuin/goldmark v1.4.13
 	github.com/yuin/goldmark-meta v1.0.0
+	go.etcd.io/etcd v3.3.10+incompatible
 	go.etcd.io/etcd/client/v3 v3.5.4
 	go.i3wm.org/i3/v4 v4.18.0
 	go.mongodb.org/mongo-driver v1.7.3
 	go.uber.org/fx v1.14.2
+	go.uber.org/zap v1.24.0
 	golang.org/x/crypto v0.9.0
 	golang.org/x/exp v0.0.0-20230425010034-47ecfdc1ba53
 	golang.org/x/net v0.10.0
@@ -230,7 +234,6 @@ require (
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/dig v1.12.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	go.uber.org/zap v1.24.0 // indirect
 	golang.org/x/arch v0.3.0 // indirect
 	golang.org/x/mod v0.8.0 // indirect
 	golang.org/x/text v0.9.0 // indirect
@@ -263,7 +266,7 @@ require (
 	github.com/opencontainers/go-digest v1.0.0 // indirect
 	github.com/opencontainers/image-spec v1.1.0-rc2.0.20221005185240-3a7f492d3f1b // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
-	github.com/sirupsen/logrus v1.9.0 // indirect
+	github.com/sirupsen/logrus v1.9.0
 	github.com/sourcegraph/conc v0.1.0
 	go.etcd.io/bbolt v1.3.7 // indirect
 	gotest.tools/v3 v3.3.0 // indirect

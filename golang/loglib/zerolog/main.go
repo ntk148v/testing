@@ -2,6 +2,8 @@ package main
 
 import (
 	"flag"
+	"os"
+	"time"
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -27,4 +29,10 @@ func main() {
 		value := "bar"
 		e.Str("foo", value).Msg("some debug message")
 	}
+
+	// zerolog can also be configured to produce binary logs in the CBOR format
+	logger := zerolog.New(zerolog.ConsoleWriter{Out: os.Stderr, TimeFormat: time.RFC3339}).
+		Level(zerolog.TraceLevel).With().Timestamp().Caller().Logger()
+
+	logger.Info().Msg("Hello from Zerlog logger")
 }
