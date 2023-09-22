@@ -21,7 +21,7 @@ import (
 	"strings"
 	"time"
 
-	"clientv3 "go.etcd.io/etcd/client/v3""
+	clientv3 "go.etcd.io/etcd/client/v3"
 )
 
 func main() {

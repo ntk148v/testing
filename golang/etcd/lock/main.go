@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"log"
 
-	"clientv3 "go.etcd.io/etcd/client/v3""
-	"clientv3 "go.etcd.io/etcd/client/v3"/concurrency"
+	clientv3 "go.etcd.io/etcd/client/v3"
+	"go.etcd.io/etcd/client/v3/concurrency"
 )
 
 func main() {
