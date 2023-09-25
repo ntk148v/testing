@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-selections=$(curl -sL https://www.toptal.com/developers/gitignore/api/list\?format\=lines | fzf --height=80% \
+selections=$(curl -sL https://www.toptal.com/developers/gitignore/api/list\?format\=lines | fzf -m --height=80% \
     --prompt='▶ ' --pointer='→' \
     --border=sharp \
     --preview='curl -sL https://www.toptal.com/developers/gitignore/api/{}' \
@@ -8,15 +8,24 @@ selections=$(curl -sL https://www.toptal.com/developers/gitignore/api/list\?form
     --bind='ctrl-r:reload(curl -sL https://www.toptal.com/developers/gitignore/api/list\?format\=lines)' \
     --bind='ctrl-p:toggle-preview' \
     --header '
-CTRL-A to select all
-CTRL-x to deselect all
-ENTER to append the selected to .gitignore file
-CTRL-r to refresh the list
-CTRL-P to toggle preview
+--------------------------------------------------------------
+* Tab/Shift-Tab:       mark multiple items
+* ENTER:               append the selected to .gitignore file
+* Ctrl-r:              refresh the list
+* Ctrl-p:              toggle preview
+* Ctrl-q:              exit
+* Shift-up/Shift-down: scroll the preview
+--------------------------------------------------------------
 ')
 
+if [[ ${#selections[@]} == 0 ]]; then
+    echo "▶ Nothing selected"
+    return 0
+fi
+
 # allow multi-select
-for s in "${selections[@]}"; do
-    echo "▶ Selected: $s"
-    curl -sL https://www.toptal.com/developers/gitignore/api/$s >>/tmp/.gitignore
-done
+touch $PWD/.gitignore
+while IFS= read -r s; do
+    curl -sL https://www.toptal.com/developers/gitignore/api/$s >>$PWD/.gitignore
+    echo "▶ Appended: $s"
+done <<<"$selections"
