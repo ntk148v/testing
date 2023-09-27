@@ -80,14 +80,15 @@ require (
 	go.uber.org/fx v1.14.2
 	go.uber.org/multierr v1.11.0
 	go.uber.org/zap v1.24.0
-	golang.org/x/crypto v0.9.0
+	golang.org/x/crypto v0.13.0
 	golang.org/x/exp v0.0.0-20230425010034-47ecfdc1ba53
-	golang.org/x/net v0.10.0
-	golang.org/x/oauth2 v0.4.0
+	golang.org/x/net v0.15.0
+	golang.org/x/oauth2 v0.12.0
+	golang.org/x/perf v0.0.0-20230906145419-e9dd5d2713ed
 	golang.org/x/sync v0.1.0
-	golang.org/x/sys v0.11.0
-	golang.org/x/term v0.11.0
-	google.golang.org/grpc v1.54.0
+	golang.org/x/sys v0.12.0
+	golang.org/x/term v0.12.0
+	google.golang.org/grpc v1.55.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	gopkg.in/inconshreveable/log15.v2 v2.16.0
 	gopkg.in/yaml.v2 v2.4.0
@@ -108,6 +109,7 @@ require (
 	github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible // indirect
 	github.com/Microsoft/hcsshim v0.10.0-rc.7 // indirect
 	github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d // indirect
+	github.com/aclements/go-moremath v0.0.0-20210112150236-f10218a38794 // indirect
 	github.com/adam-hanna/randomstrings v0.0.0-20160715001758-88fd7c52a2c7 // indirect
 	github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5 // indirect
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
@@ -245,11 +247,13 @@ require (
 	go.uber.org/dig v1.12.0 // indirect
 	golang.org/x/arch v0.3.0 // indirect
 	golang.org/x/mod v0.8.0 // indirect
-	golang.org/x/text v0.12.0 // indirect
+	golang.org/x/text v0.13.0 // indirect
 	golang.org/x/tools v0.6.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20230403163135-c38d8f061ccd // indirect
-	google.golang.org/protobuf v1.30.0 // indirect
+	google.golang.org/genproto v0.0.0-20230530153820-e85fd2cbaebc // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20230530153820-e85fd2cbaebc // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20230530153820-e85fd2cbaebc // indirect
+	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

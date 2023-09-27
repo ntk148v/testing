@@ -1,0 +1,10 @@
+goos: linux
+goarch: amd64
+pkg: github.com/ntk148v/testing/golang/benchfmt/sample
+cpu: AMD Ryzen 7 4800H with Radeon Graphics         
+BenchmarkPrimeNumbers/input_size_100-16         	 4662108	      2324 ns/op	     504 B/op	       6 allocs/op
+BenchmarkPrimeNumbers/input_size_1000-16        	  334878	     32660 ns/op	    4088 B/op	       9 allocs/op
+BenchmarkPrimeNumbers/input_size_74382-16       	    1345	   8741045 ns/op	  259321 B/op	      18 allocs/op
+BenchmarkPrimeNumbers/input_size_382399-16      	     142	  82442286 ns/op	 1160443 B/op	      23 allocs/op
+PASS
+ok  	github.com/ntk148v/testing/golang/benchfmt/sample	57.566s
