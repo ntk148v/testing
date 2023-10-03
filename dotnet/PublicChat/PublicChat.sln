@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicChat", "PublicChat\PublicChat.csproj", "{9329FBA1-795A-46BB-B87E-0F98606E0077}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9329FBA1-795A-46BB-B87E-0F98606E0077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9329FBA1-795A-46BB-B87E-0F98606E0077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9329FBA1-795A-46BB-B87E-0F98606E0077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9329FBA1-795A-46BB-B87E-0F98606E0077}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

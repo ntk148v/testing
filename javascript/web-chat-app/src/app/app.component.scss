@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+}
+
+.msg-italic-style {
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+
+// Header
+.ud-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+
+  background-color: rgb(25, 29, 50);
+  height: 8vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    color: #fdffff;
+  }
+}
+
+// body
+.ud-body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: 9vh 10% 2vh;
+  padding: 0 10% 0;
+
+  .msg-box {
+    width: 100%;
+    height: calc(100% - 140px);
+    margin-top: 20px;
+    border: 2px solid #191d32;
+    border-radius: 0.5em;
+    padding: 10px 30px;
+    font-size: 14px;
+
+    overflow: auto;
+
+    ul {
+      list-style: none;
+
+      .ex-msg {
+        margin-bottom: 10px;
+        color: #459c1a;
+
+        text-align: left;
+      }
+
+      .in-msg {
+        margin-bottom: 10px;
+        color: #dd1155;
+
+        text-align: right;
+      }
+    }
+  }
+
+  .ud-flex-row {
+    margin-top: 20px;
+    height: 40px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .msg-input {
+      height: 100%;
+      border-radius: 0.5em;
+      border: 0px solid rgba(0, 0, 0, 0);
+      padding: 10px;
+      flex: 1 1 0;
+      border: 1.5px solid #dd1155;
+    }
+
+    .msg-input:focus {
+      outline: none;
+      border-color: #dd1155;
+      box-shadow: 0 0 5px #dd1155;
+    }
+
+    .send-btn {
+      height: 100%;
+      width: 100px;
+      border-radius: 0.3em;
+      background-color: #dd1155;
+      margin-left: 20px;
+      border: 0px solid rgba(0, 0, 0, 0);
+      font-size: 25px;
+      color: #fdffff;
+      position: relative;
+    }
+
+    .send-btn:focus {
+      outline: none;
+      border-color: #dd1155;
+      box-shadow: 0 0 5px #dd1155;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .ud-flex-row {
+      flex-direction: column;
+      align-items: flex-start;
+      height: 80px;
+
+      .msg-input {
+        width: 100%;
+      }
+
+      .send-btn {
+        margin-left: 0px;
+        font-size: 20px;
+        margin-top: 7px;
+        height: 80%;
+      }
+    }
+  }
+
+  .name-box {
+    margin-top: 10px;
+    height: 40px;
+    width: 180px;
+    border-radius: 0.5em;
+    border: 0px solid rgba(0, 0, 0, 0);
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #b423d1;
+  }
+
+  .name-box:focus {
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ud-body {
+    margin: 9vh 5% 2vh;
+    padding: 0 5% 0;
+
+    .msg-box {
+      height: calc(100% - 180px);
+      padding: 10px 10px;
+    }
+  }
+}
