@@ -19,6 +19,7 @@ require (
 	github.com/coreos/go-iptables v0.6.0
 	github.com/cristalhq/aconfig v0.18.3
 	github.com/dchest/siphash v1.2.2
+	github.com/digitorus/pdfsign v0.0.0-20230911190051-9b77e1fcf46f
 	github.com/docker/docker v20.10.24+incompatible
 	github.com/elazarl/goproxy v0.0.0-20220529153421-8ea89ba92021
 	github.com/fatih/semgroup v1.2.0
@@ -71,6 +72,7 @@ require (
 	github.com/shurcooL/githubv4 v0.0.0-20230305132112-efb623903184
 	github.com/spf13/pflag v1.0.5
 	github.com/tus/tusd v1.8.0
+	github.com/unidoc/unipdf/v3 v3.50.0
 	github.com/yuin/goldmark v1.4.13
 	github.com/yuin/goldmark-meta v1.0.0
 	go.etcd.io/etcd v3.3.10+incompatible
@@ -140,6 +142,9 @@ require (
 	github.com/dgraph-io/ristretto v0.0.2 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
+	github.com/digitorus/pdf v0.1.2 // indirect
+	github.com/digitorus/pkcs7 v0.0.0-20230220124406-51331ccfc40f // indirect
+	github.com/digitorus/timestamp v0.0.0-20230220124323-d542479a2425 // indirect
 	github.com/docker/go-events v0.0.0-20190806004212-e31b211e4f1c // indirect
 	github.com/dsnet/compress v0.0.1 // indirect
 	github.com/dustin/go-humanize v1.0.0 // indirect
@@ -186,6 +191,7 @@ require (
 	github.com/leodido/go-urn v1.2.4 // indirect
 	github.com/lithammer/fuzzysearch v1.1.8 // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
+	github.com/mattetti/filebuffer v1.0.1 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
 	github.com/mattn/go-localereader v0.0.1 // indirect
@@ -232,6 +238,9 @@ require (
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.11 // indirect
 	github.com/ulikunitz/xz v0.5.11 // indirect
+	github.com/unidoc/pkcs7 v0.2.0 // indirect
+	github.com/unidoc/timestamp v0.0.0-20200412005513-91597fd3793a // indirect
+	github.com/unidoc/unitype v0.2.1 // indirect
 	github.com/xanzy/ssh-agent v0.2.1 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
 	github.com/xdg-go/scram v1.0.2 // indirect
@@ -246,9 +255,11 @@ require (
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/dig v1.12.0 // indirect
 	golang.org/x/arch v0.3.0 // indirect
+	golang.org/x/image v0.5.0 // indirect
 	golang.org/x/mod v0.8.0 // indirect
 	golang.org/x/text v0.13.0 // indirect
 	golang.org/x/tools v0.6.0 // indirect
+	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20230530153820-e85fd2cbaebc // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20230530153820-e85fd2cbaebc // indirect
