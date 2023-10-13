@@ -180,6 +180,7 @@ require (
 	github.com/google/renameio v1.0.1 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gookit/color v1.5.4 // indirect
+	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/haproxytech/go-logger v1.0.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.1 // indirect
 	github.com/influxdata/line-protocol v0.0.0-20200327222509-2487e7298839 // indirect
@@ -189,6 +190,7 @@ require (
 	github.com/klauspost/compress v1.16.0 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.4 // indirect
 	github.com/klauspost/pgzip v1.2.5 // indirect
+	github.com/ledongthuc/tokyo_go_sdk v0.0.0-20210917191939-6791fe720af1 // indirect
 	github.com/leodido/go-urn v1.2.4 // indirect
 	github.com/lithammer/fuzzysearch v1.1.8 // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
