@@ -81,11 +81,7 @@ public class PDFBoxDemo {
         } catch (OperatorCreationException e) {
             throw new RuntimeException(e);
         } catch (CertificateException e) {
-            throw new RuntimeException(e)
+            throw new RuntimeException(e);
         }
-    }
-
-    public static void main(String[] args) {
-
     }
 }
