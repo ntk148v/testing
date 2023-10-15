@@ -1,7 +1,6 @@
 package com.demo.pdfbox;
 
 import org.bouncycastle.asn1.x500.X500Name;
-import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
 import org.bouncycastle.cert.X509v3CertificateBuilder;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
@@ -9,8 +8,11 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.OperatorCreationException;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
+import org.apache.pdfbox.examples.signature.CreateVisibleSignature;
 
-import javax.security.auth.x500.X500Principal;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.security.*;
 import java.security.cert.Certificate;
@@ -22,7 +24,11 @@ import java.util.Date;
 public class PDFBoxDemo {
     private static final int KEY_SIZE = 2048;
     private final KeyPair keyPair;
+    private KeyStore keystore;
     private X509Certificate certificate;
+    private static final String IN_DIR = "src/main/resources/com.demo.pdfbox/";
+    private static final String OUT_DIR = "target/";
+    private static final String STAMP_PATH = IN_DIR + "stamp.jpg";
 
     public PDFBoxDemo() {
         this(KEY_SIZE);
@@ -60,6 +66,25 @@ public class PDFBoxDemo {
         return this.certificate;
     }
 
+    public KeyStore getKeystore() {
+        if (this.keystore == null) {
+            createKeyStore();
+        }
+
+        return this.keystore;
+    }
+
+    private void createKeyStore() {
+        try {
+            this.keystore = KeyStore.getInstance("PKCS12");
+            this.keystore.load(null, null);
+            // Load the private key and certificate
+            this.keystore.setKeyEntry("alias", this.keyPair.getPrivate(), null, new Certificate[]{this.getCertificate()});
+        } catch (KeyStoreException | CertificateException | IOException | NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void generateCertificate() {
         // Add Bouncy Castle as a Security Provider
         Security.addProvider(new BouncyCastleProvider());
@@ -82,6 +107,19 @@ public class PDFBoxDemo {
             throw new RuntimeException(e);
         } catch (CertificateException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void createVisibleSignature() throws IOException, UnrecoverableKeyException, CertificateException, KeyStoreException, NoSuchAlgorithmException {
+        // input pdf
+        String inPath = IN_DIR + "input.pdf";
+        File outFile;
+        try (FileInputStream fis = new FileInputStream(STAMP_PATH)) {
+            CreateVisibleSignature signing = new CreateVisibleSignature(this.getKeystore(), null);
+            signing.setVisibleSignDesigner(inPath, 0, 0, -50, fis, 1);
+            signing.setVisibleSignatureProperties("name", "location", "Security", 0, 1, true);
+            outFile = new File(OUT_DIR + "output.pdf");
+            signing.signPDF(new File(inPath), outFile, null);
         }
     }
 }
