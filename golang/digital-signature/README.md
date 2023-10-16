@@ -10,7 +10,7 @@ Two library was used.
 
 ```shell
 export UNIDOC_LICENSE_API_KEY=<fake>
-go run ./unidoc/main.go input.pdf ./unidoc/output.pdf
+go run ./unidoc/pdf_sign_generate_key.go input.pdf ./unidoc/output.pdf
 ```
 
 - The signature is inserted on the left.
@@ -22,9 +22,9 @@ go run ./unidoc/main.go input.pdf ./unidoc/output.pdf
 
 ```shell
 # sign
-go run ./pdfsign/main.go sign input.pdf ./pdfsign/output.pdf
+go run ./pdfsign/pdf_sign_generate_key.go sign input.pdf ./pdfsign/output.pdf
 # verify
-go run ./pdfsign/main.go verify ./pdfsign/output.pdf
+go run ./pdfsign/pdf_sign_generate_key.go verify ./pdfsign/output.pdf
 ```
 
 - The signature isn't visible, but verify still works.
