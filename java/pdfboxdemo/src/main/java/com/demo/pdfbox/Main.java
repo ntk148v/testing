@@ -9,9 +9,7 @@ import java.security.cert.CertificateException;
 public class Main {
     public static void main(String[] args) throws UnrecoverableKeyException, CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException {
         PDFBoxDemo pdfdemo = new PDFBoxDemo();
-        System.out.println(pdfdemo.getPrivate());
-        System.out.println(pdfdemo.getCertificate());
-
-        pdfdemo.createVisibleSignature();
+        pdfdemo.sign();
+        pdfdemo.verify();
     }
 }
