@@ -49,10 +49,11 @@ require (
 	github.com/kilo-io/iptables_parser v0.0.0-20220520085151-275b7c93e8a7
 	github.com/knadh/go-pop3 v0.3.0
 	github.com/knadh/koanf v1.5.0
+	github.com/ledongthuc/tokyo_go_sdk v0.0.0-20210917191939-6791fe720af1
 	github.com/liamg/fontinfo v0.1.3
 	github.com/mholt/archiver/v4 v4.0.0-alpha.7
 	github.com/michaelbironneau/garbler v0.0.0-20230116103306-c77e50337f93
-	github.com/nats-io/nats.go v1.17.0
+	github.com/nats-io/nats.go v1.28.0
 	github.com/neo4j/neo4j-go-driver/v4 v4.4.0
 	github.com/ntk148v/hashring v0.0.0-20191101020850-d84c46ab57aa
 	github.com/openfga/go-sdk v0.2.2
@@ -187,10 +188,9 @@ require (
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/joho/godotenv v1.4.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
-	github.com/klauspost/compress v1.16.0 // indirect
+	github.com/klauspost/compress v1.16.7 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.4 // indirect
 	github.com/klauspost/pgzip v1.2.5 // indirect
-	github.com/ledongthuc/tokyo_go_sdk v0.0.0-20210917191939-6791fe720af1 // indirect
 	github.com/leodido/go-urn v1.2.4 // indirect
 	github.com/lithammer/fuzzysearch v1.1.8 // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
@@ -214,7 +214,7 @@ require (
 	github.com/muesli/cancelreader v0.2.2 // indirect
 	github.com/muesli/reflow v0.3.0 // indirect
 	github.com/muesli/termenv v0.15.1 // indirect
-	github.com/nats-io/nkeys v0.3.0 // indirect
+	github.com/nats-io/nkeys v0.4.4 // indirect
 	github.com/nats-io/nuid v1.0.1 // indirect
 	github.com/nwaples/rardecode/v2 v2.0.0-beta.2 // indirect
 	github.com/oklog/ulid v1.3.1 // indirect
@@ -288,7 +288,7 @@ require (
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/moby/term v0.0.0-20220808134915-39b0c02b01ae // indirect
 	github.com/morikuni/aec v1.0.0 // indirect
-	github.com/nats-io/nats-server/v2 v2.9.3 // indirect
+	github.com/nats-io/nats-server/v2 v2.9.23 // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
 	github.com/opencontainers/image-spec v1.1.0-rc2.0.20221005185240-3a7f492d3f1b // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
