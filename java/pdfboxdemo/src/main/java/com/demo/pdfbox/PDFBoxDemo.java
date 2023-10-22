@@ -1,8 +1,7 @@
 package com.demo.pdfbox;
 
 import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSString;
+import org.apache.pdfbox.examples.signature.CreateVisibleSignature2;
 import org.apache.pdfbox.examples.signature.SigUtils;
 import org.apache.pdfbox.examples.signature.cert.CertificateVerificationException;
 import org.apache.pdfbox.examples.signature.cert.CertificateVerifier;
@@ -32,6 +31,7 @@ import org.bouncycastle.tsp.TimeStampToken;
 import org.bouncycastle.util.CollectionStore;
 import org.bouncycastle.util.Store;
 
+import java.awt.geom.Rectangle2D;
 import java.io.*;
 import java.math.BigInteger;
 import java.security.*;
@@ -128,7 +128,7 @@ public class PDFBoxDemo {
         }
     }
 
-    public void sign() throws IOException, UnrecoverableKeyException, CertificateException, KeyStoreException, NoSuchAlgorithmException {
+    public void sign1() throws IOException, UnrecoverableKeyException, CertificateException, KeyStoreException, NoSuchAlgorithmException {
         // input pdf
         String inPath = IN_DIR + "input.pdf";
         File outFile;
@@ -136,8 +136,26 @@ public class PDFBoxDemo {
             CreateVisibleSignature signing = new CreateVisibleSignature(this.getKeystore(), null);
             signing.setVisibleSignDesigner(inPath, 0, 0, -50, fis, 1);
             signing.setVisibleSignatureProperties("name", "location", "Security", 0, 1, true);
-            outFile = new File(OUT_DIR + "output.pdf");
+            outFile = new File(OUT_DIR + "output1.pdf");
             signing.signPDF(new File(inPath), outFile, null);
+        }
+    }
+
+    public void sign2() {
+        // input pdf
+        String inPath = IN_DIR + "input.pdf";
+        File documentFile = new File(inPath);
+        File signedDocumentFile;
+        signedDocumentFile = new File(OUT_DIR + "output2.pdf");
+        try {
+            CreateVisibleSignature2 signing = new CreateVisibleSignature2(this.getKeystore(), null);
+            signing.setImageFile(new File(STAMP_PATH));
+            Rectangle2D humanRect = new Rectangle2D.Float(100, 200, 150, 50);
+            signing.setExternalSigning(false);
+            signing.signPDF(documentFile, signedDocumentFile, humanRect, null);
+        } catch (IOException | UnrecoverableKeyException | CertificateException | KeyStoreException |
+                 NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
         }
     }
 
