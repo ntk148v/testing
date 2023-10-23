@@ -1,5 +1,6 @@
 package com.demo.pdfbox;
 
+import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.cos.COSDictionary;
 import org.apache.pdfbox.examples.signature.CreateVisibleSignature2;
 import org.apache.pdfbox.examples.signature.SigUtils;
@@ -8,7 +9,10 @@ import org.apache.pdfbox.examples.signature.cert.CertificateVerifier;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.io.RandomAccessReadBufferedFile;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.encryption.SecurityProvider;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream;
 import org.apache.pdfbox.pdmodel.interactive.digitalsignature.PDSignature;
 import org.bouncycastle.asn1.cms.Attribute;
@@ -159,10 +163,21 @@ public class PDFBoxDemo {
         }
     }
 
-    public void verify() throws IOException {
+    public void insertImage(String filename) throws IOException {
+        PDDocument document = Loader.loadPDF(new File(OUT_DIR + filename));
+        PDPage page = document.getPage(0);
+        PDImageXObject pdImage = PDImageXObject.createFromFile(STAMP_PATH, document);
+        PDPageContentStream contentStream = new PDPageContentStream(document, page);
+        contentStream.drawImage(pdImage, 70, 250);
+        contentStream.close();
+        document.save(OUT_DIR + filename); // overwrite
+        document.close();
+    }
+
+    public void verify(String filename) throws IOException {
         // output pdf
         // sign -> outFile -> become inFile of verify
-        File outFile = new File(OUT_DIR + "output.pdf");
+        File outFile = new File(OUT_DIR + filename);
         // use old-style document loading to disable leniency
         // see also https://www.pdf-insecurity.org/
         RandomAccessReadBufferedFile raFile = new RandomAccessReadBufferedFile(outFile);

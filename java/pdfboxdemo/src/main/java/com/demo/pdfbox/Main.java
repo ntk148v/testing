@@ -10,9 +10,9 @@ public class Main {
     public static void main(String[] args) throws UnrecoverableKeyException, CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException {
         PDFBoxDemo pdfdemo = new PDFBoxDemo();
         pdfdemo.sign1();
-        pdfdemo.verify();
+        pdfdemo.verify("output1.pdf");
 
-        pdfdemo.sign2();
-        pdfdemo.verify();
+//        pdfdemo.sign2();
+//        pdfdemo.verify("output2.pdf");
     }
 }
