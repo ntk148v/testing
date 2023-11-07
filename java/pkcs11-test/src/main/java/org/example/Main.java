@@ -94,10 +94,16 @@ public class Main {
                 "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",
                 "MIIG/DCCBOSgAwIBAgIRAJWSu4zurVokprj3HX0yO1owDQYJKoZIhvcNAQELBQAwgaMxCzAJBgNVBAYTAlZOMTMwMQYDVQQKDCpNaW5pc3RyeSBvZiBJbmZvcm1hdGlvbiBhbmQgQ29tbXVuaWNhdGlvbnMxPDA6BgNVBAsMM05hdGlvbmFsIENlbnRyZSBvZiBEaWdpdGFsIFNpZ25hdHVyZSBBdXRoZW50aWNhdGlvbjEhMB8GA1UEAwwYVmlldG5hbSBOYXRpb25hbCBSb290IENBMB4XDTE0MDQxNTE2MjkyMFoXDTM5MDQxNTE2MjkyMFowgaMxCzAJBgNVBAYTAlZOMTMwMQYDVQQKDCpNaW5pc3RyeSBvZiBJbmZvcm1hdGlvbiBhbmQgQ29tbXVuaWNhdGlvbnMxPDA6BgNVBAsMM05hdGlvbmFsIENlbnRyZSBvZiBEaWdpdGFsIFNpZ25hdHVyZSBBdXRoZW50aWNhdGlvbjEhMB8GA1UEAwwYVmlldG5hbSBOYXRpb25hbCBSb290IENBMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAuKxaewgw2XB6afUf4zeVThQDl/G9xj56UoT+8KbW7BeIjkUevwlUmK5/j4HQaIuNg7g9oiQaU2Gt7WM/fTR8p/PkQT7yzuY0uLzSxUO3d8LxBnFRhz/5Vnk6cfWcsZUwCEgU/LHrnVuRjIYsffdc3YDgUJkcbnnxRq6zTF9BG2xH3f3C68C4Y3yERae5MCukpNELXh6GctRR2FkShFeITzJUZSguCEJJAj5qYW3rakJud4XjFFVgMnl6+78PYxvlAA8oFQrUbAywWq6Lzn6zcpo+OZuWfF7NFVGEcAtDuN1oyvst+H68f6giZ4+dKI4dBcrFkYJ+ptf98+Dev/Ij6onjOLgVgE/6LwprDIVY7X0vdqGG7Nbh6gaeugCG5/mYtIVkHhwPK+KcTPETYZJDYxT3rUIahaYh1Qp+LfEDXTJI2XGKey9lBkmFgdGpZY65p3xvrYW+NHccbtPsR+swcuuGRV7UP/ndmRX08GiaMTfKrkR7V5RvferDiQ/vezfq2hDPHizFaqxtImTUu8wFvXGbo11hsrqLCaKQxZToonYp7ECVYFDueuL7E6Up4cXler1qLvp3w+QZVR4r58IKvxVrtHaRiZUsbDa335dAlWjgaJI8QWZ4HOHVZLQjrX+JkjDPJTMHNxuMEkElrCSF3rXqUKZ/JMvqKeY16jQDaH0CAwEAAaOCAScwggEjMA4GA1UdDwEB/wQEAwIBhjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBR+8Iftsbid+wiDb6QW/fG4rGKbATCB4AYDVR0jBIHYMIHVgBR+8Iftsbid+wiDb6QW/fG4rGKbAaGBqaSBpjCBozELMAkGA1UEBhMCVk4xMzAxBgNVBAoMKk1pbmlzdHJ5IG9mIEluZm9ybWF0aW9uIGFuZCBDb21tdW5pY2F0aW9uczE8MDoGA1UECwwzTmF0aW9uYWwgQ2VudHJlIG9mIERpZ2l0YWwgU2lnbmF0dXJlIEF1dGhlbnRpY2F0aW9uMSEwHwYDVQQDDBhWaWV0bmFtIE5hdGlvbmFsIFJvb3QgQ0GCEQCVkruM7q1aJKa49x19MjtaMA0GCSqGSIb3DQEBCwUAA4ICAQBNNunXKvYvaxzgOPbKsmJLZ1gqHpJeHzT74IzBHDgp8bgbLDtqH+PZV+w7DwvfZD8xuFKQJz9v5TDpz/CYwrhA+BUsxyMbzS6Kv1lNa42Ja63BlEQ1AAVY+ZX3mFbVumOV43kLQgzQayYKPolq1o7Qxz3l2zgzhg4o436Vfek8Lrh/WcP5ezyC8Tt7VCaUOl/fuSaCPYvZbV7bZw/Eyj4xK1ud7Uq2Op54vSTegoh0+ZW28SQEgH49BjyjQTv56sTRolWZ4WxbHtbBJwTj7vliksebvvljoRYo9wg29AuY/Arw3NNhTyIbUFO75colaaF8i+5aAvmPQzfIk9m1bzK15VOk8t8QnV8i4I42jDLbVzbZFQZHbLL8gj+LTHVZc9sfKmfhkH2HDsngb6UvKDuWHB5+XQ5QoSiyGVJ0MeUYohPI6cghZXbIflHGyse9hbARM7Ubrisf/P//FDLlJ3UL7+aLIk9fw6n7Wy0WcgN+QxjfdxUM9VSCx705+uX/aN4y0g5LMNChDOzpBYUg6smm8A0W2LIAMw0Q9U9TLnHO8Ovw3ikuO5rfTSWwbYmyt15NsFp8LM/Q0Nu9QqaMNNy23YbQZZlfFormI9ioWEpjDbWqU9YyH6oHpGjsBbSoR4G0IUsfxaDdE3CXIx48pRolSddeayvR5sdOsNrhJOAFwg=="
         );
-        System.out.println(LoadCertificate(certStr));
+
+        List<CertificateToken> certChain = new ArrayList<>(certChainStr.size());
+        CertificateToken cert = LoadCertificate(certStr);
+        System.out.println(cert);
         for (String cs : certChainStr) {
+            certChain.add(LoadCertificate(cs));
             System.out.println(LoadCertificate(cs));
         }
+
+        MSCAPISign(cert, certChain);
     }
 
     public static CertificateToken LoadCertificate(String certStr) {
@@ -120,7 +126,7 @@ public class Main {
         return null;
     }
 
-    public static void MSCAPISign() {
+    public static void MSCAPISign(CertificateToken cert, List<CertificateToken> certChain) {
         try (MSCAPISignatureToken token = new MSCAPISignatureToken()) {
             DSSPrivateKeyEntry privateKey = token.getKeys().get(0);
             System.out.println(privateKey.getCertificate());
@@ -137,6 +143,25 @@ public class Main {
             // same parameter when you invoke the method sign on the token. The default value is
             // SHA256
             parameters.setDigestAlgorithm(DigestAlgorithm.SHA256);
+            // We set the signing certificate
+            parameters.setSigningCertificate(cert);
+            // We set the certificate chain
+            parameters.setCertificateChain(certChain);
+
+            // Initialize visual signature and configure
+            SignatureImageParameters imageParameters = new SignatureImageParameters();
+            // set an image
+            imageParameters.setImage(new InMemoryDocument(new FileInputStream("signed.jpeg")));
+
+            // initialize signature field parameters
+            SignatureFieldParameters fieldParameters = new SignatureFieldParameters();
+            imageParameters.setFieldParameters(fieldParameters);
+            // the origin is the left and top corner of the page
+            fieldParameters.setOriginX(200);
+            fieldParameters.setOriginY(400);
+            fieldParameters.setWidth(300);
+            fieldParameters.setHeight(200);
+            parameters.setImageParameters(imageParameters);
 
             // We set the signing certificate
             parameters.setSigningCertificate(privateKey.getCertificate());
@@ -156,11 +181,15 @@ public class Main {
             // private key and specified algorithm
             DigestAlgorithm digestAlgorithm = DigestAlgorithm.SHA256;
             // Do it in the client application
-//            SignatureValue signatureValue = token.sign(dataToSign, digestAlgorithm, privateKey);
-//            System.out.println("Signature value : " + Utils.toBase64(signatureValue.getValue()));
-//
-//            DSSDocument signedDocument = service.signDocument(toSignDocument, parameters, signatureValue);
-//            signedDocument.writeTo(new FileOutputStream("output2.pdf"));
+            SignatureValue signatureValue = token.sign(dataToSign, digestAlgorithm, privateKey);
+            System.out.println("Signature value : " + Utils.toBase64(signatureValue.getValue()));
+
+            DSSDocument signedDocument = service.signDocument(toSignDocument, parameters, signatureValue);
+            signedDocument.writeTo(new FileOutputStream("output2.pdf"));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
