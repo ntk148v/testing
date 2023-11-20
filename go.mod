@@ -20,7 +20,7 @@ require (
 	github.com/cristalhq/aconfig v0.18.3
 	github.com/dchest/siphash v1.2.2
 	github.com/digitorus/pdfsign v0.0.0-20230911190051-9b77e1fcf46f
-	github.com/docker/docker v20.10.24+incompatible
+	github.com/docker/docker v24.0.7+incompatible
 	github.com/ebfe/scard v0.0.0-20230420082256-7db3f9b7c8a7
 	github.com/elazarl/goproxy v0.0.0-20220529153421-8ea89ba92021
 	github.com/fatih/semgroup v1.2.0
