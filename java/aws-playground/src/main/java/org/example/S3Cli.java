@@ -2,11 +2,17 @@ package org.example;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import software.amazon.awssdk.services.s3.model.PutObjectRequest;
-import software.amazon.awssdk.services.s3.model.S3Exception;
+import software.amazon.awssdk.core.sync.RequestBody;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.*;
 import software.amazon.awssdk.services.s3.presigner.S3Presigner;
+import software.amazon.awssdk.services.s3.presigner.model.GetObjectPresignRequest;
+import software.amazon.awssdk.services.s3.presigner.model.PresignedGetObjectRequest;
 import software.amazon.awssdk.services.s3.presigner.model.PresignedPutObjectRequest;
 import software.amazon.awssdk.services.s3.presigner.model.PutObjectPresignRequest;
+import software.amazon.awssdk.services.s3.waiters.S3Waiter;
+import software.amazon.awssdk.utils.IoUtils;
+import software.amazon.awssdk.utils.builder.Buildable;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -19,30 +25,21 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.file.Path;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.Map;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.time.Duration;
-
-import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
-import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.s3.model.GetObjectRequest;
-import software.amazon.awssdk.services.s3.model.S3Exception;
-import software.amazon.awssdk.services.s3.presigner.model.GetObjectPresignRequest;
-import software.amazon.awssdk.services.s3.presigner.model.PresignedGetObjectRequest;
-import software.amazon.awssdk.services.s3.presigner.S3Presigner;
-import software.amazon.awssdk.utils.IoUtils;
 
 
 public class S3Cli {
-    public S3Cli(S3Presigner presigner) {
+    public S3Cli(S3Client s3, S3Presigner presigner) {
+        this.s3 = s3;
         this.presigner = presigner;
     }
 
+    private final S3Client s3;
+
     private final S3Presigner presigner;
 
-    private final static Logger logger = LoggerFactory.getLogger(S3Cli.class);
+    private final Logger logger = LoggerFactory.getLogger(S3Cli.class);
 
     /**
      * Create a presigned URL for uploading with a PUT request.
@@ -200,5 +197,94 @@ public class S3Cli {
         } catch (S3Exception | IOException e) {
             logger.error(e.getMessage(), e);
         }
+    }
+
+    public void putS3Object(String bucketName, String objectKey, String objectPath) {
+        try {
+            Map<String, String> metadata = new HashMap<>();
+            metadata.put("x-amz-meta-myVal", "test");
+            PutObjectRequest putOb = PutObjectRequest.builder()
+                    .bucket(bucketName)
+                    .key(objectKey)
+                    .metadata(metadata)
+                    .build();
+
+            s3.putObject(putOb, RequestBody.fromFile(new File(objectPath)));
+            System.out.println("Successfully placed " + objectKey + " into bucket " + bucketName);
+
+        } catch (S3Exception e) {
+            logger.error(e.getMessage(), e);
+        }
+    }
+
+    public PutObjectResponse putObject(final String bucket, final String key, final byte[] data,
+                                       final String contentType) {
+        return putObject(bucket, key, data, contentType, null);
+    }
+
+    public PutObjectResponse putObject(final String bucket, final String key, final byte[] data,
+                                       final String contentType, final Map<String, String> metadata) {
+        int contentLength = data.length;
+        PutObjectRequest.Builder builder = PutObjectRequest.builder().bucket(bucket)
+                .key(key).contentLength(Long.valueOf(contentLength));
+        if (contentType != null) {
+            builder.contentType(contentType);
+        }
+
+        if (metadata != null) {
+            builder.metadata(metadata);
+        }
+
+
+        return this.s3.putObject(builder.build(), RequestBody.fromBytes(data));
+    }
+
+    public void createBucket(String bucketName, boolean enableVersioning) {
+        this.s3.createBucket(b -> b.bucket(bucketName));
+        try (S3Waiter waiter = this.s3.waiter()) {
+            waiter.waitUntilBucketExists(b -> b.bucket(bucketName));
+        }
+
+        if (enableVersioning) {
+            enableVersioning(bucketName);
+        }
+
+        logger.info("Bucket [{}] created", bucketName);
+    }
+
+    public ListObjectVersionsResponse listObjectVersions(String bucketName) {
+        ListObjectVersionsRequest.Builder builder = ListObjectVersionsRequest.builder().bucket(bucketName);
+        logger.info("List versions of object in bucket [{}]", bucketName);
+        return this.s3.listObjectVersions(builder.build());
+    }
+
+    public void enableVersioning(String bucketName) {
+        s3.putBucketVersioning(b -> b.bucket(bucketName).versioningConfiguration(b1 -> b1.status(BucketVersioningStatus.ENABLED)));
+        logger.info("Bucket [{}] versioning enabled", bucketName);
+    }
+
+    public void deleteBucket(String bucketName) {
+        s3.deleteBucket(b -> b.bucket(bucketName));
+        try (S3Waiter waiter = s3.waiter()) {
+            waiter.waitUntilBucketNotExists(b -> b.bucket(bucketName));
+        }
+        logger.info("Bucket [{}] deleted", bucketName);
+    }
+
+    public void deleteObject(String bucketName, String key) {
+        s3.deleteObject(b -> b.bucket(bucketName).key(key));
+        try (S3Waiter waiter = s3.waiter()) {
+            waiter.waitUntilObjectNotExists(b -> b.bucket(bucketName).key(key));
+        }
+        logger.info("Object [{}] deleted", key);
+    }
+
+    public ListObjectsResponse listObjects(final String bucket, final String prefix) {
+        ListObjectsRequest.Builder builder = ListObjectsRequest.builder().bucket(bucket);
+        if (prefix != null) {
+            builder = builder.prefix(prefix);
+        }
+
+        return s3.listObjects(builder.build());
     }
 }
