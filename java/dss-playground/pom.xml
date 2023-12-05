@@ -54,6 +54,27 @@
             <artifactId>dss-service</artifactId>
             <version>5.12.1</version>
         </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.sd-dss</groupId>
+            <artifactId>dss-signature-dto</artifactId>
+            <version>5.12.1</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.sd-dss</groupId>
+            <artifactId>dss-signature-remote</artifactId>
+            <version>5.12.1</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.sd-dss</groupId>
+            <artifactId>dss-pades-pdfbox</artifactId>
+            <version>5.12.1</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.sd-dss</groupId>
+            <artifactId>dss-utils-apache-commons</artifactId>
+            <version>5.12.1</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 

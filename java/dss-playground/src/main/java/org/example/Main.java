@@ -1,57 +1,98 @@
 package org.example;
 
- import eu.europa.esig.dss.detailedreport.DetailedReport;
- import eu.europa.esig.dss.diagnostic.DiagnosticData;
- import eu.europa.esig.dss.enumerations.DigestAlgorithm;
- import eu.europa.esig.dss.model.SignatureValue;
- import eu.europa.esig.dss.model.ToBeSigned;
- import eu.europa.esig.dss.model.x509.CertificateToken;
- import eu.europa.esig.dss.token.DSSPrivateKeyEntry;
- import eu.europa.esig.dss.token.MSCAPISignatureToken;
- import eu.europa.esig.dss.utils.Utils;
- import eu.europa.esig.dss.spi.CertificateExtensionsUtils;
- import eu.europa.esig.dss.validation.CertificateValidator;
- import eu.europa.esig.dss.validation.CertificateVerifier;
- import eu.europa.esig.dss.validation.CommonCertificateVerifier;
- import eu.europa.esig.dss.service.crl.OnlineCRLSource;
- import eu.europa.esig.dss.service.ocsp.OnlineOCSPSource;
- import eu.europa.esig.dss.validation.reports.CertificateReports;
- import eu.europa.esig.dss.simplecertificatereport.SimpleCertificateReport;
+import eu.europa.esig.dss.enumerations.SignatureAlgorithm;
+import eu.europa.esig.dss.enumerations.SignatureLevel;
+import eu.europa.esig.dss.model.DSSDocument;
+import eu.europa.esig.dss.model.FileDocument;
+import eu.europa.esig.dss.model.SignatureValue;
+import eu.europa.esig.dss.model.ToBeSigned;
+import eu.europa.esig.dss.model.x509.CertificateToken;
+import eu.europa.esig.dss.pades.PAdESSignatureParameters;
+import eu.europa.esig.dss.pades.signature.PAdESService;
+import eu.europa.esig.dss.pdf.pdfbox.PdfBoxNativeObjectFactory;
+import eu.europa.esig.dss.utils.Utils;
+import eu.europa.esig.dss.validation.CommonCertificateVerifier;
+import eu.europa.esig.dss.ws.converter.DTOConverter;
+import eu.europa.esig.dss.ws.converter.RemoteCertificateConverter;
+import eu.europa.esig.dss.ws.dto.RemoteCertificate;
+import eu.europa.esig.dss.ws.dto.RemoteDocument;
+import eu.europa.esig.dss.ws.dto.ToBeSignedDTO;
+import eu.europa.esig.dss.ws.signature.common.RemoteDocumentSignatureServiceImpl;
+import eu.europa.esig.dss.ws.signature.dto.parameters.RemoteSignatureParameters;
+import org.apache.commons.io.FileUtils;
 
- import java.util.List;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.rmi.Remote;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class Main {
-    public static void main(String[] args) {
-        try (MSCAPISignatureToken token = new MSCAPISignatureToken()) {
-
-            List<DSSPrivateKeyEntry> keys = token.getKeys();
-            for (DSSPrivateKeyEntry entry : keys) {
-
-                CertificateToken certificateToken = entry.getCertificate();
-                CertificateVerifier cv = new CommonCertificateVerifier();
-                cv.setOcspSource(new OnlineOCSPSource());
-                cv.setCrlSource(new OnlineCRLSource());
-                // We create an instance of the CertificateValidator with the certificate
-                CertificateValidator validator = CertificateValidator.fromCertificate(certificateToken);
-                validator.setCertificateVerifier(cv);
-                CertificateReports certificateReports = validator.validate();
-                // We have 3 reports
-                // The diagnostic data which contains all used and static data
-                DiagnosticData diagnosticData = certificateReports.getDiagnosticData();
-
-                // The detailed report which is the result of the process of the diagnostic data and the validation policy
-                DetailedReport detailedReport = certificateReports.getDetailedReport();
-
-                // The simple report is a summary of the detailed report or diagnostic data (more user-friendly)
-                SimpleCertificateReport simpleReport = certificateReports.getSimpleReport();
-                System.out.println(simpleReport);
-            }
-
-//            ToBeSigned toBeSigned = new eu.europa.esig.dss.model.ToBeSigned("Hello world".getBytes());
-//            SignatureValue signatureValue = token.sign(toBeSigned, DigestAlgorithm.SHA256, keys.get(0));
-//
-//            System.out.println("Signature value : " + Utils.toBase64(signatureValue.getValue()));
+    public static void main(String[] args) throws IOException {
+        System.out.println(Instant.now().toEpochMilli());
+        String certStr = "MIIFPTCCBCWgAwIBAgIQVAEBYZ82L1CjhIy7Ds8Z6TANBgkqhkiG9w0BAQsFADBbMRcwFQYDVQQDDA5GYXN0Q0EgU0hBLTI1NjEzMDEGA1UECgwqQ8OUTkcgVFkgQ+G7lCBQSOG6pk4gQ0jhu64gS8OdIFPhu5AgRkFTVENBMQswCQYDVQQGEwJWTjAeFw0yMzExMDMwODEyMDBaFw0yNDExMDMwODEyMDBaMGQxCzAJBgNVBAYTAlZOMRIwEAYDVQQIDAlIw6AgTuG7mWkxHjAcBgNVBAMMFU5HVVnhu4ROIFRV4bqkTiBLScOKTjEhMB8GCgmSJomT8ixkAQEMEUNDQ0Q6Mjg2MDk0MDAwMDIwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2KcyXepH6YS25XoKR6yZxTxpheKJhtkljqKyW3yIYXFaC6Iwe1eQmOEcdng1TYYl7o8lLaNe2gWn10d2SScI9xkvnNCGmTVuZ0W0LUPwnz2TiUCcsdr9YNdnltlXofPV0+0NG5kmmf3e4+AYudmTUIyXyx1cu9c+YZrwS7j5CXktYaSoM81GL9+gUV27SGHuZXOYvOynxJeYJP18wMxouZESTZtxqPDS8PjtPuj4BTs8DUvtpnllBv/avT6CEYAxPn4aEATi3iEO+eehEI8H5aWUSYnsG97bgeeTB64s0g/Dwat183wn/zmrVFWbEbe8gt0QHI4UtvrSRworf7QeewIDAQABo4IB8jCCAe4wDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBRSKOOvdOPsfmMJUHch3ZqOGP1KfDBeBggrBgEFBQcBAQRSMFAwKwYIKwYBBQUHMAKGH2h0dHA6Ly9wdWIuZmFzdGNhLnZuL0Zhc3RDQS5jcnQwIQYIKwYBBQUHMAGGFWh0dHA6Ly9vY3NwLmZhc3RjYS52bjBhBgNVHSAEWjBYMFYGDCsGAQQBge0DAQkDATBGMBYGCCsGAQUFBwICMAoMCFBlcnNvbmFsMCwGCCsGAQUFBwICMCAMHmh0dHBzOi8vZmFzdGNhLnZuL2Rvd25sb2FkL0NQUzA0BgNVHSUELTArBggrBgEFBQcDAgYIKwYBBQUHAwQGCisGAQQBgjcKAwwGCSqGSIb3LwEBBTCBlAYDVR0fBIGMMIGJMIGGoCOgIYYfaHR0cDovL2NybC5mYXN0Y2Eudm4vZmFzdGNhLmNybKJfpF0wWzEXMBUGA1UEAwwORmFzdENBIFNIQS0yNTYxMzAxBgNVBAoMKkPDlE5HIFRZIEPhu5QgUEjhuqZOIENI4buuIEvDnSBT4buQIEZBU1RDQTELMAkGA1UEBhMCVk4wHQYDVR0OBBYEFNg29r6rfh8pzd0V7NGH93qPH2VjMA4GA1UdDwEB/wQEAwIE8DANBgkqhkiG9w0BAQsFAAOCAQEAtPzyvc1QAnW5EztuImg0EcKmklhvear9rG20SmnkTqR7fsQkLm5ext5uMtPF1OucrQ8AoVT8Dd1TwOzxpiv5JRUaanFo1b7aet7Ql2wjXsyKt29uGinWGZSQFV/xa7QdFp5uqjg3yhRoN5CfmtrB6lJDuHc1MibKmgChEQHlaoQBczS2AfXUQgN30NwUIy0ujSDOXIXiWbyS9Ijt/Eck1a2jBNlnA91mdJsCjWevgUBiAQ1fNtnkxyt7a64LDLcvAlpOFgvyDoc/F4wGnGLOgRZT5OUGay+fbJAjiPJl/T6PLt2FhxyhgD4+FRRsl5LQS/NMYUQ0g3UPDy9zPSVEkA==";
+        List<String> certChainStr = Arrays.asList(
+                "MIIFPTCCBCWgAwIBAgIQVAEBYZ82L1CjhIy7Ds8Z6TANBgkqhkiG9w0BAQsFADBbMRcwFQYDVQQDDA5GYXN0Q0EgU0hBLTI1NjEzMDEGA1UECgwqQ8OUTkcgVFkgQ+G7lCBQSOG6pk4gQ0jhu64gS8OdIFPhu5AgRkFTVENBMQswCQYDVQQGEwJWTjAeFw0yMzExMDMwODEyMDBaFw0yNDExMDMwODEyMDBaMGQxCzAJBgNVBAYTAlZOMRIwEAYDVQQIDAlIw6AgTuG7mWkxHjAcBgNVBAMMFU5HVVnhu4ROIFRV4bqkTiBLScOKTjEhMB8GCgmSJomT8ixkAQEMEUNDQ0Q6Mjg2MDk0MDAwMDIwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2KcyXepH6YS25XoKR6yZxTxpheKJhtkljqKyW3yIYXFaC6Iwe1eQmOEcdng1TYYl7o8lLaNe2gWn10d2SScI9xkvnNCGmTVuZ0W0LUPwnz2TiUCcsdr9YNdnltlXofPV0+0NG5kmmf3e4+AYudmTUIyXyx1cu9c+YZrwS7j5CXktYaSoM81GL9+gUV27SGHuZXOYvOynxJeYJP18wMxouZESTZtxqPDS8PjtPuj4BTs8DUvtpnllBv/avT6CEYAxPn4aEATi3iEO+eehEI8H5aWUSYnsG97bgeeTB64s0g/Dwat183wn/zmrVFWbEbe8gt0QHI4UtvrSRworf7QeewIDAQABo4IB8jCCAe4wDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBRSKOOvdOPsfmMJUHch3ZqOGP1KfDBeBggrBgEFBQcBAQRSMFAwKwYIKwYBBQUHMAKGH2h0dHA6Ly9wdWIuZmFzdGNhLnZuL0Zhc3RDQS5jcnQwIQYIKwYBBQUHMAGGFWh0dHA6Ly9vY3NwLmZhc3RjYS52bjBhBgNVHSAEWjBYMFYGDCsGAQQBge0DAQkDATBGMBYGCCsGAQUFBwICMAoMCFBlcnNvbmFsMCwGCCsGAQUFBwICMCAMHmh0dHBzOi8vZmFzdGNhLnZuL2Rvd25sb2FkL0NQUzA0BgNVHSUELTArBggrBgEFBQcDAgYIKwYBBQUHAwQGCisGAQQBgjcKAwwGCSqGSIb3LwEBBTCBlAYDVR0fBIGMMIGJMIGGoCOgIYYfaHR0cDovL2NybC5mYXN0Y2Eudm4vZmFzdGNhLmNybKJfpF0wWzEXMBUGA1UEAwwORmFzdENBIFNIQS0yNTYxMzAxBgNVBAoMKkPDlE5HIFRZIEPhu5QgUEjhuqZOIENI4buuIEvDnSBT4buQIEZBU1RDQTELMAkGA1UEBhMCVk4wHQYDVR0OBBYEFNg29r6rfh8pzd0V7NGH93qPH2VjMA4GA1UdDwEB/wQEAwIE8DANBgkqhkiG9w0BAQsFAAOCAQEAtPzyvc1QAnW5EztuImg0EcKmklhvear9rG20SmnkTqR7fsQkLm5ext5uMtPF1OucrQ8AoVT8Dd1TwOzxpiv5JRUaanFo1b7aet7Ql2wjXsyKt29uGinWGZSQFV/xa7QdFp5uqjg3yhRoN5CfmtrB6lJDuHc1MibKmgChEQHlaoQBczS2AfXUQgN30NwUIy0ujSDOXIXiWbyS9Ijt/Eck1a2jBNlnA91mdJsCjWevgUBiAQ1fNtnkxyt7a64LDLcvAlpOFgvyDoc/F4wGnGLOgRZT5OUGay+fbJAjiPJl/T6PLt2FhxyhgD4+FRRsl5LQS/NMYUQ0g3UPDy9zPSVEkA==",
+                "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",
+                "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"
+        );
+        String signatureValueStr = "fr9aUx7BIhzPPuYiFpT+1jPWM75okRxWJHPm1pNoF2dyWbQUxBZ7RcNK9wWDXdc9ycnWe7r9jlaTUQD6q7sxpvK7Gy2Ih616Bm7Gg4sGWHdeNoI8nfRTdyjycMJ3ZkRMb7XHauoAM1HZOdyI+4T1M1SKDvjC+AH9rNx7HRfC2Smdtx0qjBetCNuzFtr5x5snAVqLVh3wO4OItPiE3RFj5PoNbpmH2WaaVv244VuPm08TMUDTIfPHAXsP7SI/8QH9O0FGg1h+qfrXXAYxAWNVzSo90aL0SubKqivWnqD6ZwtEBdYxmAC0N5dYwsoiNtfT2m7mI0ZxMg0VG2aKxSzM5Q==";
+        signatureValueStr = "nr2QmnTdbU3vB1kzT91Mq52alRDm7u5aJsDd8JqEVRk33zteU20E+LzDBG8KjZ8uUgnd0KibOU+e/q1q8xZOdpJS5bKVaJs/ZYivAWquUiJnE6mBeSkQ9UGnzxVjh1ZpdhTduL1YWZ0BUA1rU3GPcWTkC9Xq9xmXZa3R0gDyk2GnDakdgRLCpy3bJphrsKNn4a4nFkDkYB14iQqxiIf9NeCf8wye8YcRg7Hq3p4dbjPxZ6NsHRgCQ85zPvMXPPxesDl2aVB+LoDHgAODV0gaj3tokmJTuntz4Ibi4YAFEpreqVwbqCghQoxq3fd4R2h/5ie5OdVv4IjQc87qop0MxQ==";
+        RemoteSignatureParameters parameters = new RemoteSignatureParameters();
+        RemoteCertificate remoteCert = new RemoteCertificate();
+        remoteCert.setEncodedCertificate(Utils.fromBase64(certStr));
+        List<RemoteCertificate> remoteCertChain = new ArrayList<>();
+        ;
+        for (String cert : certChainStr) {
+            remoteCertChain.add(new RemoteCertificate(Utils.fromBase64(cert)));
         }
+        parameters.setSignatureLevel(SignatureLevel.PAdES_BASELINE_B);
+        parameters.setCertificateChain(remoteCertChain);
+        parameters.setSigningCertificate(remoteCert);
+
+        RemoteDocumentSignatureServiceImpl signatureService = new RemoteDocumentSignatureServiceImpl();
+        CommonCertificateVerifier commonCertificateVerifier = new CommonCertificateVerifier();
+        PAdESService padesService = new PAdESService(commonCertificateVerifier);
+        padesService.setPdfObjFactory(new PdfBoxNativeObjectFactory());
+        signatureService.setPadesService(padesService);
+
+        SignatureValue signatureValue = new SignatureValue(SignatureAlgorithm.RSA_SHA256, Utils.fromBase64(signatureValueStr));
+        ToBeSigned toBeSigned = new ToBeSigned(Utils.fromBase64("MYH+MBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwLwYJKoZIhvcNAQkEMSIEIHFx0+rK1JCmvrU0VaPilYXDZCnu69IsavLyAPHEgmCaMIGwBgsqhkiG9w0BCRACLzGBoDCBnTCBmjCBlwQgIRQ7i7RB0Jef0k1eWfsa6URUeEF743HYFLyAR/e8cSYwczBfpF0wWzEXMBUGA1UEAwwORmFzdENBIFNIQS0yNTYxMzAxBgNVBAoMKkPDlE5HIFRZIEPhu5QgUEjhuqZOIENI4buuIEvDnSBT4buQIEZBU1RDQTELMAkGA1UEBhMCVk4CEFQBAWGfNi9Qo4SMuw7PGek="));
+        System.out.println(Utils.toBase64(toBeSigned.getBytes()));
+        System.out.println(padesService.isValidSignatureValue(
+                toBeSigned,
+                signatureValue,
+                RemoteCertificateConverter.toCertificateToken(parameters.getSigningCertificate())
+        ));
+
+        byte[] pdfBytes = FileUtils.readFileToByteArray(new File("input.pdf"));
+        RemoteDocument toBeSignedDocument = new RemoteDocument(pdfBytes, "input.pdf");
+        ToBeSignedDTO toBeSignedDTO = signatureService.getDataToSign(toBeSignedDocument, parameters);
+        System.out.println(Utils.toBase64(toBeSignedDTO.getBytes()));
+
+        System.out.println(padesService.isValidSignatureValue(
+                DTOConverter.toToBeSigned(toBeSignedDTO),
+                signatureValue,
+                RemoteCertificateConverter.toCertificateToken(parameters.getSigningCertificate())
+        ));
+
+
+        PAdESSignatureParameters padesParameters = new PAdESSignatureParameters();
+        padesParameters.setSignatureLevel(SignatureLevel.PAdES_BASELINE_B);
+        padesParameters.setSigningCertificate(RemoteCertificateConverter.toCertificateToken(parameters.getSigningCertificate()));
+        ToBeSigned tobeSigned = padesService.getDataToSign(new FileDocument("input.pdf"), padesParameters);
+        System.out.println(Utils.toBase64(tobeSigned.getBytes()));
+
+        System.out.println(padesService.isValidSignatureValue(
+                tobeSigned,
+                signatureValue,
+                RemoteCertificateConverter.toCertificateToken(parameters.getSigningCertificate())
+        ));
     }
 }
