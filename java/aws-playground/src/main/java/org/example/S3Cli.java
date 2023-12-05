@@ -252,8 +252,12 @@ public class S3Cli {
         logger.info("Bucket [{}] created", bucketName);
     }
 
-    public ListObjectVersionsResponse listObjectVersions(String bucketName) {
-        ListObjectVersionsRequest.Builder builder = ListObjectVersionsRequest.builder().bucket(bucketName);
+    public ListObjectVersionsResponse listObjectVersions(String bucketName, String prefix) {
+        ListObjectVersionsRequest.Builder builder = ListObjectVersionsRequest.builder().
+                bucket(bucketName);
+        if (prefix != null){
+            builder = builder.prefix(prefix);
+        }
         logger.info("List versions of object in bucket [{}]", bucketName);
         return this.s3.listObjectVersions(builder.build());
     }

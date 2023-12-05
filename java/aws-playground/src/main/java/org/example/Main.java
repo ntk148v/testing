@@ -34,7 +34,7 @@ public class Main {
 //        String bucketName = "b-" + UUID.randomUUID();
 //        String keyName = "k-" + UUID.randomUUID();
         String bucketName = "test-bucket";
-        String keyName = "test-key";
+        String keyName = "docs/test-key";
         File file = new File("input.pdf");
 
         try (S3Client s3Client = S3Client.builder().region(Region.US_EAST_1).
@@ -58,7 +58,7 @@ public class Main {
                 cli.getPresignedUrl(bucketName, keyName, "/tmp/input_downloaded.pdf");
 
                 // List object versions
-                ListObjectVersionsResponse versions = cli.listObjectVersions(bucketName);
+                ListObjectVersionsResponse versions = cli.listObjectVersions(bucketName, "docs");
                 for (ObjectVersion version : versions.versions()) {
                     logger.info(version.toString());
                 }
