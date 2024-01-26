@@ -2,19 +2,30 @@ package com.demo.pdfbox;
 
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.cos.COSDictionary;
+import org.apache.pdfbox.examples.signature.CreateVisibleSignature;
 import org.apache.pdfbox.examples.signature.CreateVisibleSignature2;
 import org.apache.pdfbox.examples.signature.SigUtils;
 import org.apache.pdfbox.examples.signature.cert.CertificateVerificationException;
 import org.apache.pdfbox.examples.signature.cert.CertificateVerifier;
+import org.apache.pdfbox.io.RandomAccessReadBufferedFile;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.io.RandomAccessReadBufferedFile;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.PDResources;
+import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.encryption.SecurityProvider;
+import org.apache.pdfbox.pdmodel.graphics.image.JPEGFactory;
+import org.apache.pdfbox.pdmodel.graphics.image.LosslessFactory;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
+import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationWidget;
+import org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceDictionary;
+import org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceStream;
 import org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStream;
 import org.apache.pdfbox.pdmodel.interactive.digitalsignature.PDSignature;
+import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
+import org.apache.pdfbox.pdmodel.interactive.form.PDButton;
+import org.apache.pdfbox.pdmodel.interactive.form.PDPushButton;
 import org.bouncycastle.asn1.cms.Attribute;
 import org.bouncycastle.asn1.cms.CMSAttributes;
 import org.bouncycastle.asn1.cms.Time;
@@ -23,30 +34,34 @@ import org.bouncycastle.cert.X509CertificateHolder;
 import org.bouncycastle.cert.X509v3CertificateBuilder;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
-import org.bouncycastle.cms.*;
+import org.bouncycastle.cms.CMSException;
+import org.bouncycastle.cms.CMSProcessableByteArray;
+import org.bouncycastle.cms.CMSSignedData;
+import org.bouncycastle.cms.SignerInformation;
 import org.bouncycastle.cms.jcajce.JcaSimpleSignerInfoVerifierBuilder;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.OperatorCreationException;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
-import org.apache.pdfbox.examples.signature.CreateVisibleSignature;
 import org.bouncycastle.tsp.TSPException;
 import org.bouncycastle.tsp.TimeStampToken;
 import org.bouncycastle.util.CollectionStore;
 import org.bouncycastle.util.Store;
 
+import javax.imageio.ImageIO;
 import java.awt.geom.Rectangle2D;
-import java.io.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
 import java.security.*;
-import java.security.cert.*;
 import java.security.cert.Certificate;
+import java.security.cert.*;
 import java.security.spec.RSAKeyGenParameterSpec;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashSet;
+import java.util.*;
 
 public class PDFBoxDemo {
     private static final int KEY_SIZE = 2048;
@@ -78,6 +93,82 @@ public class PDFBoxDemo {
         }
         this.keyPair = keyPairGenerator.generateKeyPair();
         this.generateCertificate();
+    }
+
+    public void createImageButton() throws IOException {
+        try (InputStream resource = new FileInputStream(STAMP_PATH);
+             PDDocument document = new PDDocument()) {
+            BufferedImage bufferedImage = ImageIO.read(resource);
+            PDImageXObject pdImageXObject = LosslessFactory.createFromImage(document, bufferedImage);
+            float width = pdImageXObject.getWidth();
+            float height = pdImageXObject.getHeight();
+
+            PDAppearanceStream pdAppearanceStream = new PDAppearanceStream(document);
+            pdAppearanceStream.setResources(new PDResources());
+            try (PDPageContentStream pdPageContentStream = new PDPageContentStream(document, pdAppearanceStream)) {
+                pdPageContentStream.drawImage(pdImageXObject, 26, 9, width, height);
+            }
+            pdAppearanceStream.setBBox(new PDRectangle(width, height));
+
+            PDPage page = new PDPage(PDRectangle.A4);
+            document.addPage(page);
+            PDAcroForm acroForm = new PDAcroForm(document);
+            document.getDocumentCatalog().setAcroForm(acroForm);
+            PDPushButton pdPushButton = new PDPushButton(acroForm);
+            pdPushButton.setPartialName("ImageButton");
+            List<PDAnnotationWidget> widgets = pdPushButton.getWidgets();
+            for (PDAnnotationWidget pdAnnotationWidget : widgets) {
+                pdAnnotationWidget.setRectangle(new PDRectangle(50, 750, width, height));
+                pdAnnotationWidget.setPage(page);
+                page.getAnnotations().add(pdAnnotationWidget);
+
+                PDAppearanceDictionary pdAppearanceDictionary = pdAnnotationWidget.getAppearance();
+                if (pdAppearanceDictionary == null) {
+                    pdAppearanceDictionary = new PDAppearanceDictionary();
+                    pdAnnotationWidget.setAppearance(pdAppearanceDictionary);
+                }
+
+                pdAppearanceDictionary.setNormalAppearance(pdAppearanceStream);
+            }
+
+            acroForm.getFields().add(pdPushButton);
+
+            document.save(new File(OUT_DIR, "imageButton.pdf"));
+        }
+    }
+
+    public void updateImageButton() throws IOException {
+        try (InputStream resource = new FileInputStream(STAMP_PATH);
+             PDDocument document = Loader.loadPDF(new File(OUT_DIR + "output.pdf"));) {
+            PDImageXObject pdImageXObject = JPEGFactory.createFromStream(document, resource);
+            float width = pdImageXObject.getWidth();
+            float height = pdImageXObject.getHeight();
+
+            PDAppearanceStream pdAppearanceStream = new PDAppearanceStream(document);
+            pdAppearanceStream.setResources(new PDResources());
+            try (PDPageContentStream pdPageContentStream = new PDPageContentStream(document, pdAppearanceStream)) {
+                pdPageContentStream.drawImage(pdImageXObject, 0, 0, width, height);
+            }
+            pdAppearanceStream.setBBox(new PDRectangle(width, height));
+
+            PDAcroForm acroForm = document.getDocumentCatalog().getAcroForm();
+            PDButton button = (PDPushButton) acroForm.getField("ImageButton");
+
+            List<PDAnnotationWidget> widgets = button.getWidgets();
+            for (PDAnnotationWidget pdAnnotationWidget : widgets) {
+
+                PDAppearanceDictionary pdAppearanceDictionary = pdAnnotationWidget.getAppearance();
+                if (pdAppearanceDictionary == null) {
+                    pdAppearanceDictionary = new PDAppearanceDictionary();
+                    pdAnnotationWidget.setAppearance(pdAppearanceDictionary);
+                }
+
+                pdAppearanceDictionary.setNormalAppearance(pdAppearanceStream);
+            }
+            button.setReadOnly(true);
+
+            document.save(new File(OUT_DIR, "imageButtonUpdated.pdf"));
+        }
     }
 
     /**
