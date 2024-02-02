@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<body>
+<script>
+(async function() {
+try {
+        const resp = await fetch('https://127.0.0.1:8085/');
+        const text = await resp.text();
+        document.body.innerText += "Response: " + text;
+} catch (e) {
+        console.log(e);
+}
+})();
+</script>
+</body>
+</html>
