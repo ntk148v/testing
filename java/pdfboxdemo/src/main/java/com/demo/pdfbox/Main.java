@@ -15,7 +15,7 @@ public class Main {
 //        pdfdemo.sign2();
 //        pdfdemo.verify("output2.pdf");
 //        pdfdemo.createImageButton();
-//        pdfdemo.updateImageButton();
-        pdfdemo.insertImage("output.pdf");
+        pdfdemo.updateImageButton("/tmp/input.pdf", 2, 26, 9, 100, 100);
+//        pdfdemo.insertImage("output.pdf");
     }
 }

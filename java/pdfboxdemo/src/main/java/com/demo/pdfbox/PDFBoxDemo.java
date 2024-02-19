@@ -137,6 +137,51 @@ public class PDFBoxDemo {
         }
     }
 
+    public void updateImageButton(String inputFile, int pageIndex, float x, float y, float width, float height) throws IOException {
+        try (InputStream resource = new FileInputStream(STAMP_PATH);
+             PDDocument document = Loader.loadPDF(new File(inputFile));) {
+            BufferedImage bufferedImage = ImageIO.read(resource);
+            PDImageXObject pdImageXObject = LosslessFactory.createFromImage(document, bufferedImage);
+            width = pdImageXObject.getWidth();
+            height = pdImageXObject.getHeight();
+
+            PDAppearanceStream pdAppearanceStream = new PDAppearanceStream(document);
+            pdAppearanceStream.setResources(new PDResources());
+            try (PDPageContentStream pdPageContentStream = new PDPageContentStream(document, pdAppearanceStream)) {
+                pdPageContentStream.drawImage(pdImageXObject, 0, 0, width, height);
+            }
+            pdAppearanceStream.setBBox(new PDRectangle(width, height));
+
+            // Get page
+            PDPage page = document.getPage(pageIndex);
+            // Create button
+            PDAcroForm acroForm = new PDAcroForm(document);
+            document.getDocumentCatalog().setAcroForm(acroForm);
+            PDPushButton pdPushButton = new PDPushButton(acroForm);
+            pdPushButton.setPartialName("ImageButton");
+            List<PDAnnotationWidget> widgets = pdPushButton.getWidgets();
+            for (PDAnnotationWidget pdAnnotationWidget : widgets) {
+                pdAnnotationWidget.setRectangle(new PDRectangle(x, y, width, height));
+//                pdAnnotationWidget.setPage(page);
+                page.getAnnotations().add(pdAnnotationWidget);
+
+                PDAppearanceDictionary pdAppearanceDictionary = pdAnnotationWidget.getAppearance();
+                if (pdAppearanceDictionary == null) {
+                    pdAppearanceDictionary = new PDAppearanceDictionary();
+                    pdAnnotationWidget.setAppearance(pdAppearanceDictionary);
+                }
+
+                pdAppearanceDictionary.setNormalAppearance(pdAppearanceStream);
+            }
+
+            acroForm.getFields().add(pdPushButton);
+
+            File outFile = new File("/tmp/output.pdf");
+            outFile.delete();
+            document.save(outFile);
+        }
+    }
+
     public void updateImageButton() throws IOException {
         try (InputStream resource = new FileInputStream(STAMP_PATH);
              PDDocument document = Loader.loadPDF(new File(OUT_DIR + "output.pdf"));) {
