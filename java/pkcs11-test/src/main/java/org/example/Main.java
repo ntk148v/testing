@@ -11,10 +11,10 @@ import eu.europa.esig.dss.pades.SignatureImageParameters;
 import eu.europa.esig.dss.pades.signature.PAdESService;
 import eu.europa.esig.dss.pdf.pdfbox.PdfBoxNativeObjectFactory;
 import eu.europa.esig.dss.pdfa.PDFAValidationResult;
+import eu.europa.esig.dss.pdfa.validation.PDFADocumentValidator;
 import eu.europa.esig.dss.token.DSSPrivateKeyEntry;
 import eu.europa.esig.dss.token.MSCAPISignatureToken;
 import eu.europa.esig.dss.token.Pkcs11SignatureToken;
-import eu.europa.esig.dss.pdfa.validation.PDFADocumentValidator;
 import eu.europa.esig.dss.utils.Utils;
 import eu.europa.esig.dss.validation.CommonCertificateVerifier;
 import eu.europa.esig.dss.validation.reports.Reports;
@@ -27,7 +27,6 @@ import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.math.BigInteger;
 import java.security.*;
 import java.security.cert.Certificate;
@@ -88,6 +87,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        ImageOnly();
         String certStr = "MIIFPTCCBCWgAwIBAgIQVAEBYZ82L1CjhIy7Ds8Z6TANBgkqhkiG9w0BAQsFADBbMRcwFQYDVQQDDA5GYXN0Q0EgU0hBLTI1NjEzMDEGA1UECgwqQ8OUTkcgVFkgQ+G7lCBQSOG6pk4gQ0jhu64gS8OdIFPhu5AgRkFTVENBMQswCQYDVQQGEwJWTjAeFw0yMzExMDMwODEyMDBaFw0yNDExMDMwODEyMDBaMGQxCzAJBgNVBAYTAlZOMRIwEAYDVQQIDAlIw6AgTuG7mWkxHjAcBgNVBAMMFU5HVVnhu4ROIFRV4bqkTiBLScOKTjEhMB8GCgmSJomT8ixkAQEMEUNDQ0Q6Mjg2MDk0MDAwMDIwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2KcyXepH6YS25XoKR6yZxTxpheKJhtkljqKyW3yIYXFaC6Iwe1eQmOEcdng1TYYl7o8lLaNe2gWn10d2SScI9xkvnNCGmTVuZ0W0LUPwnz2TiUCcsdr9YNdnltlXofPV0+0NG5kmmf3e4+AYudmTUIyXyx1cu9c+YZrwS7j5CXktYaSoM81GL9+gUV27SGHuZXOYvOynxJeYJP18wMxouZESTZtxqPDS8PjtPuj4BTs8DUvtpnllBv/avT6CEYAxPn4aEATi3iEO+eehEI8H5aWUSYnsG97bgeeTB64s0g/Dwat183wn/zmrVFWbEbe8gt0QHI4UtvrSRworf7QeewIDAQABo4IB8jCCAe4wDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBRSKOOvdOPsfmMJUHch3ZqOGP1KfDBeBggrBgEFBQcBAQRSMFAwKwYIKwYBBQUHMAKGH2h0dHA6Ly9wdWIuZmFzdGNhLnZuL0Zhc3RDQS5jcnQwIQYIKwYBBQUHMAGGFWh0dHA6Ly9vY3NwLmZhc3RjYS52bjBhBgNVHSAEWjBYMFYGDCsGAQQBge0DAQkDATBGMBYGCCsGAQUFBwICMAoMCFBlcnNvbmFsMCwGCCsGAQUFBwICMCAMHmh0dHBzOi8vZmFzdGNhLnZuL2Rvd25sb2FkL0NQUzA0BgNVHSUELTArBggrBgEFBQcDAgYIKwYBBQUHAwQGCisGAQQBgjcKAwwGCSqGSIb3LwEBBTCBlAYDVR0fBIGMMIGJMIGGoCOgIYYfaHR0cDovL2NybC5mYXN0Y2Eudm4vZmFzdGNhLmNybKJfpF0wWzEXMBUGA1UEAwwORmFzdENBIFNIQS0yNTYxMzAxBgNVBAoMKkPDlE5HIFRZIEPhu5QgUEjhuqZOIENI4buuIEvDnSBT4buQIEZBU1RDQTELMAkGA1UEBhMCVk4wHQYDVR0OBBYEFNg29r6rfh8pzd0V7NGH93qPH2VjMA4GA1UdDwEB/wQEAwIE8DANBgkqhkiG9w0BAQsFAAOCAQEAtPzyvc1QAnW5EztuImg0EcKmklhvear9rG20SmnkTqR7fsQkLm5ext5uMtPF1OucrQ8AoVT8Dd1TwOzxpiv5JRUaanFo1b7aet7Ql2wjXsyKt29uGinWGZSQFV/xa7QdFp5uqjg3yhRoN5CfmtrB6lJDuHc1MibKmgChEQHlaoQBczS2AfXUQgN30NwUIy0ujSDOXIXiWbyS9Ijt/Eck1a2jBNlnA91mdJsCjWevgUBiAQ1fNtnkxyt7a64LDLcvAlpOFgvyDoc/F4wGnGLOgRZT5OUGay+fbJAjiPJl/T6PLt2FhxyhgD4+FRRsl5LQS/NMYUQ0g3UPDy9zPSVEkA==";
         List<String> certChainStr = Arrays.asList(
                 "MIIFPTCCBCWgAwIBAgIQVAEBYZ82L1CjhIy7Ds8Z6TANBgkqhkiG9w0BAQsFADBbMRcwFQYDVQQDDA5GYXN0Q0EgU0hBLTI1NjEzMDEGA1UECgwqQ8OUTkcgVFkgQ+G7lCBQSOG6pk4gQ0jhu64gS8OdIFPhu5AgRkFTVENBMQswCQYDVQQGEwJWTjAeFw0yMzExMDMwODEyMDBaFw0yNDExMDMwODEyMDBaMGQxCzAJBgNVBAYTAlZOMRIwEAYDVQQIDAlIw6AgTuG7mWkxHjAcBgNVBAMMFU5HVVnhu4ROIFRV4bqkTiBLScOKTjEhMB8GCgmSJomT8ixkAQEMEUNDQ0Q6Mjg2MDk0MDAwMDIwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2KcyXepH6YS25XoKR6yZxTxpheKJhtkljqKyW3yIYXFaC6Iwe1eQmOEcdng1TYYl7o8lLaNe2gWn10d2SScI9xkvnNCGmTVuZ0W0LUPwnz2TiUCcsdr9YNdnltlXofPV0+0NG5kmmf3e4+AYudmTUIyXyx1cu9c+YZrwS7j5CXktYaSoM81GL9+gUV27SGHuZXOYvOynxJeYJP18wMxouZESTZtxqPDS8PjtPuj4BTs8DUvtpnllBv/avT6CEYAxPn4aEATi3iEO+eehEI8H5aWUSYnsG97bgeeTB64s0g/Dwat183wn/zmrVFWbEbe8gt0QHI4UtvrSRworf7QeewIDAQABo4IB8jCCAe4wDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBRSKOOvdOPsfmMJUHch3ZqOGP1KfDBeBggrBgEFBQcBAQRSMFAwKwYIKwYBBQUHMAKGH2h0dHA6Ly9wdWIuZmFzdGNhLnZuL0Zhc3RDQS5jcnQwIQYIKwYBBQUHMAGGFWh0dHA6Ly9vY3NwLmZhc3RjYS52bjBhBgNVHSAEWjBYMFYGDCsGAQQBge0DAQkDATBGMBYGCCsGAQUFBwICMAoMCFBlcnNvbmFsMCwGCCsGAQUFBwICMCAMHmh0dHBzOi8vZmFzdGNhLnZuL2Rvd25sb2FkL0NQUzA0BgNVHSUELTArBggrBgEFBQcDAgYIKwYBBQUHAwQGCisGAQQBgjcKAwwGCSqGSIb3LwEBBTCBlAYDVR0fBIGMMIGJMIGGoCOgIYYfaHR0cDovL2NybC5mYXN0Y2Eudm4vZmFzdGNhLmNybKJfpF0wWzEXMBUGA1UEAwwORmFzdENBIFNIQS0yNTYxMzAxBgNVBAoMKkPDlE5HIFRZIEPhu5QgUEjhuqZOIENI4buuIEvDnSBT4buQIEZBU1RDQTELMAkGA1UEBhMCVk4wHQYDVR0OBBYEFNg29r6rfh8pzd0V7NGH93qPH2VjMA4GA1UdDwEB/wQEAwIE8DANBgkqhkiG9w0BAQsFAAOCAQEAtPzyvc1QAnW5EztuImg0EcKmklhvear9rG20SmnkTqR7fsQkLm5ext5uMtPF1OucrQ8AoVT8Dd1TwOzxpiv5JRUaanFo1b7aet7Ql2wjXsyKt29uGinWGZSQFV/xa7QdFp5uqjg3yhRoN5CfmtrB6lJDuHc1MibKmgChEQHlaoQBczS2AfXUQgN30NwUIy0ujSDOXIXiWbyS9Ijt/Eck1a2jBNlnA91mdJsCjWevgUBiAQ1fNtnkxyt7a64LDLcvAlpOFgvyDoc/F4wGnGLOgRZT5OUGay+fbJAjiPJl/T6PLt2FhxyhgD4+FRRsl5LQS/NMYUQ0g3UPDy9zPSVEkA==",
@@ -103,7 +103,7 @@ public class Main {
             System.out.println(LoadCertificate(cs));
         }
 
-        MSCAPISign(cert, certChain);
+//        MSCAPISign(cert, certChain);
     }
 
     public static CertificateToken LoadCertificate(String certStr) {
@@ -196,7 +196,7 @@ public class Main {
     public static void PKCS11Sign() {
         // uncomment if you want to gen and add :x
         // genAndAddKeyStore();
-        try (Pkcs11SignatureToken token = new Pkcs11SignatureToken("/usr/local/lib/softhsm/libsofthsm2.so", new KeyStore.PasswordProtection("1234".toCharArray()), 1651866022)) {
+        try (Pkcs11SignatureToken token = new Pkcs11SignatureToken("/usr/local/lib/softhsm/libsofthsm2.so", new KeyStore.PasswordProtection("1234".toCharArray()), 1162775937)) {
             List<DSSPrivateKeyEntry> keys = token.getKeys();
 //            for (DSSPrivateKeyEntry entry : keys) {
 //                System.out.println(entry.getCertificate().getCertificate());
@@ -298,6 +298,40 @@ public class Main {
             errorMessages = diagnosticData.getPDFAValidationErrors();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void ImageOnly() {
+        try {
+            // Initialize visual signature and configure
+            SignatureImageParameters imageParameters = new SignatureImageParameters();
+            // set an image
+            imageParameters.setImage(new InMemoryDocument(new FileInputStream("signed.jpeg")));
+
+            // initialize signature field parameters
+            SignatureFieldParameters fieldParameters = new SignatureFieldParameters();
+            imageParameters.setFieldParameters(fieldParameters);
+            // the origin is the left and top corner of the page
+            fieldParameters.setPage(1);
+            fieldParameters.setOriginX(50);
+            fieldParameters.setOriginY(50);
+            fieldParameters.setWidth(100);
+            fieldParameters.setHeight(100);
+
+            // Create common certificate verifier
+            CommonCertificateVerifier commonCertificateVerifier = new CommonCertificateVerifier();
+            // Create PAdESService for signature
+            PAdESService service = new PAdESService(commonCertificateVerifier);
+            service.setPdfObjFactory(new PdfBoxNativeObjectFactory());
+
+            // Do it in the web client, return the data!
+            DSSDocument toSignDocument = new FileDocument("input.pdf");
+            DSSDocument addedImageDocument = service.addNewSignatureField(toSignDocument, fieldParameters);
+
+            addedImageDocument.writeTo(new FileOutputStream("/tmp/output.pdf"));
+            System.out.println(service.getAvailableSignatureFields(addedImageDocument).getFirst());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

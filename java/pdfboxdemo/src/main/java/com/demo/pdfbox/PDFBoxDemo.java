@@ -174,6 +174,7 @@ public class PDFBoxDemo {
                 pdAppearanceDictionary.setNormalAppearance(pdAppearanceStream);
             }
 
+            pdPushButton.setReadonly(true);
             acroForm.getFields().add(pdPushButton);
 
             File outFile = new File("/tmp/output.pdf");
