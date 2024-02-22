@@ -2,6 +2,8 @@ package com.demo.pdfbox;
 
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.cos.COSDictionary;
+import org.apache.pdfbox.cos.COSName;
+import org.apache.pdfbox.cos.COSObject;
 import org.apache.pdfbox.examples.signature.CreateVisibleSignature;
 import org.apache.pdfbox.examples.signature.CreateVisibleSignature2;
 import org.apache.pdfbox.examples.signature.SigUtils;
@@ -25,6 +27,7 @@ import org.apache.pdfbox.pdmodel.interactive.digitalsignature.COSFilterInputStre
 import org.apache.pdfbox.pdmodel.interactive.digitalsignature.PDSignature;
 import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
 import org.apache.pdfbox.pdmodel.interactive.form.PDButton;
+import org.apache.pdfbox.pdmodel.interactive.form.PDField;
 import org.apache.pdfbox.pdmodel.interactive.form.PDPushButton;
 import org.bouncycastle.asn1.cms.Attribute;
 import org.bouncycastle.asn1.cms.CMSAttributes;
@@ -51,10 +54,7 @@ import org.bouncycastle.util.Store;
 import javax.imageio.ImageIO;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.math.BigInteger;
 import java.security.*;
 import java.security.cert.Certificate;
@@ -137,6 +137,55 @@ public class PDFBoxDemo {
         }
     }
 
+    public void fillImageButton(String inputFile, int pageIndex) throws IOException {
+        try (InputStream resource = new FileInputStream(STAMP_PATH);
+             PDDocument document = Loader.loadPDF(new File(inputFile));) {
+            BufferedImage bufferedImage = ImageIO.read(resource);
+            PDImageXObject pdImageXObject = LosslessFactory.createFromImage(document, bufferedImage);
+            float imageScaleRatio = (float) (pdImageXObject.getHeight() / pdImageXObject.getWidth());
+
+            PDAcroForm acroForm = document.getDocumentCatalog().getAcroForm();
+            acroForm.getCOSObject().setNeedToBeUpdated(true);
+            COSObject fields = acroForm.getCOSObject().getCOSObject(COSName.FIELDS);
+            if (fields != null)
+                fields.setNeedToBeUpdated(true);
+
+            acroForm.setAppendOnly(true);
+            acroForm.getCOSObject().setDirect(true);
+
+            if (isFieldFilledAcroForm(acroForm, "ImageButton")) {
+                throw new RuntimeException("Field already filled");
+            }
+
+            PDField field = acroForm.getField("ImageButton");
+            PDPushButton pdPushButton = (PDPushButton) field;
+            PDAnnotationWidget annotationWidget = pdPushButton.getWidgets().get(0); // just need one widget
+
+            PDRectangle buttonPosition = annotationWidget.getRectangle();
+            float height = buttonPosition.getHeight();
+            float width = height / imageScaleRatio;
+            float x = buttonPosition.getLowerLeftX();
+            float y = buttonPosition.getLowerLeftY();
+
+            PDAppearanceStream pdAppearanceStream = new PDAppearanceStream(document);
+            pdAppearanceStream.setResources(new PDResources());
+            try (PDPageContentStream pdPageContentStream = new PDPageContentStream(document, pdAppearanceStream)) {
+                pdPageContentStream.drawImage(pdImageXObject, 0, 0, width, height);
+            }
+            pdAppearanceStream.setBBox(new PDRectangle(width, height));
+
+            PDAppearanceDictionary pdAppearanceDictionary = annotationWidget.getAppearance();
+            if (pdAppearanceDictionary == null) {
+                pdAppearanceDictionary = new PDAppearanceDictionary();
+                annotationWidget.setAppearance(pdAppearanceDictionary);
+            }
+
+            pdAppearanceDictionary.setNormalAppearance(pdAppearanceStream);
+
+            document.save(new FileOutputStream(new File("input-fill-form.pdf")));
+        }
+    }
+
     public void updateImageButton(String inputFile, int pageIndex, float x, float y, float width, float height) throws IOException {
         try (InputStream resource = new FileInputStream(STAMP_PATH);
              PDDocument document = Loader.loadPDF(new File(inputFile));) {
@@ -174,7 +223,6 @@ public class PDFBoxDemo {
                 pdAppearanceDictionary.setNormalAppearance(pdAppearanceStream);
             }
 
-            pdPushButton.setReadonly(true);
             acroForm.getFields().add(pdPushButton);
 
             File outFile = new File("/tmp/output.pdf");
@@ -183,9 +231,23 @@ public class PDFBoxDemo {
         }
     }
 
-    public void updateImageButton() throws IOException {
+    public boolean isFieldFilledAcroForm(PDAcroForm acroForm, String fieldName) throws IOException {
+        for (PDField field : acroForm.getFieldTree()) {
+            if (field instanceof PDPushButton && fieldName.equals(field.getPartialName())) {
+                for (final PDAnnotationWidget widget : field.getWidgets()) {
+                    WidgetImageChecker checker = new WidgetImageChecker(widget);
+                    if (checker.hasImages())
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    public void updateImageButton(String inputFile) throws IOException {
         try (InputStream resource = new FileInputStream(STAMP_PATH);
-             PDDocument document = Loader.loadPDF(new File(OUT_DIR + "output.pdf"));) {
+             PDDocument document = Loader.loadPDF(new File(inputFile));) {
             PDImageXObject pdImageXObject = JPEGFactory.createFromStream(document, resource);
             float width = pdImageXObject.getWidth();
             float height = pdImageXObject.getHeight();
@@ -211,9 +273,11 @@ public class PDFBoxDemo {
 
                 pdAppearanceDictionary.setNormalAppearance(pdAppearanceStream);
             }
+
             button.setReadOnly(true);
 
-            document.save(new File(OUT_DIR, "imageButtonUpdated.pdf"));
+//            document.save(new File(OUT_DIR, "imageButtonUpdated.pdf"));
+            document.saveIncremental(new FileOutputStream(new File(OUT_DIR, "input-fill-form.pdf")));
         }
     }
 
