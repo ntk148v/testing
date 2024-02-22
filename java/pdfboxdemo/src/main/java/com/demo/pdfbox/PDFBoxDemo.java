@@ -248,9 +248,18 @@ public class PDFBoxDemo {
     public void updateImageButton(String inputFile) throws IOException {
         try (InputStream resource = new FileInputStream(STAMP_PATH);
              PDDocument document = Loader.loadPDF(new File(inputFile));) {
+            PDAcroForm acroForm = document.getDocumentCatalog().getAcroForm();
+            PDButton button = (PDPushButton) acroForm.getField("ImageButton");
+            PDAnnotationWidget pdAnnotationWidget = button.getWidgets().get(0);
+            PDRectangle pdRectangle = pdAnnotationWidget.getRectangle();
+
             PDImageXObject pdImageXObject = JPEGFactory.createFromStream(document, resource);
-            float width = pdImageXObject.getWidth();
-            float height = pdImageXObject.getHeight();
+            float imageScaleRatio = (float) pdImageXObject.getHeight() / (float) pdImageXObject.getWidth();
+            float height = pdRectangle.getHeight();
+            float width = height / imageScaleRatio;
+
+//            float width = pdRectangle.getWidth();
+//            float height = pdRectangle.getHeight();
 
             PDAppearanceStream pdAppearanceStream = new PDAppearanceStream(document);
             pdAppearanceStream.setResources(new PDResources());
@@ -259,24 +268,16 @@ public class PDFBoxDemo {
             }
             pdAppearanceStream.setBBox(new PDRectangle(width, height));
 
-            PDAcroForm acroForm = document.getDocumentCatalog().getAcroForm();
-            PDButton button = (PDPushButton) acroForm.getField("ImageButton");
-
-            List<PDAnnotationWidget> widgets = button.getWidgets();
-            for (PDAnnotationWidget pdAnnotationWidget : widgets) {
-
-                PDAppearanceDictionary pdAppearanceDictionary = pdAnnotationWidget.getAppearance();
-                if (pdAppearanceDictionary == null) {
-                    pdAppearanceDictionary = new PDAppearanceDictionary();
-                    pdAnnotationWidget.setAppearance(pdAppearanceDictionary);
-                }
-
-                pdAppearanceDictionary.setNormalAppearance(pdAppearanceStream);
+            PDAppearanceDictionary pdAppearanceDictionary = pdAnnotationWidget.getAppearance();
+            if (pdAppearanceDictionary == null) {
+                pdAppearanceDictionary = new PDAppearanceDictionary();
+                pdAnnotationWidget.setAppearance(pdAppearanceDictionary);
             }
+
+            pdAppearanceDictionary.setNormalAppearance(pdAppearanceStream);
 
             button.setReadOnly(true);
 
-//            document.save(new File(OUT_DIR, "imageButtonUpdated.pdf"));
             document.saveIncremental(new FileOutputStream(new File(OUT_DIR, "input-fill-form.pdf")));
         }
     }
