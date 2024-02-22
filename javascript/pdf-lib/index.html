@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <script src="https://unpkg.com/pdf-lib@1.17.1"></script>
+    <script src="./pdf-lib.js"></script>
     <script src="https://unpkg.com/downloadjs@1.4.7"></script>
     <style>
       body {
@@ -43,16 +43,24 @@
       Click the button to fill form fields in an existing PDF document with
       <code>pdf-lib</code>
     </p>
-    <button onclick="createForm()">Fill PDF</button>
-    <button onclick="fillFormBasic()">Fill PDF</button>
-    <button onclick="fillFormAdvanced()">Fill PDF</button>
-    <p class="small">(Your browser will download the resulting file)</p>
+    <button onclick="createForm()">Create form PDF</button>
+    <button onclick="fillFormBasic()">Fill form basic PDF</button>
+    <button onclick="fillFormAdvanced()">Fill form advanced PDF</button>
+
+    <div id="animation-target"></div>
+    <iframe id="iframe"></iframe>
   </body>
 
   <script>
     const { PDFDocument, ImageAlignment } = PDFLib;
     const fetchBinaryAsset = (asset) =>
       fetch(`${asset}`).then((res) => res.arrayBuffer());
+
+    const renderInIframe = (pdfBytes) => {
+      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const blobUrl = URL.createObjectURL(blob);
+      document.getElementById("iframe").src = blobUrl;
+    };
 
     async function createForm() {
       // Fetch the PDF
@@ -71,35 +79,39 @@
         height: 60,
       });
 
-      const textField = form.createTextField("TextField");
-      textField.addToPage(page, {
-        x: 90,
-        y: 90,
-        width: 90,
-        height: 60,
-      });
-
-
       // Serialize the PDFDocument to bytes (a Uint8Array)
       const formPdfBytes = await pdfDoc.save();
 
       // Trigger the browser to download the PDF document
-      download(
-        formPdfBytes,
-        "input-create-form.pdf",
-        "application/pdf"
-      );
+      download(formPdfBytes, "input-create-form.pdf", "application/pdf");
     }
 
     async function fillFormBasic() {
       // Fetch the PDF
-      const pdfBytes = await fetchBinaryAsset("input-create-form.pdf");
+      const pdfBytes = await fetchBinaryAsset(
+        "input-create-form-signed-pades-baseline-b.pdf"
+      );
       // Load a PDF
       const pdfDoc = await PDFDocument.load(pdfBytes);
-      const page = pdfDoc.getPage(0); // the first page
+
+      // Take a snapshot of the document
+      const snapshot = pdfDoc.takeSnapshot();
+
+      // const page = pdfDoc.getPage(0); // the first page
+      // Mark the page as modified
+      // snapshot.markRefForSave(page.ref);
 
       // Get the form so we can add fields to it
       const form = pdfDoc.getForm();
+      const buttonField = form.getButton("ImageButton");
+      const widgets = buttonField.acroField.getWidgets();
+      snapshot.markRefForSave(buttonField.ref);
+      widgets.forEach((w) => {
+        let rectangle = w.getRectangle();
+        let page = pdfDoc.getPages().find((p) => p.ref === w.P());
+        snapshot.markRefForSave(page.ref);
+        let pageIndex = pdfDoc.getPages().findIndex((p) => p.ref === w.P());
+      });
 
       // Fetch the Mario image
       const marioUrl = "https://pdf-lib.js.org/assets/small_mario.png";
@@ -108,16 +120,24 @@
       );
       // Embed the Mario and emblem images
       const marioImage = await pdfDoc.embedPng(marioImageBytes);
-
-      const buttonField = form.getButton("ImageButton");
       buttonField.setImage(marioImage, ImageAlignment.Center);
-      const textField = form.getTextField("TextField");
-      textField.setImage(marioImage, ImageAlignment.Center);
 
-      const formPdfBytes = await pdfDoc.save();
+      // Serialize the PDFDocument to bytes (a Uint8Array)
+      const pdfIncrementalBytes = await pdfDoc.saveIncremental(snapshot);
+      const formPdfBytes = new Uint8Array([
+        ...new Uint8Array(pdfBytes),
+        ...pdfIncrementalBytes,
+      ]);
+
+      // const formPdfBytes = await pdfDoc.save();
 
       // Trigger the browser to download the PDF document
-      download(formPdfBytes, "input-fill-basic.pdf", "application/pdf");
+      // download(
+      //   formPdfBytes,
+      //   "input-create-form-signed-pades-baseline-b.pdf",
+      //   "application/pdf"
+      // );
+      renderInIframe(formPdfBytes);
     }
 
     async function fillFormAdvanced() {
@@ -227,11 +247,7 @@
       const pdfBytes = await pdfDoc.save();
 
       // Trigger the browser to download the PDF document
-      download(
-        pdfBytes,
-        "input-fill-form-advanced.pdf",
-        "application/pdf"
-      );
+      download(pdfBytes, "input-fill-form-advanced.pdf", "application/pdf");
     }
   </script>
 </html>
