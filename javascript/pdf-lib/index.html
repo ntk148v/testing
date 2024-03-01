@@ -43,9 +43,10 @@
       Click the button to fill form fields in an existing PDF document with
       <code>pdf-lib</code>
     </p>
-    <button onclick="createForm()">Fill PDF</button>
-    <button onclick="fillFormBasic()">Fill PDF</button>
-    <button onclick="fillFormAdvanced()">Fill PDF</button>
+    <button onclick="createForm()">Create form</button>
+    <button onclick="fillFormBasic()">Fill form basic</button>
+    <button onclick="fillFormAdvanced()">Fill form advanced</button>
+    <button onClick="removeSig()">Remove signature field</button>
     <p class="small">(Your browser will download the resulting file)</p>
   </body>
 
@@ -53,6 +54,34 @@
     const { PDFDocument, ImageAlignment } = PDFLib;
     const fetchBinaryAsset = (asset) =>
       fetch(`${asset}`).then((res) => res.arrayBuffer());
+
+    async function removeSig() {
+      // Fetch the PDF
+      const pdfBytes = await fetchBinaryAsset("input-signed.pdf");
+      // Load a PDF
+      const pdfDoc = await PDFDocument.load(pdfBytes);
+      const form = pdfDoc.getForm();
+      const formFields = form.getFields();
+      try {
+        for (const field of formFields) {
+          if (!(field.acroField.FT().encodedName == "/Sig")) {
+            continue;
+          }
+          console.log("Remove sig field", field);
+          while (field.acroField.getWidgets().length) {
+            field.acroField.removeWidget(0);
+          }
+          form.removeField(field);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+
+      const formPdfBytes = await pdfDoc.save();
+
+      // Trigger the browser to download the PDF document
+      download(formPdfBytes, "input-removed-sig.pdf", "application/pdf");
+    }
 
     async function createForm() {
       // Fetch the PDF
@@ -79,16 +108,11 @@
         height: 60,
       });
 
-
       // Serialize the PDFDocument to bytes (a Uint8Array)
       const formPdfBytes = await pdfDoc.save();
 
       // Trigger the browser to download the PDF document
-      download(
-        formPdfBytes,
-        "input-create-form.pdf",
-        "application/pdf"
-      );
+      download(formPdfBytes, "input-create-form.pdf", "application/pdf");
     }
 
     async function fillFormBasic() {
@@ -227,11 +251,7 @@
       const pdfBytes = await pdfDoc.save();
 
       // Trigger the browser to download the PDF document
-      download(
-        pdfBytes,
-        "input-fill-form-advanced.pdf",
-        "application/pdf"
-      );
+      download(pdfBytes, "input-fill-form-advanced.pdf", "application/pdf");
     }
   </script>
 </html>
