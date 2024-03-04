@@ -51,36 +51,57 @@
   </body>
 
   <script>
-    const { PDFDocument, ImageAlignment } = PDFLib;
+    const { PDFDocument, ImageAlignment, PDFSignature, PDFName, PDFRef } =
+      PDFLib;
     const fetchBinaryAsset = (asset) =>
       fetch(`${asset}`).then((res) => res.arrayBuffer());
 
     async function removeSig() {
       // Fetch the PDF
-      const pdfBytes = await fetchBinaryAsset("input-signed.pdf");
+      const pdfBytes = await fetchBinaryAsset(
+        "input-create-form-signed-pades-baseline-b.pdf"
+      );
       // Load a PDF
       const pdfDoc = await PDFDocument.load(pdfBytes);
       const form = pdfDoc.getForm();
       const formFields = form.getFields();
       try {
         for (const field of formFields) {
-          if (!(field.acroField.FT().encodedName == "/Sig")) {
-            continue;
+          if (field instanceof PDFSignature) {
+            const tmpField = pdfDoc.context.lookup(field.ref);
+            const signatureDictRef = tmpField.get(PDFName.of("V"));
+            const signatureDict = pdfDoc.context.lookup(signatureDictRef);
+
+            const signatureInfo = {
+              fieldName: tmpField.get(PDFName.of("T"))?.asString(),
+              certificateName: signatureDict
+                .get(PDFName.of("Name"))
+                ?.toString(),
+              signingTime: signatureDict.get(PDFName.of("M"))?.toString(),
+            };
+
+            const signatureContents = signatureDict.get(PDFName.of("Contents"))?.toString();
+
+            console.log(signatureContents);
           }
-          console.log("Remove sig field", field);
-          while (field.acroField.getWidgets().length) {
-            field.acroField.removeWidget(0);
-          }
-          form.removeField(field);
+
+          // if (!(field instanceof PDFSignature)) {
+          //   continue;
+          // }
+          // console.log("Remove sig field", field);
+          // while (field.acroField.getWidgets().length) {
+          //   field.acroField.removeWidget(0);
+          // }
+          // form.removeField(field);
         }
       } catch (error) {
         console.log(error);
       }
 
-      const formPdfBytes = await pdfDoc.save();
+      // const formPdfBytes = await pdfDoc.save();
 
       // Trigger the browser to download the PDF document
-      download(formPdfBytes, "input-removed-sig.pdf", "application/pdf");
+      // download(formPdfBytes, "input-removed-sig.pdf", "application/pdf");
     }
 
     async function createForm() {
