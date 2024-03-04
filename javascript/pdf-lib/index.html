@@ -43,12 +43,11 @@
       Click the button to fill form fields in an existing PDF document with
       <code>pdf-lib</code>
     </p>
-    <button onclick="createForm()">Create form PDF</button>
-    <button onclick="fillFormBasic()">Fill form basic PDF</button>
-    <button onclick="fillFormAdvanced()">Fill form advanced PDF</button>
-
-    <div id="animation-target"></div>
-    <iframe id="iframe"></iframe>
+    <button onclick="createForm()">Create form</button>
+    <button onclick="fillFormBasic()">Fill form basic</button>
+    <button onclick="fillFormAdvanced()">Fill form advanced</button>
+    <button onClick="removeSig()">Remove signature field</button>
+    <p class="small">(Your browser will download the resulting file)</p>
   </body>
 
   <script>
@@ -56,11 +55,33 @@
     const fetchBinaryAsset = (asset) =>
       fetch(`${asset}`).then((res) => res.arrayBuffer());
 
-    const renderInIframe = (pdfBytes) => {
-      const blob = new Blob([pdfBytes], { type: "application/pdf" });
-      const blobUrl = URL.createObjectURL(blob);
-      document.getElementById("iframe").src = blobUrl;
-    };
+    async function removeSig() {
+      // Fetch the PDF
+      const pdfBytes = await fetchBinaryAsset("input-signed.pdf");
+      // Load a PDF
+      const pdfDoc = await PDFDocument.load(pdfBytes);
+      const form = pdfDoc.getForm();
+      const formFields = form.getFields();
+      try {
+        for (const field of formFields) {
+          if (!(field.acroField.FT().encodedName == "/Sig")) {
+            continue;
+          }
+          console.log("Remove sig field", field);
+          while (field.acroField.getWidgets().length) {
+            field.acroField.removeWidget(0);
+          }
+          form.removeField(field);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+
+      const formPdfBytes = await pdfDoc.save();
+
+      // Trigger the browser to download the PDF document
+      download(formPdfBytes, "input-removed-sig.pdf", "application/pdf");
+    }
 
     async function createForm() {
       // Fetch the PDF
