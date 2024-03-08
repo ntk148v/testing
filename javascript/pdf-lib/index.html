@@ -81,10 +81,10 @@
               signingTime: signatureDict.get(PDFName.of("M"))?.toString(),
             };
 
-            const signatureContents = signatureDict.get(PDFName.of("Contents"))?.toString();
+            const signatureContents = signatureDict.get(PDFName.of("Contents")).asBytes();
 
-            console.log(signatureContents);
-            var certAsn1 = forge.asn1.fromDer(signatureContents)
+            console.log(new TextDecoder().decode(signatureContents));
+            var certAsn1 = forge.pkcs7.messageFromPem(signatureContents)
             console.log(certAsn1);
           }
 
