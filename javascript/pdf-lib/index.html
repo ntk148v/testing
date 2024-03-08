@@ -3,6 +3,7 @@
     <meta charset="utf-8" />
     <script src="./pdf-lib.js"></script>
     <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/node-forge@1.0.0/dist/forge.min.js"></script>
     <style>
       body {
         width: 100vw;
@@ -83,6 +84,8 @@
             const signatureContents = signatureDict.get(PDFName.of("Contents"))?.toString();
 
             console.log(signatureContents);
+            var certAsn1 = forge.asn1.fromDer(signatureContents)
+            console.log(certAsn1);
           }
 
           // if (!(field instanceof PDFSignature)) {
