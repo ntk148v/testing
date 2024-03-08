@@ -15,23 +15,42 @@ func main() {
 	defer db.Close()
 
 	// Execute the query
-	rows, err := db.Query("SELECT product_id, vendor_id, instance_uuid FROM nova.pci_devices")
+	rows, err := db.Query("SELECT product_id, vendor_id, instance_uuid, status FROM nova.pci_devices")
 	if err != nil {
 		panic(err.Error()) // proper error handling instead of panic in your app
 	}
 	defer rows.Close()
 
-	var (
-		product_id    []byte
-		vendor_id     []byte
-		instance_uuid []byte
-	)
+	var columns = []string{"product_id", "vendor_id", "instance_uuid", "status"}
+	// Make a slice for the values
+	values := make([]sql.RawBytes, len(columns))
+
+	// rows.Scan wants '[]interface{}' as an argument, so we must copy the
+	// references into such a slice
+	// See http://code.google.com/p/go-wiki/wiki/InterfaceSlice for details
+	scanArgs := make([]interface{}, len(values))
+	for i := range values {
+		scanArgs[i] = &values[i]
+	}
 
 	for rows.Next() {
-		err = rows.Scan(&product_id, &vendor_id, &instance_uuid)
+		// get RawBytes from data
+		err = rows.Scan(scanArgs...)
 		if err != nil {
-			panic(err.Error())
+			panic(err.Error()) // proper error handling instead of panic in your app
 		}
-		fmt.Println(string(product_id), string(vendor_id), string(instance_uuid))
+
+		// Now do something with the data.
+		// Here we just print each column as a string.
+		var value string
+		for i, col := range values {
+			// Here we can check if the value is nil (NULL value)
+			if col == nil {
+				value = "NULL"
+			} else {
+				value = string(col)
+			}
+			fmt.Printf("%s: %s\n", columns[i], value)
+		}
 	}
 }
