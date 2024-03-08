@@ -36,6 +36,7 @@ require (
 	github.com/go-kit/log v0.2.0
 	github.com/go-openapi/strfmt v0.21.0
 	github.com/go-redis/redis/v8 v8.11.3
+	github.com/go-sql-driver/mysql v1.4.1
 	github.com/gojek/heimdall/v7 v7.0.2
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/google/go-cmp v0.6.0
