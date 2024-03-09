@@ -3,6 +3,10 @@
     <meta charset="utf-8" />
     <script src="./pdf-lib.js"></script>
     <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/requirejs/require.js"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/node-forge@1.0.0/dist/forge.min.js"></script>
     <style>
       body {
@@ -81,11 +85,33 @@
               signingTime: signatureDict.get(PDFName.of("M"))?.toString(),
             };
 
-            const signatureContents = signatureDict.get(PDFName.of("Contents")).asBytes();
+            const signatureContents = signatureDict.get(PDFName.of("Contents"));
 
-            console.log(new TextDecoder().decode(signatureContents));
-            var certAsn1 = forge.pkcs7.messageFromPem(signatureContents)
-            console.log(certAsn1);
+            require([
+              "https://unpkg.com/@lapo/asn1js/asn1.js",
+              "https://unpkg.com/@lapo/asn1js/hex.js",
+              "https://cdn.jsdelivr.net/npm/node-forge@1.0.0/dist/forge.min.js",
+            ], function (ASN1, Hex, forge) {
+              // https://github.com/digitalbazaar/forge/issues/395
+              let asn1 = forge.asn1.fromDer(
+                hex2str(signatureContents.asString())
+              );
+              let message = forge.pkcs7.messageFromAsn1(asn1);
+              console.log(message);
+
+              function hex2str(str1) {
+                var hex = str1.toString();
+                var str = "";
+                for (var n = 0; n < hex.length; n += 2) {
+                  str += String.fromCharCode(parseInt(hex.substr(n, 2), 16));
+                }
+                return str;
+              }
+            });
+            // let derKey  = forge.util.decode64(signatureContents.asString());
+            // let asn1 = forge.asn1.fromDer(derKey);
+            // console.log(forge.asn1.fromDer(signatureContents.asBytes()));
+            // console.log(forge.pki.certificateFromAsn1(signatureContents.asString()));
           }
 
           // if (!(field instanceof PDFSignature)) {
