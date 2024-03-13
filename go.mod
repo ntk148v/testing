@@ -96,7 +96,7 @@ require (
 	golang.org/x/sys v0.15.0
 	golang.org/x/term v0.15.0
 	google.golang.org/grpc v1.55.0
-	google.golang.org/protobuf v1.31.0
+	google.golang.org/protobuf v1.33.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	gopkg.in/inconshreveable/log15.v2 v2.16.0
 	gopkg.in/yaml.v2 v2.4.0
