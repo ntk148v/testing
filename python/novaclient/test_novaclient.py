@@ -1,6 +1,5 @@
 import os
 
-
 from keystoneauth1 import loading
 from keystoneauth1 import session
 from novaclient import client
