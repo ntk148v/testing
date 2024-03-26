@@ -1,5 +1,5 @@
-#!/bin/sh
 
+#!/usr/bin/env sh
 # Expose total number of established TCP connections for the specified port.
 #
 # Usage: tcp_conn <-s|-d> port
