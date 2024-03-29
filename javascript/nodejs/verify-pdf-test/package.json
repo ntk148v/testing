@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "@ninja-labs/verify-pdf": "https://github.com/ntk148v/verify-pdf.git",
-    "express": "^4.18.3"
+    "express": "^4.19.2"
   }
 }
