@@ -29,6 +29,9 @@ import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
 import org.apache.pdfbox.pdmodel.interactive.form.PDButton;
 import org.apache.pdfbox.pdmodel.interactive.form.PDField;
 import org.apache.pdfbox.pdmodel.interactive.form.PDPushButton;
+import org.apache.pdfbox.rendering.ImageType;
+import org.apache.pdfbox.rendering.PDFRenderer;
+import org.apache.pdfbox.tools.imageio.ImageIOUtil;
 import org.bouncycastle.asn1.cms.Attribute;
 import org.bouncycastle.asn1.cms.CMSAttributes;
 import org.bouncycastle.asn1.cms.Time;
@@ -52,6 +55,7 @@ import org.bouncycastle.util.CollectionStore;
 import org.bouncycastle.util.Store;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -61,6 +65,7 @@ import java.security.cert.Certificate;
 import java.security.cert.*;
 import java.security.spec.RSAKeyGenParameterSpec;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.*;
 
 public class PDFBoxDemo {
@@ -560,5 +565,65 @@ public class PDFBoxDemo {
                 System.err.println("Certificate cannot be verified without signing time");
             }
         }
+    }
+
+    // https://github.com/apache/pdfbox/blob/051fcdf2421cd77263079d7e6f6d7d82e3a80941/tools/src/main/java/org/apache/pdfbox/tools/PDFToImage.java#L99
+    public Integer genThumbnail(String imageFormat, Float quality, Integer dpi) {
+        if (!List.of(ImageIO.getWriterFormatNames()).contains(imageFormat)) {
+            System.err.println("Error: Invalid image format " + imageFormat + " - supported formats: " +
+                    String.join(", ", ImageIO.getWriterFormatNames()));
+            return 2;
+        }
+
+        if (quality < 0) {
+            quality = "png".equals(imageFormat) ? 0f : 1f;
+        }
+
+        if (dpi == 0) {
+            try {
+                dpi = Toolkit.getDefaultToolkit().getScreenResolution();
+            } catch (HeadlessException e) {
+                dpi = 96;
+            }
+        }
+
+        try (PDDocument document = Loader.loadPDF(new File(IN_DIR + "input.pdf"))) {
+            PDAcroForm acroForm = document.getDocumentCatalog().getAcroForm();
+            if (acroForm != null && acroForm.getNeedAppearances()) {
+                acroForm.refreshAppearances();
+            }
+
+            long startTime = System.nanoTime();
+
+            int startPage = 1;
+            int endPage = 1;
+            ImageType imageType = ImageType.RGB;
+
+            // render the pages
+            boolean success = true;
+            endPage = Math.min(endPage, document.getNumberOfPages());
+            PDFRenderer renderer = new PDFRenderer(document);
+//            renderer.setSubsamplingAllowed(subsampling);
+            for (int i = startPage - 1; i < endPage; i++) {
+                BufferedImage image = renderer.renderImageWithDPI(i, dpi, imageType);
+                String fileName = OUT_DIR + (i + 1) + "." + imageFormat;
+                success &= ImageIOUtil.writeImage(image, fileName, dpi, quality);
+            }
+
+            // performance stats
+            long endTime = System.nanoTime();
+            long duration = endTime - startTime;
+            int count = 1 + endPage - startPage;
+            System.err.printf("Rendered %d page%s in %dms%n", count, count == 1 ? "" : "s",
+                    duration / 1000000);
+            if (!success) {
+                System.err.println("Error: no writer found for image format '" + imageFormat + "'");
+                return 1;
+            }
+        } catch (IOException ioe) {
+            System.err.println("Error converting document [" + ioe.getClass().getSimpleName() + "]: " + ioe.getMessage());
+            return 4;
+        }
+        return 0;
     }
 }

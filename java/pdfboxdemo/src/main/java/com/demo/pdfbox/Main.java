@@ -17,6 +17,8 @@ public class Main {
 //        pdfdemo.createImageButton();
 //        pdfdemo.updateImageButton("/tmp/input.pdf", 2, 26, 9, 100, 100);
 //        pdfdemo.insertImage("output.pdf");
-        pdfdemo.updateImageButton("/tmp/input-create-form-signed-pades-baseline-b.pdf");
+//        pdfdemo.updateImageButton("/tmp/input-create-form-signed-pades-baseline-b.pdf");
+
+        pdfdemo.genThumbnail("jpg", 0f, 0);
     }
 }
