@@ -1,25 +1,34 @@
-import jsPDF from 'jspdf';
-import logo from './logo.svg';
-import './App.css';
+import jsPDF from "jspdf";
+import "./App.css";
+import { useRef } from "react";
+import ReportTemplate from "./ReportTemplate";
 
 function App() {
-  const doc = new jsPDF();
+  const reportTemplateRef = useRef(null);
+
+  const handleGeneratePdf = () => {
+    const doc = new jsPDF({
+      orientation: 'l',
+      format: "a4"
+    });
+
+    // Adding the fonts
+    doc.setFont("Inter-Regular", "normal");
+    doc.html(reportTemplateRef.current, {
+      async callback(doc) {
+        await doc.save("document");
+      },
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button className="button" onClick={handleGeneratePdf}>
+        Generate PDF
+      </button>
+      <div ref={reportTemplateRef}>
+        <ReportTemplate />
+      </div>
     </div>
   );
 }
