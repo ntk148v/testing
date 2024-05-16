@@ -1,22 +1,19 @@
-import jsPDF from "jspdf";
 import "./App.css";
 import { useRef } from "react";
 import ReportTemplate from "./ReportTemplate";
+import html2PDF from "jspdf-html2canvas";
 
 function App() {
   const reportTemplateRef = useRef(null);
 
   const handleGeneratePdf = () => {
-    const doc = new jsPDF({
-      orientation: 'l',
-      format: "a4"
-    });
-
-    // Adding the fonts
-    doc.setFont("Inter-Regular", "normal");
-    doc.html(reportTemplateRef.current, {
-      async callback(doc) {
-        await doc.save("document");
+    html2PDF(reportTemplateRef.current, {
+      jsPDF: {
+        format: "a4",
+        orientation: "p",
+      },
+      success: function (pdf) {
+        window.open(pdf.output("bloburl"));
       },
     });
   };

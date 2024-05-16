@@ -5196,7 +5196,7 @@ html-webpack-plugin@^5.5.0:
     pretty-error "^4.0.0"
     tapable "^2.0.0"
 
-html2canvas@^1.0.0-rc.5:
+html2canvas@^1.0.0-rc.5, html2canvas@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/html2canvas/-/html2canvas-1.4.1.tgz#7cef1888311b5011d507794a066041b14669a543"
   integrity sha512-fPU6BHNpsyIhr8yyMpTLLxAbkaK8ArIBcmZIRiBLiDhjeqvXolaEmDGmELFuX9I4xDcaKKcJl+TKZLqruBbmWA==
@@ -6401,6 +6401,14 @@ jsonpointer@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-5.0.1.tgz#2110e0af0900fd37467b5907ecd13a7884a1b559"
   integrity sha512-p/nXbhSEcu3pZRdkW1OfJhpsVtW1gd4Wa1fnQc9YLiTfAjn0312eMKimbdIQzuZl9aa9xUGaRlP9T/CJE/ditQ==
+
+jspdf-html2canvas@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/jspdf-html2canvas/-/jspdf-html2canvas-1.5.2.tgz#05cf99eed0b846585e22cf8f1ff77ada1e67f110"
+  integrity sha512-jA/QvZWPiBJFR7Ut4XCwKsOcml1L75lvO7+mmw5qgTfmi8qbfHNr2DPXeQ8J6mNKJfB4Fn8QBBiYcr2NR3ssdQ==
+  dependencies:
+    html2canvas "^1.4.1"
+    jspdf "^2.5.1"
 
 jspdf@^2.5.1:
   version "2.5.1"
