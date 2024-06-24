@@ -45,7 +45,7 @@ require (
 	github.com/gophercloud/gophercloud v0.23.0
 	github.com/gorilla/mux v1.8.0
 	github.com/haproxytech/config-parser/v4 v4.0.0-rc2
-	github.com/hashicorp/go-retryablehttp v0.7.0
+	github.com/hashicorp/go-retryablehttp v0.7.7
 	github.com/inconshreveable/log15 v2.16.0+incompatible
 	github.com/influxdata/influxdb-client-go/v2 v2.3.1-0.20210518120617-5d1fff431040
 	github.com/influxdata/influxdb1-client v0.0.0-20191209144304-8bf82d3c094d
@@ -93,7 +93,7 @@ require (
 	golang.org/x/oauth2 v0.12.0
 	golang.org/x/perf v0.0.0-20230906145419-e9dd5d2713ed
 	golang.org/x/sync v0.3.0
-	golang.org/x/sys v0.18.0
+	golang.org/x/sys v0.20.0
 	golang.org/x/term v0.18.0
 	google.golang.org/grpc v1.55.0
 	google.golang.org/protobuf v1.33.0
@@ -160,7 +160,6 @@ require (
 	github.com/emersion/go-message v0.15.0 // indirect
 	github.com/emersion/go-textwrapper v0.0.0-20200911093747-65d896831594 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
-	github.com/fatih/color v1.13.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
@@ -191,7 +190,7 @@ require (
 	github.com/gookit/color v1.5.4 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/haproxytech/go-logger v1.0.0 // indirect
-	github.com/hashicorp/go-cleanhttp v0.5.1 // indirect
+	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/influxdata/line-protocol v0.0.0-20200327222509-2487e7298839 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/joho/godotenv v1.4.0 // indirect
@@ -204,7 +203,7 @@ require (
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
 	github.com/mattetti/filebuffer v1.0.1 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.19 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-localereader v0.0.1 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/minio/highwayhash v1.0.2 // indirect
@@ -291,7 +290,6 @@ require (
 	github.com/go-openapi/errors v0.20.0 // indirect
 	github.com/golang-jwt/jwt/v4 v4.4.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
-	github.com/hashicorp/go-hclog v0.12.2 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/moby/term v0.0.0-20220808134915-39b0c02b01ae // indirect
