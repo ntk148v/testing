@@ -37,6 +37,8 @@ beautifulsoup4 = "*"
 flet = "*"
 prettymaps = "*"
 python-novaclient = "==18.6.0"
+stravalib = "*"
+python-dotenv = "*"
 
 [requires]
 #python_version = "3.6"
