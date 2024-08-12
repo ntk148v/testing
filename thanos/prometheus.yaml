@@ -1,0 +1,33 @@
+alertmanager:
+  enabled: false
+kubeApiServer:
+  enabled: false
+kubeControllerManager:
+  enabled: false
+kubeEtcd:
+  enabled: false
+kubeScheduler:
+  enabled: false
+grafana:
+  adminPassword: prom-operator
+  sidecar:
+    datasources:
+      url: 'http://thanos-query-frontend:9090/'
+fullnameOverride: prometheus
+prometheus:
+  thanosService:
+    enabled: true
+  thanosServiceMonitor:
+    enabled: true
+  prometheusSpec:
+    thanos:
+      objectStorageConfig:
+        key: objstore-local.yml
+        name: thanos-objstore
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    ruleSelectorNilUsesHelmValues: false
+    prometheusExternalLabelNameClear: true
+    disableCompaction: true
+    remoteWrite:
+      - url: http://thanos-receive:19291/api/v1/receive

@@ -1,0 +1,39 @@
+# https://cloudentity.com/developers/deployment-and-operations/operations/monitoring/
+minio:
+  enabled: true
+  auth:
+    rootUser: admin
+    rootPassword: p@ssw0rd!
+metrics:
+  enabled: true
+  serviceMonitor:
+    enabled: true
+  prometheusRule:
+    enabled: true
+    default:
+      absent_rules: true
+      store_gateway: true
+      compaction: true
+      query: true
+query:
+  replicaCount: 1
+  dnsDiscovery:
+    sidecarsService: prometheus-thanos-discovery
+    sidecarsNamespace: monitoring
+compactor:
+  enabled: false
+  retentionResolutionRaw: 7d
+  retentionResolution5m: 30d
+  retentionResolution1h: 90d
+  persistence:
+    size: 100Gi
+storegateway:
+  enabled: true
+  persistence:
+    size: 10Gi
+existingObjstoreSecret: thanos-objstore
+
+receive:
+  enabled: true
+  resources:
+    limits:
