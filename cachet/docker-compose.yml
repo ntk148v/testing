@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:12-alpine
+    container_name: postgres
+    volumes:
+      - /var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    restart: always
+  cachet:
+    image: cachethq/docker:latest
+    container_name: cachet
+    ports:
+      - 2690:8000
+    links:
+      - postgres:postgres
+    environment:
+      - DB_DRIVER=pgsql
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_DATABASE=postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+      - DB_PREFIX=chq_
+      - APP_KEY=base64:qHvpjrVqqHGxaIcKRyRksRcCZxHDmyvi2FY1reB1X1E=  # hmm it's fake haha
+      - APP_LOG=errorlog
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - DEBUG=false
+    depends_on:
+      - postgres
+    restart: on-failure
