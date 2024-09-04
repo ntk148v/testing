@@ -85,7 +85,7 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
     profiles:
       - with_prometheus
@@ -110,6 +110,13 @@ services:
           cpus: "0.5"
     profiles:
       - with_grafana
+
+  alertmanager:
+    image: "prom/alertmanager"
+    container_name: alertmanager
+    ports:
+      - 9093:9093
+    restart: always
 
 volumes:
   grafana_data:
