@@ -335,7 +335,7 @@ GEM
     unicode-display_width (2.1.0)
     unicode_utils (1.4.0)
     uuidtools (2.2.0)
-    webrick (1.7.0)
+    webrick (1.8.2)
     winrm (2.3.6)
       builder (>= 2.1.2)
       erubi (~> 1.8)
