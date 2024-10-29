@@ -1,4 +1,5 @@
-import logging
+from datetime import datetime
+import os
 import time
 
 import futurist
@@ -6,40 +7,58 @@ from taskflow import engines
 from taskflow.patterns import linear_flow as lf
 from taskflow.patterns import unordered_flow as uf
 from taskflow import task
+import telegram
+from dotenv import load_dotenv
+from prettytable import PrettyTable
 
+load_dotenv()
 
-class PrinterTask(task.Task):
-    def __init__(self, name, show_name=True, inject=None):
-        super(PrinterTask, self).__init__(name, inject=inject)
-        self._show_name = show_name
-
-    def execute(self, output):
-        if self._show_name:
-            print("%s: %s" % (self.name, output))
-        else:
-            print(output)
+counter = 0
 
 
 class Task1(task.Task):
-    def execute(self, hostname, notification_uuid):
-        i = 0
-        while i <= 5:
-            print("Task1: ", hostname, notification_uuid)
-            time.sleep(1)
-            i += 1
+    def execute(self, host_name, notification_uuid):
+        global counter
+        while counter <= 10:
+            print("Task1: ", host_name, notification_uuid)
+            time.sleep(2)
+            counter += 1
 
 
 class Task2(task.Task):
-    def execute(self, hostname, notification_uuid):
-        i = 0
-        while i <= 5:
-            print("Task2: ", hostname, notification_uuid)
-            time.sleep(2)  # This task supposes to take longer time
-            i += 1
+    def execute(self, host_name, notification_uuid):
+        global counter
+        bot = telegram.Bot(os.getenv("TELEGRAM_BOT_TOKEN"))
+        while True:
+            if counter > 10:
+                break
+            # Send message to telegram
+            table = PrettyTable()
+            table.field_names = ["City name", "Area",
+                                 "Population", "Annual Rainfall"]
+            table.add_row(["Adelaide", 1295, 1158259, 600.5])
+            table.add_row(["Brisbane", 5905, 1857594, 1146.4])
+            table.add_row(["Darwin", 112, 120900, 1714.7])
+            table.add_row(["Hobart", 1357, 205556, 619.5])
+            table.add_row(["Sydney", 2058, 4336374, 1214.8])
+            table.add_row(["Melbourne", 1566, 3806092, 646.9])
+            table.add_row(["Perth", 5386, 1554769, 869.4])
+
+            msg = f"""
+<b>🔥[Test][{host_name}][{notification_uuid}] Done {counter} times at {datetime.now()}</b>
+
+<pre>
+{table.get_string()}
+</pre>
+"""
+            bot.send_message(chat_id=os.getenv(
+                "TELEGRAM_CHAT_ID"), text=msg, parse_mode="HTML")
+
+            time.sleep(5)  # This task supposes to take longer time
 
 
 class Task3(task.Task):
-    def execute(self, hostname, notification_uuid):
+    def execute(self, host_name, notification_uuid):
         # Calling flow from task
         parent = uf.Flow('parent')
         parent.add(Task1(), Task2())
@@ -54,7 +73,7 @@ class Task3(task.Task):
             executor = futurist.ThreadPoolExecutor(max_workers=5)
         try:
             e = engines.load(parent, engine='parallel', executor=executor,
-                             store={'hostname': hostname,
+                             store={'host_name': host_name,
                                     'notification_uuid': notification_uuid})
             for st in e.run_iter():
                 print(st)
@@ -63,7 +82,7 @@ class Task3(task.Task):
 
 
 class Task4(task.Task):
-    def execute(self, hostname, notification_uuid):
+    def execute(self, host_name, notification_uuid):
         # Calling flow from task
         parent = uf.Flow('parent')
         parent.add(Task1(), Task2())
@@ -75,13 +94,13 @@ class Task4(task.Task):
             # No eventlet currently active, use real threads instead.
             print("-- Running in parallel using real threads --")
             e = engines.load(parent, engine='parallel', executor='threaded',
-                             store={'hostname': hostname,
+                             store={'host_name': host_name,
                                     'notification_uuid': notification_uuid},
                              max_workers=5)
         else:
             print("-- Running in parallel using eventlet --")
             e = engines.load(parent, engine='parallel', executor='greenthreaded',
-                             store={'hostname': hostname,
+                             store={'host_name': host_name,
                                     'notification_uuid': notification_uuid},
                              max_workers=5)
         e.run()
@@ -89,5 +108,5 @@ class Task4(task.Task):
 
 main = lf.Flow('main')
 main.add(Task4())
-engines.run(main, store={'hostname': 'computehost1',
+engines.run(main, store={'host_name': 'computehost1',
                          'notification_uuid': 'yourphonenumber'})
