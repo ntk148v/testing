@@ -23,6 +23,7 @@ require (
 	github.com/coreos/go-iptables v0.6.0
 	github.com/cristalhq/aconfig v0.18.3
 	github.com/dchest/siphash v1.2.2
+	github.com/deluan/lookup v0.0.8-0.20230320213506-fc958d096e3a
 	github.com/digitorus/pdfsign v0.0.0-20230911190051-9b77e1fcf46f
 	github.com/docker/docker v26.1.4+incompatible
 	github.com/ebfe/scard v0.0.0-20230420082256-7db3f9b7c8a7
@@ -153,7 +154,6 @@ require (
 	github.com/cyphar/filepath-securejoin v0.2.4 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/deepmap/oapi-codegen v1.6.0 // indirect
-	github.com/deluan/lookup v0.0.8-0.20230320213506-fc958d096e3a // indirect
 	github.com/dgraph-io/badger v1.6.1 // indirect
 	github.com/dgraph-io/ristretto v0.0.2 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
@@ -252,7 +252,6 @@ require (
 	github.com/opencontainers/runtime-spec v1.1.0-rc.1 // indirect
 	github.com/opencontainers/selinux v1.11.0 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
-	github.com/otiai10/gosseract/v2 v2.4.1 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.8 // indirect
 	github.com/pierrec/lz4/v4 v4.1.14 // indirect
 	github.com/pjbgf/sha1cd v0.3.0 // indirect
@@ -317,7 +316,7 @@ require (
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/go-openapi/errors v0.22.0 // indirect
-	github.com/golang-jwt/jwt/v4 v4.4.2 // indirect
+	github.com/golang-jwt/jwt/v4 v4.5.1 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
