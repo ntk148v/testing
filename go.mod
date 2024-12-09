@@ -25,7 +25,7 @@ require (
 	github.com/dchest/siphash v1.2.2
 	github.com/deluan/lookup v0.0.8-0.20230320213506-fc958d096e3a
 	github.com/digitorus/pdfsign v0.0.0-20230911190051-9b77e1fcf46f
-	github.com/docker/docker v26.1.4+incompatible
+	github.com/docker/docker v26.1.5+incompatible
 	github.com/ebfe/scard v0.0.0-20230420082256-7db3f9b7c8a7
 	github.com/elazarl/goproxy v0.0.0-20230808193330-2592e75ae04a
 	github.com/fatih/semgroup v1.2.0
