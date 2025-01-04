@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  teleport:
+    container_name: teleport
+    hostname: localhost
+    image: public.ecr.aws/gravitational/teleport-distroless-debug:16.4.12
+    command:
+      - --insecure
+    ports:
+      - 3080:3080
+      - 3025:3025
+    volumes:
+      - ./config:/etc/teleport
+      - teleport_data:/var/lib/teleport
+
+volumes:
+  teleport_data:
