@@ -27,8 +27,7 @@ load_dotenv()
 #         "status": "PENDING",
 #     },
 #     {
-#         "index": 2,
-#         "project_id": "projectid",
+#         "index": 2, "project_id": "projectid",
 #         "project_name": "projectname",
 #         "domain_id": "domainid",
 #         "domain_name": "domainname",
@@ -78,12 +77,11 @@ for i in range(1, 100):
         "source_host": f"host{random.randint(1, 10)}",
         "dest_host": f"host{random.randint(1, 10)}",
         "down_time": random.randint(1, 100),
-        "status": random.choice(["PENDING", "COMPLETED", "FAILED"])
+        "status": random.choice(["PENDING", "COMPLETED", "FAILED"]),
     }
     data.append(sample)
 strBuf = io.StringIO()
-csv_writer = csv.DictWriter(
-    strBuf, fieldnames=data[0].keys())
+csv_writer = csv.DictWriter(strBuf, fieldnames=data[0].keys())
 csv_writer.writeheader()
 csv_writer.writerows(data)
 # Seek to the beginning of the BytesIO buffer
@@ -100,14 +98,18 @@ bytesBuf.seek(0)
 
 def divide_into_batches(data, batch_size):
     # Divide the data into batches of the specified size
-    return [data[i:i + batch_size] for i in range(0, len(data), batch_size)]
+    return [data[i: i + batch_size] for i in range(0, len(data), batch_size)]
 
 
 bot = telegram.Bot(os.getenv("TELEGRAM_BOT_TOKEN"))
 try:
-    bot.send_document(chat_id=os.getenv("TELEGRAM_CHAT_ID"), text="Long Text",
-                      parse_mode="HTML", document=bytesBuf,
-                      filename="test.csv")
+    bot.send_document(
+        chat_id=os.getenv("TELEGRAM_CHAT_ID"),
+        text="Long Text",
+        parse_mode="HTML",
+        document=bytesBuf,
+        filename="test.csv",
+    )
     # Send as prettytable
     table = PrettyTable()
     table.field_names = data[0].keys()
@@ -122,8 +124,16 @@ try:
 {table.get_string()}
 </pre>
         """
-        bot.send_message(chat_id=os.getenv(
-            "TELEGRAM_CHAT_ID"), text=msg, parse_mode="HTML")
+        # bot.send_message(chat_id=os.getenv(
+        #     "TELEGRAM_CHAT_ID"), text=msg, parse_mode="HTML")
         table.clear_rows()
 except Exception as e:
-    raise e
+    if (
+        isinstance(e, telegram.error.BadRequest)
+        and "Not enough rights to send documents" in e.message
+    ):
+        print("save to file")
+        with open("/tmp/evacuate.csv", "wb") as file:
+            file.write(bytesBuf.getvalue())
+    else:
+        raise e
