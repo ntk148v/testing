@@ -1,0 +1,31 @@
+clusterName: teleport.duyp.local
+proxyListenerMode: multiplex
+
+enterprise: false
+
+acme: false
+acmeEmail: ntk148v@gmail.com
+
+proxy:
+  service:
+    type: ClusterIP
+
+auth:
+  teleportConfig:
+    auth_service:
+      enabled: true
+
+annotations:
+  ingress:
+    nginx.ingress.kubernetes.io/backend-protocol: 'HTTPS'
+
+ingress:
+  enabled: true
+  suppressAutomaticWildcards: true
+  spec:
+    ingressClassName: nginx
+
+# image: public.ecr.aws/gravitational/teleport-distroless-debug
+# If you are running Kubernetes 1.23 or above, disable PodSecurityPolicies
+podSecurityPolicy:
+  enabled: false
