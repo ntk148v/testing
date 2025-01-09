@@ -1,7 +1,7 @@
 clusterName: teleport.duyp.local
 proxyListenerMode: multiplex
 
-enterprise: false
+enterprise: true
 
 acme: false
 acmeEmail: ntk148v@gmail.com

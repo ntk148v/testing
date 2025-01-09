@@ -14,18 +14,17 @@ teleport:
     severity: INFO
     format:
       output: text
-  ca_pin: ""
-  diag_addr: ""
+  ca_pin: ''
+  diag_addr: ''
 auth_service:
-  enabled: "yes"
+  enabled: 'yes'
   listen_addr: 0.0.0.0:3025
   proxy_listener_mode: multiplex
 ssh_service:
-  enabled: "no"
+  enabled: 'no'
 proxy_service:
-  enabled: "yes"
-  public_addr: "198.19.249.3"
+  enabled: 'yes'
+  public_addr: 'localhost' # Should be your public addr
   https_keypairs: []
   https_keypairs_reload_interval: 0s
   acme: {}
-

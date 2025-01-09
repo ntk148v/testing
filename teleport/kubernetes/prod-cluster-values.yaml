@@ -1,0 +1,7 @@
+roles: kube,app,discovery
+authToken: 26057369a0f67e46c95ca1ee41c35db0
+proxyAddr: localhost:3080
+kubeClusterName: duyp-cluster
+labels:
+    teleport.internal/resource-id: faf21556-0c65-4157-a4c7-3a00435a0848
+enterprise: true

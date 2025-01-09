@@ -4,15 +4,27 @@ services:
   teleport:
     container_name: teleport
     hostname: localhost
-    image: public.ecr.aws/gravitational/teleport-distroless-debug:16.4.12
+    image: public.ecr.aws/gravitational/teleport-ent-distroless-debug:16.4.12
+    environment:
+      http_proxy: http://squid:3128
+      https_proxy: http://squid:3128
+      no_proxy: localhost,127.0.0.1,172.0.0.0/8,0.0.0.0
     command:
       - --insecure
     ports:
       - 3080:3080
       - 3025:3025
     volumes:
-      - ./config:/etc/teleport
+      - /tmp/license.pem:/var/lib/teleport/license.pem
+      - ./config/teleport:/etc/teleport
       - teleport_data:/var/lib/teleport
+  squid:
+    image: ubuntu/squid:5.2-22.04_beta
+    container_name: squid
+    volumes:
+      - ./config/squid:/etc/squid
+    ports:
+      - 3128:3128
 
 volumes:
   teleport_data:
