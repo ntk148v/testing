@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  nginx:
+    container_name: nginx
+    image: openresty/openresty:alpine
+    volumes:
+      - "./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf"
+    ports:
+      - "8000:80"
+    restart: always
+  http_server:
+    image: python:3.10-slim
+    container_name: http_server
+    ports:
+      - "8001:8001"
+    command: python -m http.server 8001
