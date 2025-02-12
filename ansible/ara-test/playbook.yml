@@ -1,0 +1,31 @@
+---
+- name: Simple Local Playbook
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+
+  tasks:
+    - name: Create a directory
+      file:
+        path: "~/test_directory"
+        state: directory
+        mode: "0755"
+
+    - name: Create a test file
+      copy:
+        content: "Hello from Ansible!\n"
+        dest: "~/test_directory/test.txt"
+        mode: "0644"
+
+    - name: Display system information
+      debug:
+        msg: "OS Family: {{ ansible_os_family }}, Distribution: {{ ansible_distribution }}"
+
+    - name: Check disk space
+      command: df -h
+      register: disk_space
+      changed_when: false
+
+    - name: Show disk space
+      debug:
+        var: disk_space.stdout_lines

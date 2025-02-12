@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: ara
+      POSTGRES_PASSWORD: ara_password
+      POSTGRES_DB: ara
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  ara:
+    image: recordsansible/ara-api:latest
+    container_name: ara
+    environment:
+      - ARA_DATABASE_DRIVER=postgresql
+      - ARA_DATABASE_USER=ara
+      - ARA_DATABASE_PASSWORD=ara_password
+      - ARA_DATABASE_HOST=postgres
+      - ARA_DATABASE_NAME=ara
+      - ARA_EXTERNAL_AUTH=True
+      - ARA_READ_LOGIN_REQUIRED=False
+      - ARA_WRITE_LOGIN_REQUIRED=False
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    depends_on:
+      - ara
+    volumes:
+      - ./nginx/ara.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/htpasswd:/etc/nginx/.htpasswd:ro
+    ports:
+      - "8000:8000" # Expose Nginx on port 8000
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
