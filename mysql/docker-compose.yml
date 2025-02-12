@@ -1,0 +1,69 @@
+version: "3.9"
+
+services:
+  mysql1:
+    image: mysql:8.0
+    container_name: mysql1
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: clusteradmin
+      MYSQL_PASSWORD: clusterpassword
+    ports:
+      - "3306:3306"
+    networks:
+      - mysql_cluster
+    volumes:
+      - mysql1_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password --server_id=1 --log-bin=mysql-bin --gtid-mode=ON --enforce-gtid-consistency=ON --transaction-write-set-extraction=XXHASH64 --relay-log-info-repository=TABLE --binlog-checksum=NONE --log-slave-updates=ON --master-info-repository=TABLE --loose-group-replication-local-address=192.168.1.101:33061 --loose-group-replication-group-seeds=192.168.1.101:33061,192.168.1.102:33061,192.168.1.103:33061 --loose-group-replication-start-on-boot=OFF --loose-group-replication-single-primary-mode=ON --loose-group-replication-enforce-update-everywhere-checks=OFF
+
+  mysql2:
+    image: mysql:8.0
+    container_name: mysql2
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: clusteradmin
+      MYSQL_PASSWORD: clusterpassword
+    networks:
+      - mysql_cluster
+    volumes:
+      - mysql2_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password --server_id=2 --log-bin=mysql-bin --gtid-mode=ON --enforce-gtid-consistency=ON --transaction-write-set-extraction=XXHASH64 --relay-log-info-repository=TABLE --binlog-checksum=NONE --log-slave-updates=ON --master-info-repository=TABLE --loose-group-replication-local-address=192.168.1.102:33061 --loose-group-replication-group-seeds=192.168.1.101:33061,192.168.1.102:33061,192.168.1.103:33061 --loose-group-replication-start-on-boot=OFF --loose-group-replication-single-primary-mode=ON --loose-group-replication-enforce-update-everywhere-checks=OFF
+
+  mysql3:
+    image: mysql:8.0
+    container_name: mysql3
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: clusteradmin
+      MYSQL_PASSWORD: clusterpassword
+    networks:
+      - mysql_cluster
+    volumes:
+      - mysql3_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password --server_id=3 --log-bin=mysql-bin --gtid-mode=ON --enforce-gtid-consistency=ON --transaction-write-set-extraction=XXHASH64 --relay-log-info-repository=TABLE --binlog-checksum=NONE --log-slave-updates=ON --master-info-repository=TABLE --loose-group-replication-local-address=192.168.1.103:33061 --loose-group-replication-group-seeds=192.168.1.101:33061,192.168.1.102:33061,192.168.1.103:33061 --loose-group-replication-start-on-boot=OFF --loose-group-replication-single-primary-mode=ON --loose-group-replication-enforce-update-everywhere-checks=OFF
+
+  mysql-router:
+    image: mysql:8.0
+    container_name: mysql-router
+    restart: always
+    depends_on:
+      - mysql1
+    networks:
+      - mysql_cluster
+    command: /bin/bash -c "
+      mysqlrouter --bootstrap clusteradmin:clusterpassword@mysql1:3306 --user=mysqlrouter;
+      sleep infinity"
+    ports:
+      - "6446:6446"
+
+networks:
+  mysql_cluster:
+    driver: bridge
+
+volumes:
+  mysql1_data:
+  mysql2_data:
+  mysql3_data:
