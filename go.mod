@@ -45,7 +45,7 @@ require (
 	github.com/google/go-cmp v0.6.0
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/google/wire v0.5.0
-	github.com/gophercloud/gophercloud v0.23.0
+	github.com/gophercloud/gophercloud v1.14.1
 	github.com/gorilla/mux v1.8.0
 	github.com/haproxytech/config-parser/v4 v4.0.0-rc2
 	github.com/hashicorp/go-retryablehttp v0.7.7
