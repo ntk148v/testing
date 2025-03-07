@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <script src="./pdf-lib.js"></script>
+    <script src="https://unpkg.com/pdf-lib"></script>
     <script src="https://unpkg.com/downloadjs@1.4.7"></script>
     <script
       type="text/javascript"
@@ -57,25 +57,25 @@
 
   <script>
     const { PDFDocument, ImageAlignment, PDFSignature, PDFName, PDFRef } =
-      PDFLib;
+      PDFLib
     const fetchBinaryAsset = (asset) =>
-      fetch(`${asset}`).then((res) => res.arrayBuffer());
+      fetch(`${asset}`).then((res) => res.arrayBuffer())
 
     async function removeSig() {
       // Fetch the PDF
       const pdfBytes = await fetchBinaryAsset(
-        "input-create-form-signed-pades-baseline-b.pdf"
-      );
+        "input-create-form-signed-pades-baseline-b.pdf",
+      )
       // Load a PDF
-      const pdfDoc = await PDFDocument.load(pdfBytes);
-      const form = pdfDoc.getForm();
-      const formFields = form.getFields();
+      const pdfDoc = await PDFDocument.load(pdfBytes)
+      const form = pdfDoc.getForm()
+      const formFields = form.getFields()
       try {
         for (const field of formFields) {
           if (field instanceof PDFSignature) {
-            const tmpField = pdfDoc.context.lookup(field.ref);
-            const signatureDictRef = tmpField.get(PDFName.of("V"));
-            const signatureDict = pdfDoc.context.lookup(signatureDictRef);
+            const tmpField = pdfDoc.context.lookup(field.ref)
+            const signatureDictRef = tmpField.get(PDFName.of("V"))
+            const signatureDict = pdfDoc.context.lookup(signatureDictRef)
 
             const signatureInfo = {
               fieldName: tmpField.get(PDFName.of("T"))?.asString(),
@@ -83,9 +83,9 @@
                 .get(PDFName.of("Name"))
                 ?.toString(),
               signingTime: signatureDict.get(PDFName.of("M"))?.toString(),
-            };
+            }
 
-            const signatureContents = signatureDict.get(PDFName.of("Contents"));
+            const signatureContents = signatureDict.get(PDFName.of("Contents"))
 
             require([
               "https://unpkg.com/@lapo/asn1js/asn1.js",
@@ -94,20 +94,20 @@
             ], function (ASN1, Hex, forge) {
               // https://github.com/digitalbazaar/forge/issues/395
               let asn1 = forge.asn1.fromDer(
-                hex2str(signatureContents.asString())
-              );
-              let message = forge.pkcs7.messageFromAsn1(asn1);
-              console.log(message);
+                hex2str(signatureContents.asString()),
+              )
+              let message = forge.pkcs7.messageFromAsn1(asn1)
+              console.log(message)
 
               function hex2str(str1) {
-                var hex = str1.toString();
-                var str = "";
+                var hex = str1.toString()
+                var str = ""
                 for (var n = 0; n < hex.length; n += 2) {
-                  str += String.fromCharCode(parseInt(hex.substr(n, 2), 16));
+                  str += String.fromCharCode(parseInt(hex.substr(n, 2), 16))
                 }
-                return str;
+                return str
               }
-            });
+            })
             // let derKey  = forge.util.decode64(signatureContents.asString());
             // let asn1 = forge.asn1.fromDer(derKey);
             // console.log(forge.asn1.fromDer(signatureContents.asBytes()));
@@ -124,7 +124,7 @@
           // form.removeField(field);
         }
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
 
       // const formPdfBytes = await pdfDoc.save();
@@ -135,70 +135,70 @@
 
     async function createForm() {
       // Fetch the PDF
-      const pdfBytes = await fetchBinaryAsset("input.pdf");
+      const pdfBytes = await fetchBinaryAsset("input.pdf")
       // Load a PDF
-      const pdfDoc = await PDFDocument.load(pdfBytes);
-      const page = pdfDoc.getPage(0); // the first page
+      const pdfDoc = await PDFDocument.load(pdfBytes)
+      const page = pdfDoc.getPage(0) // the first page
       // Get the form so we can add fields to it
-      const form = pdfDoc.getForm();
+      const form = pdfDoc.getForm()
 
-      const buttonField = form.createButton("ImageButton");
+      const buttonField = form.createButton("ImageButton")
       buttonField.addToPage("", page, {
         x: 30,
         y: 30,
         width: 90,
         height: 60,
-      });
+      })
 
       // Serialize the PDFDocument to bytes (a Uint8Array)
-      const formPdfBytes = await pdfDoc.save();
+      const formPdfBytes = await pdfDoc.save()
 
       // Trigger the browser to download the PDF document
-      download(formPdfBytes, "input-create-form.pdf", "application/pdf");
+      download(formPdfBytes, "input-create-form.pdf", "application/pdf")
     }
 
     async function fillFormBasic() {
       // Fetch the PDF
       const pdfBytes = await fetchBinaryAsset(
-        "input-create-form-signed-pades-baseline-b.pdf"
-      );
+        "input-create-form-signed-pades-baseline-b.pdf",
+      )
       // Load a PDF
-      const pdfDoc = await PDFDocument.load(pdfBytes);
+      const pdfDoc = await PDFDocument.load(pdfBytes)
 
       // Take a snapshot of the document
-      const snapshot = pdfDoc.takeSnapshot();
+      const snapshot = pdfDoc.takeSnapshot()
 
       // const page = pdfDoc.getPage(0); // the first page
       // Mark the page as modified
       // snapshot.markRefForSave(page.ref);
 
       // Get the form so we can add fields to it
-      const form = pdfDoc.getForm();
-      const buttonField = form.getButton("ImageButton");
-      const widgets = buttonField.acroField.getWidgets();
-      snapshot.markRefForSave(buttonField.ref);
+      const form = pdfDoc.getForm()
+      const buttonField = form.getButton("ImageButton")
+      const widgets = buttonField.acroField.getWidgets()
+      snapshot.markRefForSave(buttonField.ref)
       widgets.forEach((w) => {
-        let rectangle = w.getRectangle();
-        let page = pdfDoc.getPages().find((p) => p.ref === w.P());
-        snapshot.markRefForSave(page.ref);
-        let pageIndex = pdfDoc.getPages().findIndex((p) => p.ref === w.P());
-      });
+        let rectangle = w.getRectangle()
+        let page = pdfDoc.getPages().find((p) => p.ref === w.P())
+        snapshot.markRefForSave(page.ref)
+        let pageIndex = pdfDoc.getPages().findIndex((p) => p.ref === w.P())
+      })
 
       // Fetch the Mario image
-      const marioUrl = "https://pdf-lib.js.org/assets/small_mario.png";
+      const marioUrl = "https://pdf-lib.js.org/assets/small_mario.png"
       const marioImageBytes = await fetch(marioUrl).then((res) =>
-        res.arrayBuffer()
-      );
+        res.arrayBuffer(),
+      )
       // Embed the Mario and emblem images
-      const marioImage = await pdfDoc.embedPng(marioImageBytes);
-      buttonField.setImage(marioImage, ImageAlignment.Center);
+      const marioImage = await pdfDoc.embedPng(marioImageBytes)
+      buttonField.setImage(marioImage, ImageAlignment.Center)
 
       // Serialize the PDFDocument to bytes (a Uint8Array)
-      const pdfIncrementalBytes = await pdfDoc.saveIncremental(snapshot);
+      const pdfIncrementalBytes = await pdfDoc.saveIncremental(snapshot)
       const formPdfBytes = new Uint8Array([
         ...new Uint8Array(pdfBytes),
         ...pdfIncrementalBytes,
-      ]);
+      ])
 
       // const formPdfBytes = await pdfDoc.save();
 
@@ -208,69 +208,67 @@
       //   "input-create-form-signed-pades-baseline-b.pdf",
       //   "application/pdf"
       // );
-      renderInIframe(formPdfBytes);
+      renderInIframe(formPdfBytes)
     }
 
     async function fillFormAdvanced() {
       // Fetch the PDF with form fields
-      const formUrl = "https://pdf-lib.js.org/assets/dod_character.pdf";
-      const formPdfBytes = await fetch(formUrl).then((res) =>
-        res.arrayBuffer()
-      );
+      const formUrl = "https://pdf-lib.js.org/assets/dod_character.pdf"
+      const formPdfBytes = await fetch(formUrl).then((res) => res.arrayBuffer())
 
       // Fetch the Mario image
-      const marioUrl = "https://pdf-lib.js.org/assets/small_mario.png";
+      const marioUrl = "https://pdf-lib.js.org/assets/small_mario.png"
       const marioImageBytes = await fetch(marioUrl).then((res) =>
-        res.arrayBuffer()
-      );
+        res.arrayBuffer(),
+      )
 
       // Fetch the emblem image
-      const emblemUrl = "https://pdf-lib.js.org/assets/mario_emblem.png";
+      const emblemUrl = "https://pdf-lib.js.org/assets/mario_emblem.png"
       const emblemImageBytes = await fetch(emblemUrl).then((res) =>
-        res.arrayBuffer()
-      );
+        res.arrayBuffer(),
+      )
 
       // Load a PDF with form fields
-      const pdfDoc = await PDFDocument.load(formPdfBytes);
+      const pdfDoc = await PDFDocument.load(formPdfBytes)
 
       // Embed the Mario and emblem images
-      const marioImage = await pdfDoc.embedPng(marioImageBytes);
-      const emblemImage = await pdfDoc.embedPng(emblemImageBytes);
+      const marioImage = await pdfDoc.embedPng(marioImageBytes)
+      const emblemImage = await pdfDoc.embedPng(emblemImageBytes)
 
       // Get the form containing all the fields
-      const form = pdfDoc.getForm();
+      const form = pdfDoc.getForm()
 
       // Get all fields in the PDF by their names
-      const nameField = form.getTextField("CharacterName 2");
-      const ageField = form.getTextField("Age");
-      const heightField = form.getTextField("Height");
-      const weightField = form.getTextField("Weight");
-      const eyesField = form.getTextField("Eyes");
-      const skinField = form.getTextField("Skin");
-      const hairField = form.getTextField("Hair");
+      const nameField = form.getTextField("CharacterName 2")
+      const ageField = form.getTextField("Age")
+      const heightField = form.getTextField("Height")
+      const weightField = form.getTextField("Weight")
+      const eyesField = form.getTextField("Eyes")
+      const skinField = form.getTextField("Skin")
+      const hairField = form.getTextField("Hair")
 
-      const alliesField = form.getTextField("Allies");
-      const factionField = form.getTextField("FactionName");
-      const backstoryField = form.getTextField("Backstory");
-      const traitsField = form.getTextField("Feat+Traits");
-      const treasureField = form.getTextField("Treasure");
+      const alliesField = form.getTextField("Allies")
+      const factionField = form.getTextField("FactionName")
+      const backstoryField = form.getTextField("Backstory")
+      const traitsField = form.getTextField("Feat+Traits")
+      const treasureField = form.getTextField("Treasure")
 
-      const characterImageField = form.getButton("CHARACTER IMAGE");
-      const factionImageField = form.getButton("Faction Symbol Image");
+      const characterImageField = form.getButton("CHARACTER IMAGE")
+      const factionImageField = form.getButton("Faction Symbol Image")
 
-      console.log(characterImageField);
+      console.log(characterImageField)
 
       // Fill in the basic info fields
-      nameField.setText("Mario");
-      ageField.setText("24 years");
-      heightField.setText(`5' 1"`);
-      weightField.setText("196 lbs");
-      eyesField.setText("blue");
-      skinField.setText("white");
-      hairField.setText("brown");
+      nameField.setText("Mario")
+      ageField.setText("24 years")
+      heightField.setText(`5' 1"`)
+      weightField.setText("196 lbs")
+      eyesField.setText("blue")
+      skinField.setText("white")
+      hairField.setText("brown")
 
       // Fill the character image field with our Mario image
-      characterImageField.setImage(marioImage);
+      characterImageField.setImage(marioImage)
 
       // Fill in the allies field
       alliesField.setText(
@@ -287,19 +285,19 @@
           ``,
           `Organizations:`,
           `  • Italian Plumbers Association`,
-        ].join("\n")
-      );
+        ].join("\n"),
+      )
 
       // Fill in the faction name field
-      factionField.setText(`Mario's Emblem`);
+      factionField.setText(`Mario's Emblem`)
 
       // Fill the faction image field with our emblem image
-      factionImageField.setImage(emblemImage);
+      factionImageField.setImage(emblemImage)
 
       // Fill in the backstory field
       backstoryField.setText(
-        `Mario is a fictional character in the Mario video game franchise, owned by Nintendo and created by Japanese video game designer Shigeru Miyamoto. Serving as the company's mascot and the eponymous protagonist of the series, Mario has appeared in over 200 video games since his creation. Depicted as a short, pudgy, Italian plumber who resides in the Mushroom Kingdom, his adventures generally center upon rescuing Princess Peach from the Koopa villain Bowser. His younger brother and sidekick is Luigi.`
-      );
+        `Mario is a fictional character in the Mario video game franchise, owned by Nintendo and created by Japanese video game designer Shigeru Miyamoto. Serving as the company's mascot and the eponymous protagonist of the series, Mario has appeared in over 200 video games since his creation. Depicted as a short, pudgy, Italian plumber who resides in the Mushroom Kingdom, his adventures generally center upon rescuing Princess Peach from the Koopa villain Bowser. His younger brother and sidekick is Luigi.`,
+      )
 
       // Fill in the traits field
       traitsField.setText(
@@ -308,17 +306,17 @@
           `  • the Super Mushroom, which causes Mario to grow larger`,
           `  • the Fire Flower, which allows Mario to throw fireballs`,
           `  • the Starman, which gives Mario temporary invincibility`,
-        ].join("\n")
-      );
+        ].join("\n"),
+      )
 
       // Fill in the treasure field
-      treasureField.setText(["• Gold coins", "• Treasure chests"].join("\n"));
+      treasureField.setText(["• Gold coins", "• Treasure chests"].join("\n"))
 
       // Serialize the PDFDocument to bytes (a Uint8Array)
-      const pdfBytes = await pdfDoc.save();
+      const pdfBytes = await pdfDoc.save()
 
       // Trigger the browser to download the PDF document
-      download(pdfBytes, "input-fill-form-advanced.pdf", "application/pdf");
+      download(pdfBytes, "input-fill-form-advanced.pdf", "application/pdf")
     }
   </script>
 </html>
