@@ -17,6 +17,8 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.PDResources;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.encryption.SecurityProvider;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.Standard14Fonts;
 import org.apache.pdfbox.pdmodel.graphics.image.JPEGFactory;
 import org.apache.pdfbox.pdmodel.graphics.image.LosslessFactory;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
@@ -61,12 +63,12 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.math.BigInteger;
 import java.security.*;
-import java.security.cert.Certificate;
 import java.security.cert.*;
+import java.security.cert.Certificate;
 import java.security.spec.RSAKeyGenParameterSpec;
 import java.text.SimpleDateFormat;
-import java.util.List;
 import java.util.*;
+import java.util.List;
 
 public class PDFBoxDemo {
     private static final int KEY_SIZE = 2048;
@@ -101,7 +103,7 @@ public class PDFBoxDemo {
     }
 
     public void createImageButton() throws IOException {
-        try (InputStream resource = new FileInputStream(STAMP_PATH);
+        try (InputStream resource = new FileInputStream("/tmp/stamp.jpg");
              PDDocument document = new PDDocument()) {
             BufferedImage bufferedImage = ImageIO.read(resource);
             PDImageXObject pdImageXObject = LosslessFactory.createFromImage(document, bufferedImage);
@@ -112,6 +114,12 @@ public class PDFBoxDemo {
             pdAppearanceStream.setResources(new PDResources());
             try (PDPageContentStream pdPageContentStream = new PDPageContentStream(document, pdAppearanceStream)) {
                 pdPageContentStream.drawImage(pdImageXObject, 26, 9, width, height);
+                pdPageContentStream.setFont(new PDType1Font(Standard14Fonts.FontName.HELVETICA_BOLD), 12);
+                pdPageContentStream.beginText();
+                pdPageContentStream.newLineAtOffset(26 + 10, 9 + 10); // Position text
+                String signDate = "Signed on: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+                pdPageContentStream.showText(signDate);
+                pdPageContentStream.endText();
             }
             pdAppearanceStream.setBBox(new PDRectangle(width, height));
 
@@ -138,12 +146,13 @@ public class PDFBoxDemo {
 
             acroForm.getFields().add(pdPushButton);
 
-            document.save(new File(OUT_DIR, "imageButton.pdf"));
+//            document.save(new File(OUT_DIR, "imageButton.pdf"));
+            document.save(new File("/tmp/output.pdf"));
         }
     }
 
     public void fillImageButton(String inputFile, int pageIndex) throws IOException {
-        try (InputStream resource = new FileInputStream(STAMP_PATH);
+        try (InputStream resource = new FileInputStream("/tmp/stamp.jpg");
              PDDocument document = Loader.loadPDF(new File(inputFile));) {
             BufferedImage bufferedImage = ImageIO.read(resource);
             PDImageXObject pdImageXObject = LosslessFactory.createFromImage(document, bufferedImage);
@@ -376,7 +385,6 @@ public class PDFBoxDemo {
         PDImageXObject pdImage = PDImageXObject.createFromFile(STAMP_PATH, document);
         PDPageContentStream contentStream = new PDPageContentStream(document, page);
         contentStream.drawImage(pdImage, 70, 250);
-        contentStream.close();
         document.save(OUT_DIR + filename); // overwrite
         document.close();
     }

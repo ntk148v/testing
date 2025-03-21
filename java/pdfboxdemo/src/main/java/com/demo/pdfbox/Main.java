@@ -14,11 +14,12 @@ public class Main {
 
 //        pdfdemo.sign2();
 //        pdfdemo.verify("output2.pdf");
-//        pdfdemo.createImageButton();
+        pdfdemo.createImageButton();
+//        pdfdemo.fillImageButton("/tmp/output.pdf", 1);
 //        pdfdemo.updateImageButton("/tmp/input.pdf", 2, 26, 9, 100, 100);
-//        pdfdemo.insertImage("output.pdf");
+//        pdfdemo.insertImage("/tmp/output.pdf");
 //        pdfdemo.updateImageButton("/tmp/input-create-form-signed-pades-baseline-b.pdf");
 
-        pdfdemo.genThumbnail("jpg", 0f, 0);
+//        pdfdemo.genThumbnail("jpg", 0f, 0);
     }
 }
