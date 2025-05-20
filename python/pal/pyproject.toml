@@ -1,0 +1,14 @@
+[project]
+name = "pal"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-community>=0.3.24",
+    "langchain>=0.3.25",
+    "openai>=1.79.0",
+    "python-dateutil>=2.9.0.post0",
+    "python-dotenv>=1.1.0",
+    "langchain-openai>=0.3.17",
+]
