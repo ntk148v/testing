@@ -1,36 +1,37 @@
-version: '3.1'
+version: "3.1"
 
 volumes:
   guacd_data:
+  mysql_data:
 
 services:
   casvisor:
-    image: casbin/casvisor:v1.66.0
+    image: casbin/casvisor:latest
     container_name: casvisor
     restart: always
     entrypoint: /bin/sh -c './server --createDatabase=true'
     ports:
-      - '19000:19000'
+      - "19000:19000"
     depends_on:
       - db
     environment:
-      RUNNING_IN_DOCKER: 'true'
+      RUNNING_IN_DOCKER: "true"
     volumes:
-      - ./casvisorconf/app.conf:/home/casvisor/conf/app.conf
+      - ./casvisorconf/:/conf
 
   casdoor:
-    image: casbin/casdoor:v1.794.0
+    image: casbin/casdoor:latest
     container_name: casdoor
     restart: always
     entrypoint: /bin/sh -c './server --createDatabase=true'
     ports:
-      - '8000:8000'
+      - "8000:8000"
     depends_on:
       - db
     environment:
-      RUNNING_IN_DOCKER: 'true'
+      RUNNING_IN_DOCKER: "true"
     volumes:
-      - ./casdoorconf/app.conf:/home/casdoor/conf/app.conf
+      - ./casdoorconf/:/conf
 
   db:
     restart: always
@@ -38,11 +39,11 @@ services:
     container_name: mysql
     platform: linux/amd64
     ports:
-      - '3306:3306'
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 123456
     volumes:
-      - /usr/local/docker/mysql:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
 
   guacd:
     image: guacamole/guacd:latest
@@ -52,5 +53,5 @@ services:
     volumes:
       - guacd_data:/usr/local/casvisor/data
     ports:
-      - '4822:4822'
+      - "4822:4822"
     restart: always
