@@ -1,0 +1,31 @@
+database:
+  enabled: true
+  type: postgres
+  postgres:
+    hostname: postgresql
+    port: 5432
+    username: next-terminal
+    password: next-terminal
+    database: next-terminal
+log:
+  level: debug
+  filename: ./logs/nt.log
+
+server:
+  addr: "0.0.0.0:8088"
+  tls:
+    enabled: false
+    auto: false
+    cert: ""
+    key: ""
+
+app:
+  recording:
+    type: "local"
+    path: "/usr/local/next-terminal/data/recordings"
+  guacd:
+    drive: "/usr/local/next-terminal/data/drive"
+    hosts:
+      - hostname: guacd
+        port: 4822
+        weight: 1

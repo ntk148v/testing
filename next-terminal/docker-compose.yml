@@ -1,0 +1,42 @@
+volumes:
+  guacd_data:
+  postgres_data:
+  next_data:
+  next_logs:
+
+services:
+  guacd:
+    container_name: guacd
+    image: guacamole/guacd:1.5.5
+    volumes:
+      - guacd_data:/usr/local/next-terminal/data
+    restart: always
+
+  postgresql:
+    container_name: postgresql
+    image: postgres:17.5
+    environment:
+      POSTGRES_DB: next-terminal
+      POSTGRES_USER: next-terminal
+      POSTGRES_PASSWORD: next-terminal
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  next-terminal:
+    container_name: next-terminal
+    image: aaronlee/next-terminal-premium:v2.5.4
+    ports:
+      - "8088:8088" # Web管理界面
+      - "2022:2022" # SSH Server 端口 (可选)
+      - "80:80" # 资产反代 HTTP 端口 (可选)
+      - "443:443" # 资产反代 HTTPS 端口 (申请证书必需)
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - next_data:/usr/local/next-terminal/data
+      - next_logs:/usr/local/next-terminal/logs
+      - ./config.yaml:/etc/next-terminal/config.yaml
+    depends_on:
+      - postgresql
+      - guacd
+    restart: always
