@@ -1,0 +1,13 @@
+services:
+  consul:
+    image: hashicorp/consul
+    container_name: consul
+    command: "consul agent -dev -client=0.0.0.0" # Start Consul in development mode
+    volumes:
+      - consul-data:/consul/data
+    network_mode: host
+    restart: unless-stopped
+
+volumes:
+  consul-data: # Volumes to persist Consul data
+    driver: local
