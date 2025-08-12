@@ -64,11 +64,11 @@ async fn fetch_repos(
             username, page
         );
 
-        let mut req = client.get(&url).header("User-Agent", "github-star-counter");
+        let mut req = client.get(&url).header("user-agent", "github-star-counter");
 
         // If we have an ETag, send it
         if let Some(entry) = cache.get(username) {
-            req = req.header("If-None-Match", &entry.etag);
+            req = req.header("if-none-match", &entry.etag);
         }
 
         let resp = req.send().await?;
