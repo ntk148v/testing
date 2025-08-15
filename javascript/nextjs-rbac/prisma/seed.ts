@@ -46,6 +46,7 @@ async function main() {
     create: {
       email: 'admin@example.com',
       name: 'Admin User',
+      username: 'admin',
       password: adminPassword,
     },
   });
