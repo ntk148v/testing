@@ -2,13 +2,13 @@ import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 export default function NavBar() {
   const { data: session } = useSession();
-  const role = (session as any)?.user?.role;
+  const roles = (session as any)?.user?.roles;
   return (
     <nav className="bg-white border-b">
       <div className="container flex items-center justify-between py-3">
         <div className="flex gap-4 items-center">
           <Link href="/" className="font-semibold">RBAC Starter</Link>
-          {role === 'ADMIN' && <Link href="/admin/users" className="text-sm text-gray-700 hover:underline">Users</Link>}
+          {roles?.includes('admin') && <Link href="/admin/users" className="text-sm text-gray-700 hover:underline">Users</Link>}
         </div>
         <div className="flex items-center gap-3">
           {!session ? (
