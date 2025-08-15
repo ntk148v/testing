@@ -1,0 +1,10 @@
+node_modules
+.next
+.env
+.env.local
+dist
+.prisma
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
