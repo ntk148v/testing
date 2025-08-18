@@ -1,0 +1,60 @@
+{
+  "realm": "lab",
+  "enabled": true,
+  "roles": {
+    "realm": [
+      {
+        "name": "grafana-admin"
+      },
+      {
+        "name": "grafana-editor"
+      },
+      {
+        "name": "grafana-viewer"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "grafana",
+      "secret": "grafana-secret",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "redirectUris": ["http://localhost:3000/*", "https://localhost:8443/*"],
+      "webOrigins": ["http://localhost:3000", "https://localhost:8443"],
+      "publicClient": false,
+      "directAccessGrantsEnabled": true
+    }
+  ],
+  "users": [
+    {
+      "username": "alice",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "alice",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["grafana-admin"]
+    },
+    {
+      "username": "bob",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "bob",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["grafana-viewer"]
+    }
+  ],
+  "browserSecurityHeaders": {
+    "contentSecurityPolicy": "frame-ancestors 'self' http://localhost:3000 http://your-portal-domain https://localhost:8443"
+  }
+}

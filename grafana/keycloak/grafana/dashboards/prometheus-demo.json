@@ -1,0 +1,29 @@
+{
+  "id": null,
+  "uid": "demo",
+  "title": "Prometheus Demo",
+  "tags": ["prometheus"],
+  "timezone": "browser",
+  "schemaVersion": 36,
+  "version": 1,
+  "refresh": "5s",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Prometheus HTTP Requests",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "rate(prometheus_http_requests_total[1m])",
+          "legendFormat": "{{ handler }}"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 8
+      }
+    }
+  ]
+}
