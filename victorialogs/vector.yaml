@@ -1,0 +1,51 @@
+# =========================================================================
+# Sources
+#
+# A source defines where Vector collects log data.
+# The 'files' source type tails log files from the host machine.
+# =========================================================================
+sources:
+  host_logs:
+    type: file
+    include:
+      - /var/log/syslog
+      - /var/log/auth.log
+
+# =========================================================================
+# Transforms
+#
+# A transform modifies the log data before it's sent to the sink.
+# This transform adds a timestamp and a "job" label, which are
+# recommended for the VictoriaLogs schema.
+# =========================================================================
+transforms:
+  vector_to_victorialogs:
+    type: remap
+    inputs:
+      - host_logs
+    source: |
+      .timestamp = now()
+      .host = get_env_var!("HOSTNAME")
+      .job = "host_logs"
+
+# =========================================================================
+# Sinks
+#
+# A sink defines the destination for collected log data.
+# This sink uses the `http` type to send logs to VictoriaLogs.
+# =========================================================================
+sinks:
+  victorialogs_sink:
+    type: elasticsearch
+    inputs:
+      - vector_to_victorialogs
+    endpoints:
+      - "http://victorialogs:9428/insert/elasticsearch/"
+    api_version: v8
+    compression: gzip
+    healthcheck:
+      enabled: false
+    query:
+      _msg_field: message
+      _time_field: timestamp
+      _stream_fields: host,container_name

@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  # The Vector service. It collects logs and sends them to VictoriaLogs.
+  vector:
+    image: timberio/vector:0.49.0-debian
+    container_name: vector
+    restart: unless-stopped
+    volumes:
+      # Mount the local vector.yaml config file into the container.
+      - ./vector.yaml:/etc/vector/vector.yaml
+      # Mount the host's /var/log directory for log collection.
+      # Be sure to adjust the path if your logs are elsewhere.
+      - /var/log:/var/log:ro
+    ports:
+      # Expose Vector's API for metrics and health checks.
+      - "8686:8686"
+    depends_on:
+      - victorialogs
+    # Pass environment variables to the Vector container.
+    environment:
+      - HOSTNAME=${HOSTNAME}
+
+  # The VictoriaLogs service. It receives and stores the logs.
+  victorialogs:
+    image: victoriametrics/victoria-logs:v1.29.0
+    container_name: victorialogs
+    restart: unless-stopped
+    volumes:
+      # Persist the data outside the container for long-term storage.
+      # This prevents log data loss if the container is removed.
+      - victoria-logs-data:/victorialogs-data
+    ports:
+      # Expose the port for log ingestion (TCP, UDP) and the built-in UI.
+      - "9428:9428"
+      - "8428:8428"
+    command:
+      # Set the data storage directory.
+      - "--storageDataPath=/victorialogs-data"
+
+volumes:
+  # Define the volume for VictoriaLogs data persistence.
+  victoria-logs-data:
