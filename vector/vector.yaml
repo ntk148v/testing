@@ -16,10 +16,10 @@ sources:
 #
 # A transform modifies the log data before it's sent to the sink.
 # This transform adds a timestamp and a "job" label, which are
-# recommended for the VictoriaLogs schema.
+# recommended for the clickhouse schema.
 # =========================================================================
 transforms:
-  vector_to_victorialogs:
+  vector_to_multi:
     type: remap
     inputs:
       - host_logs
@@ -32,20 +32,39 @@ transforms:
 # Sinks
 #
 # A sink defines the destination for collected log data.
-# This sink uses the `http` type to send logs to VictoriaLogs.
 # =========================================================================
 sinks:
-  victorialogs_sink:
-    type: elasticsearch
+  # clickhouse_sink:
+  #   type: clickhouse
+  #   compression: gzip
+  #   inputs:
+  #     - vector_to_multi
+  #   endpoint: http://clickhouse:8123
+  #   table: logs.logs
+  #   auth:
+  #     strategy: basic
+  #     user: vector_user
+  #     password: vector_password
+  #   buffer:
+  #     when_full: drop_newest
+  # victorialogs_sink:
+  #   type: elasticsearch
+  #   inputs:
+  #     - vector_to_multi
+  #   endpoints:
+  #     - "http://victorialogs:9428/insert/elasticsearch/"
+  #   api_version: v8
+  #   compression: gzip
+  #   healthcheck:
+  #     enabled: false
+  #   query:
+  #     _msg_field: message
+  #     _time_field: timestamp
+  #     _stream_fields: host,container_name
+  greptimedb_sink:
+    type: greptimedb_metrics
     inputs:
-      - vector_to_victorialogs
-    endpoints:
-      - "http://victorialogs:9428/insert/elasticsearch/"
-    api_version: v8
-    compression: gzip
-    healthcheck:
-      enabled: false
-    query:
-      _msg_field: message
-      _time_field: timestamp
-      _stream_fields: host,container_name
+      - vector_to_multi
+    dbname: public
+    endpoint: greptime_frontend0:4001
+    grpc_compression: gzip
