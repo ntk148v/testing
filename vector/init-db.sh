@@ -1,12 +1,14 @@
 #!/bin/bash
-set -e
+set +e
 
 clickhouse client -n <<-EOSQL
-CREATE TABLE IF NOT EXISTS logs.logs (
+CREATE DATABASE IF NOT EXISTS logs;
+CREATE TABLE IF NOT EXISTS logs.syslog (
     timestamp DateTime,
     host String,
     job String,
     message String
-) ENGINE = MergeTree()
-ORDER BY timestamp;
+)
+ENGINE = MergeTree()
+ORDER BY tuple();
 EOSQL

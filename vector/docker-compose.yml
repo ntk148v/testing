@@ -29,6 +29,7 @@ services:
     # Pass environment variables to the Vector container.
     environment:
       - HOSTNAME=${HOSTNAME}
+      - VECTOR_LOG=debug
 
   # The clickhouse service. It receives and stores the logs.
   clickhouse:
@@ -48,9 +49,29 @@ services:
     environment:
       # Define a user and password for the ClickHouse database.
       # These credentials are used by Vector to connect.
-      - CLICKHOUSE_USER=vector_user
-      - CLICKHOUSE_PASSWORD=vector_password
+      - CLICKHOUSE_USER=user
+      - CLICKHOUSE_PASSWORD=password
       - CLICKHOUSE_DB=logs
+
+  ch-ui:
+    image: ghcr.io/caioricciuti/ch-ui:latest
+    container_name: ch_ui
+    restart: always
+    ports:
+      - "5521:5521"
+    depends_on:
+      - clickhouse
+    environment:
+      # Core ClickHouse Configuration
+      VITE_CLICKHOUSE_URL: "http://localhost:8123"
+      VITE_CLICKHOUSE_USER: "user"
+      VITE_CLICKHOUSE_PASS: "password"
+      # Optional: Advanced Features
+      VITE_CLICKHOUSE_USE_ADVANCED: "true"
+      VITE_CLICKHOUSE_CUSTOM_PATH: ""
+      VITE_CLICKHOUSE_REQUEST_TIMEOUT: "30000"
+      # Optional: Reverse Proxy Support
+      VITE_BASE_PATH: "/"
 
   # The VictoriaLogs service. It receives and stores the logs.
   victorialogs:
