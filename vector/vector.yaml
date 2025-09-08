@@ -9,6 +9,11 @@ sources:
     include:
       - /var/log/syslog
       - /var/log/auth.log
+  demo_logs:
+    type: demo_logs
+    format: json
+    decoding:
+      codec: json
 
 # =========================================================================
 # Transforms
@@ -33,7 +38,7 @@ transforms:
 # A sink defines the destination for collected log data.
 # =========================================================================
 sinks:
-  clickhouse_sink:
+  clickhouse_sink1:
     type: clickhouse
     compression: none
     inputs:
@@ -47,7 +52,7 @@ sinks:
       password: password
     buffer:
       when_full: drop_newest
-  victorialogs_sink:
+  victorialogs_sink1:
     type: elasticsearch
     inputs:
       - vector_to_multi
@@ -61,19 +66,31 @@ sinks:
       _msg_field: message
       _time_field: timestamp
       _stream_fields: host,container_name
-  # greptimedb_sink:
-  #   type: greptimedb_metrics
-  #   inputs:
-  #     - vector_to_multi
-  #   dbname: public
-  #   endpoint: greptime_frontend0:4001
-  #   grpc_compression: gzip
-  # stdout_sink:
-  #   type: console
-  #   inputs:
-  #     - vector_to_multi
-  #   target: stdout
-  #   encoding:
-  #     codec: json
-  #     json:
-  #       pretty: true
+  victorialogs_sink2:
+    type: elasticsearch
+    inputs:
+      - demo_logs
+    endpoints:
+      - "http://victorialogs:9428/insert/elasticsearch/"
+    api_version: v8
+    compression: gzip
+    healthcheck:
+      enabled: false
+    query:
+      _msg_field: referer
+      _time_field: event_time
+      _stream_fields: host,bytes,method,protocol,request,status,user-identifier,event_time,referer
+  clickhouse_sink2:
+    type: clickhouse
+    compression: none
+    inputs:
+      - demo_logs
+    endpoint: http://clickhouse:8123
+    database: logs
+    table: demo
+    auth:
+      strategy: basic
+      user: user
+      password: password
+    buffer:
+      when_full: drop_newest
