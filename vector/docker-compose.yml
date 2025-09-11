@@ -31,8 +31,8 @@ services:
       - "8123:8123"
     volumes:
       # Persist the data and logs for ClickHouse
-      - clickhouse-data:/var/lib/clickhouse
-      - clickhouse-logs:/var/log/clickhouse-server
+      - clickhouse_data:/var/lib/clickhouse
+      - clickhouse_logs:/var/log/clickhouse-server
       - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
       - ./clickhouse_compression_config.xml:/etc/clickhouse-server/config.d/clickhouse_compression_config.xml
     environment:
@@ -42,25 +42,25 @@ services:
       - CLICKHOUSE_PASSWORD=password
       - CLICKHOUSE_DB=logs
 
-  ch-ui:
-    image: ghcr.io/caioricciuti/ch-ui:latest
-    container_name: ch_ui
-    restart: always
-    ports:
-      - "5521:5521"
-    depends_on:
-      - clickhouse
-    environment:
-      # Core ClickHouse Configuration
-      VITE_CLICKHOUSE_URL: "http://localhost:8123"
-      VITE_CLICKHOUSE_USER: "user"
-      VITE_CLICKHOUSE_PASS: "password"
-      # Optional: Advanced Features
-      VITE_CLICKHOUSE_USE_ADVANCED: "true"
-      VITE_CLICKHOUSE_CUSTOM_PATH: ""
-      VITE_CLICKHOUSE_REQUEST_TIMEOUT: "30000"
-      # Optional: Reverse Proxy Support
-      VITE_BASE_PATH: "/"
+  # ch-ui:
+  #   image: ghcr.io/caioricciuti/ch-ui:latest
+  #   container_name: ch_ui
+  #   restart: always
+  #   ports:
+  #     - "5521:5521"
+  #   depends_on:
+  #     - clickhouse
+  #   environment:
+  #     # Core ClickHouse Configuration
+  #     VITE_CLICKHOUSE_URL: "http://localhost:8123"
+  #     VITE_CLICKHOUSE_USER: "user"
+  #     VITE_CLICKHOUSE_PASS: "password"
+  #     # Optional: Advanced Features
+  #     VITE_CLICKHOUSE_USE_ADVANCED: "true"
+  #     VITE_CLICKHOUSE_CUSTOM_PATH: ""
+  #     VITE_CLICKHOUSE_REQUEST_TIMEOUT: "30000"
+  #     # Optional: Reverse Proxy Support
+  #     VITE_BASE_PATH: "/"
 
   # The VictoriaLogs service. It receives and stores the logs.
   victorialogs:
@@ -70,14 +70,14 @@ services:
     volumes:
       # Persist the data outside the container for long-term storage.
       # This prevents log data loss if the container is removed.
-      - victorialogs-data:/victorialogs-data
+      - victorialogs_data:/victorialogs_data
     ports:
       # Expose the port for log ingestion (TCP, UDP) and the built-in UI.
       - "9428:9428"
       - "8428:8428"
     command:
       # Set the data storage directory.
-      - "--storageDataPath=/victorialogs-data"
+      - "--storageDataPath=/victorialogs_data"
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.19.3
@@ -90,7 +90,7 @@ services:
       - "9200:9200"
       - "9300:9300"
     volumes:
-      - elasticsearch-data:/usr/share/elasticsearch/data
+      - elasticsearch_data:/usr/share/elasticsearch/data
 
   kibana:
     image: docker.elastic.co/kibana/kibana:8.19.3
@@ -104,7 +104,7 @@ services:
       - elasticsearch # Make sure Elasticsearch starts first
 volumes:
   # Define the volume for clickhouse data persistence.
-  clickhouse-data:
-  clickhouse-logs:
-  victorialogs-data:
-  elasticsearch-data:
+  clickhouse_data:
+  clickhouse_logs:
+  victorialogs_data:
+  elasticsearch_data:

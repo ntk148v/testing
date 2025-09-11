@@ -42,13 +42,13 @@ transforms:
 # A sink defines the destination for collected log data.
 # =========================================================================
 sinks:
-  debug_sink:
-    type: console
-    inputs: ["httplog"]
-    encoding:
-      codec: json
-      json:
-        pretty: true
+  # debug_sink:
+  #   type: console
+  #   inputs: ["httplog"]
+  #   encoding:
+  #     codec: json
+  #     json:
+  #       pretty: true
   clickhouse_sink1:
     type: clickhouse
     compression: none
@@ -64,6 +64,13 @@ sinks:
     skip_unknown_fields: true
     buffer:
       when_full: drop_newest
+    query_settings:
+      async_insert_settings:
+        enabled: true
+        max_data_size: 100000000
+        max_query_number: 450000
+        wait_for_processing: false
+        wait_for_processing_timeout: 5000
   clickhouse_sink2:
     type: clickhouse
     compression: none
@@ -78,6 +85,13 @@ sinks:
       password: password
     buffer:
       when_full: drop_newest
+    query_settings:
+      async_insert_settings:
+        enabled: true
+        max_data_size: 100000000
+        max_query_number: 450000
+        wait_for_processing: false
+        wait_for_processing_timeout: 5000
   elasticsearch_sink1:
     type: elasticsearch
     inputs:
@@ -102,6 +116,7 @@ sinks:
       - "http://victorialogs:9428/insert/elasticsearch/"
     api_version: v8
     compression: gzip
+    mode: bulk
     healthcheck:
       enabled: false
     query:
@@ -116,6 +131,7 @@ sinks:
       - "http://victorialogs:9428/insert/elasticsearch/"
     api_version: v8
     compression: gzip
+    mode: bulk
     healthcheck:
       enabled: false
     query:
