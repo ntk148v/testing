@@ -9,9 +9,6 @@ services:
     volumes:
       # Mount the local vector.yaml config file into the container.
       - ./vector.yaml:/etc/vector/vector.yaml
-      # Mount the host's /var/log directory for log collection.
-      # Be sure to adjust the path if your logs are elsewhere.
-      - /var/log:/var/log:ro
     ports:
       # Expose Vector's API for metrics and health checks.
       - "8686:8686"
@@ -19,8 +16,8 @@ services:
       - clickhouse
       - victorialogs
     # Pass environment variables to the Vector container.
-    environment:
-      - VECTOR_LOG=debug
+    # environment:
+    #   - VECTOR_LOG=debug
 
   # The clickhouse service. It receives and stores the logs.
   clickhouse:

@@ -4,33 +4,37 @@
 # The 'files' source type tails log files from the host machine.
 # =========================================================================
 sources:
-  host_logs:
-    type: file
-    include:
-      - /var/log/syslog
-      - /var/log/auth.log
-  demo_logs:
+  syslog:
+    type: demo_logs
+    format: syslog
+    interval: 0.001
+    count: 1000000
+  httplog:
     type: demo_logs
     format: json
     decoding:
       codec: json
+    interval: 0.001
+    count: 1000000
 
-# =========================================================================
-# Transforms
-#
-# A transform modifies the log data before it's sent to the sink.
-# This transform adds a timestamp and a "job" label, which are
-# recommended for the clickhouse schema.
-# =========================================================================
+# Parse Syslog logs
+# See the Vector Remap Language reference for more info: https://vrl.dev
 transforms:
-  vector_to_multi:
-    type: remap
-    inputs:
-      - host_logs
+  parsed_syslog:
+    type: "remap"
+    inputs: ["syslog"]
     source: |
-      .timestamp = format_timestamp!(now(), "%F %T")
-      .host = get_env_var!("HOSTNAME")
-      .job = "host_logs"
+      . = parse_syslog!(string!(.message))
+      .timestamp = format_timestamp!(.timestamp, "%Y-%m-%d %H:%M:%S")
+      # Add logging for debugging
+      if . == null {
+        log("Parse error: " + .message)
+      }
+  parsed_httplog:
+    type: "remap"
+    inputs: ["httplog"]
+    source: |
+      .timestamp = format_timestamp!(parse_timestamp!(.timestamp, "%+"), "%Y-%m-%d %H:%M:%S")
 
 # =========================================================================
 # Sinks
@@ -38,11 +42,18 @@ transforms:
 # A sink defines the destination for collected log data.
 # =========================================================================
 sinks:
+  debug_sink:
+    type: console
+    inputs: ["httplog"]
+    encoding:
+      codec: json
+      json:
+        pretty: true
   clickhouse_sink1:
     type: clickhouse
     compression: none
     inputs:
-      - vector_to_multi
+      - parsed_syslog
     endpoint: http://clickhouse:8123
     database: logs
     table: syslog
@@ -50,44 +61,17 @@ sinks:
       strategy: basic
       user: user
       password: password
+    skip_unknown_fields: true
     buffer:
       when_full: drop_newest
-  victorialogs_sink1:
-    type: elasticsearch
-    inputs:
-      - vector_to_multi
-    endpoints:
-      - "http://victorialogs:9428/insert/elasticsearch/"
-    api_version: v8
-    compression: gzip
-    healthcheck:
-      enabled: false
-    query:
-      _msg_field: message
-      _time_field: timestamp
-      _stream_fields: host,container_name
-  victorialogs_sink2:
-    type: elasticsearch
-    inputs:
-      - demo_logs
-    endpoints:
-      - "http://victorialogs:9428/insert/elasticsearch/"
-    api_version: v8
-    compression: gzip
-    healthcheck:
-      enabled: false
-    query:
-      _msg_field: referer
-      _time_field: event_time
-      _stream_fields: host,bytes,method,protocol,request,status,user-identifier,event_time,referer
   clickhouse_sink2:
     type: clickhouse
     compression: none
     inputs:
-      - demo_logs
+      - parsed_httplog
     endpoint: http://clickhouse:8123
     database: logs
-    table: demo
+    table: http
     auth:
       strategy: basic
       user: user
@@ -97,16 +81,44 @@ sinks:
   elasticsearch_sink1:
     type: elasticsearch
     inputs:
-      - vector_to_multi
+      - parsed_syslog
     endpoints:
       - http://elasticsearch:9200
     bulk:
-      index: syslog
+      index: syslog-%F
   elasticsearch_sink2:
     type: elasticsearch
     inputs:
-      - demo_logs
+      - parsed_httplog
     endpoints:
       - http://elasticsearch:9200
     bulk:
-      index: demo
+      index: httplog-%F
+  victorialogs_sink1:
+    type: elasticsearch
+    inputs:
+      - parsed_syslog
+    endpoints:
+      - "http://victorialogs:9428/insert/elasticsearch/"
+    api_version: v8
+    compression: gzip
+    healthcheck:
+      enabled: false
+    query:
+      _msg_field: message
+      _time_field: timestamp
+      _stream_fields: hostname,appname,procid,facility,severity,msgid,version
+  victorialogs_sink2:
+    type: elasticsearch
+    inputs:
+      - parsed_httplog
+    endpoints:
+      - "http://victorialogs:9428/insert/elasticsearch/"
+    api_version: v8
+    compression: gzip
+    healthcheck:
+      enabled: false
+    query:
+      _msg_field: referer
+      _time_field: timestamp
+      _stream_fields: host,bytes,method,protocol,request,status,user-identifier,event_time,referer

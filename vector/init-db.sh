@@ -6,24 +6,30 @@ clickhouse client -n <<-EOSQL
 CREATE DATABASE IF NOT EXISTS logs;
 
 -- Optimized syslog table
-CREATE TABLE IF NOT EXISTS logs.syslog (
+CREATE TABLE IF NOT EXISTS logs.syslog
+(
     timestamp DateTime CODEC(DoubleDelta, ZSTD(3)),
-    host LowCardinality(String) CODEC(LZ4),
-    job LowCardinality(String) CODEC(LZ4),
-    message String CODEC(ZSTD(5))
+    hostname String CODEC(ZSTD(1)),
+    appname String CODEC(ZSTD(1)),
+    procid UInt32 CODEC(ZSTD(1)),
+    msgid String CODEC(ZSTD(1)),
+    facility String CODEC(ZSTD(1)),
+    severity String CODEC(ZSTD(1)),
+    message String CODEC(ZSTD(3)),
+    version UInt8 CODEC(ZSTD(1))
 )
-ENGINE = MergeTree()
+ENGINE = MergeTree
 PARTITION BY toYYYYMM(timestamp)
-ORDER BY (timestamp, host)
+ORDER BY (timestamp, hostname, appname)
 SETTINGS
     index_granularity = 8192,
     compress_marks = 1,
     compress_primary_key = 1,
     min_bytes_for_wide_part = 0;
 
--- Optimized demo table
-CREATE TABLE IF NOT EXISTS logs.demo (
-    event_time DateTime CODEC(DoubleDelta, ZSTD(3)),
+-- Optimized http table
+CREATE TABLE IF NOT EXISTS logs.http (
+    timestamp DateTime CODEC(DoubleDelta, ZSTD(3)),
     host LowCardinality(String) CODEC(LZ4),
     method LowCardinality(String) CODEC(LZ4),
     protocol LowCardinality(String) CODEC(LZ4),
@@ -34,8 +40,8 @@ CREATE TABLE IF NOT EXISTS logs.demo (
     \`user-identifier\` String CODEC(LZ4)
 )
 ENGINE = MergeTree()
-PARTITION BY toYYYYMM(event_time)
-ORDER BY (event_time, host, status)
+PARTITION BY toYYYYMM(timestamp)
+ORDER BY (timestamp, host, status)
 SETTINGS
     index_granularity = 8192,
     compress_marks = 1,
