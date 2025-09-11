@@ -20,7 +20,6 @@ services:
       - victorialogs
     # Pass environment variables to the Vector container.
     environment:
-      - HOSTNAME=${HOSTNAME}
       - VECTOR_LOG=debug
 
   # The clickhouse service. It receives and stores the logs.
@@ -38,6 +37,7 @@ services:
       - clickhouse-data:/var/lib/clickhouse
       - clickhouse-logs:/var/log/clickhouse-server
       - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+      - ./clickhouse_compression_config.xml:/etc/clickhouse-server/config.d/clickhouse_compression_config.xml
     environment:
       # Define a user and password for the ClickHouse database.
       # These credentials are used by Vector to connect.
@@ -73,7 +73,7 @@ services:
     volumes:
       # Persist the data outside the container for long-term storage.
       # This prevents log data loss if the container is removed.
-      - victoria-logs-data:/victorialogs-data
+      - victorialogs-data:/victorialogs-data
     ports:
       # Expose the port for log ingestion (TCP, UDP) and the built-in UI.
       - "9428:9428"
@@ -82,8 +82,32 @@ services:
       # Set the data storage directory.
       - "--storageDataPath=/victorialogs-data"
 
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.19.3
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false # Disable security for a simple local setup, enable for production
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.19.3
+    container_name: kibana
+    environment:
+      - xpack.security.enabled=false # Disable X-Pack security features
+      - elasticsearch.hosts=http://elasticsearch:9200 # Connect to the Elasticsearch service
+    ports:
+      - "5601:5601" # Expose the Kibana web interface port
+    depends_on:
+      - elasticsearch # Make sure Elasticsearch starts first
 volumes:
   # Define the volume for clickhouse data persistence.
   clickhouse-data:
   clickhouse-logs:
-  victoria-logs-data:
+  victorialogs-data:
+  elasticsearch-data:

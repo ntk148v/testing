@@ -94,3 +94,19 @@ sinks:
       password: password
     buffer:
       when_full: drop_newest
+  elasticsearch_sink1:
+    type: elasticsearch
+    inputs:
+      - vector_to_multi
+    endpoints:
+      - http://elasticsearch:9200
+    bulk:
+      index: syslog
+  elasticsearch_sink2:
+    type: elasticsearch
+    inputs:
+      - demo_logs
+    endpoints:
+      - http://elasticsearch:9200
+    bulk:
+      index: demo
