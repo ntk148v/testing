@@ -122,7 +122,7 @@ sinks:
     query:
       _msg_field: message
       _time_field: timestamp
-      _stream_fields: hostname,appname,procid,facility,severity,msgid,version
+      _stream_fields: hostname,appname,severity,facility
   victorialogs_sink2:
     type: elasticsearch
     inputs:
@@ -137,4 +137,4 @@ sinks:
     query:
       _msg_field: referer
       _time_field: timestamp
-      _stream_fields: host,bytes,method,protocol,request,status,user-identifier,event_time,referer
+      _stream_fields: host,method,protocol,status
