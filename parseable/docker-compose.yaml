@@ -219,7 +219,7 @@ services:
       # Expose Vector's API for metrics and health checks.
       - "8686:8686"
     depends_on:
-      - parseable-query
+      - nginx
     networks:
       - parseable-internal
 
