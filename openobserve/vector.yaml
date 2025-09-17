@@ -1,0 +1,85 @@
+# ========================================================================= Sources
+#
+# A source defines where Vector collects log data.
+# The 'files' source type tails log files from the host machine.
+# =========================================================================
+sources:
+  syslog:
+    type: demo_logs
+    format: syslog
+    interval: 0.001
+    count: 1000000
+  httplog:
+    type: demo_logs
+    format: json
+    decoding:
+      codec: json
+    interval: 0.001
+    count: 1000000
+
+# Parse Syslog logs
+# See the Vector Remap Language reference for more info: https://vrl.dev
+transforms:
+  parsed_syslog:
+    type: "remap"
+    inputs: ["syslog"]
+    source: |
+      . = parse_syslog!(string!(.message))
+      .timestamp = format_timestamp!(.timestamp, "%Y-%m-%d %H:%M:%S")
+      # Add logging for debugging
+      if . == null {
+        log("Parse error: " + .message)
+      }
+  parsed_httplog:
+    type: "remap"
+    inputs: ["httplog"]
+    source: |
+      .timestamp = format_timestamp!(parse_timestamp!(.timestamp, "%+"), "%Y-%m-%d %H:%M:%S")
+
+sinks:
+  openobserve1:
+    type: http
+    method: post
+    batch:
+      max_bytes: 10485760
+      max_events: 1000
+      timeout_secs: 10
+    compression: gzip
+    inputs:
+      - parsed_syslog
+    encoding:
+      codec: json
+    uri: "http://openobserve:5080/api/dm/syslog/_json"
+    auth:
+      strategy: basic
+      user: root@example.com
+      password: Complexpass#123
+    request:
+      headers:
+        X-P-Stream: syslog
+    healthcheck:
+      enabled: true
+      path: "http://openobserve:5080/healthz"
+  openobserve2:
+    type: http
+    method: post
+    batch:
+      max_bytes: 10485760
+      max_events: 1000
+      timeout_secs: 10
+    compression: gzip
+    inputs:
+      - parsed_httplog
+    encoding:
+      codec: json
+    uri: "http://openobserve:5080/api/dm/httplog/_json"
+    auth:
+      strategy: basic
+      user: root@example.com
+      password: Complexpass#123
+    request:
+      headers:
+        X-P-Stream: httplog
+    healthcheck:
+      enabled: true
+      path: "http://openobserve:5080/healthz"

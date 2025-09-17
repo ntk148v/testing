@@ -1,0 +1,53 @@
+volumes:
+  minio_disk1:
+  minio_disk2:
+  minio_disk3:
+  minio_disk4:
+
+services:
+  minio:
+    image: minio/minio
+    container_name: minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_disk1:/mnt/disk1
+      - minio_disk2:/mnt/disk2
+      - minio_disk3:/mnt/disk3
+      - minio_disk4:/mnt/disk4
+    command: server http://minio/mnt/disk{1...4}/minio --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin # Set your desired root username
+      MINIO_ROOT_PASSWORD: minioadmin # Set your desired root password
+      MINIO_DEFAULT_BUCKETS: testbucket123 # Optional: Create a default bucket on startup
+
+  openobserve:
+    image: public.ecr.aws/zinclabs/openobserve:latest
+    container_name: openobserve
+    environment:
+      ZO_ROOT_USER_EMAIL: "root@example.com"
+      ZO_ROOT_USER_PASSWORD: "Complexpass#123"
+      ZO_S3_SERVER_URL: "http://minio:9091"
+      ZO_S3_ACCESS_KEY: "minioadmin"
+      ZO_S3_SECRET_KEY: "minioadmin"
+      ZO_S3_BUCKET_NAME: "testbucket123"
+      ZO_S3_PROVIDER: "minio"
+      ZO_S3_REGION_NAME: "us-east-1"
+    ports:
+      - 5080:5080
+    depends_on:
+      - minio
+
+  vector:
+    image: timberio/vector:0.49.0-debian
+    container_name: vector
+    restart: unless-stopped
+    volumes:
+      # Mount the local vector.yaml config file into the container.
+      - ./vector.yaml:/etc/vector/vector.yaml
+    ports:
+      # Expose Vector's API for metrics and health checks.
+      - "8686:8686"
+    depends_on:
+      - openobserve
