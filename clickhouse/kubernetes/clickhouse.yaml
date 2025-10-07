@@ -1,0 +1,61 @@
+apiVersion: clickhouse.altinity.com/v1
+kind: ClickHouseInstallation
+metadata:
+  name: clickhouse
+  namespace: clickhouse
+spec:
+  configuration:
+    zookeeper:
+      nodes:
+        - host: chk-clickhousekeeper-keeper-0-0.clickhouse.svc.cluster.local
+          port: 2181
+        - host: chk-clickhousekeeper-keeper-0-1.clickhouse.svc.cluster.local
+          port: 2181
+        - host: chk-clickhousekeeper-keeper-0-2.clickhouse.svc.cluster.local
+          port: 2181
+
+    clusters:
+      - name: cluster1
+        layout:
+          shardsCount: 1
+          replicasCount: 3
+        templates:
+          podTemplate: clickhouse-pod-template
+          volumeClaimTemplate: clickhouse-pvc-template
+
+  templates:
+    podTemplates:
+      - name: clickhouse-pod-template
+        spec:
+          affinity:
+            podAntiAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                - labelSelector:
+                    matchExpressions:
+                      - key: clickhouse.altinity.com/chi
+                        operator: In
+                        values:
+                          - clickhouse
+                  topologyKey: kubernetes.io/hostname
+          containers:
+            - name: clickhouse
+              image: clickhouse/clickhouse-server:25.8
+              resources:
+                requests:
+                  cpu: "1"
+                  memory: "2Gi"
+                limits:
+                  cpu: "2"
+                  memory: "4Gi"
+              env:
+                - name: CLICKHOUSE_MAX_THREADS
+                  value: "4"
+
+    volumeClaimTemplates:
+      - name: clickhouse-pvc-template
+        spec:
+          accessModes: ["ReadWriteOnce"]
+          storageClassName: openebs-hostpath
+          resources:
+            requests:
+              storage: 50Gi
