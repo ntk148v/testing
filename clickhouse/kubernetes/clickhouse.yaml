@@ -22,17 +22,17 @@ spec:
   templates:
     podTemplates:
       - name: clickhouse-pod-template
-        # spec:
-        #   affinity:
-        #     podAntiAffinity:
-        #       requiredDuringSchedulingIgnoredDuringExecution:
-        #         - labelSelector:
-        #             matchExpressions:
-        #               - key: clickhouse.altinity.com/chi
-        #                 operator: In
-        #                 values:
-        #                   - clickhouse
-        #           topologyKey: kubernetes.io/hostname
+        spec:
+          # affinity:
+          #   podAntiAffinity:
+          #     requiredDuringSchedulingIgnoredDuringExecution:
+          #       - labelSelector:
+          #           matchExpressions:
+          #             - key: clickhouse.altinity.com/chi
+          #               operator: In
+          #               values:
+          #                 - clickhouse
+          #         topologyKey: kubernetes.io/hostname
           containers:
             - name: clickhouse
               image: clickhouse/clickhouse-server:25.8
