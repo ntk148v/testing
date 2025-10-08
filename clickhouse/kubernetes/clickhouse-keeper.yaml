@@ -1,12 +1,12 @@
 apiVersion: clickhouse-keeper.altinity.com/v1
 kind: ClickHouseKeeperInstallation
 metadata:
-  name: clickhousekeeper
+  name: clickhouse-keeper
   namespace: clickhouse
 spec:
   configuration:
     clusters:
-      - name: keeper
+      - name: chk01
         layout:
           replicasCount: 3
         templates:
@@ -16,6 +16,9 @@ spec:
   templates:
     podTemplates:
       - name: keeper-pod-template
+        metadata:
+          labels:
+            app: clickhouse-keeper
         spec:
           affinity:
             podAntiAffinity:
@@ -25,7 +28,7 @@ spec:
                       - key: app
                         operator: In
                         values:
-                          - clickhousekeeper
+                          - clickhouse-keeper
                   topologyKey: kubernetes.io/hostname
           containers:
             - name: clickhouse-keeper
