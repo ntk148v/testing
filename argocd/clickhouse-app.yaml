@@ -1,0 +1,16 @@
+project: clickhouse
+source:
+  repoURL: https://github.com/ntk148v/testing
+  path: clickhouse/kubernetes
+  targetRevision: HEAD
+  directory:
+    recurse: true
+    jsonnet: {}
+destination:
+  server: https://kubernetes.default.svc
+  namespace: clickhouse
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+    enabled: true
