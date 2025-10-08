@@ -39,13 +39,13 @@ spec:
               resources:
                 requests:
                   cpu: "1"
-                  memory: "2Gi"
+                  memory: "1Gi"
                 limits:
-                  cpu: "2"
-                  memory: "4Gi"
+                  cpu: "1"
+                  memory: "2Gi"
               env:
                 - name: CLICKHOUSE_MAX_THREADS
-                  value: "4"
+                  value: "2"
 
     volumeClaimTemplates:
       - name: clickhouse-pvc-template
