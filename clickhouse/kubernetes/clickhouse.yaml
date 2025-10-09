@@ -18,10 +18,24 @@ spec:
         templates:
           podTemplate: clickhouse-pod-template
           volumeClaimTemplate: clickhouse-pvc-template
+    settings:
+      # to allow scrape metrics via embedded prometheus protocol
+      prometheus/endpoint: /metrics
+      prometheus/port: 8888
+      prometheus/metrics: true
+      prometheus/events: true
+      prometheus/asynchronous_metrics: true
+      prometheus/status_info: true
 
   templates:
     podTemplates:
       - name: clickhouse-pod-template
+        metadata:
+          # for `additionalScrapeConfigs`, look https://github.com/Altinity/clickhouse-operator/blob/master/deploy/prometheus/prometheus-template.yaml#L11
+          annotations:
+            prometheus.io/scrape: "true"
+            prometheus.io/path: "/metrics"
+            prometheus.io/port: "8888"
         spec:
           # affinity:
           #   podAntiAffinity:
@@ -38,20 +52,24 @@ spec:
               image: clickhouse/clickhouse-server:25.8
               resources:
                 requests:
-                  cpu: "1"
-                  memory: "1Gi"
+                  cpu: 500m
+                  memory: 1Gi
                 limits:
-                  cpu: "1"
-                  memory: "2Gi"
+                  cpu: 1
+                  memory: 2Gi
               env:
                 - name: CLICKHOUSE_MAX_THREADS
                   value: "2"
+              # for `PodMonitor`
+              ports:
+                - name: "metrics"
+                  containerPort: 8888
 
     volumeClaimTemplates:
       - name: clickhouse-pvc-template
         spec:
           accessModes: ["ReadWriteOnce"]
-          storageClassName: openebs-hostpath
+          storageClassName: openebs-lvmpv
           resources:
             requests:
-              storage: 50Gi
+              storage: 10Gi

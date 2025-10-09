@@ -3,6 +3,9 @@ kind: ClickHouseKeeperInstallation
 metadata:
   name: clickhouse-keeper
   namespace: clickhouse
+  annotations:
+    prometheus.io/port: "7000"
+    prometheus.io/scrape: "true"
 spec:
   configuration:
     clusters:
@@ -12,6 +15,18 @@ spec:
         templates:
           podTemplate: keeper-pod-template
           volumeClaimTemplate: keeper-storage-template
+    settings:
+      logger/level: "trace"
+      logger/console: "true"
+      listen_host: "0.0.0.0"
+      keeper_server/four_letter_word_white_list: "*"
+      keeper_server/coordination_settings/raft_logs_level: "information"
+      prometheus/endpoint: "/metrics"
+      prometheus/port: "7000"
+      prometheus/metrics: "true"
+      prometheus/events: "true"
+      prometheus/asynchronous_metrics: "true"
+      prometheus/status_info: "false"
 
   templates:
     podTemplates:
@@ -19,6 +34,9 @@ spec:
         metadata:
           labels:
             app: clickhouse-keeper
+          annotations:
+            prometheus.io/port: "7000"
+            prometheus.io/scrape: "true"
         spec:
           affinity:
             podAntiAffinity:
@@ -36,6 +54,8 @@ spec:
               ports:
                 - name: tcp
                   containerPort: 9181
+                - name: metrics
+                  containerPort: 7000
               resources:
                 requests:
                   cpu: 500m
@@ -50,7 +70,7 @@ spec:
       - name: keeper-storage-template
         spec:
           accessModes: ["ReadWriteOnce"]
-          storageClassName: openebs-hostpath
+          storageClassName: openebs-lvmpv
           resources:
             requests:
-              storage: 10Gi
+              storage: 1Gi

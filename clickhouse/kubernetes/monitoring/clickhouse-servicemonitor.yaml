@@ -1,0 +1,38 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: clickhouse-monitor
+  namespace: monitoring
+  labels:
+    release: prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app: clickhouse
+  namespaceSelector:
+    matchNames:
+      - clickhouse
+  endpoints:
+    - port: metricse
+      path: /metrics
+      interval: 15s
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: clickhouse-keeper-monitor
+  namespace: monitoring
+  labels:
+    release: prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app: clickhouse-keeper
+  namespaceSelector:
+    matchNames:
+      - clickhouse
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 15s

@@ -82,7 +82,7 @@ kubectl delete crd volumesnapshotcontents.snapshot.storage.k8s.io
 kubectl delete crd volumesnapshots.snapshot.storage.k8s.io
 
 # Setup OPENEBS-operator into dedicated namespace via kustomize
-helm install openebs --namespace "${OPENEBS_NAMESPACE}" openebs/openebs --set engines.replicated.mayastor.enabled=false --set engines.local.zfs.enabled=false --create-namespace --version "${OPENEBS_HELM_VERSION}"
+helm install openebs --namespace "${OPENEBS_NAMESPACE}" openebs/openebs --set lvm-localpv.lvmNode.kubeletDir=/var/lib/kubelet --set engines.replicated.mayastor.enabled=false --set engines.local.zfs.enabled=false --create-namespace --version "${OPENEBS_HELM_VERSION}"
 
 echo -n "Waiting '${OPENEBS_NAMESPACE}/openebs-lvm-localpv-controller' deployment to start"
 # Check grafana deployment have all pods ready
@@ -92,13 +92,15 @@ while [[ $(kubectl --namespace="${OPENEBS_NAMESPACE}" get deployments | grep "op
 done
 echo "...DONE"
 
-# Install the test storage class
-kubectl apply -f openebs-lvm-storageclass.yaml -n "${OPENEBS_NAMESPACE}"
+# Install the storage classes
+kubectl apply -f ./openebs-lvm-storageclass.yaml -n "${OPENEBS_NAMESPACE}"
+kubectl apply -f ./openebs-hostpath-storageclass.yaml -n "${OPENEBS_NAMESPACE}"
 
 # Install a simple Clickhouse instance using openebs
 echo "Setup simple Clickhouse into ${OPENEBS_NAMESPACE} namespace using OpenEBS"
 ensure_namespace "${CLICKHOUSE_NAMESPACE}"
-kubectl apply --validate="${VALIDATE_YAML}" --namespace="${CLICKHOUSE_NAMESPACE}" -f clickhouse-installation-with-openebs.yaml
+kubectl apply --validate="${VALIDATE_YAML}" --namespace="${CLICKHOUSE_NAMESPACE}" -f clickhouse-keeper.yaml
+kubectl apply --validate="${VALIDATE_YAML}" --namespace="${CLICKHOUSE_NAMESPACE}" -f clickhouse.yaml
 
 # Remove downloaded sources
 clean_dir "${TMP_DIR}"
