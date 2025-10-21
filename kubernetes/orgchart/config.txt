@@ -1,0 +1,3 @@
+{{- with secret "internal/data/database/config" -}}
+postgresql://{{ .Data.data.username }}:{{ .Data.data.password }}@postgres:5432/wizard
+{{- end -}}

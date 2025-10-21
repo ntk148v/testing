@@ -1,0 +1,6 @@
+#!/bin/bash
+SA_TOKEN=$(kubectl create token internal-app --namespace default)
+curl --request POST \
+    --data '{"jwt": "'"$SA_TOKEN"'", "role": "internal-app"}' \
+    http://localhost:8200/v1/auth/kubernetes/login
+

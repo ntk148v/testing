@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orgchart
+  labels:
+    app: orgchart
+spec:
+  selector:
+    matchLabels:
+      app: orgchart
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        # agent-inject-status set to update informs the injector reinject these values.
+        vault.hashicorp.com/agent-inject-status: "update"
+        vault.hashicorp.com/role: "internal-app"
+        vault.hashicorp.com/agent-inject-secret-database-config.txt: "internal/data/database/config"
+        # agent-inject-template-FILEPATH prefixes the file path. The value defines the Vault Agent template to apply to the secret's data.
+        vault.hashicorp.com/agent-inject-template-database-config.txt: |
+          {{- with secret "internal/data/database/config" -}}
+          postgresql://{{ .Data.data.username }}:{{ .Data.data.password }}@postgres:5432/wizard
+          {{- end -}}
+        vault.hashicorp.com/agent-inject-template-file-database-config.txt: "/vault/templates/config.txt"
+      labels:
+        app: orgchart
+    spec:
+      serviceAccountName: internal-app
+      containers:
+        - name: orgchart
+          image: jweissig/app:0.0.1
+          volumeMounts:
+            - mountPath: /vault/templates/config.txt
+              name: database-config
+              subPath: config.txt
+      volumes:
+        - name: database-config
+          configMap:
+            name: database-config
+            items:
+              - key: config.txt
+                path: config.txt
