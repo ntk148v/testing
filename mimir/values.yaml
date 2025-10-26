@@ -7,7 +7,7 @@ metaMonitoring:
     enabled: true
     installOperator: true
     logs:
-      enabled: false
+      enabled: true
     metrics:
       additionalRemoteWriteConfigs:
         - url: "http://mimir-nginx.mimir-test.svc:80/api/v1/push"
