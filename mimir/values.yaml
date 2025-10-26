@@ -1,0 +1,13 @@
+global:
+  dnsService: "rke2-coredns-rke2-coredns"
+metaMonitoring:
+  serviceMonitor:
+    enabled: true
+  grafanaAgent:
+    enabled: true
+    installOperator: true
+    logs:
+      enabled: false
+    metrics:
+      additionalRemoteWriteConfigs:
+        - url: "http://mimir-nginx.mimir-test.svc:80/api/v1/push"
