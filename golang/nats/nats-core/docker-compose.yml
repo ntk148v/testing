@@ -2,6 +2,6 @@ version: "3.5"
 
 services:
   nats:
-    image: nats:2.8.4
+    image: nats:latest
     container_name: nats
     network_mode: host
