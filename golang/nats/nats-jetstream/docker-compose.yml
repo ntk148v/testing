@@ -1,8 +1,13 @@
-version: "3.5"
+version: "3"
 
 services:
   nats:
-    image: nats:2.8.4
+    image: nats:latest
     container_name: nats
     network_mode: host
-    command: --js
+    command: --js --sd=/data
+    volumes:
+      - nats_data:/data # Persistent storage for JetStream data
+
+volumes:
+  nats_data:
