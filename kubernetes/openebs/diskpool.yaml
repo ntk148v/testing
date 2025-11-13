@@ -1,0 +1,36 @@
+---
+apiVersion: "openebs.io/v1beta3"
+kind: DiskPool
+metadata:
+  name: pool-on-node-1
+  namespace: openebs
+spec:
+  node: worker01
+  disks: ["aio:///dev/disk/by-id/virtio-41ea4851-f8e3-45c7-8"]
+  topology:
+    labelled:
+      topology-key: topology-value
+---
+apiVersion: "openebs.io/v1beta3"
+kind: DiskPool
+metadata:
+  name: pool-on-node-2
+  namespace: openebs
+spec:
+  node: worker02
+  disks: ["aio:///dev/disk/by-id/virtio-68f6cfe4-bd75-4009-8"]
+  topology:
+    labelled:
+      topology-key: topology-value
+---
+apiVersion: "openebs.io/v1beta3"
+kind: DiskPool
+metadata:
+  name: pool-on-node-3
+  namespace: openebs
+spec:
+  node: worker03
+  disks: ["aio:///dev/disk/by-id/virtio-5df1363b-7ab6-4fc3-9"]
+  topology:
+    labelled:
+      topology-key: topology-value
