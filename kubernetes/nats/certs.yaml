@@ -1,0 +1,86 @@
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: selfsigned-cluster-issuer
+spec:
+  selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nats-ca
+  namespace: nats
+spec:
+  secretName: nats-ca
+  duration: 8736h # 1 year
+  renewBefore: 240h # 10 days
+  issuerRef:
+    name: selfsigned-cluster-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
+  commonName: nats-ca
+  usages:
+    - cert sign
+  subject:
+    organizations:
+      - Your organization
+  isCA: true
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: nats-ca-issuer
+  namespace: nats
+spec:
+  ca:
+    secretName: nats-ca
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nats-server-tls
+  namespace: nats
+spec:
+  secretName: nats-server-tls
+  duration: 2160h # 90 days
+  renewBefore: 240h # 10 days
+  issuerRef:
+    name: nats-ca
+    kind: Issuer
+    group: cert-manager.io
+  usages:
+    - signing
+    - key encipherment
+    - server auth
+  subject:
+    organizations:
+      - Your organization
+  commonName: nats.default.svc.cluster.local
+  dnsNames:
+    - nats.default.svc
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nats-routes-tls
+  namespace: nats
+spec:
+  secretName: nats-routes-tls
+  duration: 2160h # 90 days
+  renewBefore: 240h # 10 days
+  issuerRef:
+    name: nats-ca
+    kind: Issuer
+    group: cert-manager.io
+  usages:
+    - signing
+    - key encipherment
+    - server auth
+    - client auth
+  subject:
+    organizations:
+      - Your organization
+  commonName: "*.nats-mgmt.default.svc.cluster.local"
+  dnsNames:
+    - "*.nats-mgmt.default.svc"
