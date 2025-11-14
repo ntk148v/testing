@@ -1,0 +1,55 @@
+config:
+  cluster:
+    enabled: false
+    tls:
+      enabled: false
+  jetstream:
+    enabled: true
+    pvc:
+      enabled: true
+      size: 10Gi
+      storageClassName: longhorn
+      # defaults to the PVC size
+      maxSize: 10Gi
+    memoryStore:
+      enabled: true
+      # ensure that container has a sufficient memory limit greater than maxSize
+      maxSize: 1Gi
+  monitor:
+    enabled: true
+    port: 8222
+    tls:
+      # config.nats.tls must be enabled also
+      # when enabled, monitoring port will use HTTPS with the options from config.nats.tls
+      # if promExporter is also enabled, consider setting promExporter.monitorDomain
+      enabled: false
+  profiling:
+    enabled: true
+    port: 65432
+############################################################
+# service
+############################################################
+service:
+  enabled: true
+
+  # service port options
+  # additional boolean field enable to control whether port is exposed in the service
+  # must be enabled in the config section also
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#serviceport-v1-core
+  ports:
+    nats:
+      enabled: true
+    leafnodes:
+      enabled: true
+    websocket:
+      enabled: true
+    mqtt:
+      enabled: true
+    cluster:
+      enabled: true
+    gateway:
+      enabled: false
+    monitor:
+      enabled: true
+    profiling:
+      enabled: true
