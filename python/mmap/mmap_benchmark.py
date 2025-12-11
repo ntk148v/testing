@@ -6,7 +6,7 @@ import random
 FILENAME = "perf_test.bin"
 FILE_SIZE_MB = 1024
 FILE_SIZE = FILE_SIZE_MB * 1024 * 1024
-NUM_OPERATIONS = 100_000
+NUM_OPERATIONS = 100_000_00
 
 
 def setup_file():
