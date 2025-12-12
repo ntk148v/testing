@@ -1,15 +1,22 @@
 version: "3"
 
+volumes:
+  prometheus_data:
+
 services:
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
     hostname: prometheus
     restart: always
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
     ports:
       - "9090:9090"
     volumes:
       - ./config/prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
 
   alertmanager:
     image: prom/alertmanager:latest
@@ -52,4 +59,3 @@ services:
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-    restart: always
