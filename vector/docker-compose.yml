@@ -14,7 +14,7 @@ services:
       - "8686:8686"
     depends_on:
       - clickhouse
-      - victorialogs
+      # - victorialogs
     # Pass environment variables to the Vector container.
     # environment:
     #   - VECTOR_LOG=debug
@@ -38,70 +38,71 @@ services:
     environment:
       # Define a user and password for the ClickHouse database.
       # These credentials are used by Vector to connect.
-      - CLICKHOUSE_USER=user
+      - CLICKHOUSE_USER=admin
       - CLICKHOUSE_PASSWORD=password
+      - CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1
       - CLICKHOUSE_DB=logs
 
-  # ch-ui:
-  #   image: ghcr.io/caioricciuti/ch-ui:latest
-  #   container_name: ch_ui
-  #   restart: always
-  #   ports:
-  #     - "5521:5521"
-  #   depends_on:
-  #     - clickhouse
-  #   environment:
-  #     # Core ClickHouse Configuration
-  #     VITE_CLICKHOUSE_URL: "http://localhost:8123"
-  #     VITE_CLICKHOUSE_USER: "user"
-  #     VITE_CLICKHOUSE_PASS: "password"
-  #     # Optional: Advanced Features
-  #     VITE_CLICKHOUSE_USE_ADVANCED: "true"
-  #     VITE_CLICKHOUSE_CUSTOM_PATH: ""
-  #     VITE_CLICKHOUSE_REQUEST_TIMEOUT: "30000"
-  #     # Optional: Reverse Proxy Support
-  #     VITE_BASE_PATH: "/"
-
-  # The VictoriaLogs service. It receives and stores the logs.
-  victorialogs:
-    image: victoriametrics/victoria-logs:v1.29.0
-    container_name: victorialogs
-    restart: unless-stopped
-    volumes:
-      # Persist the data outside the container for long-term storage.
-      # This prevents log data loss if the container is removed.
-      - victorialogs_data:/victorialogs_data
+  ch-ui:
+    image: ghcr.io/caioricciuti/ch-ui:latest
+    container_name: ch_ui
+    restart: always
     ports:
-      # Expose the port for log ingestion (TCP, UDP) and the built-in UI.
-      - "9428:9428"
-      - "8428:8428"
-    command:
-      # Set the data storage directory.
-      - "--storageDataPath=/victorialogs_data"
-
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.19.3
-    container_name: elasticsearch
-    environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=false # Disable security for a simple local setup, enable for production
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
-    ports:
-      - "9200:9200"
-      - "9300:9300"
-    volumes:
-      - elasticsearch_data:/usr/share/elasticsearch/data
-
-  kibana:
-    image: docker.elastic.co/kibana/kibana:8.19.3
-    container_name: kibana
-    environment:
-      - xpack.security.enabled=false # Disable X-Pack security features
-      - elasticsearch.hosts=http://elasticsearch:9200 # Connect to the Elasticsearch service
-    ports:
-      - "5601:5601" # Expose the Kibana web interface port
+      - "5521:5521"
     depends_on:
-      - elasticsearch # Make sure Elasticsearch starts first
+      - clickhouse
+    environment:
+      # Core ClickHouse Configuration
+      VITE_CLICKHOUSE_URL: "http://localhost:8123"
+      VITE_CLICKHOUSE_USER: "admin"
+      VITE_CLICKHOUSE_PASS: "password"
+      # Optional: Advanced Features
+      VITE_CLICKHOUSE_USE_ADVANCED: "true"
+      VITE_CLICKHOUSE_CUSTOM_PATH: ""
+      VITE_CLICKHOUSE_REQUEST_TIMEOUT: "30000"
+      # Optional: Reverse Proxy Support
+      VITE_BASE_PATH: "/"
+
+  # # The VictoriaLogs service. It receives and stores the logs.
+  # victorialogs:
+  #   image: victoriametrics/victoria-logs:v1.29.0
+  #   container_name: victorialogs
+  #   restart: unless-stopped
+  #   volumes:
+  #     # Persist the data outside the container for long-term storage.
+  #     # This prevents log data loss if the container is removed.
+  #     - victorialogs_data:/victorialogs_data
+  #   ports:
+  #     # Expose the port for log ingestion (TCP, UDP) and the built-in UI.
+  #     - "9428:9428"
+  #     - "8428:8428"
+  #   command:
+  #     # Set the data storage directory.
+  #     - "--storageDataPath=/victorialogs_data"
+  #
+  # elasticsearch:
+  #   image: docker.elastic.co/elasticsearch/elasticsearch:8.19.3
+  #   container_name: elasticsearch
+  #   environment:
+  #     - discovery.type=single-node
+  #     - xpack.security.enabled=false # Disable security for a simple local setup, enable for production
+  #     - ES_JAVA_OPTS=-Xms512m -Xmx512m
+  #   ports:
+  #     - "9200:9200"
+  #     - "9300:9300"
+  #   volumes:
+  #     - elasticsearch_data:/usr/share/elasticsearch/data
+  #
+  # kibana:
+  #   image: docker.elastic.co/kibana/kibana:8.19.3
+  #   container_name: kibana
+  #   environment:
+  #     - xpack.security.enabled=false # Disable X-Pack security features
+  #     - elasticsearch.hosts=http://elasticsearch:9200 # Connect to the Elasticsearch service
+  #   ports:
+  #     - "5601:5601" # Expose the Kibana web interface port
+  #   depends_on:
+  #     - elasticsearch # Make sure Elasticsearch starts first
 volumes:
   # Define the volume for clickhouse data persistence.
   clickhouse_data:
