@@ -35,6 +35,8 @@ services:
       - clickhouse_logs:/var/log/clickhouse-server
       - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
       - ./clickhouse_compression_config.xml:/etc/clickhouse-server/config.d/clickhouse_compression_config.xml
+      # - ./clickhouse_session_log.xml:/etc/clickhouse-server/config.d/clickhouse_session_log.xml
+      # - ./clickhouse_system_logs_tables.xml:/etc/clickhouse-server/config.d/enable_system_log_tables.xml
     environment:
       # Define a user and password for the ClickHouse database.
       # These credentials are used by Vector to connect.
