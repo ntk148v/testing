@@ -16,7 +16,8 @@ sources:
       codec: json
     interval: 0.001
     count: 1000000
-
+  internal_logs:
+    type: internal_logs
 # Parse Syslog logs
 # See the Vector Remap Language reference for more info: https://vrl.dev
 transforms:
@@ -59,7 +60,7 @@ sinks:
     table: syslog
     auth:
       strategy: basic
-      user: user
+      user: admin
       password: password
     skip_unknown_fields: true
     buffer:
@@ -81,7 +82,7 @@ sinks:
     table: http
     auth:
       strategy: basic
-      user: user
+      user: admin
       password: password
     buffer:
       when_full: drop_newest
