@@ -3,7 +3,7 @@ version: "3.8"
 services:
   # The Vector service. It collects logs and sends them to clickhouse.
   vector:
-    image: timberio/vector:0.49.0-debian
+    image: timberio/vector:nightly-alpine
     container_name: vector
     restart: unless-stopped
     volumes:
@@ -44,25 +44,25 @@ services:
       - CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1
       - CLICKHOUSE_DB=logs
 
-  ch-ui:
-    image: ghcr.io/caioricciuti/ch-ui:latest
-    container_name: ch_ui
-    restart: always
-    ports:
-      - "5521:5521"
-    depends_on:
-      - clickhouse
-    environment:
-      # Core ClickHouse Configuration
-      VITE_CLICKHOUSE_URL: "http://localhost:8123"
-      VITE_CLICKHOUSE_USER: "admin"
-      VITE_CLICKHOUSE_PASS: "password"
-      # Optional: Advanced Features
-      VITE_CLICKHOUSE_USE_ADVANCED: "true"
-      VITE_CLICKHOUSE_CUSTOM_PATH: ""
-      VITE_CLICKHOUSE_REQUEST_TIMEOUT: "30000"
-      # Optional: Reverse Proxy Support
-      VITE_BASE_PATH: "/"
+  # ch-ui:
+  #   image: ghcr.io/caioricciuti/ch-ui:latest
+  #   container_name: ch_ui
+  #   restart: always
+  #   ports:
+  #     - "5521:5521"
+  #   depends_on:
+  #     - clickhouse
+  #   environment:
+  #     # Core ClickHouse Configuration
+  #     VITE_CLICKHOUSE_URL: "http://localhost:8123"
+  #     VITE_CLICKHOUSE_USER: "admin"
+  #     VITE_CLICKHOUSE_PASS: "password"
+  #     # Optional: Advanced Features
+  #     VITE_CLICKHOUSE_USE_ADVANCED: "true"
+  #     VITE_CLICKHOUSE_CUSTOM_PATH: ""
+  #     VITE_CLICKHOUSE_REQUEST_TIMEOUT: "30000"
+  #     # Optional: Reverse Proxy Support
+  #     VITE_BASE_PATH: "/"
 
   # # The VictoriaLogs service. It receives and stores the logs.
   # victorialogs:
