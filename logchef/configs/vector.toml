@@ -1,0 +1,38 @@
+[api]
+enabled = true
+
+[sources.generate_syslog]
+type = "demo_logs"
+format = "syslog"
+interval = 0.5
+
+[transforms.remap_syslog]
+inputs = ["generate_syslog"]
+type = "remap"
+source = '''
+structured = parse_syslog!(.message)
+
+.timestamp = format_timestamp!(structured.timestamp, format: "%Y-%m-%d %H:%M:%S.%f")
+.body = structured.message
+.service_name = structured.appname
+.namespace = "syslog"
+
+.severity_text = "INFO"
+.severity_number = 9
+
+.log_attributes = {
+  "syslog.hostname": structured.hostname
+}
+
+del(.message)
+'''
+
+[sinks.clickhouse]
+type = "clickhouse"
+inputs = ["remap_syslog"]
+endpoint = "http://clickhouse:8123"
+database = "default"
+table = "logs"
+compression = "gzip"
+healthcheck.enabled = false
+skip_unknown_fields = true
