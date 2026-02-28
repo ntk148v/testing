@@ -1,0 +1,18 @@
+<clickhouse>
+    <profiles>
+        <default>
+            <!-- Enable the query cache by default for queries using this profile -->
+            <use_query_cache>1</use_query_cache>
+
+            <!-- Optional: Configure default TTL for cached results (in seconds, e.g., 300s or 5 minutes) -->
+            <query_cache_ttl>300</query_cache_ttl>
+
+            <!-- Optional: Control writes to cache (true by default) -->
+            <enable_writes_to_query_cache>1</enable_writes_to_query_cache>
+
+            <!-- Optional: Control reads from cache (true by default) -->
+            <enable_reads_from_query_cache>1</enable_reads_from_query_cache>
+        </default>
+    </profiles>
+</clickhouse>
+
