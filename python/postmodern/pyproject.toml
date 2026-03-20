@@ -1,0 +1,53 @@
+[project]
+name = "postmodern"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.12.5",
+]
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.42.1",
+    "pytest>=9.0.2",
+    "ruff>=0.15.7",
+    "ty>=0.0.24",
+]
+
+[tool.ruff]
+# if this is a library, enter the _minimum_ version you
+# want to support, otherwise do py313
+target-version = "py313"
+line-length = 120  # use whatever number makes you happy
+
+[tool.ruff.lint]
+# you can see the looong list of rules here:
+# https://docs.astral.sh/ruff/rules/
+# here's a couple to start with
+select = [
+	"A",    # warn about shadowing built-ins
+	"E",    # style stuff, whitespaces
+	"F",    # important pyflakes lints
+	"I",    # import sorting
+	"N",    # naming
+	"T100", # breakpoints (probably don't want these in prod!)
+]
+# if you're feeling confident you can do:
+# select = ["ALL"]
+# and then manually ignore annoying ones:
+# ignore = [...]
+
+[tool.ruff.lint.isort]
+# so it knows to group first-party stuff last
+known-first-party = ["postmodern"]
+
+[tool.poe.tasks]
+# run with eg `uv run poe fmt`
+fmt = "ruff format"
+lint = "ruff check --fix"
+check = "ty check"
+test = "pytest"
+# run all the above
+all = [ {ref="fmt"}, {ref="lint"}, {ref="check"}, {ref="test"} ]
