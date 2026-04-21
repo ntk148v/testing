@@ -9,6 +9,6 @@ dependencies = [
     "langchain>=0.3.25",
     "openai>=1.79.0",
     "python-dateutil>=2.9.0.post0",
-    "python-dotenv>=1.1.0",
+    "python-dotenv>=1.2.2",
     "langchain-openai>=1.1.14",
 ]
