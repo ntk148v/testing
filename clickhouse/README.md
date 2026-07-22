@@ -182,48 +182,48 @@ SETTINGS enable_full_text_index = 1;
 
 Index stats:
 
-| Metric | Value |
-| --- | --- |
-| Rows | 28,737,557 |
-| Table size | 6.61 GiB |
-| FTS index size | 1.81 GiB (27% of table) |
-| Granules without FTS | 3,529 |
-| Granules with FTS (`clickhouse`) | 441 (87% skipped) |
-| Granules with FTS (`olap` + `oltp`) | 416 (88% skipped) |
+| Metric                              | Value                   |
+| ----------------------------------- | ----------------------- |
+| Rows                                | 28,737,557              |
+| Table size                          | 6.61 GiB                |
+| FTS index size                      | 1.81 GiB (27% of table) |
+| Granules without FTS                | 3,529                   |
+| Granules with FTS (`clickhouse`)    | 441 (87% skipped)       |
+| Granules with FTS (`olap` + `oltp`) | 416 (88% skipped)       |
 
 All times from `system.query_log` (best of 3 hot runs).
 
 ### Q1: Single token `clickhouse` (appears in 1,145 rows)
 
-| Metric | Without FTS | With FTS | Improvement |
-|---|---|---|---|
-| query_duration_ms | 537 ms | **2 ms** | **~270× faster** |
-| read_bytes | 1.30 GiB | 3.45 MiB | **~390× less** |
-| marks scanned | 442 | 441 | negligible |
+| Metric            | Without FTS | With FTS | Improvement      |
+| ----------------- | ----------- | -------- | ---------------- |
+| query_duration_ms | 537 ms      | **2 ms** | **~270× faster** |
+| read_bytes        | 1.30 GiB    | 3.45 MiB | **~390× less**   |
+| marks scanned     | 442         | 441      | negligible       |
 
 ### Q2: Multi-token `olap AND oltp` (appears in 476 rows)
 
-| Metric | Without FTS | With FTS | Improvement |
-|---|---|---|---|
-| query_duration_ms | 3,980 ms | **4 ms** | **~1,000× faster** |
-| read_bytes | 7.76 GiB | 6.47 MiB | **~1,200× less** |
-| marks scanned | 3,091 | 416 | **87% skipped** |
+| Metric            | Without FTS | With FTS | Improvement        |
+| ----------------- | ----------- | -------- | ------------------ |
+| query_duration_ms | 3,980 ms    | **4 ms** | **~1,000× faster** |
+| read_bytes        | 7.76 GiB    | 6.47 MiB | **~1,200× less**   |
+| marks scanned     | 3,091       | 416      | **87% skipped**    |
 
 ### Q3: Token filter + GROUP BY monthly aggregation
 
-| Metric | Without FTS | With FTS | Improvement |
-|---|---|---|---|
-| query_duration_ms | 611 ms | **6 ms** | **~100× faster** |
-| read_bytes | 1.31 GiB | 17.23 MiB | **~78× less** |
-| marks scanned | 442 | 441 | negligible |
+| Metric            | Without FTS | With FTS  | Improvement      |
+| ----------------- | ----------- | --------- | ---------------- |
+| query_duration_ms | 611 ms      | **6 ms**  | **~100× faster** |
+| read_bytes        | 1.31 GiB    | 17.23 MiB | **~78× less**    |
+| marks scanned     | 442         | 441       | negligible       |
 
 ### Summary
 
-| Query pattern | No FTS | With FTS | Speedup |
-|---|---|---|---|
-| Single token | 537 ms | 2 ms | **~270×** |
-| Multi-token | 3,980 ms | 4 ms | **~1,000×** |
-| Token + GROUP BY | 611 ms | 6 ms | **~100×** |
+| Query pattern    | No FTS   | With FTS | Speedup     |
+| ---------------- | -------- | -------- | ----------- |
+| Single token     | 537 ms   | 2 ms     | **~270×**   |
+| Multi-token      | 3,980 ms | 4 ms     | **~1,000×** |
+| Token + GROUP BY | 611 ms   | 6 ms     | **~100×**   |
 
 **Why the gap is so wide here**: `clickhouse` appears in only 0.004% of rows. The FTS index identifies those 1,145 rows instantly and reads only their data. Without FTS, ClickHouse must scan the entire 1.30 GiB of text data (or 7.76 GiB for the multi-token case) even though 99.996% of rows don't match.
 
