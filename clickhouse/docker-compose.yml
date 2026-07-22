@@ -10,7 +10,6 @@ services:
     volumes:
       - clickhouse_data:/var/lib/clickhouse
       - ./config/config.xml:/etc/clickhouse-server/config.d/docker.xml
-      - ./config/users.xml:/etc/clickhouse-server/users.d/docker.xml
     environment:
       CLICKHOUSE_DB: analytics
       CLICKHOUSE_USER: username
