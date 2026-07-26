@@ -1,0 +1,11 @@
+[project]
+name = "pydantic-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pydantic-ai-harness[code-mode]>=0.11.0",
+    "pydantic-ai-slim[openrouter,duckduckgo]>=2.18.0",
+    "python-dotenv>=1.2.2",
+]
