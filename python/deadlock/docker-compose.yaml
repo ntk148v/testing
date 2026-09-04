@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  db:
+    image: mysql:8.4
+    container_name: mysql
+    command: --innodb-print-all-deadlocks=1
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"

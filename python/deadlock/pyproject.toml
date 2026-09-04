@@ -1,0 +1,19 @@
+[project]
+name = "deadlock"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Kien Nguyen Tuan", email = "kiennt2609@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "pymysql>=1.2.0",
+]
+
+[project.scripts]
+deadlock = "deadlock:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
