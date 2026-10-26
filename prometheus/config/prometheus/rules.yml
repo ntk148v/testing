@@ -1,6 +1,14 @@
 groups:
   - name: example
     rules:
+      # Fake alert for validating alertmanager-mcp-server (fires immediately)
+      - alert: fake_always_firing
+        expr: vector(1)
+        labels:
+          severity: test
+        annotiations:
+          summary: "fake alert for MCP validation"
+
       # Alert for any instance that is unreachable for >2 minutes.
       - alert: service_down
         expr: up == 0
